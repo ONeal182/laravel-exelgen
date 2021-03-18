@@ -1,0 +1,678 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+html {
+    font-family: Open Sans;
+    height: 100%
+}
+
+a {
+    color: #004AC9;
+}
+
+a:hover {
+    color: #0099FF;
+}
+
+body { 
+    font-family: Open Sans;
+}
+
+p {
+    color: grey
+}
+
+a.button-home:hover {
+    background: #0099FF;
+    box-shadow: 0px 4px 0px 0px #1C69EE, 0px 0px 16px -7px #000;
+    text-decoration: none;
+}
+
+/* General style */
+
+body.home { 
+    height: 100%; 
+}
+
+.home_banner {
+    height: 76vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../img/index-background.jpg);
+}
+
+.banner {
+    text-align: center;
+}
+
+.banner h1 {
+    font-family: Oswald;
+    text-transform: uppercase;
+    color: #004AC9;
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+
+.banner p {
+    max-width: 640px;
+    margin: 0 auto;
+    font-family: 'Open Sans';
+    font-size: 18px;
+    color: #515151;
+    font-weight: bold;
+    line-height: 27px;
+}
+
+a.button-home {
+    font-family: 'Oswald';
+    color: #fff;
+    background: #004AC9;
+    padding: 15px 45px;
+    border-radius: 100px;
+    box-shadow: 0px 4px 0px 0px #003187, 0px 0px 16px -7px #000;
+    display: inline-block;
+    margin-top: 25px;
+}
+
+.top_menu ul {
+    list-style: none;
+    margin-bottom: 0px;
+}
+
+.login ul {
+    display: flex;
+}
+
+.top_nav ul {
+    display: flex;
+}
+
+.top_nav li {
+    margin-right: 15px;
+}
+
+.login li:nth-child(1):after {
+    content: "|";
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #949494;
+}
+
+.login li:nth-child(1) {
+    margin-right: 5px;
+}
+
+nav.top_navbar {
+    background: #F8F8F8;
+    padding: 12px;
+}
+
+nav.bottom_navbar {
+    padding: 0px;
+    background: #fff;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1)
+}
+
+.bottom_navbar ul {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+}
+
+
+.bottom_navbar ul li a { 
+    padding: 17px;
+    display: inline-block;
+}
+
+.bottom_navbar ul li a:hover {
+    background: #004ac9;
+    color: #fff;
+    text-decoration: none;
+}
+
+.bottom_navbar ul li a:hover path {
+    fill: #fff;
+}
+
+.bottom_navbar ul li svg {
+    margin-right: 10px;
+    height: 24px;
+}
+
+footer {
+    padding: 25px;
+}
+
+.top_nav a {
+    color: #000;
+}
+
+
+
+/* Forms */
+
+.step {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 24px;
+    font-family: 'Oswald';
+    color: #004ac9;
+    font-weight: 600;
+}
+
+.form-card h2 {
+    font-size: 24px;
+    font-family: 'Oswald';
+    color: #004ac9;
+    font-weight: 600;
+}
+
+.form-card h3 {
+    font-size: 20px;
+    letter-spacing: 0px;
+    font-family: 'Oswald';
+    color: #003187;
+    font-weight: 500;
+} 
+
+.title-inner { 
+    margin-bottom: 15px; 
+}
+
+
+.header-forms {
+    border-bottom: 1px solid #D7D7D8;
+    padding-bottom: 15px;
+    margin: 20px 0px;
+}
+
+
+.step-count, .step-all {
+    margin: 0px 5px;
+}
+
+
+
+#heading {
+    text-transform: uppercase;
+    color: #673AB7;
+    font-weight: normal
+}
+
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+    border-bottom: 1px solid #D7D7D8;
+    padding-bottom: 15px;
+}
+
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 20px;
+    position: relative
+}
+
+.form-card {
+    text-align: left;
+    min-height: 60vh;
+}
+
+#msform fieldset:not(:first-of-type) {
+    display: none
+}
+
+#msform input, #msform textarea {
+    padding: 9px 15px 9px 15px;
+    border: 2px solid #D7D7D8;
+    border-radius: 5px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #000000;
+    background-color: #fff;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+#msform input[type="checkbox"] {
+    width: auto;
+    padding: 0px;
+}
+
+
+#msform .action-button {
+    width: auto;
+    font-family: 'Oswald';
+    color: #fff;
+    background-color: #004AC9;
+    padding: 10px 55px 10px 35px;
+    border-radius: 100px;
+    display: inline-block;
+    margin-bottom: 0px;
+    background-image: url(../img/arrow.svg);
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: 90%;
+    border: 0px;
+}
+
+#msform .action-button.previous {
+    background-color: #F3F3F3;
+    color: #515151;
+    padding: 10px 35px 10px 55px;
+    background-image: url(../img/arrow-left.svg);
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: 10%;
+}
+
+
+
+#msform .action-button.previous:hover {
+    background-color: #D7D7D8;
+}
+
+
+#msform .action-button:focus {
+    outline: none;
+}
+
+#msform .action-button:hover {
+    background-color: #0099FF;
+}
+
+.footer-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 25px;
+}
+
+.step-form {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 16px;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    align-items: center;
+}
+
+
+.card {
+    z-index: 0;
+    border: none;
+    position: relative
+}
+
+.fs-title {
+    font-size: 25px;
+    color: #673AB7;
+    margin-bottom: 15px;
+    font-weight: normal;
+    text-align: left
+}
+
+.purple-text {
+    color: #673AB7;
+    font-weight: normal
+}
+
+.steps {
+    font-size: 25px;
+    color: gray;
+    margin-bottom: 10px;
+    font-weight: normal;
+    text-align: right
+}
+
+.fieldlabels {
+    color: #515151;
+    text-align: left
+}
+
+.bottomlabel {
+    font-size: 16px;
+    color: #949494;
+}
+
+
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey
+}
+
+#progressbar .active {
+    color: #673AB7
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 15px;
+    width: 25%;
+    float: left;
+    position: relative;
+    font-weight: 400
+}
+
+#progressbar #account:before {
+    font-family: FontAwesome;
+    content: "\f13e"
+}
+
+#progressbar #personal:before {
+    font-family: FontAwesome;
+    content: "\f007"
+}
+
+#progressbar #payment:before {
+    font-family: FontAwesome;
+    content: "\f030"
+}
+
+#progressbar #confirm:before {
+    font-family: FontAwesome;
+    content: "\f00c"
+}
+
+#progressbar li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 20px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px
+}
+
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: #673AB7
+}
+
+.progress {
+    height: 10px;
+    border-radius: 30px;
+}
+
+.progress-bar {
+    background-color: #0099FF;
+}
+
+.fit-image {
+    width: 100%;
+    object-fit: cover
+}
+
+/* Customize the label (the container) */
+.checkbox-label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  border-radius: 5px;
+  left: 0;
+  height: 26px;
+  width: 26px;
+  background-color: #fff;
+  border: 3px solid #0099FF;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-label:hover input ~ .checkmark {
+  background-color: #fff;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-label input:checked ~ .checkmark {
+  background-color: #0099FF;
+  border: 3px solid #0099FF;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-label .checkmark:after {
+  left: 6px;
+  top: 0px;
+  width: 9px;
+  height: 15px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.add_section {
+   display: flex;
+}
+.first_section .control_section {
+    padding-top: 6px;
+}
+.control_section {
+    width: 5%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+}
+
+.content_section {
+    width: 95%;
+}
+
+.delete {
+    background: url(../img/icons/delete.svg);
+    background-size: 32px 32px;
+    width: 32px;
+    height: 32px;
+}
+
+.add {
+    background: url(../img/icons/add.svg);
+    background-size: 32px 32px;
+    width: 32px;
+    height: 32px;
+}
+
+.add_section:not(:nth-child(1)) {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.row_sections .control_section {
+    padding-top: 8px;
+}
+
+.row_sections .add_section {
+    border-top: 0px;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+#msform .row_sections input, #msform .row_sections textarea {
+    margin-bottom: 10px;
+}
+
+.textarea-large { 
+    height: 140px; 
+}
+
+#msform .row_element input, #msform .row_element textarea {
+    display: flex;
+}
+
+.row_element .field-line {
+    align-items: center;
+    display: flex;
+}
+
+.add_doc {
+    display: flex;
+}
+
+.add_doc_2, .add_doc {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.add_doc .add, .add_doc_2 .add {
+    margin-right: 15px;
+}
+
+.add_doc_2:hover, .add_doc:hover {
+    text-decoration: underline;
+}
+
+.forms .row { 
+    margin-bottom: 15px; 
+}
+
+.contor_in_row_element {
+    display: flex;
+    align-items: center;
+}
+
+.template { 
+    display: none; 
+}
+
+#msform input:focus, #msform textarea:focus {
+    border-color: #0099FF;
+    outline: none;
+}
+
+fieldset[page="pg9"] .first_section .control_section {
+    padding-top: 40px;
+}
+
+.add:hover, .delete:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+
+/* date */
+
+#msform input.stopDate {
+    border: 2px solid #F14D4D;
+}
+
+.bs-tooltip-auto[x-placement^=bottom] .arrow::before, .bs-tooltip-bottom .arrow::before {
+    bottom: 0;
+    border-width: 0 .4rem .4rem;
+    border-bottom-color: #F14D4D;
+}
+.tooltip-inner {
+    max-width: 200px;
+    padding: .25rem .5rem;
+    color: #fff;
+    text-align: center;
+    background-color: #F14D4D;
+    border-radius: .25rem;
+}
+
+span.trigger-tooltip {
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #D7D7D8;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #D7D7D8;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #D7D7D8;
+}
+
+#msform input[disabled="disabled"] {
+    background-color: #FCFCFC;
+    color: #D7D7D8;
+}
+
+
+.button-blue {
+    width: auto;
+    font-family: 'Oswald';
+    color: #fff;
+    background-color: #004AC9;
+    padding: 10px 55px 10px 35px;
+    border-radius: 100px;
+    display: inline-block;
+    margin-bottom: 0px;
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: 90%;
+    border: 0px;
+}
+
+.button-blue img {
+    margin-right: 20px;
+    position: relative;
+    top: -2px;
+}
