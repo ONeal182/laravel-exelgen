@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PDFController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +20,6 @@ Route::get('/', function () {
 Route::get('/forms', function () {
     return view('forms');
 });
+
+Route::get('pdf/preview', [PDFController::class, 'preview'])->name('pdf.preview');
+Route::get('pdf/generate', [PDFController::class, 'generatePDF'])->name('pdf.generate');
