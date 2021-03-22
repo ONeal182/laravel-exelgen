@@ -23,6 +23,7 @@
     }
 </style>    
 <body>
+{{$id}}
     <div class="container">
         <div class="col-md-8 section offset-md-2">
             <div class="panel panel-primary">

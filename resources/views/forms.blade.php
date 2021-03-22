@@ -16,7 +16,11 @@
 
 </head>
 <body class="snippet-body">
-
+<form class="test" action="pdf/preview" method="post">
+{{ csrf_field() }}
+  <input name='test' type="text">
+  <input type="submit" value="Отправить">
+</form>
 
  <!-- header --> 
  <header class="top_menu">
@@ -1408,6 +1412,8 @@
 <!-- Script --> 
 <script type="text/javascript" src="{{ asset("assets/js/rule-date.js") }}"></script>
 <script type="text/javascript" src="{{ asset("assets/js/script.js") }}"></script>
+<script type="text/javascript" src="{{ asset("assets/js/script.js") }}"></script>
+<script type="text/javascript" src="{{ asset("assets/js/ajax.js") }}"></script>
 
 
 </html>

@@ -21,5 +21,5 @@ Route::get('/forms', function () {
     return view('forms');
 });
 
-Route::get('pdf/preview', [PDFController::class, 'preview'])->name('pdf.preview');
+Route::post('pdf/preview', [PDFController::class, 'preview'])->name('pdf.preview');
 Route::get('pdf/generate', [PDFController::class, 'generatePDF'])->name('pdf.generate');
