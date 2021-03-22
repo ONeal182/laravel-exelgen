@@ -1,0 +1,242 @@
+/* Размер шрифта вставялемых данных */
+.text-line { 
+	font-size: 14px!important;
+}
+/* разрыв для печати, и отступ между таблицами, мб поможет для разибвания страниц */
+.divider { 
+	margin-top: 25px;
+	page-break-after: always;
+}
+
+/* Таблица */
+table.excel559 {
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-left: 1px;
+	color: windowtext;
+	font-size: 10.0pt;
+	font-weight: 400;
+	width: 680px;
+	font-style: normal;
+	text-decoration: none;
+	font-family: "Times New Roman";
+	text-align: general;
+	vertical-align: bottom;
+	border: none;
+	white-space: nowrap;
+	table-layout: fixed;
+
+}
+
+/* Поля ввода */
+.excel622, .excel625  {
+	padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	color:windowtext;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"Times New Roman", serif;
+	text-align:left;
+	vertical-align:middle;
+	border:none;
+	white-space: break-spaces;
+	border-top: none;
+	border-right: none;
+	border-bottom: .5pt solid windowtext;
+	border-left: none;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+.excel627 {
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-left: 1px;
+	color: windowtext;
+	font-size: 11.0pt;
+	font-weight: 700;
+	font-style: italic;
+	text-decoration: none;
+	font-family: "Times New Roman", serif;
+	text-align: left;
+	vertical-align: middle;
+	border: none;
+	white-space: nowrap;
+	border-top: none;
+	border-right: none;
+	border-bottom: .5pt solid windowtext;
+	border-left: none;
+}
+.excel626 {
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-left: 1px;
+	color: windowtext;
+	font-size: 11.0pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: "Times New Roman", serif;
+	text-align: center;
+	vertical-align: bottom;
+	border: none;
+	white-space: nowrap;
+	border-top: none;
+	border-right: none;
+	border-bottom: .5pt solid windowtext;
+	border-left: none;
+}
+
+.excel629 {
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-left: 1px;
+    color: windowtext;
+    font-size: 11.0pt;
+    font-weight: 700;
+    font-style: italic;
+    text-decoration: none;
+    font-family: "Times New Roman", serif;
+    text-align: center;
+    vertical-align: bottom;
+    border: none;
+    white-space: nowrap;
+    border-top: none;
+    border-right: none;
+    border-bottom: .5pt solid windowtext;
+    border-left: none;
+}
+
+/* Заголовок 1 */	
+.excel617 {
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-left: 1px;
+	color: windowtext;
+	font-size: 12.0pt;
+	font-weight: 700;
+	font-style: normal;
+	text-decoration: none;
+	font-family: "Times New Roman", serif;
+	text-align: center;
+	vertical-align: bottom;
+	border: none;
+	white-space: nowrap;
+}
+
+/* Заголовки внутри */
+.excel618 {
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-left: 1px;
+	color: windowtext;
+	font-size: 11.0pt;
+	font-weight: 700;
+	font-style: normal;
+	text-decoration: none;
+	font-family: "Times New Roman", serif;
+	text-align: general;
+	vertical-align: bottom;
+	border: none;
+	white-space: nowrap;
+}
+
+.excel564 {
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-left: 1px;
+    color: windowtext;
+    font-size: 11.0pt;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    font-family: "Times New Roman", serif;
+    text-align: general;
+    vertical-align: middle;
+    border: none;
+    white-space: nowrap;
+}
+.excel571 {
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-left: 1px;
+    color: windowtext;
+    font-size: 11.0pt;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    font-family: "Times New Roman", serif;
+    text-align: left;
+    vertical-align: middle;
+    border: none;
+    white-space: nowrap;
+}
+/* Мелкий шрифт */
+.excel623 {
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-left: 1px;
+	color: windowtext;
+	font-size: 7.0pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: "Times New Roman", serif;
+	text-align: center;
+	vertical-align: middle;
+	border: none;
+	white-space: normal;
+}
+
+/* № */
+.excel614 {
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-left: 1px;
+	color: windowtext;
+	font-size: 11.0pt;
+	font-weight: 700;
+	font-style: normal;
+	text-decoration: none;
+	font-family: "Times New Roman", serif;
+	text-align: right;
+	vertical-align: bottom;
+	border: none;
+	white-space: nowrap;
+}
+
+/* Верхняя часть */
+.excel621 {
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-left: 1px;
+	color: windowtext;
+	font-size: 10.0pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: "Times New Roman", serif;
+	text-align: right;
+	vertical-align: bottom;
+	border: none;
+	white-space: normal;
+}
+
+/* Кавычки */ 
+.excel602 {
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-left: 1px;
+    color: windowtext;
+    font-size: 11.0pt;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    font-family: "Times New Roman", serif;
+    text-align: right;
+    vertical-align: bottom;
+    border: none;
+    white-space: nowrap;
+}

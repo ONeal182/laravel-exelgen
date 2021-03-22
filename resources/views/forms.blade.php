@@ -13,6 +13,8 @@
   <!-- Style --> 
   <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/style.css") }}">
   <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/datepicker.min.css") }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/form/style.css") }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/form/new-style.css") }}">
 
 </head>
 <body class="snippet-body">
