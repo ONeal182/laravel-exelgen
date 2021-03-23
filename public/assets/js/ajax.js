@@ -1,10 +1,9 @@
 $(document).ready(function(){
-    $('.test').on('submit', function(e){
-        
+    $('#msform').on('submit', function(e){
         $.ajax({
             type: 'POST',
             url: 'pdf/preview',
-            data: $('.test').serialize(),
+            data: $('#msform').serialize(),
             success: function (data) {
                 console.log(data)
             },

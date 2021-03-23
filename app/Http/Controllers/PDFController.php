@@ -10,8 +10,8 @@ class PDFController extends Controller
     
     public function preview(Request $request)
     {
-        $id = $request->input('test');
-        return view('preview', ['id'=> $id]);
+        // $id = $request->input('test');
+        return view('preview');
     }
 
     public function generatePDF()

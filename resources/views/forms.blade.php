@@ -18,11 +18,6 @@
 
 </head>
 <body class="snippet-body">
-<form class="test" action="pdf/preview" method="post">
-{{ csrf_field() }}
-  <input name='test' type="text">
-  <input type="submit" value="Отправить">
-</form>
 
  <!-- header --> 
  <header class="top_menu">
@@ -89,8 +84,8 @@
 <div class="container">
 
   <!-- Forms -->
-  <form id="msform">
-
+  <form id="msform" action="pdf/preview" method="post">
+  {{ csrf_field() }}
     <!-- 
     /---------------------------/
     Step 1
@@ -1335,7 +1330,7 @@
     <div class="footer-form">
       <input type="button" name="previous" class="previous action-button" value="Назад"/>
       <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div></div>
-      <input type="button" name="next" class="next action-button" value="Далее" />
+      <input type="submit" name="next" class="next action-button submitAOSR" value="Далее" />
     </div>
   </fieldset>
 
