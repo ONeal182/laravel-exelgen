@@ -676,3 +676,7 @@ span.trigger-tooltip {
     position: relative;
     top: -2px;
 }
+
+.forms .row {
+    justify-content: center;
+}

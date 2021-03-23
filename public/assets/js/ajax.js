@@ -5,7 +5,7 @@ $(document).ready(function(){
             url: 'pdf/preview',
             data: $('#msform').serialize(),
             success: function (data) {
-                console.log(data)
+                $('.previwePDF .row').append(data);
             },
             error: function () {
                 $('#senderror').show();

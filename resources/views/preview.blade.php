@@ -1,7 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/form/style.css") }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/form/new-style.css") }}">
+  <style>
+  body { font-family: 'times' !important ; }
+  td { font-family: 'times' !important; }
+  </style>
+
+</head>
+<body>
 <table width="640" align="center" cellpadding="0" cellspacing="0" class="excel559">
   <col width="17" span="36" style="width:13pt;">
   <tr style="height:15.0pt;">         
-    <td colspan="8" class="excel621" width="136" style="text-align:left;">Приложение №3</td>
+    <td colspan="8" class="excel621" width="136" style="text-align:left;">Приложение №3</td> 
   </tr>
   <tr style="height:15.0pt;">
     <td colspan="36" class="excel621" width="136" style="width:104pt;">РД 11-02-2006</td>
@@ -306,7 +322,7 @@
 
   </tr>
   <tr style="height:14.1pt;">
-    <td class="excel560" colspan="10" style="height:14.1pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; окончания работ</td>
+    <td class="excel560" colspan="10" style="height:14.1pt;">окончания работ</td>
     <td class="excel560"></td>
     <td class="excel602">&quot;</td>
   <td colspan="2" class="excel629 text-line" id="line-input-36">36</td>
@@ -498,3 +514,5 @@
   </tr>
 </table>
 <!-- <a href="{{ route('pdf.generate') }}" class="btn btn-primary">Generate PDF</a> -->
+</body>
+</html>

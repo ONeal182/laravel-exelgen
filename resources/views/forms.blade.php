@@ -1351,7 +1351,7 @@
         </div>
       </div>
       <!-- input step --> 
-      <div class="forms">
+      <div class="forms previwePDF">
 
         <div class="row">
 
