@@ -115,13 +115,13 @@
         <div class="row">
           <div class="col-lg-7">
             <label class="fieldlabels">Наименование проектной документации</label> 
-            <input type="text" name="step1_input1" /> 
+            <input type="text" name="projectName" /> 
           </div>
         </div>
         <div class="row">
           <div class="col-lg-12">
             <label class="fieldlabels">Почтовый или строительный адрес объекта капитального строительства</label> 
-            <textarea name="step1_input2"></textarea>
+            <textarea name="projectAddres"></textarea>
           </div>
         </div>
          <div class="row">
@@ -166,40 +166,40 @@
         <div class="row">
           <div class="col-lg-6">
             <label class="fieldlabels">Наименование</label> 
-            <input type="text" name="step2_input1" /> 
+            <input type="text" name="builderName" /> 
           </div>
           <div class="col-lg-6">
             <label class="fieldlabels">Место нахождения юридического лица</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="builderAddres" /> 
           </div>
         </div>
         <div class="row">
           <div class="col-lg-4">
             <label class="fieldlabels">ОГРН</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="builderORGN" /> 
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">ИНН</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="builderINN" /> 
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">Телефон / Факс</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="builderPhone" /> 
           </div>  
         </div>
         <h3 class="title-inner"> Саморегулируемая организация </h3>
         <div class="row">
           <div class="col-lg-4">
             <label class="fieldlabels">Наименование</label> 
-            <input type="text" name="step2_input1" /> 
+            <input type="text" name="builderNameOrg" /> 
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">ОГРН</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="builderOrgORG" /> 
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">ИНН</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="builderOrgINN" /> 
           </div>
         </div>
          <div class="row">
@@ -245,40 +245,40 @@
         <div class="row">
           <div class="col-lg-6">
             <label class="fieldlabels">Наименование</label> 
-            <input type="text" name="step2_input1" /> 
+            <input type="text" name="contractorName" /> 
           </div>
           <div class="col-lg-6">
             <label class="fieldlabels">Место нахождения юридического лица</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="contractorAddres" /> 
           </div>
         </div>
         <div class="row">
           <div class="col-lg-4">
             <label class="fieldlabels">ОГРН</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="contractorORGN" /> 
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">ИНН</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="contractorINN" /> 
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">Телефон / Факс</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="contractorPhone" /> 
           </div>  
         </div>
         <h3 class="title-inner"> Саморегулируемая организация </h3>
         <div class="row">
           <div class="col-lg-4">
             <label class="fieldlabels">Наименование</label> 
-            <input type="text" name="step2_input1" /> 
+            <input type="text" name="contractorOrgName" /> 
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">ОГРН</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="contractorOrgORGN" /> 
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">ИНН</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="contractorOrgINN" /> 
           </div>
         </div>
          <div class="row">
@@ -322,40 +322,40 @@
         <div class="row">
           <div class="col-lg-6">
             <label class="fieldlabels">Наименование</label> 
-            <input type="text" name="step2_input1" /> 
+            <input type="text" name="preparationName" /> 
           </div>
           <div class="col-lg-6">
             <label class="fieldlabels">Место нахождения юридического лица</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="preparationAddres" /> 
           </div>
         </div>
         <div class="row">
           <div class="col-lg-4">
             <label class="fieldlabels">ОГРН</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="preparationORGN" /> 
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">ИНН</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="preparationINN" /> 
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">Телефон / Факс</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="preparationPhone" /> 
           </div>  
         </div>
         <h3 class="title-inner"> Саморегулируемая организация </h3>
         <div class="row">
           <div class="col-lg-4">
             <label class="fieldlabels">Наименование</label> 
-            <input type="text" name="step2_input1" /> 
+            <input type="text" name="preparationOrgName" /> 
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">ОГРН</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="preparationOrgORGN" /> 
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">ИНН</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="preparationOrgINN" /> 
           </div>
         </div>
          <div class="row">
@@ -400,46 +400,46 @@
         <div class="row">
           <div class="col-lg-6">
             <label class="fieldlabels">Должность</label> 
-            <input type="text" name="step5_input1" /> 
+            <input type="text" name="representativeBuilderPosition" /> 
           </div>
           <div class="col-lg-6">
             <label class="fieldlabels">Фамилия, инициалы</label> 
-            <input type="text" name="step5_input2" /> 
+            <input type="text" name="representativeBuilderFIO" /> 
           </div>
         </div>
         <div class="row">
           <div class="col-lg-8">
             <label class="fieldlabels">Реквизиты распорядительного документа, подтверждающего полномочия</label> 
-            <input type="text" name="step5_input3" /> 
+            <input type="text" name="representativeBuilderRequisites" /> 
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">Дата распорядительного документа</label> 
-            <input type="text" class="date" name="step5_input4" /> 
+            <input type="text" class="date" name="representativeBuilderDate" /> 
           </div>
         </div>
         <div class="row">
           <div class="col-lg-4">
             <label class="fieldlabels">Идентификационный номер</label> 
-            <input type="text" name="step5_input5" /> 
+            <input type="text" name="representativeBuilderId" /> 
             <label class="bottomlabel"> в национальном реестре специалистов в области строительства </label>
           </div>  
           <div class="col-lg-4">
             <label class="fieldlabels">Дата выдачи номера</label> 
-            <input type="text" class="date" name="step5_input6" /> 
+            <input type="text" class="date" name="representativeBuilderDateGet" /> 
           </div>
         </div>
         <div class="row">
           <div class="col-lg-4">
             <label class="fieldlabels">ОГРН</label> 
-            <input type="text" name="step5_input5" /> 
+            <input type="text" name="representativeBuilderORGN" /> 
           </div>  
           <div class="col-lg-4">
             <label class="fieldlabels">ИНН</label> 
-            <input type="text" name="step5_input6" /> 
+            <input type="text" name="representativeBuilderINN" /> 
           </div>
            <div class="col-lg-4">
             <label class="fieldlabels">Местонахождение юр.Лица</label> 
-            <input type="text"  name="step5_input6" /> 
+            <input type="text"  name="representativeBuilderAddres" /> 
           </div>
         </div>
         <div class="row">
@@ -485,21 +485,21 @@
         <div class="row">
           <div class="col-lg-6">
             <label class="fieldlabels">Должность</label> 
-            <input type="text" name="step2_input1" /> 
+            <input type="text" name="representativeContractorPosition" /> 
           </div>
           <div class="col-lg-6">
             <label class="fieldlabels">Фамилия, инициалы</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="representativeContractorFIO" /> 
           </div>
         </div>
         <div class="row">
           <div class="col-lg-8">
             <label class="fieldlabels">Реквизиты распорядительного документа, подтверждающего полномочия</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="representativeContractorRequisites" /> 
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">Дата выдачи документа</label> 
-            <input type="text" class="date" name="step2_input2" /> 
+            <input type="text" class="date" name="representativeContractorDate" /> 
           </div>
         </div>
         <div class="row">
@@ -542,32 +542,32 @@
         <div class="row">
           <div class="col-lg-6">
             <label class="fieldlabels">Должность</label> 
-            <input type="text" name="step2_input1" /> 
+            <input type="text" name="memberBuilderPosition" /> 
           </div>
           <div class="col-lg-6">
             <label class="fieldlabels">Фамилия, инициалы</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="memberBuilderFIO" /> 
           </div>
         </div>
         <div class="row">
           <div class="col-lg-4">
             <label class="fieldlabels">Идентификационный номер</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="memberBuilderId" /> 
             <label class="bottomlabel"> в национальном реестре специалистов в области строительства </label>
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">Дата выдачи номера</label> 
-            <input type="text" class="date" name="step2_input2" /> 
+            <input type="text" class="date" name="memberBuilderDateId" /> 
           </div>
         </div>
         <div class="row">
           <div class="col-lg-8">
             <label class="fieldlabels">Реквизиты распорядительного документа, подтверждающего полномочия</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="memberBuilderRequisites" /> 
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">Дата выдачи документа</label> 
-            <input type="text" class="date" name="step2_input2" /> 
+            <input type="text" class="date" name="memberBuilderDate" /> 
           </div>
         </div>
         <div class="row">
@@ -610,45 +610,45 @@
         <div class="row">
           <div class="col-lg-6">
             <label class="fieldlabels">Должность</label> 
-            <input type="text" name="step2_input1" /> 
+            <input type="text" name="preparationPosition" /> 
           </div>
           <div class="col-lg-6">
             <label class="fieldlabels">Фамилия, инициалы</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="preparationFIO" /> 
           </div>
         </div>
         <div class="row">
           <div class="col-lg-8">
             <label class="fieldlabels">Реквизиты распорядительного документа, подтверждающего полномочия</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="preparationREQ" /> 
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">Дата выдачи номера</label> 
-            <input type="text" class="date" name="step2_input2" /> 
+            <input type="text" class="date" name="preparationDateId" /> 
           </div>
         </div>
         <div class="row">
           <div class="col-lg-6">
             <label class="fieldlabels">Наименование юридического лица</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="preparationYurName" /> 
           </div>
           <div class="col-lg-6">
             <label class="fieldlabels">Место нахождения юридического лица</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="preparationYurAddres" /> 
           </div>
         </div>
         <div class="row">
           <div class="col-lg-4">
             <label class="fieldlabels">ОГРН</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="preparationORGN" /> 
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">ИНН</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="preparationINN" /> 
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">Телефон / Факс</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="preparationPhone" /> 
           </div>
         </div>
         <div class="row">
@@ -691,45 +691,45 @@
         <div class="row">
           <div class="col-lg-6">
             <label class="fieldlabels">Должность</label> 
-            <input type="text" name="step2_input1" /> 
+            <input type="text" name="complitePosition" /> 
           </div>
           <div class="col-lg-6">
             <label class="fieldlabels">Фамилия, инициалы</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="compliteFIO" /> 
           </div>
         </div>
         <div class="row">
           <div class="col-lg-8">
             <label class="fieldlabels">Реквизиты распорядительного документа, подтверждающего полномочия</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="compliteREQ" /> 
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">Дата выдачи номера</label> 
-            <input type="text" class="date" name="step2_input2" /> 
+            <input type="text" class="date" name="compliteDateId" /> 
           </div>
         </div>
         <div class="row">
           <div class="col-lg-6">
             <label class="fieldlabels">Наименование юридического лица</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="compliteNameYUR" /> 
           </div>
           <div class="col-lg-6">
             <label class="fieldlabels">Место нахождения юридического лица</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="compliteYURaddres" /> 
           </div>
         </div>
         <div class="row">
           <div class="col-lg-4">
             <label class="fieldlabels">ОГРН</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="compliteORGN" /> 
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">ИНН</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="compliteINN" /> 
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">Телефон / Факс</label> 
-            <input type="text" name="step2_input2" /> 
+            <input type="text" name="complitePhone" /> 
           </div>
         </div>
         <div class="row">
@@ -774,27 +774,27 @@
             <div class="row">
               <div class="col-lg-6">
                 <label class="fieldlabels">Должность</label> 
-                <input type="text" name="step2_input1" /> 
+                <input type="text" name="anotherPosition" /> 
               </div>
               <div class="col-lg-6">
                 <label class="fieldlabels">Фамилия, инициалы</label> 
-                <input type="text" name="step2_input2" /> 
+                <input type="text" name="anotherFIO" /> 
               </div>
             </div>
             <div class="row">
               <div class="col-lg-8">
                 <label class="fieldlabels">Реквизиты распорядительного документа, подтверждающего полномочия</label> 
-                <input type="text" name="step2_input2" /> 
+                <input type="text" name="anotherREQ" /> 
               </div>
               <div class="col-lg-4">
                 <label class="fieldlabels">Дата выдачи номера</label> 
-                <input type="text" class="date" name="step2_input2" /> 
+                <input type="text" class="date" name="anotherDate_Id" /> 
               </div>
             </div>
             <div class="row">
               <div class="col-lg-6">
                 <label class="fieldlabels">Наименование юридического лица</label> 
-                <input type="text" name="step2_input2" /> 
+                <input type="text" name="anotherNameYur" /> 
               </div>  
 
             </div>
@@ -860,7 +860,7 @@
           <div class="col-lg-12">
             <label class="fieldlabels">Наименование юридического лица, выполнившего работы, подлежащие освидетельствованию
             </label> 
-            <input type="text" name="step2_input1" /> 
+            <input type="text" name="checkName" /> 
           </div>
         </div>
       </div> 
@@ -896,7 +896,7 @@
           <div class="content_section">
             <div class="row">
               <div class="col-lg-12">
-                <input type="text" name="step2_input1" placeholder="Введите информацию о предъявленной работе" /> 
+                <input type="text" name="workDo" placeholder="Введите информацию о предъявленной работе" /> 
               </div>
             </div>
           </div>
@@ -911,7 +911,7 @@
             <div class="row">
               <div class="col-lg-12">
 
-                <input type="text" name="step2_input1" disabled="disabled" placeholder="Добавить новый пункт" /> 
+                <input type="text" name="workDo" disabled="disabled" placeholder="Добавить новый пункт" /> 
               </div>
             </div>
           </div>
@@ -953,7 +953,7 @@
           <div class="col-lg-12">
             <label class="fieldlabels">Номер, другие реквизиты чертежа, наименование проектной документации и/или рабочей документации, сведения о лицах, осуществляющих подготовку раздела проектной и/или рабочей документации
             </label> 
-            <textarea name="step1_input2" class="textarea-large"></textarea>
+            <textarea name="anotherDocs" class="textarea-large"></textarea>
           </div>
         </div>
         <div class="row">
@@ -997,25 +997,25 @@
           <div class="content_section">
             <div class="row">
               <div class="col-lg-12">
-                <input type="text" name="step2_input1" placeholder="Наименование материала"> 
+                <input type="text" name="materialName" placeholder="Наименование материала"> 
               </div>
             </div>
             <div class="row_element document_in ">
               <div class="row sertificat_sootvetsviya template">
                 <div class="col-lg-4">
-                  <input type="text" name="step14_input2" placeholder="Сертификат соответсвия">
+                  <input type="text" name="sertificate" placeholder="Сертификат соответсвия">
                 </div>
                 <div class="field-line">
                   <label class="fieldlabels"> Действителен с </label>
                 </div>
                 <div class="col-lg-2">
-                  <input type="text" class="date" name="step14_input3">
+                  <input type="text" class="date" name="sertificatefrom">
                 </div>
                 <div class="field-line">
                   <label class="fieldlabels"> По </label>
                 </div>
                 <div class="col-lg-2">
-                  <input type="text" class="date" name="step14_input4">
+                  <input type="text" class="date" name="sertificateBy">
                 </div>
                 <div class="contor_in_row_element">
                   <div class="delete"></div>
@@ -1023,13 +1023,13 @@
               </div>
               <div class="row document_podtverjdayushiy template">
                 <div class="col-lg-4">
-                  <input type="text" name="step14_input2" placeholder="Документ подтверждающий качество">
+                  <input type="text" name="sertificateQuality" placeholder="Документ подтверждающий качество">
                 </div>
                 <div class="field-line">
                   <label class="fieldlabels"> Дата </label>
                 </div>
                 <div class="col-lg-2">
-                  <input type="text" class="date" name="step14_input3">
+                  <input type="text" class="date" name="sertificateDate">
                 </div>
                 <div class="contor_in_row_element">
                   <div class="delete"></div>
@@ -1101,10 +1101,10 @@
           <div class="content_section">
             <div class="row">
               <div class="col-lg-8">
-                <input type="text" name="step2_input1" placeholder="Документ" /> 
+                <input type="text" name="doc" placeholder="Документ" /> 
               </div>
               <div class="col-lg-4">
-                <input type="text" class="date" name="step2_input1" /> 
+                <input type="text" class="date" name="docDate" /> 
               </div>
             </div>
           </div>
@@ -1118,10 +1118,10 @@
           <div class="content_section">
            <div class="row">
             <div class="col-lg-8">
-              <input type="text" name="step2_input1" placeholder="Документ" /> 
+              <input type="text" name="doc" placeholder="Документ" /> 
             </div>
             <div class="col-lg-4">
-              <input type="text" class="date" name="step2_input1" /> 
+              <input type="text" class="date" name="docDate" /> 
             </div>
           </div>
         </div>
@@ -1164,11 +1164,11 @@
         <div class="row">
           <div class="col-lg-4">
             <label class="fieldlabels">Дата начала производства работ</label> 
-            <input type="text" class="date" name="step2_input1" /> 
+            <input type="text" class="date" name="dateBeginWork" /> 
           </div>
           <div class="col-lg-4">
             <label class="fieldlabels">Дата окончания производства работ</label> 
-            <input type="text" class="date" name="step2_input2" /> 
+            <input type="text" class="date" name="dateEndWork" /> 
           </div>
         </div>
       </div> 
@@ -1204,13 +1204,13 @@
         <div class="row">
           <div class="col-lg-12">
             <label class="fieldlabels">Наименования и структурные единицы технических регламентов, иных нормативных правовых актов</label> 
-            <textarea class="textarea-large"></textarea>
+            <textarea name="RegName" class="textarea-large"></textarea>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-12">
             <label class="fieldlabels">Разделы проектной и/или рабочей документации</label> 
-            <textarea class="textarea-large"></textarea>
+            <textarea name="razdeDoc" class="textarea-large"></textarea>
           </div>
         </div>
       </div> 
@@ -1246,7 +1246,7 @@
         <div class="row">
           <div class="col-lg-12">
             <label class="fieldlabels">Наименование работ, конструкций, участков сетей инженерно-технического обеспечения</label> 
-            <textarea class="textarea-large"></textarea>
+            <textarea name="nameWorkCostruct" class="textarea-large"></textarea>
           </div>
         </div>
       </div> 
@@ -1282,7 +1282,7 @@
         <div class="row">
           <div class="col-lg-12">
             <label class="fieldlabels">Внесите дополнительные сведения:</label> 
-            <textarea class="textarea-large"></textarea>
+            <textarea name="moreInfo" class="textarea-large"></textarea>
           </div>
         </div>
       </div> 
@@ -1318,15 +1318,15 @@
         <div class="row">
           <div class="col-lg-4">
             <label class="fieldlabels">Номер акта</label> 
-            <input type="text"> 
+            <input type="numberAct"> 
             <label class="bottomlabel">Вы можете использовать цифры и буквы</label>
           </div>
           <div class="col-lg-4">
-            <label class="fieldlabels">Дата составления АОСР</label> 
+            <label class="dateAOSR">Дата составления АОСР</label> 
             <input type="text" class="date"> 
           </div>
           <div class="col-lg-4">
-            <label class="fieldlabels">Количество экземпляров акта</label> 
+            <label class="countExemp">Количество экземпляров акта</label> 
             <input type="number"> 
           </div>
         </div>
