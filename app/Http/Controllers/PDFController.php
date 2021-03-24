@@ -7,11 +7,11 @@ use PDF;
 
 class PDFController extends Controller
 {
-    
-    public function preview(Request $request)
-    {
+    public function formRequest(Request $request){
+                //Данные из формы
+
+        //$request->input данные при отправки формы
         //Оформление АОСР
-        $id = $request->input('test');
         $projectName = $request->input('projectName'); // Наименование проектной документации
         $projectAddres = $request->input('projectAddres'); //Почтовый или строительный адрес объекта капитального строительства
         // Юридическое лицо
@@ -125,17 +125,117 @@ class PDFController extends Controller
         $dateAOSR = $request->input('dateAOSR'); // Дата составления АОСР
         $countAOSR = $request->input('countAOSR'); // Колличество документов
         
+        //Массив данных формы
 
+        $dataForm = [
+            'projectName' => $projectName,
+            'projectAddres' => $projectAddres,
+            'builderName' => $builderName,
+            'builderAddres' => $builderAddres,
+            'builderORGN' => $builderORGN,
+            'builderINN' => $builderINN,
+            'builderINN' => $builderINN,
+            'builderNameOrg' => $builderNameOrg,
+            'builderOrgORG' => $builderOrgORG,
+            'builderOrgINN' => $builderOrgINN,
+            'contractorName'=> $contractorName,
+            'contractorAddres' => $contractorAddres,
+            'contractorORGN' => $contractorORGN,
+            'contractorINN' => $contractorINN,
+            'contractorPhone' => $contractorPhone,
+            'contractorOrgName' => $contractorOrgName,
+            'contractorOrgORGN' => $contractorOrgORGN,
+            'contractorOrgINN' => $contractorOrgINN,
+            'preparationName' => $preparationName,
+            'preparationAddres' => $preparationAddres,
+            'preparationORGN' => $preparationORGN,
+            'preparationINN' => $preparationINN,
+            'preparationPhone' => $preparationPhone,
+            'preparationOrgName' => $preparationOrgName,
+            'preparationOrgORGN' => $preparationOrgORGN,
+            'preparationOrgINN' => $preparationOrgINN,
+            'representativeBuilderPosition' => $representativeBuilderPosition,
+            'representativeBuilderFIO' => $representativeBuilderFIO,
+            'representativeBuilderRequisites' => $representativeBuilderRequisites,
+            'representativeBuilderDate' => $representativeBuilderDate,
+            'representativeBuilderId' => $representativeBuilderId,
+            'representativeBuilderDateGet' => $representativeBuilderDateGet,
+            'representativeBuilderORGN' => $representativeBuilderORGN,
+            'representativeBuilderINN' => $representativeBuilderINN,
+            'representativeBuilderAddres' => $representativeBuilderAddres,
+            'representativeContractorPosition' => $representativeContractorPosition,
+            'representativeContractorFIO' => $representativeContractorFIO,
+            'representativeContractorRequisites' => $representativeContractorRequisites,
+            'representativeContractorDate' => $representativeContractorDate,
+            'memberBuilderPosition' => $memberBuilderPosition,
+            'memberBuilderFIO' => $memberBuilderFIO,
+            'memberBuilderId' => $memberBuilderId,
+            'memberBuilderDateId' => $memberBuilderDateId,
+            'memberBuilderRequisites' => $memberBuilderRequisites,
+            'memberBuilderDate' => $memberBuilderDate,
+            'preparationPosition' => $preparationPosition,
+            'preparationFIO' => $preparationFIO,
+            'preparationREQ' => $preparationREQ,
+            'preparationDateId' => $preparationDateId,
+            'preparationYurName' => $preparationYurName,
+            'preparationYurAddres' => $preparationYurAddres,
+            'preparationORGN' => $preparationORGN,
+            'preparationINN' => $preparationINN,
+            'preparationPhone' => $preparationPhone,
+            'complitePosition' => $complitePosition,
+            'compliteFIO' => $compliteFIO,
+            'compliteREQ' => $compliteREQ,
+            'compliteDateId' => $compliteDateId,
+            'compliteNameYUR' => $compliteNameYUR,
+            'compliteYURaddres' => $compliteYURaddres,
+            'compliteORGN' => $compliteORGN,
+            'compliteINN' => $compliteINN,
+            'complitePhone' => $complitePhone,
+            'anotherPosition' => $anotherPosition,
+            'anotherFIO' => $anotherFIO,
+            'anotherREQ' => $anotherREQ,
+            'anotherDate_Id' => $anotherDate_Id,
+            'anotherNameYur' => $anotherNameYur,
+            'checkName' => $checkName,
+            'workDo' => $workDo,
+            'anotherDocs' => $anotherDocs,
+            'materialName' => $materialName,
+            'sertificate' => $sertificate,
+            'sertificatefrom' => $sertificatefrom,
+            'sertificateBy' => $sertificateBy,
+            'sertificateQuality' => $sertificateQuality,
+            'sertificateDate' => $sertificateDate,
+            'doc' => $doc,
+            'docDate' => $docDate,
+            'dateBeginWork' => $dateBeginWork,
+            'dateEndWork' => $dateEndWork,
+            'RegName' => $RegName,
+            'razdeDoc' => $razdeDoc,
+            'nameWorkCostruct' => $nameWorkCostruct,
+            'moreInfo' => $moreInfo,
+            'numberAct' => $numberAct,
+            'dateAOSR' => $dateAOSR,
+            'countAOSR' => $countAOSR
+
+        ];
+
+        return $dataForm;
+    }
+
+    public function preview(Request $request)
+    {
 
         
 
 
-        return view('preview', ['id'=> $id]);
+        return view('preview', $this->formRequest($request));
     }
 
     public function generatePDF()
     {
+        //Записывает экземпляр класса PDF метод loadView
         $pdf = PDF::loadView('preview');    
+        //Возвращаем файл pdf
         return $pdf->download('demo.pdf');
     }
 }
