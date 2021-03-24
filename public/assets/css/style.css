@@ -677,6 +677,12 @@ span.trigger-tooltip {
     top: -2px;
 }
 
-.forms .row {
-    justify-content: center;
+.previwePDF .row {
+    justify-self: center;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.previwePDF .row table{
+    margin: 0 auto;
 }

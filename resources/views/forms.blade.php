@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AOCP - ФОРМА</title>
-
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500&display=swap" rel="stylesheet">
@@ -13,9 +12,6 @@
   <!-- Style --> 
   <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/style.css") }}">
   <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/datepicker.min.css") }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/form/style.css") }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/form/new-style.css") }}">
-
 </head>
 <body class="snippet-body">
 

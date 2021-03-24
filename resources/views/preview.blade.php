@@ -26,7 +26,7 @@
     <td class="excel618" colspan="36" style="height:12.95pt;">Объект капитального строительства</td>
   </tr>
   <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-1" style="height:12.95pt;">projectName</td>
+    <td colspan="36" class="excel622 text-line" id="line-input-1" style="height:12.95pt;">{{$projectName}} {{$projectAddres}}</td>
   </tr>
   <tr style="height:9.0pt;">
     <td colspan="36" class="excel623" width="612" style="height:9.0pt;width:468pt;">(наименование    проектной документации, почтовый или строительный адрес объекта капитального строительства)</td>
@@ -36,7 +36,7 @@
   </tr>
 
   <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-2" style="height:12.95pt;">projectAddres</td>
+    <td colspan="36" class="excel622 text-line" id="line-input-2" style="height:12.95pt;"></td>
   </tr>
   <tr style="height:9.95pt;">
     <td colspan="36" class="excel623" width="612" style="height:9.95pt;width:468pt;">(фамилия, имя, отчество<font class="font13"><sup>1</sup></font><font class="font10">, </font><font class="font11">адрес места жительства, ОРГНИП,    ИНН индивидуального предпринимателя, наименование,&nbsp;</font></td>
