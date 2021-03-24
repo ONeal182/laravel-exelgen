@@ -224,10 +224,6 @@ class PDFController extends Controller
 
     public function preview(Request $request)
     {
-
-        
-
-
         return view('preview', $this->formRequest($request));
     }
 
