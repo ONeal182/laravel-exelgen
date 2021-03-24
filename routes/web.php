@@ -20,6 +20,6 @@ Route::get('/', function () {
 Route::get('/forms', function () {
     return view('forms');
 });
-
+// Добавил роутинг для консроллера PDFController /app/Http/Controllers/PDFController
 Route::get('pdf/preview', [PDFController::class, 'preview'])->name('pdf.preview');
 Route::get('pdf/generate', [PDFController::class, 'generatePDF'])->name('pdf.generate');
