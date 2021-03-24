@@ -1318,11 +1318,11 @@
           </div>
           <div class="col-lg-4">
             <label class="dateAOSR">Дата составления АОСР</label> 
-            <input type="text" class="date"> 
+            <input name="dateAOSR" type="text" class="date"> 
           </div>
           <div class="col-lg-4">
             <label class="countExemp">Количество экземпляров акта</label> 
-            <input type="number"> 
+            <input name="countAOSR" type="number"> 
           </div>
         </div>
       </div> 
