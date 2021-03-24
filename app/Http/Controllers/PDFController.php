@@ -224,13 +224,14 @@ class PDFController extends Controller
 
     public function preview(Request $request)
     {
+        //Возвращаем view /resources/preview.blade.php
         return view('preview', $this->formRequest($request));
     }
 
-    public function generatePDF()
+    public function generatePDF(Request $request)
     {
         //Записывает экземпляр класса PDF метод loadView
-        $pdf = PDF::loadView('preview');    
+        $pdf = PDF::loadView('preview',$this->formRequest($request))->setPaper('a4', 'landscape')->setWarnings(false);    
         //Возвращаем файл pdf
         return $pdf->download('demo.pdf');
     }

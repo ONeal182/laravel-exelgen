@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <title>Document</title>
   <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/form/style.css") }}">
   <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/form/new-style.css") }}">
@@ -12,8 +12,7 @@
   td { font-family: 'times' !important; }
   </style>
 
-</head>
-<body>
+
 <table width="640" align="center" cellpadding="0" cellspacing="0" class="excel559">
   <col width="17" span="36" style="width:13pt;">
   <tr style="height:15.0pt;">         
@@ -26,7 +25,7 @@
     <td class="excel618" colspan="36" style="height:12.95pt;">Объект капитального строительства</td>
   </tr>
   <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-1" style="height:12.95pt;">{{$projectName}} {{$projectAddres}}</td>
+    <td colspan="36" class="excel622 text-line" id="line-input-1" style="height:12.95pt;">{{$projectName}}</td>
   </tr>
   <tr style="height:9.0pt;">
     <td colspan="36" class="excel623" width="612" style="height:9.0pt;width:468pt;">(наименование    проектной документации, почтовый или строительный адрес объекта капитального строительства)</td>

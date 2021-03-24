@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AOCP - ФОРМА</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500&display=swap" rel="stylesheet">
@@ -12,6 +13,7 @@
   <!-- Style --> 
   <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/style.css") }}">
   <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/datepicker.min.css") }}">
+
 </head>
 <body class="snippet-body">
 
@@ -1358,7 +1360,7 @@
     </div> 
     <div class="footer-form">
       <input type="button" name="previous" class="previous action-button" value="Назад"/>
-      <a href="#" class="button-blue"><img src="img/icons/save-button.svg">Скачать на компьютер (PDF) </a>
+      <a href="#" class="button-blue btn-download"><img src="img/icons/save-button.svg">Скачать на компьютер (PDF) </a>
       <input type="button" name="next" class="next action-button" value="Далее" style="visibility: hidden;"/>
     </div>
   </fieldset>
