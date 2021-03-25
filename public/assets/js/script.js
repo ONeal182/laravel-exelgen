@@ -25,6 +25,42 @@ function tooltipDate() {
 	})
 };
 
+function moreBegin(){
+	$('.date').tooltip({ 
+		placement: 'bottom',
+		trigger: 'manual',
+		html: true,
+		title: 'Дата раньше начала работ'
+	})
+}
+
+function lessBegin(){
+	$('.date').tooltip({ 
+		placement: 'bottom',
+		trigger: 'manual',
+		html: true,
+		title: 'Дата меньше начала работ'
+	})
+}
+
+function moreEnd(){
+	$('.date').tooltip({ 
+		placement: 'bottom',
+		trigger: 'manual',
+		html: true,
+		title: 'Дата раньше конца работ'
+	})
+}
+
+function lessEnd(){
+	$('.date').tooltip({ 
+		placement: 'bottom',
+		trigger: 'manual',
+		html: true,
+		title: 'Дата позже конца работ'
+	})
+}
+
 // Выполнить при показе всплывающей подсказки
 function ignoreTooltip() {
 	$('.date').on('shown.bs.tooltip', function () {
@@ -41,15 +77,17 @@ function ignoreTooltip() {
 
 // Проверка даты
 function dateCheck() {
-// Включаем подсказку
-tooltipDate();
-// Включаем возможность игнорировать подсказку
-ignoreTooltip();
+
 
 // Проверка даты 
 $('.date').on('pick.datepicker', function (e) {
+	// Включаем подсказку
+	
+	// Включаем возможность игнорировать подсказку
+	ignoreTooltip();
 	// Если дата раньше текущего дня, активируем условия
 	if (e.date < new Date()) {
+		tooltipDate();
 		$(this).addClass('stopDate');
 		$(this).tooltip('show');
 	} else { 
@@ -74,7 +112,27 @@ function activePage() {
 	}	
 }
 activePage();
+
+$('.date').on('change', function(){
+	var beginDate = $('.date[name=dateBeginWork]').val();
+	var endDate = $('.date[name=dateEndWork]').val();
+	var selectDate = $(this).val();
 	
+	if(beginDate > endDate){
+		console.log('Ошибка');
+		lessEnd();
+		$(this).addClass('stopDate');
+		$(this).tooltip('show');
+	}else{
+		console.log('Валидно');
+		$(this).removeClass('stopDate');
+		$(this).tooltip('hide');
+	}
+	console.log('Выбраная дата '+$(this).val());
+	console.log('Начало работ ' + beginDate);
+	console.log('Дата окончания работ ' + endDate);
+})
+
 // Удалить секцию 
 $('body').on('click', '.control_section .delete', function(){
 		$count = $(this).parents('.forms').find('.add_section').length;
