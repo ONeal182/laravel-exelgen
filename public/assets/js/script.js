@@ -4,7 +4,7 @@ $(document).ready(function(){
 // Init datepicker
 function datePicker() {
 	$('.date').datepicker({
-		format: 'mm.dd.yyyy',
+		format: 'dd.mm.yyyy',
 		date: new Date,
 		language: 'ru-RU',
 		autoHide: true
