@@ -82,7 +82,7 @@
 <div class="container">
 
   <!-- Forms -->
-  <form id="msform" action="pdf/preview" method="post">
+  <form id="msform" action="exel" method="get">
   {{ csrf_field() }}
     <!-- 
     /---------------------------/
@@ -1139,7 +1139,7 @@
     /--------------------------/ 
   -->
 
-  <fieldset>
+  <fieldset id="step16">
     <div class="form-card">
       <!-- header step -->
       <div class="header-forms">
@@ -1293,7 +1293,7 @@
     /--------------------------/ 
   -->
 
-  <fieldset>
+  <fieldset id='step20'>
     <div class="form-card">
       <!-- header step -->
       <div class="header-forms">

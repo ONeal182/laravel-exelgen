@@ -21,7 +21,7 @@ function tooltipDate() {
 		placement: 'bottom',
 		trigger: 'manual',
 		html: true,
-		title: 'Неправильно указана дата <span class="trigger-tooltip">Игнорировать</span>'
+		title: 'Не указанна дата <span class="trigger-tooltip">Игнорировать</span>'
 	})
 };
 
@@ -86,7 +86,7 @@ $('.date').on('pick.datepicker', function (e) {
 	// Включаем возможность игнорировать подсказку
 	ignoreTooltip();
 	// Если дата раньше текущего дня, активируем условия
-	if (e.date < new Date()) {
+	if (e.date == '') {
 		tooltipDate();
 		$(this).addClass('stopDate');
 		$(this).tooltip('show');
@@ -99,6 +99,9 @@ $('.date').on('pick.datepicker', function (e) {
 
 // При включении любой страницы 
 function activePage() {
+	var beginDate = $('.date[name=dateBeginWork]').val();
+	var endDate = $('.date[name=dateEndWork]').val();
+	var representativeBuilderDate = $('.date[name=representativeBuilderDate]').val();
 	// По умолчанию сбрасываем подсказки с дат
 	$('.date').tooltip('hide');
 	// Инициализируем датапикер
@@ -107,30 +110,34 @@ function activePage() {
 	dateCheck();
 
 	// Заготовка, инициализация чего-либо на 5(или любом другом) шаге
-	if($('#step5').hasClass('active_page')){
-		console.log('Это пятый шаг');
-	}	
+	// if($('#step16').hasClass('active_page')){
+	// 	if(beginDate < representativeBuilderDate){
+	// 		console.log('Ошибка');
+	// 		$('#step16 .next').addClass('error');
+	// 	}
+		
+	// }	
 }
 activePage();
 
-$('.date').on('change', function(){
-	var beginDate = $('.date[name=dateBeginWork]').val();
-	var endDate = $('.date[name=dateEndWork]').val();
-	var selectDate = $(this).val();
+$('.date').on('change', function(e){
+	// var beginDate = $('.date[name=dateBeginWork]').val();
+	// var endDate = $('.date[name=dateEndWork]').val();
+	// var representativeContractorDate = $('.date[name=representativeContractorDate]').val();
+	// var selectDate = $(this).val();
+	// ignoreTooltip();
 	
-	if(beginDate > endDate){
-		console.log('Ошибка');
-		lessEnd();
-		$(this).addClass('stopDate');
-		$(this).tooltip('show');
-	}else{
-		console.log('Валидно');
-		$(this).removeClass('stopDate');
-		$(this).tooltip('hide');
-	}
-	console.log('Выбраная дата '+$(this).val());
-	console.log('Начало работ ' + beginDate);
-	console.log('Дата окончания работ ' + endDate);
+	// if(beginDate > endDate){
+	// 	console.log('Больше');
+	// 	lessEnd();
+	// 	$(this).addClass('stopDate');
+	// 	$(this).tooltip('show');
+	// }else{
+	// 	console.log('Норм');
+	// 	$('.date[name=dateBeginWork]').removeClass('stopDate');
+	// 	$('.date[name=dateBeginWork]').tooltip('hide');
+	// }
+
 })
 
 // Удалить секцию 
@@ -218,6 +225,128 @@ setProgressBar(current);
 
 // Следующий шаг
 $(".next").click(function(){
+	var error = [];
+	var errorText = 'Ошибка:';
+	var beginDate = $('.date[name=dateBeginWork]');
+	var endDate = $('.date[name=dateEndWork]');
+	var representativeBuilderDateGet = $('.date[name=representativeBuilderDateGet]');
+	var representativeBuilderDate = $('.date[name=representativeBuilderDate]');
+	var representativeContractorDate = $('.date[name=representativeContractorDate]');
+	var memberBuilderDateId = $('.date[name=memberBuilderDateId]');
+	var preparationDateId = $('.date[name=preparationDateId]');
+	var compliteDateId = $('.date[name=compliteDateId]');
+	var anotherDate_Id = $('.date[name=anotherDate_Id]');
+
+	var docDate = $('.date[name=docDate]');
+	console.log(docDate);
+
+
+	if(beginDate.datepicker("getDate") < representativeBuilderDate.datepicker("getDate") || beginDate.datepicker("getDate") < representativeBuilderDateGet.datepicker("getDate")){
+		error.push('false');
+		errorText = errorText + ' Шаг 5 обе даты раньше начала работ ';
+	}else{
+		error.push('true');
+	}
+
+	if(beginDate.datepicker("getDate") < representativeContractorDate.datepicker("getDate")){
+		error.push('false');
+		errorText = errorText + ' Шаг 6 дата раньше начала работ ';
+	}else{
+		error.push('true');
+	}
+
+	if(beginDate.datepicker("getDate") < memberBuilderDateId.datepicker("getDate")){
+		error.push('false');
+		errorText = errorText + ' Шаг 7 дата раньше начала работ ';
+	}else{
+		error.push('true');
+	}
+
+	if(beginDate.datepicker("getDate") < preparationDateId.datepicker("getDate")){
+		error.push('false');
+		errorText = errorText + ' Шаг 8 дата раньше начала работ ';
+	}else{
+		error.push('true');
+	}
+
+	if(beginDate.datepicker("getDate") < compliteDateId.datepicker("getDate")){
+		error.push('false');
+		errorText = errorText + ' Шаг 9 дата раньше начала работ ';
+	}else{
+		error.push('true');
+	}
+
+	if(beginDate.datepicker("getDate") < anotherDate_Id.datepicker("getDate")){
+		error.push('false');
+		errorText = errorText + ' Шаг 10 дата раньше начала работ ';
+	}else{
+		error.push('true');
+	}
+
+	docDate.each(function(){
+		var arrdocDate;
+		if($(this).datepicker("getDate") > beginDate.datepicker("getDate")){
+			var arrdocDate = false;
+			
+		}
+
+		if(arrdocDate == false){
+			error.push('false');
+			errorText = errorText + ' Шаг 15 обе даты раньше начала работ ';
+		}
+	})
+
+	// if(endDate.datepicker("getDate") < dateAOSR.datepicker("getDate")){
+	// 	error.push('false');
+	// 	errorText = errorText + ' не раньше чем окончания работ, не раньше чем исполнительная схема шаг  15  ';
+	// }else{
+	// 	error.push('true');
+	// }
+	
+	
+
+	
+	if(error.indexOf('false')){
+		$('#step16 .next').removeClass('error');
+	}else{
+		
+		$('#step16 .next').addClass('error');
+		console.log(errorText);
+	}
+	if($('#step16').hasClass('active_page')){
+		if($('#step16 .next').hasClass('error')){
+			return false;
+		}
+	}
+
+	var dateAOSR = $('.date[name=dateAOSR]');
+
+	dateAOSR.each(function(){
+		var arrdateAOSR;
+		if($(this).datepicker("getDate") > endDate.datepicker("getDate")){
+			var arrdateAOSR = false;
+			
+		}
+
+		if(arrdateAOSR == false){
+			error.push('false');
+			errorText = errorText + ' Шаг 15 обе даты раньше окончания работ ';
+		}
+	})
+
+	if(error.indexOf('false')){
+		$('#step20 .next').removeClass('error');
+	}else{
+		
+		$('#step20 .next').addClass('error');
+		console.log(errorText);
+	}
+	if($('#step20').hasClass('active_page')){
+		if($('#step20 .next').hasClass('error')){
+			return false;
+		}
+	}
+	
 // Init page function
 setTimeout(function() { activePage()}, 200);
 	// Curent page
@@ -251,6 +380,7 @@ setProgressBar(++current);
 
 // Предыдущий шаг
 $(".previous").click(function(){
+	$('.next').removeClass('error');
 // Init page function
 setTimeout(function() { activePage()}, 200);
 

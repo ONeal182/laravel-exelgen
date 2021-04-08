@@ -11,507 +11,562 @@
   body { font-family: 'times' !important ; }
   td { font-family: 'times' !important; }
   </style>
+<body>
+<style>
+	body { 
+		font-family: 'Times New Roman'
+	}
+	.main-block {
+		max-width: 862px;
+		margin: 0 auto;
+	}
+	.row-doc {
+		margin-top: 5px;
+	}
+	.word:after {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		width: 100%;
+		border-bottom: 1px solid black;
+	}	
+
+	
+	.right-line {
+		float: left;
+		background: #fff;
+		width: 288px;
+		box-sizing: border-box;
+		position: relative;
+		bottom: 0px;
+		height: 20px;
+	}
+	.title {
+		font-weight: bold;
+		position: relative;
+		padding-left: 5px;
+	}
+	.small-text, .date-doc span {
+		font-size: 11px;
+		text-align: center;
+		font-style: italic;
+	}
+	.text-center { 
+		text-align: center;
+	}
+
+	.desc-page {
+		display: flex;
+		flex-flow: row;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 25px;
+		margin-bottom: 15px;
+	}
+
+	.date-doc p {
+		margin: 0px;
+		border-bottom: 1px solid #000;
+		width: 240px;
+	}
+
+	.number-doc {
+		border-bottom: 1px solid #000;
+		width: 130px;
+		text-align: center;
+	}
+
+	.title-page {
+		text-align: center;
+		font-size: 16px;
+		font-weight: 600;
+	}
+
+	.page-2 {
+		margin-top: 35px;
+	}
+
+	.date-doc {
+		text-align: center;
+	}
+	.row-doc.date {
+		display: flex;
+	}
+
+	.date .text-line {
+		width: 170px;
+	}
+	.act-number span {
+		border-bottom: 1px solid #000;
+		width: 33px;
+		text-align: center;
+		display: inline-block;
+	}
+	.right-col {
+		text-align: right;
+		margin-bottom: 15px;
+	}
+	.text-line .container{
+		position: relative;
+	}
+</style>
+
+<div class="main-block">
+	<div class="page-1">
+		<div class="right-col">
+			Приложение №3 к РД 11-02-2006 <br>
+			(в редакции приказа Ростехнадзора от 09.11.2017 №470) 
+		</div>
+		<div class="row-doc">
+			<div class="title right-line">
+				Объект капитального строительства
+			</div>
+			<div class="text-line" style="position:relative;">
+				<p>Дожимная компрессорная станция на УКПГ-1С Заполярного НГКМ (1 очередь)» 1 этап строительства, ЯНАО, Тазовский район, Заполярное НГКМ. ДКС. (1)Коммуникации по эстакадам в районе цеха очистки газа. Водопровод производственно-противопожарный. (ТК2. В2)(1)</p>
+			</div>
+			<div class="small-text"> (наименование проектной документации, почтовый или строительный адрес объекта капитального строительства) </div>
+		</div> 
+
+		<div class="row-doc">
+			<div class="title">
+				Застройщик (технический заказчик, эксплуатирующая организация или региональный оператор)
+			</div>
+			<div class="text-line text-center">
+				<p>ООО "Газпром добыча Ямбург ", ОГРН 1028900624576, ИНН 8904034777, (2) </p>
+			</div>
+			<div class="small-text"> (фамилия, имя, отчество, адрес места жительства, ОГРНИП, ИНН индивидуального предпринимателя, </div>
+		</div>
+
+		<div class="row-doc">
+			<div class="text-line text-center">
+				<p> РФ, индекс 629306, ЯНАО, г. Новый Уренгой, ул. Геологоразведчиков д.9, тел.+7 (3494) 96-60-20, факс +7 (3494) 96-64-88 (2) </p>
+			</div>
+			<div class="small-text"> наименование, ОГРН, ИНН, место нахождения юридического лица, телефон/факс, </div>
+		</div>
+
+		<div class="row-doc">
+			<div class="text-line text-center">
+				<p> ОГРН 1098900000022; ИНН 8901024900 (4) </p>
+			</div>
+			<div class="small-text"> фамилия, имя, отчество, паспортные данные, адрес места жительства, телефон/факс - для физических лиц, не являющихся индивидуальным предпринимателями </div>
+		</div>
+
+		<div class="row-doc">
+			<div class="title">
+				Лицо, осуществляющее строительство
+			</div>
+			<div class="text-line text-center">
+				<p>ООО "ГазЭнергоСервис", ОГРН 1067746456084; ИНН 7702599998, РФ, индекс 117393, г. Москва, (5)</p>
+			</div>
+			<div class="small-text"> фамилия, имя, отчество, адрес места жительства, ОГРНИП, ИНН индивидуального предпринимателя, </div>
+		</div>
+
+		<div class="row-doc">
+			<div class="text-line text-center">
+				<p>ул. Академика Пилюгина, д 22, этаж 17, пом. XXXIX, ком.1. тел. +7 (495)580-99-58. (5)</p>
+			</div>
+			<div class="small-text"> наименование, ОГРН, ИНН, место нахождения юридического лица, телефон/факс </div>
+		</div>
+
+		<div class="row-doc">
+			<div class="text-line text-center">
+				<p>Саморегулируемая организация. Ассоциация строителей газового и нефтяного комплексов", ОГРН 1097799022034, ИНН 7729441038 (6)</p>
+			</div>
+			<div class="small-text">наименование, ОГРН, ИНН саморегулируемой организации, членом которой является)  </div>
+		</div>
+
+		<div class="row-doc">
+			<div class="title">
+				Лицо, осуществляющее подготовку проектной документации
+			</div>
+			<div class="text-line text-center">
+				<p>ПАО "ВНИПИгаздобыча", ОГРН 1026403670127, ИНН 6455010081, РФ, индекс 410012, г.Саратов, (7)</p>
+			</div>
+			<div class="small-text">  (фамилия, имя, отчество, адрес места жительства, ОГРНИП, ИНН индивидуального предпринимателя, </div>
+		</div>
+
+		<div class="row-doc">
+			<div class="text-line text-center">
+				<p>ул. Сакко и Ванцетти д.4, тел. +7 (8452) 74-33-23, факс +7 (8452)74-30-17. (7)</p>
+			</div>
+			<div class="small-text">наименование, ОГРН, ИНН, место нахождения юридического лица, телефон/факс, </div>
+		</div>
+
+		<div class="row-doc">
+			<div class="text-line text-center">
+				<p>Саморегулируемая организация. Ассоциация "Объединение строительных организаций "Волга" ОГРН 1166451079717, ИНН 6454108510(8)</p>
+			</div>
+			<div class="small-text">наименование, ОГРН, ИНН саморегулируемой организации, членом которой является)</div>
+		</div>
+
+	</div>
+	<div class="page-2">
+		<div class="title-page">
+			АКТ <br>
+			освидетельствования скрытых работ
+		</div>
+		<div class="desc-page">
+			<div class="number-doc">
+				№ ТК2-В2
+			</div>
+			<div class="date-doc">
+				<p> « 26 » ноября 2020 г. </p>
+				<p> (дата составления акта) </p>
+			</div>
+		</div>
+
+		<div class="row-doc">
+			<div class="title">
+				Представитель застройщика (технического заказчика, эксплуатирующей организации или регионального
+				оператора) по вопросам строительного контроля 
+			</div>
+			<div class="text-line">
+				<p>Инженер 1 категории ОООН ССК ф. ИТЦ ООО «Газпром добыча Ямбург» Исрафилов А.А. (9)</p>
+			</div>
+			<div class="small-text"> (должность, фамилия, инициалы, идентификационный номер в национальном реестре специалистов </div>
+		</div>
+
+		<div class="row-doc">
+			<div class="text-line">
+				<p>идентификационный № С-89-149525 от 11.08.2020 , распоряжение №222 от 11.09.2020г. (10)</p>
+			</div>
+			<div class="small-text"> в области строительства, реквизиты распорядительного документа, подтверждающего полномочия </div>
+		</div>
+
+		<div class="row-doc">
+			<div class="text-line">
+				<p>ОГРН 1028900624576, ИНН 8904034777, РФ, индекс 629306, ЯНАО, г.Новый Уренгой, ул. Геологоразведчиков д.9. (11)</p>
+			</div>
+			<div class="small-text">с указанием наименования, ОГРН, ИНН, места нахождения юридического лица,</div>
+		</div>
+
+		<div class="row-doc">
+			<div class="text-line">
+				<p>&nbsp;</p>
+			</div>
+			<div class="small-text">фамилии, имени, отчества, адрес места жительства, ОГРНИП, ИНН индивидуального предпринимателя)</div>
+		</div>
+
+		<div class="row-doc">
+			<div class="title">
+				Представитель лица, осуществляющего строительство
+			</div>
+			<div class="text-line">
+				<span>Заместитель начальника генподрядного упровления ОП ООО "ГазЭнергоСервис" Азнабаев А.М.(12)</span>
+			</div>
+			<div class="small-text">(должность, фамилия, инициалы, </div>
+		</div>
+
+		<div class="row-doc">
+			<div class="text-line">
+				<span>приказ №262 от02.11.2020(13)</span>
+			</div>
+			<div class="small-text">реквизиты распорядительного документа, подтверждающего полномочия)</div>
+		</div>
+
+		<div class="row-doc">
+			<div class="title">
+				Представитель лица, осуществляющего строительство, по вопросам строительного контроля
+				(специалист по организации строительства)
+			</div>
+			<div class="text-line">
+				<span>Ведущий инженер ОКК ООО «ГазЭнергоСервис» Прозоров С.А., (14)<br> идентификационный № С-23-153323, приказ № 240 от 07.11.2019г.(15)</span>
+			</div>
+			<div class="small-text">(должность, фамилия, инициалы, идентификационный номер в национальном реестре специалистов <br>
+			в области строительства, реквизиты распорядительного документа, подтверждающего полномочия) </div>
+		</div>
+
+		<div class="row-doc">
+			<div class="text-line">
+				<span>ПАО "ВНИПИгаздобыча" ОГРН 1026403670127, ИНН 6455010081, РФ. г.Саратов, ул. Сакко и Ванцетти, д.4, (17)</span>
+			</div>
+			<div class="small-text">места нахождения юридического лица, фамилии, имени, отчества, адреса места жительства, ОГРНИП, ИНН индивидуального предпринимателя,</div>
+		</div>
+
+		<div class="row-doc">
+			<div class="title">
+				Представитель лица, выполнившего работы, подлежащие освидетельствованию
+			</div>
+			<div class="text-line">
+				<span>Производитель работ ООО «ПО «Трансгаз», Исимов А.Н., распоряжение №2 от 19.03.2020г.,(18)</span>
+			</div>
+			<div class="small-text">(должность, фамилия, инициалы, реквизиты распорядительного документа, подтверждающего полномочия,  </div>
+		</div>
+
+		<div class="row-doc">
+			<div class="text-line">
+				<span>ООО «ПО «Трансгаз» ОГРН 1149102021089, ИНН 9102014432, индекс 121471, РФ, г.Москва, ул.Рябиновая, д.26, строение</span>
+			</div>
+			<div class="small-text"> с указанием наименования, ОГРН, ИНН, места нахождения юридического лица,  </div>
+		</div>
+
+		<div class="row-doc">
+			<div class="text-line">
+				<span>10 (19)</span>
+			</div>
+			<div class="small-text"> фамилии, имени, отчества, адреса места жительства, ОГРНИП, ИНН индивидуального предпринимателя) </div>
+		</div>
+
+		<div class="row-doc">
+			<div class="title">
+				а также иные представители лиц, участвующих в освидетельствовании: 
+			</div>
+			<div class="text-line">
+				<span>Вед.инженер ПрОПРИ ф. УОР и СОФ ООО "Газпром добыча Ямбург" Кубасов О.В.,(20)<br>
+				распоряжение №15-590 от 07.05.2020г.(21)</span>
+			</div>
+			<div class="small-text">(должность, фамилия, инициалы, реквизиты распорядительного документа, подтверждающего полномочия) </div>
+		</div>
+
+		<div class="row-doc">
+			<div class="title right-line" style="width: 320px;">
+				произвели осмотр работ, выполненных
+			</div>
+			<div class="text-line">
+				<span>
+					ООО «ПО «Трансгаз» (22)
+				</span>
+			</div>
+		</div> 
+
+		<div class="row-doc">
+			<div class="title">
+				и составили настоящий акт о нижеследующем:
+			</div>
+		</div>
+
+		<div class="row-doc">
+			<div class="title">
+				1. К освидетельствованию предъявлены следующие работы:
+			</div>
+			<div class="text-line">
+				<span> Монтаж трубопровода В2 "Водопровод производственно-противопожарный" L=721,22 м: трубаØ219х6 - 343,331 м (10,822 т); Ø108х4 - 289,145 м (2,967 т); Ø 89х4 - 2,61м (0,022 т), Отвод П90-108х4-09Г2С - 44 шт.; Отвод П90-219х6-09Г2С- 54 шт., Отвод П90-89х4-09Г2С-1шт., Кран шаровой под приварку DN20 PN16 КШ.П.020.016-02 -4 шт.; Кран шаровой под приварку DN25 PN16 КШ.П.025.016-02 -7 шт.; Кран шаровой под приварку DN40 PN16 КШ.П.040.016-02 -12 шт.; Кран шаровой под приварку DN80 PN16 КШ.П.080.016-02 - 11 шт.; Затвор дисковый поворотный фланцевый DN100 PN1.6МПа. ХЛ1-6 шт.; Затвор дисковый поворотный фланцевый DN200 PN1.6МПа. ХЛ1- 3 шт.; Затвор дисковый поворотный фланцевый DN80 PN1.6МПа. ХЛ1- 1 шт; Опора приварная корпусная с теплоизол. ОПКт. ХЛ 	100.108НУ - 62шт., Опора приварная корпусная с теплоизол. ОПКт. ХЛ 100.219НУ -109шт.; Опора приварная корпусная с теплоизол. ОПКт. ХЛ 100.89НУ - 1шт.; Блок пожарных гидрантов  ХЛ БПГЭ-219. БПГЭ00.00.000-01 - 2шт.,Головка муфтовая напорная ГМ-80 Ру1,6 Мпа  -1шт.; Головка-заглушка напорная ГЗ-80 Ру1,6 Мпа -1шт.(23)
+				</span>
+			</div>
+			<div class="small-text">(наименование скрытых работ)</div>
+		</div>
+
+		<div class="row-doc">
+			<div class="title right-line" style="width: 400px;">
+				2. Работы выполнены по проектной документации
+			</div>
+			<div class="text-line">
+				<span>
+					ПАО «ВНИПИгаздобыча» 4633РК.00.Р.01..000.000.ТК2.000 л 6, 8, 9, 10, 13, 14, 15, 18, 20, 21, 22, 23, 25, 28.20-28.27 Разработал Измайлова, <br> проверил Симонова, ГИП Герджиков.(24)
+				</span>
+			</div>
+			<div class="small-text" > (номер, другие реквизиты чертежа, наименование проектной и/или рабочей документации, сведения о лицах, осуществляющих подготовку раздела проектной и/или рабочей документации) </div>
+		</div> 
 
 
-<table width="640" align="center" cellpadding="0" cellspacing="0" class="excel559">
-  <col width="17" span="36" style="width:13pt;">
-  <tr style="height:15.0pt;">         
-    <td colspan="8" class="excel621" width="136" style="text-align:left;">Приложение №3</td> 
-  </tr>
-  <tr style="height:15.0pt;">
-    <td colspan="36" class="excel621" width="136" style="width:104pt;">РД 11-02-2006</td>
-  </tr>
-  <tr style="height:12.95pt;" class="title">
-    <td class="excel618" colspan="36" style="height:12.95pt;">Объект капитального строительства</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-1" style="height:12.95pt;">{{$projectName}}</td>
-  </tr>
-  <tr style="height:9.0pt;">
-    <td colspan="36" class="excel623" width="612" style="height:9.0pt;width:468pt;">(наименование    проектной документации, почтовый или строительный адрес объекта капитального строительства)</td>
-  </tr>
-  <tr style="height:12.95pt;" >
-    <td class="excel618" colspan="36" style="height:12.95pt;">Застройщик (технический заказчик, эксплуатирующая организация или<br> региональный оператор)</td>
-  </tr>
+		<div class="row-doc">
+			<div class="title">
+				3. При выполнении работ применены
+			</div>
+			<div class="text-line">
+				<span>
+					Электроды Э50А-УОНИ 13/55 3,0х350мм,Сертификат качества №1529 от 22.11.2019 на партию №176, с (25)
+				</span>
+			</div>
+			<div class="small-text" >(наименование строительных материалов, (изделий), реквизиты сертификатов и/или других документов, подтверждающих их качество и безопасность)</div>
+		</div> 
 
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-2" style="height:12.95pt;"></td>
-  </tr>
-  <tr style="height:9.95pt;">
-    <td colspan="36" class="excel623" width="612" style="height:9.95pt;width:468pt;">(фамилия, имя, отчество<font class="font13"><sup>1</sup></font><font class="font10">, </font><font class="font11">адрес места жительства, ОРГНИП,    ИНН индивидуального предпринимателя, наименование,&nbsp;</font></td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-3" style="height:12.95pt;">Текст #line-input-3</td>
-  </tr>
-  <tr style="height:20.25pt;">
-    <td colspan="36" class="excel623" width="612" style="height:20.25pt;width:468pt;">ОГРН, ИНН, место нахождения, юридического лица, телефон/факс,    наименование, ОГРН, ИНН саморегулируемой организации, членом которой является<font class="font13"><sup>2</sup></font><font class="font11">- для индивидуальных    предпринимателей и юридических лиц;</font></td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-4"  style="height:12.95pt;">#line-input-4</td>
-  </tr>
-  <tr style="height:21.0pt;">
-    <td colspan="36" class="excel623" width="612" style="height:21.0pt;width:468pt;">фамилия, имя, отчество<font class="font13"><sup>1</sup></font><font class="font11">, паспортные данные, адрес места жительства, телефон/факс -    для физических лиц,<br>
-    не являющихся индивидуальными предпринимателями)</font></td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td class="excel618" colspan="36" style="height:12.95pt;">Лицо,    осуществляющее строительство</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-5"  style="height:12.95pt;">#line-input-5</td>
-  </tr>
-  <tr style="height:9.95pt;">
-    <td colspan="36" class="excel623" width="612" style="height:9.95pt;width:468pt;">(фамилия, имя, отчество<font class="font13"><sup>1</sup></font><font class="font11">, адрес места жительства, ОРГНИП, ИНН индивидуального    предпринимателя,&nbsp;</font></td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-6"  style="height:12.95pt;">#line-input-6</td>
-  </tr>
-  <tr style="height:8.25pt;">
-    <td colspan="36" class="excel623" width="612" style="height:8.25pt;width:468pt;">наименование, ОГРН, ИНН, место нахождения, юридического лица,    телефон/факс,&nbsp;</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-7" style="height:12.95pt;">line-input-7</td>
-  </tr>
-  <tr style="height:9.95pt;">
-    <td colspan="36" class="excel623" width="612" style="height:9.95pt;width:468pt;">(наименование, ОГРН, ИНН саморегулируемой организации, членом    которой является<font class="font11"><sup>3</sup></font>)</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td class="excel618" colspan="26" style="height:12.95pt;">Лицо,    осуществляющее подготовку проектной документации</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-8" style="height:12.95pt;">line-input-8</td>
-  </tr>
-  <tr style="height:9.0pt;">
-    <td colspan="36" class="excel623" width="612" style="height:9.0pt;width:468pt;">(фамилия,    имя, отчество<font class="font13"><sup>1</sup></font><font class="font10">,</font><font class="font11"> адрес места жительства, ОРГНИП, ИНН индивидуального    предпринимателя,&nbsp;</font></td>
-  </tr>
-  <tr style="height:12.95pt;">
-   <td colspan="36" class="excel622 text-line" id="line-input-9" style="height:12.95pt;">line-input-9</td>
- </tr>
- <tr style="height:9.0pt;">
-  <td colspan="36" class="excel623" width="612" style="height:9.0pt;width:468pt;">наименование,    ОГРН, ИНН, место нахождения, юридического лица, телефон/факс,&nbsp;</td>
-</tr>
-<tr style="height:12.95pt;">
-  <td colspan="36" class="excel622 text-line" id="line-input-10" style="height:12.95pt;">line-input-10</td>
-</tr>
-<tr style="height:9.95pt;">
-  <td colspan="36" class="excel623" width="612" style="height:9.95pt;width:468pt;">(наименование, ОГРН, ИНН саморегулируемой организации, членом    которой является<font class="font11"><sup>4</sup></font><font class="font10">)</font></td>
-</tr>
+		<div class="row-doc">
+			<div class="title">
+				4. Предъявлены документы, подтверждающие соответствие работ предъявляемым к ним требованиям
+			</div>
+			<div class="text-line">
+				<span>
+					Согласно реестру № ТК2-В2/2 от 26.11.2020г. (26)
+				</span>
+			</div>
+			<div class="small-text" > (исполнительные схемы и чертежи, результаты экспертиз, обследований, лабораторных и иных испытаний выполненных работ, проведенных в процессе строительного контроля)</div>
+		</div> 
 
-</table>
-<div class="divider"></div>
-<table width="640" align="center" cellpadding="0" cellspacing="0" class="excel559">
-  <col width="17" span="36" style="width:13pt;">
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel617" style="height:12.95pt;">Акт</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel617" style="height:12.95pt;">освидетельствования    скрытых работ</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td style="height:12.95pt;"></td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td class="excel614" style="height:12.95pt;"></td>
-    <td class="excel614">№</td>
-    <td colspan="5" class="excel622 text-line" id="line-input-11">#line-input-11</td>
-    <td colspan="16"></td>
-    <td class="excel602">&quot;</td>
-    <td colspan="2" class="excel626 text-line" id="line-input-12">12</td>
-    <td class="excel560">&quot;</td>
-    <td colspan="4" class="excel626 text-line" id="line-input-13">13</td>
-    <td class="excel560"></td>
-    <td colspan="3" class="excel626 text-line" id="line-input-14">14</td>
-    <td class="excel560">г.</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="26"></td>
-    <td class="excel612" colspan="7">(дата составления акта)</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36"></td>
-  </tr>
-  <tr style="height:14.1pt;">
-    <td class="excel564" colspan="34" style="height:14.1pt;">Представитель застройщика (технического заказчика, эксплуатирующей организации или&nbsp;</td>
-    <td class="excel564"></td>
-    <td class="excel564"></td>
-  </tr>
-  <tr style="height:15.0pt;">
-    <td class="excel564" colspan="25" style="height:15.0pt;">регионального оператора) по вопросам строительного контроля<font class="font14"><sup>5</sup></font><font class="font5">&nbsp;</font></td>
+		<div class="row-doc date">
+			<div class="title right-line">
+				5. Даты: начала работ
+			</div>
+			<div class="text-line">
+				<span>
+					«26» сентября 2020г
+				</span>
+			</div>
+		</div> 
 
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-15" style="height:12.95pt;">line-input-15</td>
-  </tr>
-  <tr style="height:9.0pt;">
-    <td colspan="36" class="excel623" width="612" style="height:9.0pt;width:468pt;">(должность,    фамилия, инициалы, идентификационный номер в национальном реестре    специалистов</td>
-  </tr>
-  <tr style="height:14.1pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-16"  style="height:14.1pt;">line-input-16</td>
-  </tr>
-  <tr style="height:23.25pt;">
-    <td colspan="36" class="excel623" width="612" style="height:23.25pt;width:468pt;">(в области строительства<font class="font10"><sup>3</sup></font><font class="font11">, реквизиты распорядительного документа, подтверждающего полномочия,с указанием наименования, ОГРН, ИНН, места нахождения юридического    лица</font><font class="excel623"><sup>6</sup></font><font class="font11">, фамилии, имени, отчества</font><font class="font11"><sup>1</sup></font><font class="font11">, адреса места жительства, ОРГНИП, ИНН индивидуального    предпринимателя</font><font class="font10"><sup>6</sup></font><font class="font11">)</font></td>
-  </tr>
-  <tr style="height:14.1pt;">
-    <td class="excel564" colspan="21" style="height:14.1pt;">Представитель лица, осуществляющего строительство&nbsp;</td>
+		<div class="row-doc date">
+			<div class="title right-line">
+				окончания работ
+			</div>
+			<div class="text-line">
+				<span>
+					«26» ноября 2020 г.
+				</span>
+			</div>
+		</div> 
 
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-17" style="height:12.95pt;">line-input-17</td>
-  </tr>
-  <tr style="height:9.0pt;">
-    <td colspan="36" class="excel623" width="612" style="height:9.0pt;width:468pt;">(должность, фамилия, инициалы, реквизиты распорядительного документа, подтверждающего    полномочия)</td>
-  </tr>
-  <tr style="height:14.1pt;">
-    <td class="excel564" colspan="35" style="height:14.1pt;">Представитель лица, осуществляющего строительство, по вопросам строительного контроля&nbsp;</td>
-    <td class="excel564"></td>
-  </tr>
-  <tr style="height:14.1pt;">
-    <td class="excel571" colspan="17" style="height:14.1pt;">(специалист по организации строительства)</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36"  class="excel622 text-line" id="line-input-18" style="height:12.95pt;">line-input-18</td>
-  </tr>
-  <tr style="height:8.25pt;">
-    <td colspan="36" class="excel623" width="612" style="height:8.25pt;width:468pt;">(должность, фамилия, инициалы, идентификационный номер в    национальном реестре специалистов</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36"  class="excel622 text-line" id="line-input-19" style="height:12.95pt;">line-input-19</td>
-  </tr>
-  <tr style="height:8.25pt;">
-    <td colspan="36" class="excel623" width="612" style="height:8.25pt;width:468pt;">в области строительства, реквизиты распорядительного документа,    подтверждающего полномочия)</td>
-  </tr>
-  <tr style="height:16.5pt;">
-    <td class="excel571" colspan="30" style="height:16.5pt;">Представитель    лица, осуществляющего подготовку проектной документации<font class="font5"><sup>7</sup></font></td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-20" style="height:12.95pt;">line-input-20</td>
-  </tr>
-  <tr style="height:30.75pt;">
-    <td colspan="36" class="excel623" width="612" style="height:30.75pt;width:468pt;">(должность, фамилия, инициалы, реквизиты распорядительного    документа, подтверждающего полномочия, с указанием наименования, ОГРН, ИНН,    места нахождения юридического лица<font class="font11"><sup>8</sup></font><font class="font11">, фамилии, имени, отчества</font><font class="font11"><sup>1</sup></font><font class="font11">, адреса места жительства, ОРГНИП, ИНН индивидуального    предпринимателя</font><font class="font11"><sup>8</sup></font><font class="font11">, наименования, ОГРН, ИНН саморегулируемой организации, членом    которой является указанное юридическое лицо, индивидуальный предприниматель</font><font class="font10"><sup>4</sup></font><font class="font11">)</font></td>
-  </tr>
-  <tr style="height:14.1pt;">
-    <td class="excel571" colspan="31" style="height:14.1pt;">Представитель    лица, выполнившего работы, подлежащие освидетельствованию<font class="font6"><sup>9</sup></font></td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-21" style="height:12.95pt;">line-input-21</td>
-  </tr>
-  <tr style="height:9.75pt;">
-    <td colspan="36" class="excel623" width="612" style="height:9.75pt;width:468pt;">(должность, фамилия, инициалы, реквизиты распорядительного    документа, подтверждающего полномочия,</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-22" style="height:12.95pt;">line-input-21</td>
-  </tr>
-  <tr style="height:10.5pt;">
-    <td colspan="36" class="excel623" width="612" style="height:10.5pt;width:468pt;">с указанием наименования, ОГРН, ИНН, места нахождения    юридического лица<font class="font10">,</font></td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36"  class="excel622 text-line" id="line-input-23"  style="height:12.95pt;">line-input-23</td>
-  </tr>
-  <tr style="page-break-before:always;height:12.0pt;">
-    <td colspan="36" class="excel623" width="612" style="height:12.0pt;width:468pt;">фамилии, имени, отчества<font class="font11"><sup>1</sup></font><font class="font11">, адреса места жительства, ОРГНИП, ИНН индивидуального    предпринимателя)</font></td>
-  </tr>
-  <tr style="height:14.1pt;">
-    <td class="excel571" colspan="27" style="height:14.1pt;">а    также иные представители лиц, участвующих в освидетельствовании:</td>
-    <td class="excel567"></td>
-    <td class="excel567"></td>
-    <td class="excel567"></td>
-    <td class="excel567"></td>
-    <td class="excel567"></td>
-    <td class="excel567"></td>
-    <td class="excel567"></td>
-    <td class="excel567"></td>
-    <td class="excel567"></td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36"class="excel622 text-line" id="line-input-24" style="height:12.95pt;">line-input-24</td>
-  </tr>
-  <tr style="height:8.25pt;">
-    <td colspan="36" class="excel623" width="612" style="height:8.25pt;width:468pt;">(должность с указанием наименования организации, фамилия,    инициалы, реквизиты распорядительного документа, подтверждающего полномочия)</td>
-  </tr>
-  <tr style="height:14.1pt;">
-    <td class="excel571" colspan="15" style="height:14.1pt;">произвели    осмотр работ, выполненных</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-25" style="height:12.95pt;">line-input-25</td>
-  </tr>
-  <tr style="height:9.95pt;">
-    <td colspan="35" class="excel630" width="595" style="height:9.95pt;width:455pt;">(наименование лица, выполнившего работы, подлежащие    освидетельствованию)</td>
-    <td class="excel608"></td>
-  </tr>
-  <tr style="height:14.1pt;">
-    <td class="excel564" colspan="18" style="height:14.1pt;">и    составили настоящий акт о нижеследующем:</td>
+		<div class="row-doc">
+			<div class="title right-line" style="width: 310px">
+				6. Работы выполнены в соответствии с
+			</div>
+			<div class="text-line">
+				<span>
+					4633РК.00.Р.01.ДКС.000.000.ТК2.000 л 6, 8, 9, 10, 13, 14, 15, 18, 20, 21, 22  23, 25, 28.20-28.27 (27) ; СП 1129.13330.2011 "Наружные сети и сооружения водоснабжения и канализации" Актуализированная редакция СНиП 3.05.04-8* " ; факсимильное сообщение ПАО "ВНИПИгаздобыча" №4633-546/1
+					от 27.06.2020г. "О согласовании соединительных деталей трубопроводов по объекту 2ДКС на УКПН-1С Заполярного
+					НГКМ (1 очередь) , 1 этап; факсимильное сообщение ПАО "ВНИПИгаздобыча" №11-НГ+4633Р/19408 от 15.10.2019г.
+					"О замене поставщика СТД"; факсимильное сообщение ПАО "ВНИПИгаздобыча" №4633-1018 от 26.11.2020г.
+					"О согласовании МТР объекту ТК2 для объекта "ДКС на УКПГ-1С ЗНГКМ".(28)
+				</span>
+			</div>
+			<div class="small-text" > (наименования и структурные единицы технических регламентов,иных нормативных правовых актов, разделы проектной и/или рабочей документации)</div>
+		</div> 
 
-  </tr>
-  <tr style="height:14.1pt;">
-    <td class="excel564" colspan="23" style="height:14.1pt;">1.    К освидетельствованию предъявлены следующие работы</td>
+		<div class="row-doc">
+			<div class="title">
+				7. Разрешается производство последующих работ
+			</div>
+			<div class="text-line">
+				<span >
+					Подготовка поверхности трубопровода перед нанесением АКЗ (29) 
+				</span>
+			</div>
+			<div class="small-text" > (наименование работ, конструкций, участков сетей инженерно-технического обеспечения) </div>
+		</div> 
 
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-26" style="height:12.95pt;">line-input-26</td>
-  </tr>
-  <tr style="height:8.25pt;">
-    <td colspan="36" class="excel623" width="612" style="height:8.25pt;width:468pt;">(наименование скрытых работ)</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td class="excel564" colspan="19" style="height:12.95pt;">2.    Работы выполнены по проектной документации</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-27" style="height:12.95pt;">line-input-27</td>
-  </tr>
-  <tr style="height:8.25pt;">
-    <td colspan="36" class="excel623" width="612" style="height:8.25pt;width:468pt;">(номер, другие реквизиты чертежа, наименование проектной и/или    рабочей документации,</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-28" style="height:12.95pt;">line-input-28</td>
-  </tr>
-  <tr style="height:8.25pt;">
-    <td colspan="36" class="excel623" width="612" style="height:8.25pt;width:468pt;">&nbsp;сведения о лицах,    осуществляющих подготовку раздела проектной и/или рабочей документации)</td>
-  </tr>
-  <tr style="height:14.1pt;">
-    <td class="excel560" colspan="14" style="height:14.1pt;">3.    При выполнении работ применены</td>
-    <td class="excel564"></td>
-    <td colspan="21" class="excel622 text-line" id="line-input-29" >line-input-29</td>
-  </tr>
-  <tr style="height:8.25pt;">
-    <td class="excel607" colspan="16" style="height:8.25pt;"></td>
+		<div class="row-doc">
+			<div class="title right-line" style="font-weight: 300; width: 200px;">
+				Дополнительные сведения:
+			</div>
+			<div class="text-line">
+				<span >
+					&nbsp;
+				</span>
+			</div>
+		</div> 
 
-    <td colspan="21" class="excel623">(наименование строительных&nbsp; материалов, (изделий)&nbsp;</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36"  class="excel622 text-line" id="line-input-30" style="height:12.95pt;">line-input-30</td>
-  </tr>
-  <tr style="height:9.95pt;">
-    <td colspan="36" class="excel623" width="612" style="height:9.95pt;width:468pt;">реквизиты сертификатов и/или другие документов, подтверждающих    их качество и безопасность)<font class="font11"><sup>10</sup></font></td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td class="excel564" colspan="34" style="height:12.95pt;">4. Предъявлены документы, подтверждающие соответствие работ предъявляемым к    ним&nbsp;</td>
-  </tr>
-  <tr style="height:14.1pt;">
-    <td class="excel560" colspan="6" style="height:14.1pt;">требованиям:</td>
-    <td colspan="30"  class="excel622 text-line" id="line-input-31">line-input-31</td>
-  </tr>
-  <tr style="height:9.95pt;">
-    <td colspan="2" class="excel633" style="height:9.95pt;"></td>
-    <td class="excel605"></td>
-    <td class="excel605"></td>
-    <td class="excel605"></td>
-    <td class="excel605"></td>
-    <td colspan="30" class="excel623">(исполнительные схемы и чертежи, результаты    экспертиз, обследований, лабораторных</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-32" style="height:12.95pt;">line-input-32</td>
-  </tr>
-  <tr style="height:9.95pt;">
-    <td colspan="36" class="excel623" width="612" style="height:9.95pt;width:468pt;">&nbsp;и иных испытаний    выполненных работ, проведенных в процессе строительного контроля)<font class="font11"><sup>10</sup></font></td>
-  </tr>
-  <tr style="height:14.1pt;">
-    <td class="excel604" style="height:14.1pt;"></td>
- 
-  </tr>
-  <tr style="height:14.1pt;">
-    <td class="excel560" colspan="9" style="height:14.1pt;">5.    Даты: начала работ</td>
-    <td class="excel560"></td>
-    <td class="excel560"></td>
-    <td class="excel602">&quot;</td>
-    <td colspan="2" class="excel629 text-line" id="line-input-33">33</td>
-    <td class="excel560">&quot;</td>
-    <td colspan="4" class="excel629 text-line" id="line-input-34">34</td>
-    <td class="excel560"></td>
-    <td colspan="3" class="excel629 text-line" id="line-input-35">35</td>
-    <td class="excel560">г.</td>
+		<div class="row-doc">
+			<div class="title act-number">
+				Акт составлен в <span> 4 </span> экземплярах.
+			</div>
+		</div> 
 
-  </tr>
-  <tr style="height:14.1pt;">
-    <td class="excel560" colspan="10" style="height:14.1pt;">окончания работ</td>
-    <td class="excel560"></td>
-    <td class="excel602">&quot;</td>
-  <td colspan="2" class="excel629 text-line" id="line-input-36">36</td>
-    <td class="excel560">&quot;</td>
-    <td colspan="4" class="excel629 text-line" id="line-input-37">37</td>
-    <td class="excel560"></td>
-    <td colspan="3" class="excel629 text-line" id="line-input-38">38</td>
-    <td class="excel560">г.</td>
+		<div class="row-doc">
+			<div class="title">
+				Приложения:
+			</div>
+			<div class="text-line">
+				<span>
+					Реестр № ТК2-В2/1 от 26.11.2020 материалов, применненых при выполнении работ и документов о качестве,(30) <br>
+					Реестр № ТК2-В2/2 от 26.11.2020 документов, подтверждающих соответсвие работ предъявляемых к ним требованиям (31)
+				</span>
+			</div>
+			<div class="small-text" >(исполнительные схемы и чертежи, результаты экспертиз, обследований, лабораторных и иных испытаний)</div>
+		</div> 
 
-  </tr>
-  <tr style="height:14.1pt;">
-    <td class="excel601" style="height:14.1pt;"></td>
+		<div class="row-doc">
+			<div class="title">
+				Приложения:
+			</div>
+			<div class="text-line">
+				<span>
+					Реестр № ТК2-В2/1 от 26.11.2020 материалов, применненых при выполнении работ и документов о качестве,(30) <br>
+					Реестр № ТК2-В2/2 от 26.11.2020 документов, подтверждающих соответсвие работ предъявляемых к ним требованиям (31)
+				</span>
+			</div>
+			<div class="small-text" >(исполнительные схемы и чертежи, результаты экспертиз, обследований, лабораторных и иных испытаний)</div>
+		</div> 
 
-  </tr>
-  <tr style="height:12.95pt;">
-    <td class="excel564" colspan="15" style="height:12.95pt;">6.    Работы выполнены в соответствии с&nbsp;</td>
+		<div class="row-doc">
+			<div class="title">
+				Представитель застройщика (технического заказчика, эксплуатирующей организации или регионального оператора)
+				по вопросам строительного контроля
+			</div>
+			<div class="text-line">
+				<span>
+					Исрафилов А.А. оглы.
+				</span>
+			</div>
+			<div class="small-text" >(фамилия, инициалы, подпись)</div>
+		</div> 
 
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-39"  style="height:12.95pt;">line-input-39</td>
-  </tr>
-  <tr style="height:8.25pt;">
-    <td colspan="36" class="excel623" width="612" style="height:8.25pt;width:468pt;">(наименования и структурные единицы технических регламентов,</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-40"   style="height:12.95pt;">line-input-40</td>
-  </tr>
-  <tr style="height:8.25pt;">
-    <td colspan="36" class="excel623" width="612" style="height:8.25pt;width:468pt;">иных нормативных правовых актов, разделы проектной и/или рабочей    документации)</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td class="excel564" colspan="20" style="height:12.95pt;">7.    Разрешается&nbsp; производство&nbsp;&nbsp; последующих&nbsp; работ&nbsp;</td>
+		<div class="row-doc">
+			<div class="title">
+				Представитель лица, осуществляющего строительство
+			</div>
+			<div class="text-line">
+				<span>
+					Исрафилов А.А. оглы.
+				</span>
+			</div>
+			<div class="small-text" >(фамилия, инициалы, подпись)</div>
+		</div> 
 
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36"  class="excel622 text-line" id="line-input-41" style="height:12.95pt;">line-input-41</td>
-  </tr>
-  <tr style="height:9.0pt;">
-    <td colspan="36" class="excel623" width="612" style="height:9.0pt;width:468pt;">(наименование    работ, конструкций, участков сетей инженерно-технического обеспечения)</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td class="excel560" colspan="10" style="height:12.95pt;">Дополнительные    сведения</td>
-    <td class="excel560"></td>
-    <td colspan="25" class="excel622 text-line" id="line-input-42">line-input-42</td>
-  </tr>
-  <tr style="height:6.0pt;">
-    <td class="excel560" style="height:6.0pt;"></td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td class="excel560" colspan="7" style="height:12.95pt;">Акт    составлен в <font class="font8">&nbsp;</font></td>
-    <td colspan="2" class="excel622 text-line" id="line-input-43">43</td>
-    <td class="excel560" colspan="5">экземплярах</td>
+		<div class="row-doc">
+			<div class="title">
+				Представитель лица, осуществляющего строительство, по вопросам строительного контроля
+				(специалист по организации строительства)
+			</div>
+			<div class="text-line">
+				<span>
+					Исрафилов А.А. оглы.
+				</span>
+			</div>
+			<div class="small-text" >(фамилия, инициалы, подпись)</div>
+		</div> 
 
-  </tr>
-  <tr style="height:4.5pt;">
-    <td class="excel560" style="height:4.5pt;"></td>
+		<div class="row-doc">
+			<div class="title">
+				Представитель лица, осуществляющего подготовку проектной документации
+			</div>
+			<div class="text-line">
+				<span>
+					Исрафилов А.А. оглы.
+				</span>
+			</div>
+			<div class="small-text" >(фамилия, инициалы, подпись)</div>
+		</div> 
+
+		<div class="row-doc">
+			<div class="title">
+				Представитель лица, выполнившего работы, подлежащие освидетельствованию 
+			</div>
+			<div class="text-line">
+				<span>
+					Исрафилов А.А. оглы.
+				</span>
+			</div>
+			<div class="small-text" >(фамилия, инициалы, подпись)</div>
+		</div>
+
+		<div class="row-doc">
+			<div class="title">
+				Представители иных лиц
+			</div>
+			<div class="text-line">
+				<span>
+					Исрафилов А.А. оглы.
+				</span>
+			</div>
+			<div class="small-text" >(фамилия, инициалы, подпись)</div>
+		</div>  
+
+	</div>
+</div>
+
+<script type="text/javascript">
+	var p = document.querySelectorAll('p');
+	p.forEach(function(item) {
+ 	var words = item.textContent.split(/\s+/gm);
+	item.classList.add('container');
+	item.innerHTML = words.map(function(w) {
+		return '<span class="word">' + w + '</span>';
+	}).join('\n'); 
+});
+</script>
 
 
-  </tr>
-  <tr style="height:12.95pt;">
-    <td class="excel571" colspan="5" style="height:12.95pt;">Приложения:</td>
 
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-44"  style="height:12.95pt;">line-input-44</td>
-  </tr>
-  <tr style="height:9.75pt;">
-    <td colspan="36" class="excel623" width="612" style="height:9.75pt;width:468pt;">(исполнительные схемы и чертежи, результаты экспертиз,    обследований, лабораторных и иных испытаний)</td>
-  </tr>
-  <tr style="height:6.75pt;">
-    <td class="excel596" style="height:6.75pt;"></td>
 
-  </tr>
-  <tr style="height:12.95pt;">
-    <td class="excel571" colspan="34" style="height:12.95pt;">Представитель    застройщика (технического заказчика, эксплуатирующей организации или&nbsp;</td>
-  
-  </tr>
-  <tr style="height:12.95pt;">
-    <td class="excel571" colspan="25" style="height:12.95pt;">регионального    оператора) по вопросам строительного контроля<span class="font5"><sup>5</sup></span></td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36"  class="excel622 text-line" id="line-input-45"  style="height:12.95pt;">line-input-45</td>
-  </tr>
-  <tr style="height:9.0pt;">
-    <td colspan="36" class="excel623" width="612" style="height:9.0pt;width:468pt;">(фамилия,    инициалы, подпись)</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td class="excel571" colspan="21" style="height:12.95pt;">Представитель    лица, осуществляющего строительство&nbsp;</td>
-  </tr>
-  <tr style="height:14.1pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-46" style="height:14.1pt;">line-input-46</td>
-  </tr>
-  <tr style="height:9.0pt;">
-    <td colspan="36" class="excel623" width="612" style="height:9.0pt;width:468pt;">(фамилия,    инициалы, подпись)</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td class="excel571" colspan="35" style="height:12.95pt;">Представитель    лица, осуществляющего строительство, по вопросам строительного контроля&nbsp;</td>
-    <td class="excel567"></td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td class="excel571" colspan="17" style="height:12.95pt;">(специалист    по организации строительства)</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-47"  style="height:12.95pt;">line-input-47</td>
-  </tr>
-  <tr style="height:9.0pt;">
-    <td colspan="36" class="excel623" width="612" style="height:9.0pt;width:468pt;">(фамилия,    инициалы, подпись)</td>
-  </tr>
-  <tr style="height:15.0pt;">
-    <td class="excel571" colspan="30" style="height:15.0pt;">Представитель    лица, осуществляющего подготовку проектной документации<font class="font5"><sup>7</sup></font></td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-48" style="height:12.95pt;">line-input-48</td>
-  </tr>
-  <tr style="height:9.0pt;">
-    <td colspan="36" class="excel623" width="612" style="height:9.0pt;width:468pt;">(фамилия,    инициалы, подпись)</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td class="excel571" colspan="31" style="height:12.95pt;">Представитель    лица, выполнившего работы, подлежащие освидетельствованию<font class="font6"><sup>9</sup></font></td>
-    <td class="excel567"></td>
-    <td class="excel567"></td>
-    <td class="excel567"></td>
-    <td class="excel567"></td>
-    <td class="excel567"></td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-49"  style="height:12.95pt;">line-input-49</td>
-  </tr>
-  <tr style="height:9.0pt;">
-    <td colspan="36" class="excel623" width="612" style="height:9.0pt;width:468pt;">(фамилия,    инициалы, подпись)</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td class="excel571" colspan="10" style="height:12.95pt;">Представители иных лиц</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-50" style="height:12.95pt;">line-input-50</td>
-  </tr>
-  <tr style="height:9.0pt;">
-    <td colspan="36" class="excel623" width="612" style="height:9.0pt;width:468pt;">(фамилия,    инициалы, подпись)</td>
-  </tr>
-  <tr style="height:12.95pt;">
-    <td colspan="36" class="excel622 text-line" id="line-input-51" style="height:12.95pt;">line-input-51</td>
-  </tr>
-  <tr style="height:9.0pt;">
-    <td colspan="36" class="excel623" width="612" style="height:9.0pt;width:468pt;">(фамилия,    инициалы, подпись)</td>
-  </tr>
-  <tr style="height:12.0pt;">
-    <td class="excel560" style="height:12.0pt;"></td>
-
-  </tr>
-  <tr style="height:33.0pt;">
-    <td colspan="36" class="excel635" width="612" style="height:33.0pt;width:468pt;"><span class="excel121"><sup>1</sup> Указывается при наличии.</span></td>
-  </tr>
-  <tr style="height:43.5pt;">
-    <td colspan="36" class="excel635" width="612" style="height:43.5pt;width:468pt;"><span class="excel121"><sup>2</sup> За    исключением случаев, когда членство в саморегулируемых организациях в области    инженерных<br>
-      изысканий, архитектурно-строительного проектирования,    строительства, реконструкции,<br>
-    капитального ремонта объектов капитального    строительства не требуется.</span></td>
-  </tr>
-  <tr style="height:33.0pt;">
-    <td colspan="36" class="excel635" width="612" style="height:33.0pt;width:468pt;"><span class="excel121"><sup>3 </sup>За    исключением случаев, когда членство в саморегулируемых организациях в области    строительства, <br>
-    реконструкции, капитального ремонта объектов капитального    строительства не требуется.</span></td>
-  </tr>
-  <tr style="height:33.0pt;">
-    <td colspan="36" class="excel635" width="612" style="height:33.0pt;width:468pt;"><span class="excel121"><sup>4</sup> За    исключением случаев, когда членство в саморегулируемых организациях в области    <br>
-    архитектурно-строительного проектирования не требуется.</span></td>
-  </tr>
-  <tr style="height:33.0pt;">
-    <td colspan="36" class="excel635" width="612" style="height:33.0pt;width:468pt;"><span class="excel121"><sup>5</sup> В    случае осуществления строительства, реконструкции, капитального ремонта на    основании <br>
-    договора строительного подряда.</span></td>
-  </tr>
-  <tr style="height:33.0pt;">
-    <td colspan="36" class="excel635" width="612" style="height:33.0pt;width:468pt;"><span class="excel121"><sup>6</sup> В    случае осуществления строительного контроля на основании договора с    застройщиком, <br>
-    техническим заказчиком, эксплуатирующей организацией или    региональным оператором.&nbsp;</span></td>
-  </tr>
-  <tr style="height:33.0pt;">
-    <td colspan="36" class="excel635" width="612" style="height:33.0pt;width:468pt;"><span class="excel121"><sup>7</sup> В    случаях когда авторский надзор осуществляется.</span></td>
-  </tr>
-  <tr style="height:33.0pt;">
-    <td colspan="36" class="excel635" width="612" style="height:33.0pt;width:468pt;"><span class="excel121"><sup>8</sup> В    случае осуществления авторского надзора лицом, <br>
-    не являющимся разработчиком    проектной документации.</span></td>
-  </tr>
-  <tr style="height:33.0pt;">
-    <td colspan="36" class="excel635" width="612" style="height:33.0pt;width:468pt;"><span class="excel121"><sup>9 </sup>В    случае выполнения работ по договорам о строительстве, реконструкции,    <br>
-    капитальном ремонте объектов капитального строительства, заключенным с иными    лицами.</span></td>
-  </tr>
-  <tr style="height:32.25pt;">
-    <td colspan="36" class="excel635" width="612" style="height:32.25pt;width:468pt;"><span class="excel121"><sup>10 </sup>В    случае если необходимо указывать более 5 документов, указывается ссылка на их    реестр, <br>
-    который является неотъемлемой частью акта.&nbsp;</span></td>
-  </tr>
-</table>
-<!-- <a href="{{ route('pdf.generate') }}" class="btn btn-primary">Generate PDF</a> -->
 </body>
 </html>

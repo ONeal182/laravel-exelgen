@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PDFController;
+use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\ExelGen;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,5 +23,8 @@ Route::get('/forms', function () {
     return view('forms');
 });
 // Добавил роутинг для консроллера PDFController /app/Http/Controllers/PDFController
-Route::get('pdf/preview', [PDFController::class, 'preview'])->name('pdf.preview');
-Route::get('pdf/generate', [PDFController::class, 'generatePDF'])->name('pdf.generate');
+// Route::get('pdf/preview', [PDFController::class, 'preview'])->name('pdf.preview');
+// Route::get('pdf/generate', [PDFController::class, 'generatePDF'])->name('pdf.generate');
+// Route::get('create',[DocumentController::class, 'create']);
+// Route::get('store',[DocumentController::class, 'store']);
+Route::get('exel',[ExelGen::class, 'generateExcel']);
