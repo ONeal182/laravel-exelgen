@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $('#msform').on('submit', function(e){
         $.ajax({
-            type: 'GET',
+            type: 'POST',
             url: 'exel',
             data: $('#msform').serialize(),
             dataType: 'binary',

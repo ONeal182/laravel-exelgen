@@ -27,4 +27,4 @@ Route::get('/forms', function () {
 // Route::get('pdf/generate', [PDFController::class, 'generatePDF'])->name('pdf.generate');
 // Route::get('create',[DocumentController::class, 'create']);
 // Route::get('store',[DocumentController::class, 'store']);
-Route::get('exel',[ExelGen::class, 'generateExcel']);
+Route::post('exel',[ExelGen::class, 'generateExcel']);

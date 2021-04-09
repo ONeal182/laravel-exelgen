@@ -33,6 +33,7 @@ class ExelGen extends Controller
         $builderORGN = $request->input('builderORGN'); // ОГРН
         $builderINN = $request->input('builderINN'); // ИНН
         $builderPhone = $request->input('builderPhone'); //Телефон
+        $builderFax = $request->input('builderFax'); //Факс
         //Заполните информацию о застройщике (технический заказчик, эксплуатирующая организация или региональный оператор)
         $builderNameOrg = $request->input('builderNameOrg'); //Наименование
         $builderOrgORG = $request->input('builderOrgORG'); // ОРГН
@@ -43,6 +44,7 @@ class ExelGen extends Controller
         $contractorORGN = $request->input('contractorORGN'); // ОРГН
         $contractorINN = $request->input('contractorINN'); // ИНН
         $contractorPhone = $request->input('contractorPhone'); //Телефон
+        $contractorFax  = $request->input('contractorFax ');
         //Саморегулируемая организация
         $contractorOrgName = $request->input('contractorOrgName'); //Наименование
         $contractorOrgORGN = $request->input('contractorOrgORGN'); // ОРГН
@@ -54,6 +56,7 @@ class ExelGen extends Controller
         $preparationORGN = $request->input('preparationORGN'); // ОРГН
         $preparationINN = $request->input('preparationINN'); //ИНН
         $preparationPhone = $request->input('preparationPhone'); // Телефон
+        $preparationFax = $request->input('preparationFax'); // Факс
         //Саморегулируемая организация
         $preparationOrgName = $request->input('preparationOrgName'); // Наименование
         $preparationOrgORGN = $request->input('preparationOrgORGN'); // ОРГН
@@ -137,7 +140,8 @@ class ExelGen extends Controller
         $numberAct = $request->input('numberAct'); // Номер акта
         $dateAOSR = $request->input('dateAOSR'); // Дата составления АОСР
         $countAOSR = $request->input('countAOSR'); // Колличество документов
-
+        $actTest = $request->input('actTest');
+        $countSuppl = $request->input('countSuppl');
         //Массив данных формы
 
         $dataForm = [
@@ -149,6 +153,7 @@ class ExelGen extends Controller
             'builderINN' => $builderINN,
             'builderINN' => $builderINN,
             'builderPhone' => $builderPhone,
+            'builderFax' => $builderFax,
             'builderNameOrg' => $builderNameOrg,
             'builderOrgORG' => $builderOrgORG,
             'builderOrgINN' => $builderOrgINN,
@@ -157,6 +162,7 @@ class ExelGen extends Controller
             'contractorORGN' => $contractorORGN,
             'contractorINN' => $contractorINN,
             'contractorPhone' => $contractorPhone,
+            'contractorFax' => $contractorFax,
             'contractorOrgName' => $contractorOrgName,
             'contractorOrgORGN' => $contractorOrgORGN,
             'contractorOrgINN' => $contractorOrgINN,
@@ -165,6 +171,7 @@ class ExelGen extends Controller
             'preparationORGN' => $preparationORGN,
             'preparationINN' => $preparationINN,
             'preparationPhone' => $preparationPhone,
+            'preparationFax' => $preparationFax,
             'preparationOrgName' => $preparationOrgName,
             'preparationOrgORGN' => $preparationOrgORGN,
             'preparationOrgINN' => $preparationOrgINN,
@@ -229,7 +236,9 @@ class ExelGen extends Controller
             'moreInfo' => $moreInfo,
             'numberAct' => $numberAct,
             'dateAOSR' => $dateAOSR,
-            'countAOSR' => $countAOSR
+            'countAOSR' => $countAOSR,
+            'actTest' => $actTest,
+            'countSuppl' => $countSuppl
 
         ];
 
@@ -245,7 +254,26 @@ class ExelGen extends Controller
 
         return $textWrap;
     }
-
+    public function formatDate($data)
+    {
+        $_monthsList = array(
+            ".01." => "января",
+            ".02." => "февраля",
+            ".03." => "марта",
+            ".04." => "апреля",
+            ".05." => "мая",
+            ".06." => "июня",
+            ".07." => "июля",
+            ".08." => "августа",
+            ".09." => "сентября",
+            ".10." => "октября",
+            ".11." => "ноября",
+            ".12." => "декабря"
+        );
+        $_mD = date(".m.", strtotime($data));
+        $data = str_replace($_mD, " " . $_monthsList[$_mD] . " ", $data);
+        return $data;
+    }
     public function styleSettings($type)
     {
         //Прописываем стили пока стандартные
@@ -265,9 +293,6 @@ class ExelGen extends Controller
                     'bottom' => array(
                         'style' => PHPExcel_Style_Border::BORDER_THIN,
                     ),
-                ),
-                'alignment' => array(
-                    'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER,
                 )
 
             );
@@ -361,6 +386,16 @@ class ExelGen extends Controller
                 'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER,
             ]
         ];
+
+        $styleBold = [
+            'font' => [
+                'bold' => true,
+                'size' => 11
+            ],
+            'alignment' => [
+                'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER,
+            ]
+        ];
         //Оформление АОСР
         //Объект капитального строительства
         foreach ($this->wordBreak($date['projectName'], 200) as $text) {
@@ -396,6 +431,7 @@ class ExelGen extends Controller
         $builderORGN = $date['builderORGN'];
         $builderINN = $date['builderINN'];
         $builderPhone = $date['builderPhone'];
+        $builderFax = $date['builderFax'];
         //Саморегулируемая организация
         $builderNameOrg = $date['builderNameOrg'];
         $builderOrgORG = $date['builderOrgORG'];
@@ -408,7 +444,7 @@ class ExelGen extends Controller
                 ]
             );
         }
-        foreach ($this->wordBreak($builderName . ', ОРГН ' . $builderORGN . ' ИНН ' . $builderINN . ' ' . $builderAddres . ' тел. ' . $builderPhone, 200) as $text) {
+        foreach ($this->wordBreak($builderName . ', ОРГН ' . $builderORGN . ' ИНН ' . $builderINN . ' ' . $builderAddres . ' тел. ' . $builderPhone . ' факс. ' . $builderFax, 200) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -424,8 +460,997 @@ class ExelGen extends Controller
                 ]
             );
         }
+        foreach ($this->wordBreak($builderNameOrg, 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
 
+        foreach ($this->wordBreak('(наименование, ОГРН, ИНН саморегулируемой организации, членом которой является - для индивидуальных предпринимателей и юридических лиц),', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+
+        foreach ($this->wordBreak('ОРГН ' . $builderOrgORG . ' ИНН ' . $builderOrgINN, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+
+        foreach ($this->wordBreak('(фамилия, имя, отчество, паспортные данные, адрес места жительства, телефон/факс - для физических лиц, не являющихся индивидуальным предпринимателями)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        //Лицо, осуществляющее строительство  
+        foreach ($this->wordBreak('Лицо, осуществляющее строительство', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        $contractorName = $date['contractorName'];
+        $contractorAddres = $date['contractorAddres'];
+        $contractorORGN = $date['contractorORGN'];
+        $contractorINN = $date['contractorINN'];
+        $contractorPhone = $date['contractorPhone'];
+        $contractorFax = $date['contractorFax'];
+        $contractorOrgName = $date['contractorOrgName'];
+        $contractorOrgORGN = $date['contractorOrgORGN'];
+        $contractorOrgINN = $date['contractorOrgINN'];
+        foreach ($this->wordBreak($contractorName . ' ОРГН ' . $contractorORGN . ' ИНН ' . $contractorINN . ' ' . $contractorAddres . ' тел. ' . $contractorPhone . ' факс. ' . $contractorFax, 170) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+
+        foreach ($this->wordBreak('( фамилия, имя, отчество, адрес места жительства, ОГРНИП, ИНН индивидуального предпринимателя,наименование, ОГРН, ИНН, место нахождения юридического лица, телефон/факс)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+
+        foreach ($this->wordBreak($contractorOrgName . ' ОРГН ' . $contractorOrgORGN . ' ИНН ' . $contractorOrgINN, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(наименование, ОГРН, ИНН саморегулируемой организации, членом которой является))', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+
+
+        // Лицо, осуществляющее подготовку проектной документации								
+        $preparationName = $date['preparationName'];
+        $preparationAddres = $date['preparationAddres'];
+        $preparationORGN = $date['preparationORGN'];
+        $preparationINN = $date['preparationINN'];
+        $preparationPhone = $date['preparationPhone'];
+        $preparationFax = $date['preparationFax'];
+        $preparationOrgName = $date['preparationOrgName'];
+        $preparationOrgORGN = $date['preparationOrgORGN'];
+        $preparationOrgINN = $date['preparationOrgINN'];
+        foreach ($this->wordBreak('Лицо, осуществляющее подготовку проектной документации', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak($preparationName . ' ОРГН ' . $preparationORGN . ' ИНН ' . $preparationINN . ' ' . $preparationAddres . ' тел. ' . $preparationPhone . ' факс ' . $preparationFax, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+
+        foreach ($this->wordBreak('( (фамилия, имя, отчество, адрес места жительства, ОГРНИП, ИНН индивидуального предпринимателя, наименование, ОГРН, ИНН, место нахождения юридического лица, телефон/факс)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        foreach ($this->wordBreak($preparationOrgName . ' ОРГН ' . $preparationOrgORGN . ' ИНН ' . $preparationOrgINN, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(наименование, ОГРН, ИНН саморегулируемой организации, членом которой является)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        foreach ($this->wordBreak(' ', 200) as $text) {
+            $this->i++;
+            $i2 = $this->i + 1;
+            $this->creatRow(
+                [
+                    [
+                        'row' => 'A' . $this->i . ':I' . $i2 . '', 'text' => $text, 'style' =>
+                        [
+                            'font' => [
+                                'bold' => true,
+                            ],
+                            'alignment' => [
+                                'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER,
+                            ]
+                        ]
+                    ]
+                ]
+            );
+            $this->i++;
+        }
+        foreach ($this->wordBreak('АКТ', 200) as $text) {
+            $this->i++;
+            $i2 = $this->i + 1;
+            $this->creatRow(
+                [
+                    [
+                        'row' => 'A' . $this->i . ':I' . $i2 . '', 'text' => $text, 'style' => [
+                            'font' => [
+                                'bold' => true,
+                            ],
+                            'alignment' => [
+                                'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER,
+                            ]
+                        ]
+                    ]
+                ]
+            );
+            $this->i++;
+        }
+        foreach ($this->wordBreak(' ', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    [
+                        'row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' =>
+                        [
+                            'font' => [
+                                'bold' => true,
+                            ],
+                            'alignment' => [
+                                'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER,
+                            ]
+                        ]
+                    ]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('освидетельствования скрытых работ', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    [
+                        'row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' =>
+                        [
+                            'font' => [
+                                'bold' => true,
+                            ],
+                            'alignment' => [
+                                'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER,
+                            ]
+                        ]
+                    ]
+                ]
+            );
+        }
+
+        foreach ($this->wordBreak('№ТК2-В2', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    [
+                        'row' => 'A' . $this->i . ':D' . $this->i . '', 'text' => $text, 'style' =>
+                        [
+                            'font' => [
+                                'italic' => true,
+                                'size' => 12
+                            ],
+                            'alignment' => [
+                                'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER,
+                            ],
+                            'borders' => [
+                                'bottom' => [
+                                    'style' => PHPExcel_Style_Border::BORDER_THIN,
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            );
+        }
+        $dateAOSR = $date['dateAOSR'];
+        $dateAOSR = $this->formatDate($dateAOSR);
+
+        foreach ($this->wordBreak($dateAOSR . ' г.', 200) as $text) {
+            $this->creatRow(
+                [
+                    [
+                        'row' => 'I' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' =>
+                        [
+                            'font' => [
+                                'italic' => true,
+                                'size' => 12
+                            ],
+                            'alignment' => [
+                                'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER,
+                            ],
+                            'borders' => [
+                                'bottom' => [
+                                    'style' => PHPExcel_Style_Border::BORDER_THIN,
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(дата составления акта)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'I' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        foreach ($this->wordBreak(' ', 200) as $text) {
+            $this->i++;
+            $i2 = $this->i + 3;
+            $this->creatRow(
+                [
+                    [
+                        'row' => 'A' . $this->i . ':I' . $i2  . '', 'text' => $text, 'style' =>
+                        [
+                            'font' => [
+                                'bold' => true,
+                            ],
+                            'alignment' => [
+                                'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER,
+                            ]
+                        ]
+                    ]
+                ]
+            );
+            $this->i++;
+            $this->i++;
+            $this->i++;
+        }
+        foreach ($this->wordBreak('Представитель  застройщика (технического заказчика, эксплуатирующей организации или регионального', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('оператора) по вопросам строительного контроля', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        $representativeBuilderPosition = $date['representativeBuilderPosition'];
+        $representativeBuilderFIO = $date['representativeBuilderFIO'];
+        $representativeBuilderRequisites = $date['representativeBuilderRequisites'];
+        $representativeBuilderDate = $date['representativeBuilderDate'];
+        $representativeBuilderId = $date['representativeBuilderId'];
+        $representativeBuilderORGN = $date['representativeBuilderORGN'];
+        $representativeBuilderINN = $date['representativeBuilderINN'];
+        $representativeBuilderAddres = $date['representativeBuilderAddres'];
+        $representativeBuilderDateGet = $date['representativeBuilderDateGet'];
+
+        foreach ($this->wordBreak(
+            $representativeBuilderPosition . ' ' . $representativeBuilderFIO,
+            180
+        ) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(должность, фамилия, инициалы, идентификационный номер в национальном реестре специалистов)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        foreach ($this->wordBreak(
+            'индификационный № ' . $representativeBuilderId . ' от ' . $representativeBuilderDate . ' распоряжение  № ' . $representativeBuilderRequisites . ' от ' . $representativeBuilderDateGet . ' ',
+            180
+        ) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(в области строительства, реквизиты распорядительного документа, подтверждающего полномочия)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('ОРГН ' . $representativeBuilderORGN . ' ИНН ' . $representativeBuilderINN . ' ' . $representativeBuilderAddres, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(с указанием наименования, ОГРН, ИНН, места нахождения юридического лица)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('оператора) по вопросам строительного контроля', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        // Заполните информацию о представителе лица осуществляющего строительство
+        foreach ($this->wordBreak('Представитель лица, осуществляющего строительство', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        $representativeContractorPosition = $date['representativeContractorPosition'];
+        $representativeContractorFIO = $date['representativeContractorFIO'];
+        $representativeContractorRequisites = $date['representativeContractorRequisites'];
+        $representativeContractorDate = $date['representativeContractorDate'];
+        foreach ($this->wordBreak($representativeContractorPosition . ' ' . $representativeContractorFIO . ' приказ №' . $representativeContractorRequisites . ' от ' . $representativeContractorDate, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(должность, фамилия, инициалы,  реквизиты распорядительного документа, подтверждающего полномочия) ', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        //Заполните информацию о представителе лица осуществляющего строительство, по вопросам строительного контроля (специалист по организации строительства)
+        foreach ($this->wordBreak('Представитель лица, осуществляющего строительство, по вопросам строительного контроля (специалист по организации строительства)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+
+        $memberBuilderPosition = $date['memberBuilderPosition'];
+        $memberBuilderFIO = $date['memberBuilderFIO'];
+        $memberBuilderId = $date['memberBuilderId'];
+        $memberBuilderDateId = $date['memberBuilderDateId'];
+        $memberBuilderRequisites = $date['memberBuilderRequisites'];
+        $memberBuilderDate = $date['memberBuilderDate'];
+        foreach ($this->wordBreak($memberBuilderPosition . ' ' .  $memberBuilderFIO . ' идентификационный № ' . $memberBuilderId . ' приказ № ' . $memberBuilderRequisites . ' от ' . $memberBuilderDate, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(должность, фамилия, инициалы, идентификационный номер в национальном реестре специалистов в области строительства, реквизиты распорядительного документа, подтверждающего полномочия) ', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        //Заполните информацию об иных лицах, участвующих в освидетельствовании.
+        foreach ($this->wordBreak('Представитель лица, осуществляющего подготовку проектной документации', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+
+        $preparationPosition = $date['preparationPosition'];
+        $preparationFIO = $date['preparationFIO'];
+        $preparationREQ = $date['preparationREQ'];
+        $preparationDateId = $date['preparationDateId'];
+        $preparationYurName = $date['preparationYurName'];
+        $preparationYurAddres = $date['preparationYurAddres'];
+        $preparationORGN = $date['preparationORGN'];
+        $preparationINN = $date['preparationINN'];
+        foreach ($this->wordBreak($preparationPosition . ' ' . $preparationFIO . ' приказ №' . $preparationREQ . ' от ' . $preparationDateId . ', ' . $preparationYurName . ' ОРГН ' . $preparationORGN . ' ИНН ' . $preparationINN . ' ' . $preparationYurAddres, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(должность, фамилия, инициалы, реквизиты распорядительного документа, подтверждающего полномочия, с указанием наименования, ОГРН, ИНН, места нахождения юридического лица, фамилии, имени, отчества, адреса места жительства, ОГРНИП, ИНН индивидуального предпринимателя)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('Представитель лица, выполнившего работы, подлежащие освидетельствованию', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        $complitePosition = $date['complitePosition'];
+        $compliteFIO = $date['compliteFIO'];
+        $compliteREQ = $date['compliteREQ'];
+        $compliteDateId = $date['compliteDateId'];
+        $compliteNameYUR = $date['compliteNameYUR'];
+        $compliteYURaddres = $date['compliteYURaddres'];
+        $compliteORGN = $date['compliteORGN'];
+        $compliteINN = $date['compliteINN'];
+
+        foreach ($this->wordBreak($complitePosition . ' ' . $compliteFIO . '  распоряжение №' . $compliteREQ . ' от ' . $compliteDateId . ' ' . $compliteNameYUR . ' ОРГН ' . $compliteORGN . ' ИНН ' . $compliteINN . ' ' . $compliteYURaddres, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(должность, фамилия, инициалы, реквизиты распорядительного документа, подтверждающего полномочия, с указанием наименования, ОГРН, ИНН, места нахождения юридического лица, фамилии, имени, отчества, адреса места жительства, ОГРНИП, ИНН индивидуального предпринимателя)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('а также иные представители лиц, участвующих в освидетельствовании:', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        $anotherPosition = $date['anotherPosition'];
+        $anotherFIO = $date['anotherFIO'];
+        $anotherREQ = $date['anotherREQ'];
+        $anotherDate_Id = $date['anotherDate_Id'];
+        $anotherNameYur = $date['anotherNameYur'];
         $objPHPExcel = $this->objPHPExcel->createSheet();
+        foreach ($this->wordBreak($anotherPosition . ' ' . $anotherNameYur . ' ' . $anotherFIO . '  распоряжение №' . $anotherREQ . ' от ' . $anotherDate_Id, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(должность, фамилия, инициалы, реквизиты распорядительного документа, подтверждающего полномочия)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('произвели осмотр работ, выполненных', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':F' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        $checkName = $date['checkName'];
+        foreach ($this->wordBreak($checkName, 180) as $text) {
+
+            $this->creatRow(
+                [
+                    ['row' => 'G' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(наименование лица, выполнившего работы, подлежащие освидетельствованию)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'G' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('и составили настоящий акт о нижеследующем:', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':F' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('1. К освидетельствованию предъявлены следующие работы:', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':F' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        $this->i++;
+        $workDo = $date['workDo'];
+        foreach ($this->wordBreak($workDo, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(наименование скрытых работ)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('2. Работы выполнены по проектной документации:', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':F' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+
+        $anotherDocs = $date['anotherDocs'];
+        foreach ($this->wordBreak($anotherDocs, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(номер, другие реквизиты чертежа, наименование проектной и/или рабочей документации, сведения о лицах, осуществляющих подготовку раздела проектной и/или рабочей документации)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('3. При выполнении работ применены:', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':F' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        $materialName = $date['materialName'];
+        $sertificate = $date['sertificate'];
+        $sertificatefrom = $date['sertificatefrom'];
+        $sertificateBy = $date['sertificateBy'];
+        $sertificateQuality =  $date['sertificateQuality'];
+        $sertificateDate = $date['sertificateDate'];
+
+        foreach ($this->wordBreak($materialName . ' ' . $sertificate . ' №' . $sertificateQuality . ' от ' . $sertificatefrom, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(наименование строительных материалов, (изделий), реквизиты сертификатов и/или других документов, подтверждающих их качество и безопасность)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('4. Предъявлены документы, подтверждающие соответствие работ предъявляемым к ним требованиям ', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        $doc = $date['doc'];
+        $docDate = $date['docDate'];
+        foreach ($this->wordBreak('Согласно реестру № ' . $doc . ' от ' . $docDate, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(исполнительные схемы и чертежи, результаты экспертиз, обследований, лабораторных и иных испытаний выполненных работ, проведенных в процессе строительного контроля)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('5. Даты:  начала работ', 200) as $text) {
+
+            $i2 = $this->i + 2;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $i2 . ':C' . $i2 . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('окончания работ', 200) as $text) {
+
+            $i2 = $this->i + 3;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $i2 . ':C' . $i2 . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        $dateBeginWork = $date['dateBeginWork'];
+        $dateEndWork = $date['dateEndWork'];
+        foreach ($this->wordBreak($this->formatDate($dateBeginWork), 180) as $text) {
+            $i2 = $this->i + 2;
+            $this->creatRow(
+                [
+                    ['row' => 'E' . $i2  . ':G' . $i2  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak($this->formatDate($dateEndWork), 180) as $text) {
+            $i2 = $this->i + 3;
+            $this->creatRow(
+                [
+                    ['row' => 'E' . $i2  . ':G' . $i2  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('6. Работы выполнены в соответствии с', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        $razdeDoc = $date['razdeDoc'];
+        $RegName = $date['RegName'];
+        foreach ($this->wordBreak($razdeDoc . ' ' . $RegName, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(наименования  и структурные единицы технических регламентов,иных нормативных правовых актов, разделы проектной и/или рабочей документации)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('7. Разрешается производство последующих работ ', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+
+        $nameWorkCostruct = $date['nameWorkCostruct'];
+        foreach ($this->wordBreak($nameWorkCostruct, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+
+        foreach ($this->wordBreak('(наименование работ, конструкций, участков сетей инженерно-технического обеспечения)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+
+        // foreach ($this->wordBreak('Представитель застройщика (технического заказчика, эксплуатирующей организации или регионального оператора) по вопросам строительного контроля', 200) as $text) {
+        //     $this->i++;
+        //     $this->creatRow(
+        //         [
+        //             ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+        //         ]
+        //     );
+        // }
+
+        foreach ($this->wordBreak('Дополнительные сведения', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':C' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        $moreInfo = $date['moreInfo'];
+        foreach ($this->wordBreak($moreInfo, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        $this->i++;
+        foreach ($this->wordBreak('Акт составлен в ', 200) as $text) {
+            
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':B' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        $countAOSR = $date['countAOSR'];
+        foreach ($this->wordBreak($countAOSR, 180) as $text) {
+            
+            $this->creatRow(
+                [
+                    ['row' => 'C' . $this->i  . ':C' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak(' экземплярах.', 200) as $text) {
+            
+            $this->creatRow(
+                [
+                    ['row' => 'D' . $this->i . ':E' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('Приложения:', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        $actTest = $date['actTest'];
+        $dateAOSR = $date['dateAOSR'];
+        $countSuppl = $date['countSuppl'];
+        foreach ($this->wordBreak('Реестр № '.$actTest.' от '.$dateAOSR.' '.$countSuppl, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+
+        foreach ($this->wordBreak('Представитель застройщика (технического заказчика, эксплуатирующей организации или регионального оператора) по вопросам строительного контроля', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak($representativeBuilderFIO, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(фамилия, инициалы, подпись)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('Представитель лица, осуществляющего строительство', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak($representativeContractorFIO, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(фамилия, инициалы, подпись)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('Представитель лица, осуществляющего строительство, по вопросам строительного контроля (специалист по организации строительства)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak($memberBuilderFIO, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(фамилия, инициалы, подпись)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('Представитель лица,  осуществляющего подготовку проектной документации', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak($preparationFIO, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(фамилия, инициалы, подпись)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('Представитель лица, выполнившего работы, подлежащие освидетельствованию', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak($compliteFIO, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(фамилия, инициалы, подпись)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('Представители иных лиц ', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak($anotherFIO, 180) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+        }
+        foreach ($this->wordBreak('(фамилия, инициалы, подпись)', 200) as $text) {
+            $this->i++;
+            $this->creatRow(
+                [
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleBottom]
+                ]
+            );
+        }
+        // Акт составлен в   4   экземплярах.
         header("Content-Type:application/vnd.ms-excel");
         header("Content-Disposition:attachment;filename=simple.xls");
 

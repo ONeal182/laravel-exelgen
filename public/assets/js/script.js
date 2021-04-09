@@ -225,127 +225,127 @@ setProgressBar(current);
 
 // Следующий шаг
 $(".next").click(function(){
-	var error = [];
-	var errorText = 'Ошибка:';
-	var beginDate = $('.date[name=dateBeginWork]');
-	var endDate = $('.date[name=dateEndWork]');
-	var representativeBuilderDateGet = $('.date[name=representativeBuilderDateGet]');
-	var representativeBuilderDate = $('.date[name=representativeBuilderDate]');
-	var representativeContractorDate = $('.date[name=representativeContractorDate]');
-	var memberBuilderDateId = $('.date[name=memberBuilderDateId]');
-	var preparationDateId = $('.date[name=preparationDateId]');
-	var compliteDateId = $('.date[name=compliteDateId]');
-	var anotherDate_Id = $('.date[name=anotherDate_Id]');
+	// var error = [];
+	// var errorText = 'Ошибка:';
+	// var beginDate = $('.date[name=dateBeginWork]');
+	// var endDate = $('.date[name=dateEndWork]');
+	// var representativeBuilderDateGet = $('.date[name=representativeBuilderDateGet]');
+	// var representativeBuilderDate = $('.date[name=representativeBuilderDate]');
+	// var representativeContractorDate = $('.date[name=representativeContractorDate]');
+	// var memberBuilderDateId = $('.date[name=memberBuilderDateId]');
+	// var preparationDateId = $('.date[name=preparationDateId]');
+	// var compliteDateId = $('.date[name=compliteDateId]');
+	// var anotherDate_Id = $('.date[name=anotherDate_Id]');
 
-	var docDate = $('.date[name=docDate]');
-	console.log(docDate);
+	// var docDate = $('.date[name=docDate]');
+	// console.log(docDate);
 
 
-	if(beginDate.datepicker("getDate") < representativeBuilderDate.datepicker("getDate") || beginDate.datepicker("getDate") < representativeBuilderDateGet.datepicker("getDate")){
-		error.push('false');
-		errorText = errorText + ' Шаг 5 обе даты раньше начала работ ';
-	}else{
-		error.push('true');
-	}
-
-	if(beginDate.datepicker("getDate") < representativeContractorDate.datepicker("getDate")){
-		error.push('false');
-		errorText = errorText + ' Шаг 6 дата раньше начала работ ';
-	}else{
-		error.push('true');
-	}
-
-	if(beginDate.datepicker("getDate") < memberBuilderDateId.datepicker("getDate")){
-		error.push('false');
-		errorText = errorText + ' Шаг 7 дата раньше начала работ ';
-	}else{
-		error.push('true');
-	}
-
-	if(beginDate.datepicker("getDate") < preparationDateId.datepicker("getDate")){
-		error.push('false');
-		errorText = errorText + ' Шаг 8 дата раньше начала работ ';
-	}else{
-		error.push('true');
-	}
-
-	if(beginDate.datepicker("getDate") < compliteDateId.datepicker("getDate")){
-		error.push('false');
-		errorText = errorText + ' Шаг 9 дата раньше начала работ ';
-	}else{
-		error.push('true');
-	}
-
-	if(beginDate.datepicker("getDate") < anotherDate_Id.datepicker("getDate")){
-		error.push('false');
-		errorText = errorText + ' Шаг 10 дата раньше начала работ ';
-	}else{
-		error.push('true');
-	}
-
-	docDate.each(function(){
-		var arrdocDate;
-		if($(this).datepicker("getDate") > beginDate.datepicker("getDate")){
-			var arrdocDate = false;
-			
-		}
-
-		if(arrdocDate == false){
-			error.push('false');
-			errorText = errorText + ' Шаг 15 обе даты раньше начала работ ';
-		}
-	})
-
-	// if(endDate.datepicker("getDate") < dateAOSR.datepicker("getDate")){
+	// if(beginDate.datepicker("getDate") < representativeBuilderDate.datepicker("getDate") || beginDate.datepicker("getDate") < representativeBuilderDateGet.datepicker("getDate")){
 	// 	error.push('false');
-	// 	errorText = errorText + ' не раньше чем окончания работ, не раньше чем исполнительная схема шаг  15  ';
+	// 	errorText = errorText + ' Шаг 5 обе даты раньше начала работ ';
 	// }else{
 	// 	error.push('true');
 	// }
-	
-	
 
-	
-	if(error.indexOf('false')){
-		$('#step16 .next').removeClass('error');
-	}else{
-		
-		$('#step16 .next').addClass('error');
-		console.log(errorText);
-	}
-	if($('#step16').hasClass('active_page')){
-		if($('#step16 .next').hasClass('error')){
-			return false;
-		}
-	}
+	// if(beginDate.datepicker("getDate") < representativeContractorDate.datepicker("getDate")){
+	// 	error.push('false');
+	// 	errorText = errorText + ' Шаг 6 дата раньше начала работ ';
+	// }else{
+	// 	error.push('true');
+	// }
 
-	var dateAOSR = $('.date[name=dateAOSR]');
+	// if(beginDate.datepicker("getDate") < memberBuilderDateId.datepicker("getDate")){
+	// 	error.push('false');
+	// 	errorText = errorText + ' Шаг 7 дата раньше начала работ ';
+	// }else{
+	// 	error.push('true');
+	// }
 
-	dateAOSR.each(function(){
-		var arrdateAOSR;
-		if($(this).datepicker("getDate") > endDate.datepicker("getDate")){
-			var arrdateAOSR = false;
+	// if(beginDate.datepicker("getDate") < preparationDateId.datepicker("getDate")){
+	// 	error.push('false');
+	// 	errorText = errorText + ' Шаг 8 дата раньше начала работ ';
+	// }else{
+	// 	error.push('true');
+	// }
+
+	// if(beginDate.datepicker("getDate") < compliteDateId.datepicker("getDate")){
+	// 	error.push('false');
+	// 	errorText = errorText + ' Шаг 9 дата раньше начала работ ';
+	// }else{
+	// 	error.push('true');
+	// }
+
+	// if(beginDate.datepicker("getDate") < anotherDate_Id.datepicker("getDate")){
+	// 	error.push('false');
+	// 	errorText = errorText + ' Шаг 10 дата раньше начала работ ';
+	// }else{
+	// 	error.push('true');
+	// }
+
+	// docDate.each(function(){
+	// 	var arrdocDate;
+	// 	if($(this).datepicker("getDate") > beginDate.datepicker("getDate")){
+	// 		var arrdocDate = false;
 			
-		}
+	// 	}
 
-		if(arrdateAOSR == false){
-			error.push('false');
-			errorText = errorText + ' Шаг 15 обе даты раньше окончания работ ';
-		}
-	})
+	// 	if(arrdocDate == false){
+	// 		error.push('false');
+	// 		errorText = errorText + ' Шаг 15 обе даты раньше начала работ ';
+	// 	}
+	// })
 
-	if(error.indexOf('false')){
-		$('#step20 .next').removeClass('error');
-	}else{
+	// // if(endDate.datepicker("getDate") < dateAOSR.datepicker("getDate")){
+	// // 	error.push('false');
+	// // 	errorText = errorText + ' не раньше чем окончания работ, не раньше чем исполнительная схема шаг  15  ';
+	// // }else{
+	// // 	error.push('true');
+	// // }
+	
+	
+
+	
+	// if(error.indexOf('false')){
+	// 	$('#step16 .next').removeClass('error');
+	// }else{
 		
-		$('#step20 .next').addClass('error');
-		console.log(errorText);
-	}
-	if($('#step20').hasClass('active_page')){
-		if($('#step20 .next').hasClass('error')){
-			return false;
-		}
-	}
+	// 	$('#step16 .next').addClass('error');
+	// 	console.log(errorText);
+	// }
+	// if($('#step16').hasClass('active_page')){
+	// 	if($('#step16 .next').hasClass('error')){
+	// 		return false;
+	// 	}
+	// }
+
+	// var dateAOSR = $('.date[name=dateAOSR]');
+
+	// dateAOSR.each(function(){
+	// 	var arrdateAOSR;
+	// 	if($(this).datepicker("getDate") > endDate.datepicker("getDate")){
+	// 		var arrdateAOSR = false;
+			
+	// 	}
+
+	// 	if(arrdateAOSR == false){
+	// 		error.push('false');
+	// 		errorText = errorText + ' Шаг 15 обе даты раньше окончания работ ';
+	// 	}
+	// })
+
+	// if(error.indexOf('false')){
+	// 	$('#step20 .next').removeClass('error');
+	// }else{
+		
+	// 	$('#step20 .next').addClass('error');
+	// 	console.log(errorText);
+	// }
+	// if($('#step20').hasClass('active_page')){
+	// 	if($('#step20 .next').hasClass('error')){
+	// 		return false;
+	// 	}
+	// }
 	
 // Init page function
 setTimeout(function() { activePage()}, 200);

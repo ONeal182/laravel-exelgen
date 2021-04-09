@@ -86,7 +86,7 @@
   <div class="container">
 
     <!-- Forms -->
-    <form id="msform" action="exel" method="get">
+    <form id="msform" action="exel" method="post">
       {{ csrf_field() }}
       <!-- 
     /---------------------------/
