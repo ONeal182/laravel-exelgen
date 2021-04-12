@@ -1129,42 +1129,43 @@ class ExelGen extends Controller
         }
         foreach ($this->wordBreak('5. Даты:  начала работ', 200) as $text) {
             $this->i++;
-            $i2 = $this->i + 2;
+            
             $this->creatRow(
                 [
-                    ['row' => 'A' . $i2 . ':C' . $i2 . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i. ':C' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
                 ]
             );
-        }
-        foreach ($this->wordBreak('окончания работ', 200) as $text) {
-
-            $i2 = $this->i + 3;
-            $this->creatRow(
-                [
-                    ['row' => 'A' . $i2 . ':C' . $i2 . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
-                ]
-            );
-            $this->i++;
         }
         $dateBeginWork = $date['dateBeginWork'];
         $dateEndWork = $date['dateEndWork'];
         foreach ($this->wordBreak($this->formatDate($dateBeginWork), 180) as $text) {
-            $i2 = $this->i + 2;
+            
             $this->creatRow(
                 [
-                    ['row' => 'E' . $i2  . ':G' . $i2  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'E' .$this->i  . ':G' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
                 ]
             );
-            $this->i++;
+            
         }
-        foreach ($this->wordBreak($this->formatDate($dateEndWork), 180) as $text) {
-            $i2 = $this->i + 3;
+        foreach ($this->wordBreak('окончания работ', 200) as $text) {
+            $this->i++;
+
             $this->creatRow(
                 [
-                    ['row' => 'E' . $i2  . ':G' . $i2  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i. ':C' . $this->i. '', 'text' => $text, 'style' => $this->styleSettings('bold')]
                 ]
             );
-            $this->i++;
+            
+        }
+       
+        foreach ($this->wordBreak($this->formatDate($dateEndWork), 180) as $text) {
+            $this->creatRow(
+                [
+                    ['row' => 'E' . $this->i . ':G' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                ]
+            );
+            // $this->i++;
+            
         }
         foreach ($this->wordBreak('6. Работы выполнены в соответствии с', 200) as $text) {
             $this->i++;
