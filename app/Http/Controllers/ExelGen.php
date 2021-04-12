@@ -357,12 +357,13 @@ class ExelGen extends Controller
         //Получаем данные из формы
         $date = $this->formRequest($request);
         $title = 'Название документа';
-        $rowMarg = ['top' => 1, 'left' => 2, 'right' => 1, 'bottom' => 1];
+        $rowMarg = ['top' => 1.5, 'left' => 1, 'right' => 0.5, 'bottom' => 1.5];
         $styleDefault =
             [
                 'fonts' => 'Times New Roman',
                 'size' => 11
             ];
+            
         $rowWidth =
             [
                 'A' => 60,
@@ -407,7 +408,7 @@ class ExelGen extends Controller
             );
         }
         //Почтовый или строительный адрес объекта капитального строительства
-        foreach ($this->wordBreak($date['projectAddres'], 200) as $text) {
+        foreach ($this->wordBreak($date['projectAddres'], 180) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -559,7 +560,7 @@ class ExelGen extends Controller
         $preparationOrgName = $date['preparationOrgName'];
         $preparationOrgORGN = $date['preparationOrgORGN'];
         $preparationOrgINN = $date['preparationOrgINN'];
-        foreach ($this->wordBreak('Лицо, осуществляющее подготовку проектной документации', 200) as $text) {
+        foreach ($this->wordBreak('Лицо, осуществляющее подготовку проектной документации', 180) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -567,7 +568,7 @@ class ExelGen extends Controller
                 ]
             );
         }
-        foreach ($this->wordBreak($preparationName . ' ОРГН ' . $preparationORGN . ' ИНН ' . $preparationINN . ' ' . $preparationAddres . ' тел. ' . $preparationPhone . ' факс ' . $preparationFax, 180) as $text) {
+        foreach ($this->wordBreak($preparationName . ' ОРГН ' . $preparationORGN . ' ИНН ' . $preparationINN . ' ' . $preparationAddres . ' тел. ' . $preparationPhone . ' факс ' . $preparationFax, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -638,24 +639,6 @@ class ExelGen extends Controller
                 ]
             );
             $this->i++;
-        }
-        foreach ($this->wordBreak(' ', 200) as $text) {
-            $this->i++;
-            $this->creatRow(
-                [
-                    [
-                        'row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' =>
-                        [
-                            'font' => [
-                                'bold' => true,
-                            ],
-                            'alignment' => [
-                                'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER,
-                            ]
-                        ]
-                    ]
-                ]
-            );
         }
         foreach ($this->wordBreak('освидетельствования скрытых работ', 200) as $text) {
             $this->i++;
@@ -1039,7 +1022,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':F' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
                 ]
             );
         }
@@ -1145,7 +1128,7 @@ class ExelGen extends Controller
             );
         }
         foreach ($this->wordBreak('5. Даты:  начала работ', 200) as $text) {
-
+            $this->i++;
             $i2 = $this->i + 2;
             $this->creatRow(
                 [
@@ -1161,6 +1144,7 @@ class ExelGen extends Controller
                     ['row' => 'A' . $i2 . ':C' . $i2 . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
                 ]
             );
+            $this->i++;
         }
         $dateBeginWork = $date['dateBeginWork'];
         $dateEndWork = $date['dateEndWork'];
@@ -1171,6 +1155,7 @@ class ExelGen extends Controller
                     ['row' => 'E' . $i2  . ':G' . $i2  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
                 ]
             );
+            $this->i++;
         }
         foreach ($this->wordBreak($this->formatDate($dateEndWork), 180) as $text) {
             $i2 = $this->i + 3;
@@ -1179,6 +1164,7 @@ class ExelGen extends Controller
                     ['row' => 'E' . $i2  . ':G' . $i2  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
                 ]
             );
+            $this->i++;
         }
         foreach ($this->wordBreak('6. Работы выполнены в соответствии с', 200) as $text) {
             $this->i++;
@@ -1243,11 +1229,11 @@ class ExelGen extends Controller
         //     );
         // }
 
-        foreach ($this->wordBreak('Дополнительные сведения', 200) as $text) {
+        foreach ($this->wordBreak('Дополнительные сведения', 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':C' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':D' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
                 ]
             );
         }
