@@ -1162,10 +1162,10 @@
               <div class="content_section">
                 <div class="row">
                   <div class="col-lg-10">
-                    <input type="text" name="doc" placeholder="Документ" />
+                    <input type="text" name="doc2" placeholder="Документ" />
                   </div>
                   <div class="col-lg-2">
-                    <input type="text" class="date" name="docDate" />
+                    <input type="text" class="date" name="docDate2" />
                   </div>
                 </div>
               </div>
@@ -1372,7 +1372,7 @@
             <div class="row">
               <div class="col-lg-4">
                 <label class="fieldlabels">Номер акта</label>
-                <input type="numberAct">
+                <input name="numberAct">
                 <label class="bottomlabel">Вы можете использовать цифры и буквы</label>
               </div>
               <div class="col-lg-4">
@@ -1405,7 +1405,7 @@
               <div class="content_section">
                 <div class="row">
                   <div class="col-lg-12">
-                    <input type="text" name="countSuppl" placeholder="Приложение">
+                    <input type="text" name="countSuppl2" placeholder="Приложение">
                   </div>
                 </div>
               </div>
