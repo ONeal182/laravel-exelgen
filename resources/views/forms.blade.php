@@ -1444,9 +1444,35 @@
           <!-- input step -->
           <div class="forms previwePDF">
 
-            <div class="row">
+            <label for="exampleFormControlSelect1">Шрифт заголовка</label>
+            <select class="form-control" name='fontTitle' id="exampleFormControlSelect1">
+              <option value="9">9px</option>
+              <option value="10">10px</option>
+              <option selected value="11">11px</option>
+              <option value="12">12px</option>
+              <option value="13">13px</option>
+              <option value="14">14px</option>
+            </select>
+            <label for="exampleFormControlSelect1">Шрифт текста</label>
+            <select class="form-control" name='fontText' id="exampleFormControlSelect1">
+              <option value="9">9px</option>
+              <option value="10">10px</option>
+              <option selected value="11">11px</option>
+              <option value="12">12px</option>
+              <option value="13">13px</option>
+              <option value="14">14px</option>
+            </select>
+            <label for="exampleFormControlSelect1">Шрифт подписи текста</label>
+            <select class="form-control" name='fontTextBottom' id="exampleFormControlSelect1">
+              <option selected value="8">8px</option>
+              <option value="9">9px</option>
+              <option value="10">10px</option>
+              <option value="11">11px</option>
+              <option value="12">12px</option>
+              <option value="13">13px</option>
+              <option value="14">14px</option>
+            </select>
 
-            </div>
 
 
           </div>

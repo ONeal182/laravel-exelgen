@@ -142,6 +142,9 @@ class ExelGen extends Controller
         $countAOSR = $request->input('countAOSR'); // Колличество документов
         $actTest = $request->input('actTest');
         $countSuppl = $request->input('countSuppl');
+        $fontTitle = $request->input('fontTitle');
+        $fontText = $request->input('fontText');
+        $fontTextBottom = $request->input('fontTextBottom');
         //Массив данных формы
 
         $dataForm = [
@@ -238,7 +241,10 @@ class ExelGen extends Controller
             'dateAOSR' => $dateAOSR,
             'countAOSR' => $countAOSR,
             'actTest' => $actTest,
-            'countSuppl' => $countSuppl
+            'countSuppl' => $countSuppl,
+            'fontTitle' => $fontTitle,
+            'fontText' => $fontText,
+            'fontTextBottom' => $fontTextBottom
 
         ];
 
@@ -276,11 +282,13 @@ class ExelGen extends Controller
     }
     public function styleSettings($type)
     {
+        // $date = $this->formRequest($request);
         //Прописываем стили пока стандартные
         if ($type == 'bold') {
             $style = array(
                 'font' => array(
                     'bold' => true,
+                    // 'size' => $date['fontTitle']
                 )
             );
         } else if ($type = 'italic') {
@@ -295,16 +303,6 @@ class ExelGen extends Controller
                     ),
                 )
 
-            );
-        } else if ($type == 'bottom') {
-            $style = array(
-                'font' => array(
-                    'italic' => true,
-                    'size' => 8
-                ),
-                'alignment' => array(
-                    'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER,
-                )
             );
         }
 
@@ -351,7 +349,9 @@ class ExelGen extends Controller
             $active_sheet->getStyle($value['row'])->applyFromArray($value['style']);
         }
     }
-
+    public function createRow()
+    {
+    }
     public function generateExcel(Request $request)
     {
         //Получаем данные из формы
@@ -363,7 +363,7 @@ class ExelGen extends Controller
                 'fonts' => 'Times New Roman',
                 'size' => 11
             ];
-            
+
         $rowWidth =
             [
                 'A' => 60,
@@ -377,21 +377,29 @@ class ExelGen extends Controller
                 'I' => 324
             ];
         $this->settings($title, $rowMarg, $styleDefault, $rowWidth);
+        $styleTitle = [
+            'font' => [
+                'bold' => true,
+                'size' => $date['fontTitle']
+            ]
+        ];
+        $styleText = [
+            'font' => [
+                'italic' => true,
+                'size' => $date['fontText']
+            ],
+            'borders' => [
+                //внешняя рамка
+                'bottom' => [
+                    'style' => PHPExcel_Style_Border::BORDER_THIN,
+                ],
+            ]
 
+        ];
         $styleBottom = [
             'font' => [
                 'italic' => true,
-                'size' => 8
-            ],
-            'alignment' => [
-                'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER,
-            ]
-        ];
-
-        $styleBold = [
-            'font' => [
-                'bold' => true,
-                'size' => 11
+                'size' => $date['fontTextBottom']
             ],
             'alignment' => [
                 'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER,
@@ -403,16 +411,16 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':D' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':D' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
         //Почтовый или строительный адрес объекта капитального строительства
-        foreach ($this->wordBreak($date['projectName'] .' '. $date['projectAddres'], 180) as $text) {
+        foreach ($this->wordBreak($date['projectName'] . ' ' . $date['projectAddres'], 180) as $text) {
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -441,7 +449,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -449,7 +457,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -465,7 +473,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -483,7 +491,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -501,7 +509,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -518,7 +526,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -536,7 +544,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -564,7 +572,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -572,7 +580,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -589,7 +597,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -743,7 +751,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -751,7 +759,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -772,7 +780,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -791,7 +799,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -807,7 +815,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -823,7 +831,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -832,7 +840,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -844,7 +852,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -861,7 +869,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -876,7 +884,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -893,7 +901,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -910,7 +918,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -926,7 +934,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -943,7 +951,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -959,7 +967,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -973,7 +981,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -989,7 +997,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':F' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':F' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -998,7 +1006,7 @@ class ExelGen extends Controller
 
             $this->creatRow(
                 [
-                    ['row' => 'G' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'G' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -1014,7 +1022,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':F' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':F' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -1022,7 +1030,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -1032,7 +1040,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -1048,7 +1056,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':F' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':F' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -1058,7 +1066,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -1074,7 +1082,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':F' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':F' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -1088,7 +1096,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -1104,7 +1112,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -1114,7 +1122,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -1128,49 +1136,47 @@ class ExelGen extends Controller
         }
         foreach ($this->wordBreak('5. Даты:  начала работ', 200) as $text) {
             $this->i++;
-            
+
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i. ':C' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':C' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
         $dateBeginWork = $date['dateBeginWork'];
         $dateEndWork = $date['dateEndWork'];
         foreach ($this->wordBreak($this->formatDate($dateBeginWork), 180) as $text) {
-            
+
             $this->creatRow(
                 [
-                    ['row' => 'E' .$this->i  . ':G' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'E' . $this->i  . ':G' . $this->i  . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
-            
         }
         foreach ($this->wordBreak('окончания работ', 200) as $text) {
             $this->i++;
 
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i. ':C' . $this->i. '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':C' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
-            
         }
-       
+
         foreach ($this->wordBreak($this->formatDate($dateEndWork), 180) as $text) {
             $this->creatRow(
                 [
-                    ['row' => 'E' . $this->i . ':G' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'E' . $this->i . ':G' . $this->i  . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
             // $this->i++;
-            
+
         }
         foreach ($this->wordBreak('6. Работы выполнены в соответствии с', 200) as $text) {
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -1180,7 +1186,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -1196,7 +1202,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -1206,7 +1212,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -1224,7 +1230,7 @@ class ExelGen extends Controller
         //     $this->i++;
         //     $this->creatRow(
         //         [
-        //             ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+        //             ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
         //         ]
         //     );
         // }
@@ -1233,7 +1239,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':D' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':D' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -1242,33 +1248,33 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
         $this->i++;
         foreach ($this->wordBreak('Акт составлен в ', 200) as $text) {
-            
+
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':B' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':B' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
         $countAOSR = $date['countAOSR'];
         foreach ($this->wordBreak($countAOSR, 180) as $text) {
-            
+
             $this->creatRow(
                 [
-                    ['row' => 'C' . $this->i  . ':C' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'C' . $this->i  . ':C' . $this->i  . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
         foreach ($this->wordBreak(' экземплярах.', 200) as $text) {
-            
+
             $this->creatRow(
                 [
-                    ['row' => 'D' . $this->i . ':E' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'D' . $this->i . ':E' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -1276,7 +1282,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -1287,7 +1293,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -1296,7 +1302,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -1304,7 +1310,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -1320,7 +1326,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -1328,7 +1334,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -1344,7 +1350,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -1352,7 +1358,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -1368,7 +1374,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -1376,7 +1382,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -1392,7 +1398,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -1400,7 +1406,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -1416,7 +1422,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $this->styleSettings('bold')]
+                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleTitle]
                 ]
             );
         }
@@ -1424,7 +1430,7 @@ class ExelGen extends Controller
             $this->i++;
             $this->creatRow(
                 [
-                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $this->styleSettings('italic')]
+                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $styleText]
                 ]
             );
         }
@@ -1437,14 +1443,15 @@ class ExelGen extends Controller
             );
         }
         // Акт составлен в   4   экземплярах.
-        
+
         $objWriter = PHPExcel_IOFactory::createWriter($this->objPHPExcel, 'Excel5');
-        
-        header("Content-Disposition:АОСР №".$numberAct." от ".$dateAOSR.".xls");
+        $filename = 'Content-Disposition:АОСР №' . $numberAct . ' от ' . $dateAOSR . '.xls';
+        header("Content-Type:application/vnd.ms-excel; charset=utf-8");
+        iconv('UTF-8', "windows-1251", $filename);
+        header($filename);
         header('Cache-Control: max-age=0');
-        header("Content-Type:application/vnd.ms-excel");
+
+
         $objWriter->save('php://output');
-        
-        
     }
 }
