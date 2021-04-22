@@ -416,7 +416,7 @@ class ExelGen extends Controller
             );
         }
         //Почтовый или строительный адрес объекта капитального строительства
-        foreach ($this->wordBreak($date['projectName'] . ' ' . $date['projectAddres'], 180) as $text) {
+        foreach ($this->wordBreak($date['projectName'] . ' ' . $date['projectAddres'], 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -487,7 +487,7 @@ class ExelGen extends Controller
             );
         }
 
-        foreach ($this->wordBreak('ОРГН ' . $builderOrgORG . ' ИНН ' . $builderOrgINN, 180) as $text) {
+        foreach ($this->wordBreak('ОРГН ' . $builderOrgORG . ' ИНН ' . $builderOrgINN, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -540,7 +540,7 @@ class ExelGen extends Controller
             );
         }
 
-        foreach ($this->wordBreak($contractorOrgName . ' ОРГН ' . $contractorOrgORGN . ' ИНН ' . $contractorOrgINN, 180) as $text) {
+        foreach ($this->wordBreak($contractorOrgName . ' ОРГН ' . $contractorOrgORGN . ' ИНН ' . $contractorOrgINN, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -568,7 +568,7 @@ class ExelGen extends Controller
         $preparationOrgName = $date['preparationOrgName'];
         $preparationOrgORGN = $date['preparationOrgORGN'];
         $preparationOrgINN = $date['preparationOrgINN'];
-        foreach ($this->wordBreak('Лицо, осуществляющее подготовку проектной документации', 180) as $text) {
+        foreach ($this->wordBreak('Лицо, осуществляющее подготовку проектной документации', 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -593,7 +593,7 @@ class ExelGen extends Controller
                 ]
             );
         }
-        foreach ($this->wordBreak($preparationOrgName . ' ОРГН ' . $preparationOrgORGN . ' ИНН ' . $preparationOrgINN, 180) as $text) {
+        foreach ($this->wordBreak($preparationOrgName . ' ОРГН ' . $preparationOrgORGN . ' ИНН ' . $preparationOrgINN, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -775,7 +775,7 @@ class ExelGen extends Controller
 
         foreach ($this->wordBreak(
             $representativeBuilderPosition . ' ' . $representativeBuilderFIO,
-            180
+            175
         ) as $text) {
             $this->i++;
             $this->creatRow(
@@ -794,7 +794,7 @@ class ExelGen extends Controller
         }
         foreach ($this->wordBreak(
             'индификационный № ' . $representativeBuilderId . ' от ' . $representativeBuilderDate . ' № ' . $representativeBuilderRequisites . ' от ' . $representativeBuilderDateGet . ' ',
-            180
+            175
         ) as $text) {
             $this->i++;
             $this->creatRow(
@@ -811,7 +811,7 @@ class ExelGen extends Controller
                 ]
             );
         }
-        foreach ($this->wordBreak('ОРГН ' . $representativeBuilderORGN . ' ИНН ' . $representativeBuilderINN . ' ' . $representativeBuilderAddres, 180) as $text) {
+        foreach ($this->wordBreak('ОРГН ' . $representativeBuilderORGN . ' ИНН ' . $representativeBuilderINN . ' ' . $representativeBuilderAddres, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -848,7 +848,7 @@ class ExelGen extends Controller
         $representativeContractorFIO = $date['representativeContractorFIO'];
         $representativeContractorRequisites = $date['representativeContractorRequisites'];
         $representativeContractorDate = $date['representativeContractorDate'];
-        foreach ($this->wordBreak($representativeContractorPosition . ' ' . $representativeContractorFIO . ' №' . $representativeContractorRequisites . ' от ' . $representativeContractorDate, 180) as $text) {
+        foreach ($this->wordBreak($representativeContractorPosition . ' ' . $representativeContractorFIO . ' №' . $representativeContractorRequisites . ' от ' . $representativeContractorDate, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -880,7 +880,7 @@ class ExelGen extends Controller
         $memberBuilderDateId = $date['memberBuilderDateId'];
         $memberBuilderRequisites = $date['memberBuilderRequisites'];
         $memberBuilderDate = $date['memberBuilderDate'];
-        foreach ($this->wordBreak($memberBuilderPosition . ' ' .  $memberBuilderFIO . ' идентификационный № ' . $memberBuilderId . ' № ' . $memberBuilderRequisites . ' от ' . $memberBuilderDate, 180) as $text) {
+        foreach ($this->wordBreak($memberBuilderPosition . ' ' .  $memberBuilderFIO . ' идентификационный № ' . $memberBuilderId . ' № ' . $memberBuilderRequisites . ' от ' . $memberBuilderDate, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -914,7 +914,7 @@ class ExelGen extends Controller
         $preparationYurAddres = $date['preparationYurAddres'];
         $preparationORGN = $date['preparationORGN'];
         $preparationINN = $date['preparationINN'];
-        foreach ($this->wordBreak($preparationPosition . ' ' . $preparationFIO . ' №' . $preparationREQ . ' от ' . $preparationDateId . ', ' . $preparationYurName . ' ОРГН ' . $preparationORGN . ' ИНН ' . $preparationINN . ' ' . $preparationYurAddres, 180) as $text) {
+        foreach ($this->wordBreak($preparationPosition . ' ' . $preparationFIO . ' №' . $preparationREQ . ' от ' . $preparationDateId . ', ' . $preparationYurName . ' ОРГН ' . $preparationORGN . ' ИНН ' . $preparationINN . ' ' . $preparationYurAddres, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -947,7 +947,7 @@ class ExelGen extends Controller
         $compliteORGN = $date['compliteORGN'];
         $compliteINN = $date['compliteINN'];
 
-        foreach ($this->wordBreak($complitePosition . ' ' . $compliteFIO . ' № ' . $compliteREQ . ' от ' . $compliteDateId . ' ' . $compliteNameYUR . ' ОРГН ' . $compliteORGN . ' ИНН ' . $compliteINN . ' ' . $compliteYURaddres, 180) as $text) {
+        foreach ($this->wordBreak($complitePosition . ' ' . $compliteFIO . ' № ' . $compliteREQ . ' от ' . $compliteDateId . ' ' . $compliteNameYUR . ' ОРГН ' . $compliteORGN . ' ИНН ' . $compliteINN . ' ' . $compliteYURaddres, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -977,7 +977,7 @@ class ExelGen extends Controller
         $anotherDate_Id = $date['anotherDate_Id'];
         $anotherNameYur = $date['anotherNameYur'];
         $objPHPExcel = $this->objPHPExcel->createSheet();
-        foreach ($this->wordBreak($anotherPosition . ' ' . $anotherNameYur . ' ' . $anotherFIO . '  распоряжение №' . $anotherREQ . ' от ' . $anotherDate_Id, 180) as $text) {
+        foreach ($this->wordBreak($anotherPosition . ' ' . $anotherNameYur . ' ' . $anotherFIO . '  распоряжение №' . $anotherREQ . ' от ' . $anotherDate_Id, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -1002,7 +1002,7 @@ class ExelGen extends Controller
             );
         }
         $checkName = $date['checkName'];
-        foreach ($this->wordBreak($checkName, 180) as $text) {
+        foreach ($this->wordBreak($checkName, 175) as $text) {
 
             $this->creatRow(
                 [
@@ -1036,7 +1036,7 @@ class ExelGen extends Controller
         }
         $this->i++;
         $workDo = $date['workDo'];
-        foreach ($this->wordBreak($workDo, 180) as $text) {
+        foreach ($this->wordBreak($workDo, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -1062,7 +1062,7 @@ class ExelGen extends Controller
         }
 
         $anotherDocs = $date['anotherDocs'];
-        foreach ($this->wordBreak($anotherDocs, 180) as $text) {
+        foreach ($this->wordBreak($anotherDocs, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -1092,7 +1092,7 @@ class ExelGen extends Controller
         $sertificateBy = $date['sertificateBy'];
         $sertificateQuality =  $date['sertificateQuality'];
         $sertificateDate = $date['sertificateDate'];
-        foreach ($this->wordBreak($materialName . ' ' . $sertificate . ' №' . $sertificateQuality . (!empty($sertificatefrom)) ? ' от ' . $sertificatefrom : '', 180) as $text) {
+        foreach ($this->wordBreak($materialName . ' ' . $sertificate . ' №' . $sertificateQuality . (!empty($sertificatefrom)) ? ' от ' . $sertificatefrom : '', 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -1118,7 +1118,7 @@ class ExelGen extends Controller
         }
         $doc = $date['doc'];
         $docDate = $date['docDate'];
-        foreach ($this->wordBreak('Согласно реестру № ' . $doc . ' от ' . $docDate, 180) as $text) {
+        foreach ($this->wordBreak('Согласно реестру № ' . $doc . ' от ' . $docDate, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -1145,7 +1145,7 @@ class ExelGen extends Controller
         }
         $dateBeginWork = $date['dateBeginWork'];
         $dateEndWork = $date['dateEndWork'];
-        foreach ($this->wordBreak($this->formatDate($dateBeginWork), 180) as $text) {
+        foreach ($this->wordBreak($this->formatDate($dateBeginWork), 175) as $text) {
 
             $this->creatRow(
                 [
@@ -1163,7 +1163,7 @@ class ExelGen extends Controller
             );
         }
 
-        foreach ($this->wordBreak($this->formatDate($dateEndWork), 180) as $text) {
+        foreach ($this->wordBreak($this->formatDate($dateEndWork), 175) as $text) {
             $this->creatRow(
                 [
                     ['row' => 'E' . $this->i . ':G' . $this->i  . '', 'text' => $text, 'style' => $styleText]
@@ -1182,7 +1182,7 @@ class ExelGen extends Controller
         }
         $razdeDoc = $date['razdeDoc'];
         $RegName = $date['RegName'];
-        foreach ($this->wordBreak($razdeDoc . ' ' . $RegName, 180) as $text) {
+        foreach ($this->wordBreak($razdeDoc . ' ' . $RegName, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -1208,7 +1208,7 @@ class ExelGen extends Controller
         }
 
         $nameWorkCostruct = $date['nameWorkCostruct'];
-        foreach ($this->wordBreak($nameWorkCostruct, 180) as $text) {
+        foreach ($this->wordBreak($nameWorkCostruct, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -1244,7 +1244,7 @@ class ExelGen extends Controller
             );
         }
         $moreInfo = $date['moreInfo'];
-        foreach ($this->wordBreak($moreInfo, 180) as $text) {
+        foreach ($this->wordBreak($moreInfo, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -1262,7 +1262,7 @@ class ExelGen extends Controller
             );
         }
         $countAOSR = $date['countAOSR'];
-        foreach ($this->wordBreak($countAOSR, 180) as $text) {
+        foreach ($this->wordBreak($countAOSR, 175) as $text) {
 
             $this->creatRow(
                 [
@@ -1289,7 +1289,7 @@ class ExelGen extends Controller
         $numberAct = $date['numberAct'];
         $dateAOSR = $date['dateAOSR'];
         $countSuppl = $date['countSuppl'];
-        foreach ($this->wordBreak($countSuppl, 180) as $text) {
+        foreach ($this->wordBreak($countSuppl, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -1306,7 +1306,7 @@ class ExelGen extends Controller
                 ]
             );
         }
-        foreach ($this->wordBreak($representativeBuilderFIO, 180) as $text) {
+        foreach ($this->wordBreak($representativeBuilderFIO, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -1330,7 +1330,7 @@ class ExelGen extends Controller
                 ]
             );
         }
-        foreach ($this->wordBreak($representativeContractorFIO, 180) as $text) {
+        foreach ($this->wordBreak($representativeContractorFIO, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -1354,7 +1354,7 @@ class ExelGen extends Controller
                 ]
             );
         }
-        foreach ($this->wordBreak($memberBuilderFIO, 180) as $text) {
+        foreach ($this->wordBreak($memberBuilderFIO, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -1378,7 +1378,7 @@ class ExelGen extends Controller
                 ]
             );
         }
-        foreach ($this->wordBreak($preparationFIO, 180) as $text) {
+        foreach ($this->wordBreak($preparationFIO, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -1402,7 +1402,7 @@ class ExelGen extends Controller
                 ]
             );
         }
-        foreach ($this->wordBreak($compliteFIO, 180) as $text) {
+        foreach ($this->wordBreak($compliteFIO, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -1426,7 +1426,7 @@ class ExelGen extends Controller
                 ]
             );
         }
-        foreach ($this->wordBreak($anotherFIO, 180) as $text) {
+        foreach ($this->wordBreak($anotherFIO, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
