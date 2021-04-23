@@ -801,27 +801,27 @@
                 <div class="row">
                   <div class="col-lg-8">
                     <label class="fieldlabels">Должность</label>
-                    <input type="text" name="anotherPosition" />
+                    <input type="text" name="anotherPosition[]" />
                   </div>
                   <div class="col-lg-4">
                     <label class="fieldlabels">Фамилия, инициалы</label>
-                    <input type="text" name="anotherFIO" />
+                    <input type="text" name="anotherFIO[]" />
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-lg-8">
                     <label class="fieldlabels">Реквизиты распорядительного документа, подтверждающего полномочия</label>
-                    <input type="text" name="anotherREQ" />
+                    <input type="text" name="anotherREQ[]" />
                   </div>
                   <div class="col-lg-4">
                     <label class="fieldlabels">Дата выдачи номера</label>
-                    <input type="text" class="date" name="anotherDate_Id" />
+                    <input type="text" class="date" name="anotherDate_Id[]" />
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-lg-6">
                     <label class="fieldlabels">Наименование юридического лица</label>
-                    <input type="text" name="anotherNameYur" />
+                    <input type="text" name="anotherNameYur[]" />
                   </div>
 
                 </div>
@@ -927,7 +927,7 @@
               <div class="content_section">
                 <div class="row">
                   <div class="col-lg-12">
-                    <textarea type="text" name="workDo" placeholder="Введите информацию о предъявленной работе" rows="5"></textarea>
+                    <textarea type="text" name="workDo[]" placeholder="Введите информацию о предъявленной работе" rows="5"></textarea>
                   </div>
                 </div>
               </div>
@@ -1031,25 +1031,25 @@
               <div class="content_section">
                 <div class="row">
                   <div class="col-lg-12">
-                    <input type="text" name="materialName" placeholder="Наименование материала">
+                    <input type="text" name="materialName[]" placeholder="Наименование материала">
                   </div>
                 </div>
                 <div class="row_element document_in ">
                   <div class="row sertificat_sootvetsviya template">
                     <div class="col-lg-4">
-                      <input type="text" name="sertificate" placeholder="Сертификат соответсвия">
+                      <input type="text" name="sertificate[]" placeholder="Сертификат соответсвия">
                     </div>
                     <div class="field-line">
                       <label class="fieldlabels"> Действителен с </label>
                     </div>
                     <div class="col-lg-2">
-                      <input type="text" class="date" name="sertificatefrom">
+                      <input type="text" class="date" name="sertificatefrom[]">
                     </div>
                     <div class="field-line">
                       <label class="fieldlabels"> По </label>
                     </div>
                     <div class="col-lg-2">
-                      <input type="text" class="date" name="sertificateBy">
+                      <input type="text" class="date" name="sertificateBy[]">
                     </div>
                     <div class="contor_in_row_element">
                       <div class="delete"></div>
@@ -1063,7 +1063,7 @@
                       <label class="fieldlabels"> Дата </label>
                     </div>
                     <div class="col-lg-2">
-                      <input type="text" class="date" name="sertificateDate">
+                      <input type="text" class="date" name="sertificateDate[]">
                     </div>
                     <div class="contor_in_row_element">
                       <div class="delete"></div>
@@ -1145,10 +1145,10 @@
               <div class="content_section">
                 <div class="row">
                   <div class="col-lg-10">
-                    <input type="text" name="doc" placeholder="Документ" />
+                    <input type="text" name="doc[]" placeholder="Документ" />
                   </div>
                   <div class="col-lg-2">
-                    <input type="text" class="date" name="docDate" />
+                    <input type="text" class="date" name="docDate[]" />
                   </div>
                 </div>
               </div>
@@ -1392,7 +1392,7 @@
               <div class="content_section">
                 <div class="row">
                   <div class="col-lg-12">
-                    <input type="text" name="countSuppl" placeholder="Приложение">
+                    <input type="text" name="countSuppl[]" placeholder="Приложение">
                   </div>
                 </div>
               </div>
@@ -1525,7 +1525,6 @@
 <script type="text/javascript" src="{{ asset("assets/js/i18n/datepicker.ru-RU.js") }}"></script>
 <!-- Script -->
 <script type="text/javascript" src="{{ asset("assets/js/rule-date.js") }}"></script>
-<script type="text/javascript" src="{{ asset("assets/js/script.js") }}"></script>
 <script type="text/javascript" src="{{ asset("assets/js/script.js") }}"></script>
 <script type="text/javascript" src="{{ asset("assets/js/ajax.js") }}"></script>
 

@@ -977,14 +977,17 @@ class ExelGen extends Controller
         $anotherDate_Id = $date['anotherDate_Id'];
         $anotherNameYur = $date['anotherNameYur'];
         $objPHPExcel = $this->objPHPExcel->createSheet();
-        foreach ($this->wordBreak($anotherPosition . ' ' . $anotherNameYur . ' ' . $anotherFIO . '  распоряжение №' . $anotherREQ . ' от ' . $anotherDate_Id, 175) as $text) {
-            $this->i++;
-            $this->creatRow(
-                [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
-                ]
-            );
+        foreach($anotherPosition as $key => $anotherPositionValue){
+            foreach ($this->wordBreak($anotherPositionValue . ' ' . $anotherNameYur[$key] . ' ' . $anotherFIO[$key] . '  распоряжение №' . $anotherREQ[$key] . ' от ' . $anotherDate_Id[$key], 175) as $text) {
+                $this->i++;
+                $this->creatRow(
+                    [
+                        ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
+                    ]
+                );
+            }
         }
+        
         foreach ($this->wordBreak('(должность, фамилия, инициалы, реквизиты распорядительного документа, подтверждающего полномочия)', 200) as $text) {
             $this->i++;
             $this->creatRow(
@@ -1036,14 +1039,17 @@ class ExelGen extends Controller
         }
         $this->i++;
         $workDo = $date['workDo'];
-        foreach ($this->wordBreak($workDo, 175) as $text) {
-            $this->i++;
-            $this->creatRow(
-                [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
-                ]
-            );
+        foreach($date['workDo'] as $key => $value){
+            foreach ($this->wordBreak($value, 175) as $text) {
+                $this->i++;
+                $this->creatRow(
+                    [
+                        ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
+                    ]
+                );
+            }
         }
+
         foreach ($this->wordBreak('(наименование скрытых работ)', 200) as $text) {
             $this->i++;
             $this->creatRow(
@@ -1088,11 +1094,11 @@ class ExelGen extends Controller
         }
         $materialName = $date['materialName'];
         $sertificate = $date['sertificate'];
-        $sertificatefrom = ($date['sertificatefrom']) ? 'das' : 'dasdas';
+        $sertificatefrom = $date['sertificatefrom'];
         $sertificateBy = $date['sertificateBy'];
         $sertificateQuality =  $date['sertificateQuality'];
         $sertificateDate = $date['sertificateDate'];
-        foreach ($this->wordBreak($materialName . ' ' . $sertificate . ' №' . $sertificateQuality . (!empty($sertificatefrom)) ? ' от ' . $sertificatefrom : '', 175) as $text) {
+        foreach ($this->wordBreak($materialName . ' ' . $sertificate . ' №' . $sertificateQuality  . (!empty($sertificatefrom)) ? ' от ' . $sertificatefrom : '', 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
@@ -1100,6 +1106,16 @@ class ExelGen extends Controller
                 ]
             );
         }
+        // foreach($materialName as $key => $value){
+            
+        //         foreach($sertificate[$key] as $key2 => $value2){
+                    
+        //         }
+        //     }
+            
+            
+
+
         foreach ($this->wordBreak('(наименование строительных материалов, (изделий), реквизиты сертификатов и/или других документов, подтверждающих их качество и безопасность)', 200) as $text) {
             $this->i++;
             $this->creatRow(
@@ -1118,14 +1134,17 @@ class ExelGen extends Controller
         }
         $doc = $date['doc'];
         $docDate = $date['docDate'];
-        foreach ($this->wordBreak('Согласно реестру № ' . $doc . ' от ' . $docDate, 175) as $text) {
-            $this->i++;
-            $this->creatRow(
-                [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
-                ]
-            );
+        foreach($doc as $key => $value){
+            foreach ($this->wordBreak('Согласно реестру № ' . $value . ' от ' . $docDate[$key], 175) as $text) {
+                $this->i++;
+                $this->creatRow(
+                    [
+                        ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
+                    ]
+                );
+            }
         }
+
         foreach ($this->wordBreak('(исполнительные схемы и чертежи, результаты экспертиз, обследований, лабораторных и иных испытаний выполненных работ, проведенных в процессе строительного контроля)', 200) as $text) {
             $this->i++;
             $this->creatRow(
@@ -1289,14 +1308,17 @@ class ExelGen extends Controller
         $numberAct = $date['numberAct'];
         $dateAOSR = $date['dateAOSR'];
         $countSuppl = $date['countSuppl'];
-        foreach ($this->wordBreak($countSuppl, 175) as $text) {
-            $this->i++;
-            $this->creatRow(
-                [
-                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $styleText]
-                ]
-            );
+        foreach($countSuppl as $value){
+            foreach ($this->wordBreak($value, 175) as $text) {
+                $this->i++;
+                $this->creatRow(
+                    [
+                        ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $styleText]
+                    ]
+                );
+            }
         }
+
 
         foreach ($this->wordBreak('Представитель застройщика (технического заказчика, эксплуатирующей организации или регионального оператора) по вопросам строительного контроля', 200) as $text) {
             $this->i++;
@@ -1426,14 +1448,14 @@ class ExelGen extends Controller
                 ]
             );
         }
-        foreach ($this->wordBreak($anotherFIO, 175) as $text) {
-            $this->i++;
-            $this->creatRow(
-                [
-                    ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $styleText]
-                ]
-            );
-        }
+        // foreach ($this->wordBreak($anotherFIO, 175) as $text) {
+        //     $this->i++;
+        //     $this->creatRow(
+        //         [
+        //             ['row' => 'A' . $this->i  . ':I' . $this->i  . '', 'text' => $text, 'style' => $styleText]
+        //         ]
+        //     );
+        // }
         foreach ($this->wordBreak('(фамилия, инициалы, подпись)', 200) as $text) {
             $this->i++;
             $this->creatRow(
