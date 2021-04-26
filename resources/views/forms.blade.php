@@ -1063,7 +1063,7 @@
                       <label class="fieldlabels"> Дата </label>
                     </div>
                     <div class="col-lg-2">
-                      <input type="text" class="date" name="sertificateDate[]">
+                      <input type="text" class="date" name="sertificateDate">
                     </div>
                     <div class="contor_in_row_element">
                       <div class="delete"></div>

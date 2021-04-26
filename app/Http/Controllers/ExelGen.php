@@ -1098,7 +1098,7 @@ class ExelGen extends Controller
         $sertificateBy = $date['sertificateBy'];
         $sertificateQuality =  $date['sertificateQuality'];
         $sertificateDate = $date['sertificateDate'];
-        foreach ($this->wordBreak($materialName . ' ' . $sertificate . ' №' . $sertificateQuality  . (!empty($sertificatefrom)) ? ' от ' . $sertificatefrom : '', 175) as $text) {
+        foreach ($this->wordBreak($materialName . ' ' . $sertificate . ' действителен с ' . $sertificatefrom  . ' по ' . $sertificateBy . ', '.$sertificateQuality.' от '.$sertificateDate, 175) as $text) {
             $this->i++;
             $this->creatRow(
                 [
