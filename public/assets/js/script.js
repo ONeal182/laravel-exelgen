@@ -254,10 +254,12 @@ $(document).ready(function () {
 			if (date(first.val()) > date(second.val()) || second.val() == '') {
 				error.push('false');
 				errorText = errorText + ' Шаг ' + step + ' обе даты раньше начала работ ';
+				second.addClass('stopDate');
 
 
 			} else {
 				error.push('true');
+				second.removeClass('stopDate');
 			}
 		}
 		if ($('#step16').hasClass('active_page')) {
@@ -288,7 +290,10 @@ $(document).ready(function () {
 				if (date($(this).val()) < date(beginDate.val()) || $(this).val() == '') {
 					console.log('dasd');
 					arrdocDate = false;
+					$(this).addClass('stopDate');
 
+				}else{
+					$(this).removeClass('stopDate');
 				}
 				if (arrdocDate == false) {
 					error.push('false');
