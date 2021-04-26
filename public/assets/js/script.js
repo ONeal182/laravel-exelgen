@@ -69,7 +69,7 @@ $(document).ready(function () {
 			$('.trigger-tooltip').click(function () {
 				$('#step16 .next').addClass('ignor');
 				if ($('#step20 .next').hasClass('error')) {
-					$('#step20 .next').addClass('ignor');
+					$('#step20 .next').addClass('ignor2');
 				}
 				// Получим айди тултипа при клике на внутреннюю кнопку
 				$tooltip = $(this).parents('.tooltip').attr('id');
@@ -356,8 +356,17 @@ $(document).ready(function () {
 		}
 
 		if ($('#step20').hasClass('active_page')) {
-			if ($('#step20 .next').hasClass('ignor') === false) {
+			if ($('#step20 .next').hasClass('ignor2') === false) {
+				
 				$('#step20 .next').addClass('error');
+				if(dateAOSR.val() == ''){
+					$('.date').tooltip('dispose');
+					ignoreTooltip();
+					tooltipDate('Ошибка: Дата составления обязательное поле ');
+					dateAOSR.addClass('stopDate');
+					dateAOSR.tooltip('show');
+					return false;
+				}
 				if (date(endDate.datepicker('getDate')) < date(dateAOSR.datepicker('getDate'))) {
 					$('.date').tooltip('dispose');
 					ignoreTooltip();
@@ -423,7 +432,7 @@ $(document).ready(function () {
 	$(".previous").click(function () {
 		$('.next').removeClass('error');
 		$('#step16 .next').removeClass('ignor');
-		$('#step20 .next').removeClass('ignor');
+		$('#step20 .next').removeClass('ignor2');
 		// Init page function
 		setTimeout(function () { activePage() }, 200);
 
