@@ -437,7 +437,7 @@
               </div>
               <div class="col-lg-4">
                 <label class="fieldlabels">Дата распорядительного документа</label>
-                <input type="text" class="date" name="representativeBuilderDate" />
+                <input type="text" data-name="representativeBuilderDate" class="date" name="representativeBuilderDate" />
               </div>
             </div>
             <div class="row">
@@ -448,7 +448,7 @@
               </div>
               <div class="col-lg-4">
                 <label class="fieldlabels">Дата выдачи номера</label>
-                <input type="text" class="date" name="representativeBuilderDateGet" />
+                <input type="text" data-name="representativeBuilderDateGet" class="date" name="representativeBuilderDateGet" />
               </div>
             </div>
             <div class="row">
@@ -524,7 +524,7 @@
               </div>
               <div class="col-lg-4">
                 <label class="fieldlabels">Дата выдачи документа</label>
-                <input type="text" class="date" name="representativeContractorDate" />
+                <input type="text" data-name="representativeContractorDate" class="date" name="representativeContractorDate" />
               </div>
             </div>
             <div class="row">
@@ -584,7 +584,7 @@
               </div>
               <div class="col-lg-4">
                 <label class="fieldlabels">Дата выдачи номера</label>
-                <input type="text" class="date" name="memberBuilderDateId" />
+                <input type="text" data-name="memberBuilderDateId" class="date" name="memberBuilderDateId" />
               </div>
             </div>
             <div class="row">
@@ -653,7 +653,7 @@
               </div>
               <div class="col-lg-4">
                 <label class="fieldlabels">Дата выдачи номера</label>
-                <input type="text" class="date" name="preparationDateId" />
+                <input type="text" data-name="preparationDateId" class="date" name="preparationDateId" />
               </div>
             </div>
             <div class="row">
@@ -733,7 +733,7 @@
               </div>
               <div class="col-lg-4">
                 <label class="fieldlabels">Дата выдачи номера</label>
-                <input type="text" class="date" name="compliteDateId" />
+                <input type="text" data-name="compliteDateId" class="date" name="compliteDateId" />
               </div>
             </div>
             <div class="row">
@@ -815,7 +815,7 @@
                   </div>
                   <div class="col-lg-4">
                     <label class="fieldlabels">Дата выдачи номера</label>
-                    <input type="text" class="date" name="anotherDate_Id[]" />
+                    <input type="text" data-name="anotherDate_Id" class="date" name="anotherDate_Id[]" />
                   </div>
                 </div>
                 <div class="row">
@@ -1148,7 +1148,7 @@
                     <input type="text" name="doc[]" placeholder="Документ" />
                   </div>
                   <div class="col-lg-2">
-                    <input type="text" class="date" name="docDate[]" />
+                    <input type="text" data-name="docDate" class="date" name="docDate[]" />
                   </div>
                 </div>
               </div>
@@ -1191,7 +1191,7 @@
     /--------------------------/ 
   -->
 
-      <fieldset>
+      <fieldset id='step16'>
         <div class="form-card">
           <!-- header step -->
           <div class="header-forms">
@@ -1210,11 +1210,11 @@
             <div class="row">
               <div class="col-lg-4">
                 <label class="fieldlabels">Дата начала производства работ</label>
-                <input type="text" class="date" name="dateBeginWork" />
+                <input type="text" data-name='dateBeginWork' class="date" name="dateBeginWork" />
               </div>
               <div class="col-lg-4">
                 <label class="fieldlabels">Дата окончания производства работ</label>
-                <input type="text" class="date" name="dateEndWork" />
+                <input type="text" data-name="dateEndWork" class="date" name="dateEndWork" />
               </div>
             </div>
           </div>
@@ -1377,7 +1377,7 @@
               </div>
               <div class="col-lg-4">
                 <label class="dateAOSR">Дата составления АОСР</label>
-                <input name="dateAOSR" type="text" class="date">
+                <input name="dateAOSR" data-name="dateAOSR" type="text" class="date">
               </div>
               <div class="col-lg-4">
                 <label class="countExemp">Количество экземпляров акта</label>
