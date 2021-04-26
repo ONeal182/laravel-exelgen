@@ -266,7 +266,14 @@ $(document).ready(function () {
 			}
 		}
 		if ($('#step16').hasClass('active_page')) {
-
+			if(beginDate.val() == ''){
+				$('.date').tooltip('dispose');
+				ignoreTooltip();
+				tooltipDate('Дата начала работ обязательное поле');
+				beginDate.addClass('stopDate');
+				beginDate.tooltip('show');
+				return false;
+			}
 			if (representativeBuilderDateGet.val() == '' || representativeBuilderDate.val() == '' || date(beginDate.datepicker('getDate')) > date(representativeBuilderDate.datepicker('getDate')) || date(beginDate.datepicker('getDate')) > date(representativeBuilderDateGet.datepicker('getDate')) ) {
 				error.push('false');
 				errorText = errorText + ' Шаг 5 обе даты раньше начала работ ';
