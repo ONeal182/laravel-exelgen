@@ -453,7 +453,7 @@ class ExelGen extends Controller
                 ]
             );
         }
-        foreach ($this->wordBreak($builderName . ', ОРГН ' . $builderORGN . ' ИНН ' . $builderINN . ' ' . $builderAddres . ' тел. ' . $builderPhone . ' факс. ' . $builderFax, 200) as $text) {
+        foreach ($this->wordBreak($builderName . ', ОРГН ' . $builderORGN . ' ИНН ' . $builderINN . ' ' . $builderAddres . ' тел. ' . $builderPhone . ' факс. ' . $builderFax, 155) as $text) {
             $this->i++;
             $this->creatRow(
                 [
