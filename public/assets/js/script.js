@@ -231,7 +231,7 @@ $(document).ready(function () {
 
 	// Следующий шаг
 	$(".next").click(function () {
-		
+
 		ignoreTooltip();
 		var error = [];
 		var errorText = 'Ошибка:';
@@ -254,7 +254,7 @@ $(document).ready(function () {
 		function checkDate(first, second, step) {
 			if (second.val() == '' || first.datepicker('getDate') < second.datepicker('getDate')) {
 				error.push('false');
-				errorText = errorText + ' Шаг ' + step + ' обе даты раньше начала работ ';
+				errorText = errorText + 'В шаге ' + step + ' даты позже начала работ ';
 				second.addClass('stopDate');
 
 
@@ -263,77 +263,80 @@ $(document).ready(function () {
 				second.removeClass('stopDate');
 			}
 		}
-		if ($('#step16').hasClass('active_page')) {
-			if(beginDate.val() == ''){
-				$('.date').tooltip('dispose');
-				ignoreTooltip();
-				tooltipDate('Дата начала работ обязательное поле');
-				beginDate.addClass('stopDate');
-				beginDate.tooltip('show');
-				return false;
-			}
-			if (representativeBuilderDateGet.val() == '' || representativeBuilderDate.val() == '' || date(beginDate.datepicker('getDate')) < date(representativeBuilderDate.datepicker('getDate')) || date(beginDate.datepicker('getDate')) < date(representativeBuilderDateGet.datepicker('getDate')) ) {
-				error.push('false');
-				errorText = errorText + ' Шаг 5 обе даты раньше начала работ ';
+		if ($('#step16 .next').hasClass('ignor') == false) {
 
 
-			} else {
-				error.push('true');
-			}
-
-
-			checkDate(beginDate, representativeContractorDate, '6');
-
-			checkDate(beginDate, memberBuilderDate, '7');
-
-			checkDate(beginDate, preparationDateId, '8');
-
-			checkDate(beginDate, compliteDateId, '9');
-
-			checkDate(beginDate, anotherDate_Id, '10');
-
-			var arrdocDate;
-			docDate.each(function () {
-				console.log($(this).val());
-				if ($(this).val() == '' || $(this).datepicker('getDate') < beginDate.datepicker('getDate') ) {
-					console.log('dasd');
-					arrdocDate = false;
-					$(this).addClass('stopDate');
-
-				}else{
-					$(this).removeClass('stopDate');
+			if ($('#step16').hasClass('active_page')) {
+				if (beginDate.val() == '') {
+					$('.date').tooltip('dispose');
+					ignoreTooltip();
+					tooltipDate('Дата начала работ обязательное поле');
+					beginDate.addClass('stopDate');
+					beginDate.tooltip('show');
+					return false;
 				}
-				if (arrdocDate == false) {
+				if (representativeBuilderDateGet.val() == '' || representativeBuilderDate.val() == '' || date(beginDate.datepicker('getDate')) < date(representativeBuilderDate.datepicker('getDate')) || date(beginDate.datepicker('getDate')) < date(representativeBuilderDateGet.datepicker('getDate'))) {
 					error.push('false');
-					errorText = errorText + ' Шаг 15 обе даты раньше начала работ ';
+					errorText = errorText + ' В шаге 5 даты позже начала работ, ';
+
+
+				} else {
+					error.push('true');
 				}
-			})
-			if (error.indexOf('false')) {
-				$('#step16 .next').removeClass('error');
 
-			} else {
-				$('#step16 .next').addClass('error');
+
+				checkDate(beginDate, representativeContractorDate, '6');
+
+				checkDate(beginDate, memberBuilderDate, '7');
+
+				checkDate(beginDate, preparationDateId, '8');
+
+				checkDate(beginDate, compliteDateId, '9');
+
+				checkDate(beginDate, anotherDate_Id, '10');
+
+				var arrdocDate;
+				docDate.each(function () {
+					console.log($(this).val());
+					if ($(this).val() == '' || $(this).datepicker('getDate') < beginDate.datepicker('getDate')) {
+						console.log('dasd');
+						arrdocDate = false;
+						$(this).addClass('stopDate');
+
+					} else {
+						$(this).removeClass('stopDate');
+					}
+					if (arrdocDate == false) {
+						error.push('false');
+						errorText = errorText + 'В шаге 15 обе дата раньше начала работ ';
+					}
+				})
+				if (error.indexOf('false')) {
+					$('#step16 .next').removeClass('error');
+
+				} else {
+					$('#step16 .next').addClass('error');
+
+				}
+				if ($('#step16 .next').hasClass('ignor') === false) {
+					// tooltipDate(errorText);
+					// Включаем возможность игнорировать подсказку
+					$('.date').tooltip('dispose');
+					ignoreTooltip();
+					// Если дата раньше текущего дня, активируем условия
+					console.log(errorText);
+					tooltipDate(errorText);
+					beginDate.addClass('stopDate');
+					beginDate.tooltip('show');
+					return false;
+				}
 
 			}
-			if ($('#step16 .next').hasClass('ignor') === false) {
-				// tooltipDate(errorText);
-				// Включаем возможность игнорировать подсказку
-				$('.date').tooltip('dispose');
-				ignoreTooltip();
-				// Если дата раньше текущего дня, активируем условия
-				console.log(errorText);
-				tooltipDate(errorText);
-				beginDate.addClass('stopDate');
-				beginDate.tooltip('show');
-				return false;
-			}
-
 		}
-
 
 		if ($('#step20').hasClass('active_page')) {
 			$('#step20 .next').addClass('error');
-			if (dateAOSR.val() == '' ||date(beginDate.datepicker('getDate')) > date(dateAOSR.datepicker('getDate')) || date(endDate.datepicker('getDate')) < date(dateAOSR.datepicker('getDate'))) {
+			if (dateAOSR.val() == '' || date(beginDate.datepicker('getDate')) > date(dateAOSR.datepicker('getDate')) || date(endDate.datepicker('getDate')) < date(dateAOSR.datepicker('getDate'))) {
 				$('.date').tooltip('dispose');
 				ignoreTooltip();
 				tooltipDate('Ошибка: не раньше чем окончания работ, не раньше чем исполнительная схема шаг  15 ');
