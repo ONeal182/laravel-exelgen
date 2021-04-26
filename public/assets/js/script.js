@@ -5,7 +5,7 @@ $(document).ready(function () {
 	function datePicker() {
 		$('.date').datepicker({
 			format: 'dd.mm.yyyy',
-			date: new Date,
+			date: '',
 			language: 'ru-RU',
 			autoHide: true
 		});
@@ -231,7 +231,7 @@ $(document).ready(function () {
 
 	// Следующий шаг
 	$(".next").click(function () {
-
+		
 		ignoreTooltip();
 		var error = [];
 		var errorText = 'Ошибка:';
@@ -246,12 +246,15 @@ $(document).ready(function () {
 		var anotherDate_Id = $('.date[data-name=anotherDate_Id]');
 		var docDate = $('.date[data-name=docDate]');
 		var dateAOSR = $('.date[data-name=dateAOSR]');
+		console.log(beginDate.datepicker('getDate'));
 		function date(date) {
 			var time = new Date(date);
 			return time;
 		}
 		function checkDate(first, second, step) {
-			if (date(first.val()) > date(second.val()) || second.val() == '') {
+
+			console.log(second.val())
+			if (second.val() == '' || first.datepicker('getDate') > second.datepicker('getDate')) {
 				error.push('false');
 				errorText = errorText + ' Шаг ' + step + ' обе даты раньше начала работ ';
 				second.addClass('stopDate');
@@ -264,7 +267,7 @@ $(document).ready(function () {
 		}
 		if ($('#step16').hasClass('active_page')) {
 
-			if (date(beginDate.val()) > date(representativeBuilderDate.val()) || date(beginDate.val()) > date(representativeBuilderDateGet.val()) || representativeBuilderDateGet.val() == '' || representativeBuilderDate.val() == '') {
+			if (representativeBuilderDateGet.val() == '' || representativeBuilderDate.val() == '' || date(beginDate.datepicker('getDate')) > date(representativeBuilderDate.datepicker('getDate')) || date(beginDate.datepicker('getDate')) > date(representativeBuilderDateGet.datepicker('getDate')) ) {
 				error.push('false');
 				errorText = errorText + ' Шаг 5 обе даты раньше начала работ ';
 
@@ -287,7 +290,7 @@ $(document).ready(function () {
 			var arrdocDate;
 			docDate.each(function () {
 				console.log($(this).val());
-				if (date($(this).val()) < date(beginDate.val()) || $(this).val() == '') {
+				if ($(this).val() == '' || $(this).datepicker('getDate') < beginDate.datepicker('getDate') ) {
 					console.log('dasd');
 					arrdocDate = false;
 					$(this).addClass('stopDate');
