@@ -281,7 +281,7 @@ $(document).ready(function () {
 				element.addClass('stopDate');
 				element.tooltip('show');
 				return false;
-			}else{
+			} else {
 				element.removeClass('stopDate');
 			}
 		}
@@ -289,7 +289,7 @@ $(document).ready(function () {
 
 
 			if ($('#step16').hasClass('active_page')) {
-				if(emptyDate(beginDate) == false || emptyDate(endDate) == false){
+				if (emptyDate(beginDate) == false || emptyDate(endDate) == false) {
 					return false;
 				}
 				if (representativeBuilderDateGet.val() == '' || representativeBuilderDate.val() == '' || date(beginDate.datepicker('getDate')) < date(representativeBuilderDate.datepicker('getDate')) || date(beginDate.datepicker('getDate')) < date(representativeBuilderDateGet.datepicker('getDate'))) {
@@ -315,7 +315,7 @@ $(document).ready(function () {
 				var arrdocDate;
 				var errorStep20;
 				docDate.each(function () {
-					if($(this).datepicker('getDate') < endDate.datepicker('getDate')){
+					if ($(this).datepicker('getDate') < endDate.datepicker('getDate')) {
 						errorStep20 = false;
 					}
 					console.log($(this).val());
@@ -354,23 +354,25 @@ $(document).ready(function () {
 
 			}
 		}
-		console.log(docDate.datepicker('getDate'));
+
 		if ($('#step20').hasClass('active_page')) {
-			$('#step20 .next').addClass('error');
-			if (date(endDate.datepicker('getDate')) < date(dateAOSR.datepicker('getDate'))) {
-				$('.date').tooltip('dispose');
-				ignoreTooltip();
-				tooltipDate('Ошибка: дата раньше чем окончания работ ');
-				dateAOSR.addClass('stopDate');
-				dateAOSR.tooltip('show');
-				return false;
-			}else if(errorStep20 === false){
-				$('.date').tooltip('dispose');
-				ignoreTooltip();
-				tooltipDate('Ошибка: дата раньше чем в шаге 15 ');
-				dateAOSR.addClass('stopDate');
-				dateAOSR.tooltip('show');
-				return false;
+			if ($('#step20 .next').hasClass('ignor') === false) {
+				$('#step20 .next').addClass('error');
+				if (date(endDate.datepicker('getDate')) < date(dateAOSR.datepicker('getDate'))) {
+					$('.date').tooltip('dispose');
+					ignoreTooltip();
+					tooltipDate('Ошибка: дата раньше чем окончания работ ');
+					dateAOSR.addClass('stopDate');
+					dateAOSR.tooltip('show');
+					return false;
+				} else if (errorStep20 === false) {
+					$('.date').tooltip('dispose');
+					ignoreTooltip();
+					tooltipDate('Ошибка: дата раньше чем в шаге 15 ');
+					dateAOSR.addClass('stopDate');
+					dateAOSR.tooltip('show');
+					return false;
+				}
 			}
 		}
 		// if (error.indexOf('false')) {
