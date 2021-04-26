@@ -308,7 +308,7 @@ $(document).ready(function () {
 					}
 					if (arrdocDate == false) {
 						error.push('false');
-						errorText = errorText + 'В шаге 15 обе дата раньше начала работ ';
+						errorText = errorText + 'В шаге 15 дата раньше начала работ ';
 					}
 				})
 				if (error.indexOf('false')) {
@@ -339,7 +339,7 @@ $(document).ready(function () {
 			if (dateAOSR.val() == '' || date(beginDate.datepicker('getDate')) > date(dateAOSR.datepicker('getDate')) || date(endDate.datepicker('getDate')) < date(dateAOSR.datepicker('getDate'))) {
 				$('.date').tooltip('dispose');
 				ignoreTooltip();
-				tooltipDate('Ошибка: не раньше чем окончания работ, не раньше чем исполнительная схема шаг  15 ');
+				tooltipDate('Ошибка: не раньше чем окончания работ, не раньше чем исполнительная схема шаг  16 ');
 				dateAOSR.addClass('stopDate');
 				dateAOSR.tooltip('show');
 				return false;
