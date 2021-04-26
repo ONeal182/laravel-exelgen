@@ -522,7 +522,7 @@ class ExelGen extends Controller
         $contractorOrgName = $date['contractorOrgName'];
         $contractorOrgORGN = $date['contractorOrgORGN'];
         $contractorOrgINN = $date['contractorOrgINN'];
-        foreach ($this->wordBreak($contractorName . ' ОРГН ' . $contractorORGN . ' ИНН ' . $contractorINN . ' ' . $contractorAddres . ' тел. ' . $contractorPhone . ' факс. ' . $contractorFax, 170) as $text) {
+        foreach ($this->wordBreak($contractorName . ' ОРГН ' . $contractorORGN . ' ИНН ' . $contractorINN . ' ' . $contractorAddres . ' тел. ' . $contractorPhone . ' факс. ' . $contractorFax, 160) as $text) {
             $this->i++;
             $this->creatRow(
                 [
