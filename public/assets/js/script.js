@@ -231,6 +231,7 @@ $(document).ready(function () {
 
 	// Следующий шаг
 	$(".next").click(function () {
+		
 		ignoreTooltip();
 		var error = [];
 		var errorText = 'Ошибка:';

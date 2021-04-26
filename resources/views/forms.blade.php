@@ -1031,25 +1031,25 @@
               <div class="content_section">
                 <div class="row">
                   <div class="col-lg-12">
-                    <input type="text" name="materialName[]" placeholder="Наименование материала">
+                    <input type="text" name="materialName" placeholder="Наименование материала">
                   </div>
                 </div>
                 <div class="row_element document_in ">
                   <div class="row sertificat_sootvetsviya template">
                     <div class="col-lg-4">
-                      <input type="text" name="sertificate[]" placeholder="Сертификат соответсвия">
+                      <input type="text" name="sertificate" placeholder="Сертификат соответсвия">
                     </div>
                     <div class="field-line">
                       <label class="fieldlabels"> Действителен с </label>
                     </div>
                     <div class="col-lg-2">
-                      <input type="text" class="date" name="sertificatefrom[]">
+                      <input type="text" class="date" name="sertificatefrom">
                     </div>
                     <div class="field-line">
                       <label class="fieldlabels"> По </label>
                     </div>
                     <div class="col-lg-2">
-                      <input type="text" class="date" name="sertificateBy[]">
+                      <input type="text" class="date" name="sertificateBy">
                     </div>
                     <div class="contor_in_row_element">
                       <div class="delete"></div>
