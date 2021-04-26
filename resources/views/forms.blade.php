@@ -23,7 +23,7 @@
   <header class="top_menu">
     <nav class="top_navbar navbar  justify-content-between">
       <div class="container">
-        <a class="top_logo" href="index.html"><img src="img/logo.svg"></a>
+        <a class="top_logo" href="index.html"><img src="{{ asset("assets/img/logo.svg") }}"></a>
         <div class="top_nav">
           <ul>
             <li style="display: none"><a href="#">О нас</a></li>
@@ -1162,10 +1162,10 @@
               <div class="content_section">
                 <div class="row">
                   <div class="col-lg-10">
-                    <input type="text" name="doc[]"  placeholder="Документ" />
+                    <input type="text" disabled="disabled"  placeholder="Документ" />
                   </div>
                   <div class="col-lg-2">
-                    <input type="text" data-name="docDate" class="date" name="docDate[]" />
+                    <input type="text"  disabled="disabled" data-name="docDate" class="date" />
                   </div>
                 </div>
               </div>
@@ -1479,7 +1479,7 @@
         </div>
         <div class="footer-form">
           <input type="button" name="previous" class="previous action-button" value="Назад" />
-          <a href="#" class="button-blue btn-download"><img src="img/icons/save-button.svg">Скачать на компьютер (PDF) </a>
+          <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер </a>
           <input type="button" name="next" class="next action-button" value="Далее" style="visibility: hidden;" />
         </div>
       </fieldset>

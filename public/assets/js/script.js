@@ -329,9 +329,12 @@ $(document).ready(function () {
 					}
 					if (arrdocDate == false) {
 						error.push('false');
-						errorText = errorText + 'В шаге 15 дата раньше начала работ ';
+						
 					}
 				})
+				if(arrdocDate == false){
+					errorText = errorText + 'В шаге 15 дата раньше начала работ ';
+				}
 				if (error.indexOf('false')) {
 					$('#step16 .next').removeClass('error');
 

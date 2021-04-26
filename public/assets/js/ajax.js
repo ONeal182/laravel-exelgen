@@ -1,4 +1,8 @@
+
 $(document).ready(function(){
+    $('#msform').on('submit', function(e){
+        e.preventDefault();
+    })
     $('.btn-download').on('click', function(e){
         $('#msform').submit();
         $.ajax({
