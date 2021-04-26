@@ -230,6 +230,10 @@ $(document).ready(function () {
 
 
 	// Следующий шаг
+	var beginDate = $('.date[data-name=dateBeginWork]');
+	beginDate.on('click', function(){
+		$('.tooltip-inner').css('display','none');
+	})
 	$(".next").click(function () {
 
 		ignoreTooltip();
@@ -246,7 +250,6 @@ $(document).ready(function () {
 		var anotherDate_Id = $('.date[data-name=anotherDate_Id]');
 		var docDate = $('.date[data-name=docDate]');
 		var dateAOSR = $('.date[data-name=dateAOSR]');
-		console.log(beginDate.datepicker('getDate'));
 		function date(date) {
 			var time = new Date(date);
 			return time;
