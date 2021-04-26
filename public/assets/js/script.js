@@ -252,9 +252,7 @@ $(document).ready(function () {
 			return time;
 		}
 		function checkDate(first, second, step) {
-
-			console.log(second.val())
-			if (second.val() == '' || first.datepicker('getDate') > second.datepicker('getDate')) {
+			if (second.val() == '' || first.datepicker('getDate') < second.datepicker('getDate')) {
 				error.push('false');
 				errorText = errorText + ' Шаг ' + step + ' обе даты раньше начала работ ';
 				second.addClass('stopDate');
@@ -274,7 +272,7 @@ $(document).ready(function () {
 				beginDate.tooltip('show');
 				return false;
 			}
-			if (representativeBuilderDateGet.val() == '' || representativeBuilderDate.val() == '' || date(beginDate.datepicker('getDate')) > date(representativeBuilderDate.datepicker('getDate')) || date(beginDate.datepicker('getDate')) > date(representativeBuilderDateGet.datepicker('getDate')) ) {
+			if (representativeBuilderDateGet.val() == '' || representativeBuilderDate.val() == '' || date(beginDate.datepicker('getDate')) < date(representativeBuilderDate.datepicker('getDate')) || date(beginDate.datepicker('getDate')) < date(representativeBuilderDateGet.datepicker('getDate')) ) {
 				error.push('false');
 				errorText = errorText + ' Шаг 5 обе даты раньше начала работ ';
 
