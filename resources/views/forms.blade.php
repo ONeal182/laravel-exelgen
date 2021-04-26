@@ -1162,10 +1162,10 @@
               <div class="content_section">
                 <div class="row">
                   <div class="col-lg-10">
-                    <input type="text" name="doc2" placeholder="Документ" />
+                    <input type="text" name="doc[]"  placeholder="Документ" />
                   </div>
                   <div class="col-lg-2">
-                    <input type="text" class="date" name="docDate2" />
+                    <input type="text" data-name="docDate" class="date" name="docDate[]" />
                   </div>
                 </div>
               </div>
