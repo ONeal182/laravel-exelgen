@@ -328,7 +328,7 @@ $(document).ready(function () {
 
 		if ($('#step20').hasClass('active_page')) {
 			$('#step20 .next').addClass('error');
-			if (date(beginDate.val()) > date(dateAOSR.val()) || date(endDate.val()) < date(dateAOSR.val())) {
+			if (dateAOSR.val() == '' ||date(beginDate.datepicker('getDate')) > date(dateAOSR.datepicker('getDate')) || date(endDate.datepicker('getDate')) < date(dateAOSR.datepicker('getDate'))) {
 				$('.date').tooltip('dispose');
 				ignoreTooltip();
 				tooltipDate('Ошибка: не раньше чем окончания работ, не раньше чем исполнительная схема шаг  15 ');
