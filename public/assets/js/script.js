@@ -17,7 +17,7 @@ $(document).ready(function () {
 
 	// Всплывающая подсказка, при неправильной дате
 	function tooltipDate(error) {
-		
+
 		$('.date').tooltip({
 			placement: 'bottom',
 			trigger: 'manual',
@@ -68,7 +68,7 @@ $(document).ready(function () {
 		$('.date').on('shown.bs.tooltip', function () {
 			$('.trigger-tooltip').click(function () {
 				$('#step16 .next').addClass('ignor');
-				if($('#step20 .next').hasClass('error')){
+				if ($('#step20 .next').hasClass('error')) {
 					$('#step20 .next').addClass('ignor');
 				}
 				// Получим айди тултипа при клике на внутреннюю кнопку
@@ -231,7 +231,7 @@ $(document).ready(function () {
 
 	// Следующий шаг
 	$(".next").click(function () {
-		
+
 		ignoreTooltip();
 		var error = [];
 		var errorText = 'Ошибка:';
@@ -246,60 +246,46 @@ $(document).ready(function () {
 		var anotherDate_Id = $('.date[data-name=anotherDate_Id]');
 		var docDate = $('.date[data-name=docDate]');
 		var dateAOSR = $('.date[data-name=dateAOSR]');
-		// if (beginDate.val() != '') {
+		function date(date) {
+			var time = new Date(date);
+			return time;
+		}
+		function checkDate(first, second, step) {
+			if (date(first.val()) > date(second.val()) || second.val() == '') {
+				error.push('false');
+				errorText = errorText + ' Шаг ' + step + ' обе даты раньше начала работ ';
+
+
+			} else {
+				error.push('true');
+			}
+		}
 		if ($('#step16').hasClass('active_page')) {
-			if (beginDate.datepicker("getDate") > representativeBuilderDate.datepicker("getDate") || beginDate.datepicker("getDate") > representativeBuilderDateGet.datepicker("getDate")) {
+
+			if (date(beginDate.val()) > date(representativeBuilderDate.val()) || date(beginDate.val()) > date(representativeBuilderDateGet.val()) || representativeBuilderDateGet.val() == '' || representativeBuilderDate.val() == '') {
 				error.push('false');
 				errorText = errorText + ' Шаг 5 обе даты раньше начала работ ';
-				// console.log(123);
 
 
-			} else {
-				// error.push('true');
-			}
-			// }
-
-
-			if (beginDate.datepicker("getDate") > representativeContractorDate.datepicker("getDate")) {
-				error.push('false');
-				errorText = errorText + ' Шаг 6 дата раньше начала работ ';
-				console.log(1)
-			} else {
-				// error.push('true');
-			}
-
-			if (beginDate.datepicker("getDate") > memberBuilderDate.datepicker("getDate")) {
-				error.push('false');
-				errorText = errorText + ' Шаг 7 дата раньше начала работ ';
 			} else {
 				error.push('true');
 			}
 
-			if (beginDate.datepicker("getDate") > preparationDateId.datepicker("getDate")) {
-				error.push('false');
-				errorText = errorText + ' Шаг 8 дата раньше начала работ ';
-			} else {
-				error.push('true');
-			}
 
-			if (beginDate.datepicker("getDate") > compliteDateId.datepicker("getDate")) {
-				error.push('false');
-				errorText = errorText + ' Шаг 9 дата раньше начала работ ';
-			} else {
-				error.push('true');
-			}
+			checkDate(beginDate, representativeContractorDate, '6');
 
-			if (beginDate.datepicker("getDate") > anotherDate_Id.datepicker("getDate")) {
-				error.push('false');
-				errorText = errorText + ' Шаг 10 дата раньше начала работ ';
-			} else {
-				error.push('true');
-			}
+			checkDate(beginDate, memberBuilderDate, '7');
+
+			checkDate(beginDate, preparationDateId, '8');
+
+			checkDate(beginDate, compliteDateId, '9');
+
+			checkDate(beginDate, anotherDate_Id, '10');
+
 			var arrdocDate;
 			docDate.each(function () {
-				console.log($(this).datepicker("getDate"));
-				console.log(beginDate.datepicker("getDate"));
-				if ($(this).datepicker("getDate") > beginDate.datepicker("getDate")) {
+				console.log($(this).val());
+				if (date($(this).val()) < date(beginDate.val()) || $(this).val() == '') {
 					console.log('dasd');
 					arrdocDate = false;
 
