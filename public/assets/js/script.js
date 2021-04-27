@@ -182,7 +182,6 @@ $(document).ready(function () {
 		var first_section = $(this).parents('fieldset').find('.forms .add_section:nth-child(1)').clone();
 		first_section.find('input').val('');
 		$(this).parent().parent().before(first_section);
-		console.log(1);
 		datePicker();
 
 	})
@@ -254,6 +253,7 @@ $(document).ready(function () {
 		var representativeBuilderDate = $('.date[data-name=representativeBuilderDate]');
 		var representativeContractorDate = $('.date[data-name=representativeContractorDate]');
 		var memberBuilderDate = $('.date[name=memberBuilderDate]');
+		var memberBuilderDateId = $('.date[name=memberBuilderDateId]');
 		var preparationDateId = $('.date[data-name=preparationDateId]');
 		var compliteDateId = $('.date[data-name=compliteDateId]');
 		var anotherDate_Id = $('.date[data-name=anotherDate_Id]');
@@ -275,6 +275,49 @@ $(document).ready(function () {
 				second.removeClass('stopDate');
 			}
 		}
+		function checkDateDuble(first, second, third, step) {
+			var errorDuble;
+			var secondEmpty;
+			var thirdEmpty;
+			if (second.val() == '') {
+				error.push('false');
+				second.addClass('stopDate');
+				errorDuble = false;
+				secondEmpty = false;
+
+
+			}
+
+			if(third.val() == ''){
+				third.addClass('stopDate');
+				errorDuble = false;
+				error.push('false');
+				thirdEmpty = false;
+			}
+			if(thirdEmpty !== false){
+				if (date(first.datepicker('getDate')) < date(third.datepicker('getDate'))) {
+					third.addClass('stopDate');
+					errorDuble = false;
+				} else {
+					third.removeClass('stopDate');
+					error.push('true');
+				}
+			}
+			if(secondEmpty !== false){
+				if (date(first.datepicker('getDate')) < date(second.datepicker('getDate'))) {
+					second.addClass('stopDate');
+					errorDuble = false;
+				} else {
+					second.removeClass('stopDate');
+					error.push('true');
+				}
+			}
+			
+			if(errorDuble === false){
+				errorText = errorText + ' В шаге ' + step + ' даты позже начала работ, ';
+				error.push('false');
+			}
+		}
 		function emptyDate(element) {
 			if (element.hasClass('ignor') === false) {
 				if (element.val() == '') {
@@ -287,7 +330,7 @@ $(document).ready(function () {
 				} else {
 					element.removeClass('stopDate');
 				}
-			}else{
+			} else {
 				return true;
 			}
 
@@ -299,19 +342,27 @@ $(document).ready(function () {
 			if (emptyDate(beginDate) == false || emptyDate(endDate) == false) {
 				return false;
 			}
-			if (representativeBuilderDateGet.val() == '' || representativeBuilderDate.val() == '' || date(beginDate.datepicker('getDate')) < date(representativeBuilderDate.datepicker('getDate')) || date(beginDate.datepicker('getDate')) < date(representativeBuilderDateGet.datepicker('getDate'))) {
-				error.push('false');
-				errorText = errorText + ' В шаге 5 даты позже начала работ, ';
 
 
-			} else {
-				error.push('true');
-			}
+			// if (representativeBuilderDateGet.val() == '' || representativeBuilderDate.val() == '' || date(beginDate.datepicker('getDate')) < date(representativeBuilderDate.datepicker('getDate')) || date(beginDate.datepicker('getDate')) < date(representativeBuilderDateGet.datepicker('getDate'))) {
+			// 	error.push('false');
+			// 	errorText = errorText + ' В шаге 5 даты позже начала работ, ';
+			// 	representativeBuilderDateGet.addClass('stopDate');
+			// 	console.log(2);
+			// 	representativeBuilderDate.addClass('stopDate');
 
+
+			// } else {
+			// 	error.push('true');
+			// 	representativeBuilderDateGet.removeClass('stopDate');
+			// 	representativeBuilderDate.removeClass('stopDate');
+			// }
+
+			checkDateDuble(beginDate, representativeBuilderDateGet, representativeBuilderDate, 5);
 
 			checkDate(beginDate, representativeContractorDate, '6');
 
-			checkDate(beginDate, memberBuilderDate, '7');
+			checkDateDuble(beginDate, memberBuilderDate, memberBuilderDateId, 7);
 
 			checkDate(beginDate, preparationDateId, '8');
 
@@ -325,9 +376,7 @@ $(document).ready(function () {
 				if ($(this).datepicker('getDate') < endDate.datepicker('getDate')) {
 					errorStep20 = false;
 				}
-				console.log($(this).val());
 				if ($(this).val() == '' || $(this).datepicker('getDate') < beginDate.datepicker('getDate')) {
-					console.log('dasd');
 					arrdocDate = false;
 					$(this).addClass('stopDate');
 
@@ -351,31 +400,16 @@ $(document).ready(function () {
 			}
 
 			if (beginDate.hasClass('ignor') === false) {
-				
-				// tooltipDate(errorText);
-				// Включаем возможность игнорировать подсказку
 				$('.date').tooltip('dispose');
 				ignoreTooltip();
-				// Если дата раньше текущего дня, активируем условия
-				console.log(errorText);
 				tooltipDate(errorText);
 				beginDate.addClass('stopDate');
 				beginDate.tooltip('show');
 				return false;
 			}
-			// if (endDate.hasClass('ignor') === false) {
-			// 	$('.date').tooltip('dispose');
-			// 	ignoreTooltip();
-			// 	// Если дата раньше текущего дня, активируем условия
-			// 	console.log(errorText);
-			// 	tooltipDate(errorText);
-			// 	beginDate.addClass('stopDate');
-			// 	beginDate.tooltip('show');
-			// 	return false;
-			// }
 
 		}
-		// }
+
 
 		if ($('#step20').hasClass('active_page')) {
 			if ($('#step20 .next').hasClass('ignor2') === false) {
