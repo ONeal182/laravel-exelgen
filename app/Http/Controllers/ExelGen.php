@@ -1467,13 +1467,14 @@ class ExelGen extends Controller
         // Акт составлен в   4   экземплярах.
 
         $objWriter = PHPExcel_IOFactory::createWriter($this->objPHPExcel, 'Excel5');
-        $filename = 'Content-Disposition:АОСР №' . $numberAct . ' от ' . $dateAOSR . '.xls';
+        $filename = 'Content-Disposition:AOCP_№' . $numberAct . '_om_' . $dateAOSR . '.xls';
         header("Content-Type:application/vnd.ms-excel; charset=utf-8");
-        iconv('UTF-8', "windows-1251", $filename);
+        // iconv('UTF-8', "windows-1251", $filename);
         header($filename);
         header('Cache-Control: max-age=0');
 
 
         $objWriter->save('php://output');
+        return $filename;
     }
 }

@@ -4,6 +4,8 @@ $(document).ready(function(){
         e.preventDefault();
     })
     $('.btn-download').on('click', function(e){
+        var dateAOSR = $('.date[data-name=dateAOSR]');
+        var numberAct = $('input[name=numberAct]');
         $('#msform').submit();
         $.ajax({
             type: 'POST',
@@ -16,13 +18,12 @@ $(document).ready(function(){
             },
             success: function(data, status, xhr) {
                 console.log(data);
-                console.log(xhr);
+                // console.log(xhr);
                 var blob = new Blob([data], {type: xhr.getResponseHeader('Content-Type')});
                 var link = document.createElement('a');
                 link.href = window.URL.createObjectURL(blob);
                 console.log(xhr.getResponseHeader('Content-Type'));
-                var fileName = xhr.getResponseHeader('Content-Disposition');
-                console.log(fileName);
+                var fileName = 'АОСР № '+numberAct.val()+' от '+dateAOSR.val()+'.xls'
                 link.download = fileName;
                 link.click();
             }
