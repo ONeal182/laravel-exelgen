@@ -1165,7 +1165,7 @@
                     <input type="text" disabled="disabled"  placeholder="Документ" />
                   </div>
                   <div class="col-lg-2">
-                    <input type="text"  disabled="disabled" data-name="docDate" class="date" />
+                    <input type="text"  disabled="disabled" data-name="docDateEmpty" class="date" />
                   </div>
                 </div>
               </div>
