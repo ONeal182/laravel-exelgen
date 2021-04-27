@@ -1040,7 +1040,7 @@ class ExelGen extends Controller
         $this->i++;
         $workDo = $date['workDo'];
         foreach($date['workDo'] as $key => $value){
-            foreach ($this->wordBreak($value, 155) as $text) {
+            foreach ($this->wordBreak($value, 150) as $text) {
                 $this->i++;
                 $this->creatRow(
                     [
@@ -1201,7 +1201,7 @@ class ExelGen extends Controller
         }
         $razdeDoc = $date['razdeDoc'];
         $RegName = $date['RegName'];
-        foreach ($this->wordBreak($razdeDoc . ' ' . $RegName, 155) as $text) {
+        foreach ($this->wordBreak($razdeDoc . ' ' . $RegName, 150) as $text) {
             $this->i++;
             $this->creatRow(
                 [
