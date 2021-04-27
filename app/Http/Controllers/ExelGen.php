@@ -1037,7 +1037,6 @@ class ExelGen extends Controller
                 ]
             );
         }
-        $this->i++;
         $workDo = $date['workDo'];
         foreach($date['workDo'] as $key => $value){
             foreach ($this->wordBreak($value, 150) as $text) {
