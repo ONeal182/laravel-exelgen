@@ -17,22 +17,22 @@
     <nav class="top_navbar navbar  justify-content-between">
       <div class="container">
         <a class="top_logo" href="/"><img src="{{ asset("assets/img/logo.svg") }}"></a>
-        <div class="top_nav">
+        <!-- <div class="top_nav">
           <ul> 
             <li style="display: none"><a href="#">О нас</a></li>
             <li><a href="#">Ваши пожелания и замечания</a></li>
           </ul>
-        </div>
-        <div class="top_phone"><a href="#"> +7 (123) 456-78-90</a></div>
+        </div> -->
+        <!-- <div class="top_phone"><a href="#"> +7 (123) 456-78-90</a></div>
         <div class="login">
           <ul> 
             <li><a href="#"> Вход </a></li>
             <li><a href="#"> Регистрация </a></li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </nav>
-    <nav class="bottom_navbar navbar justify-content-between">
+    <!-- <nav class="bottom_navbar navbar justify-content-between">
       <div class="container">
         <ul>
           <li>
@@ -69,7 +69,7 @@
           </li>
         </ul>
       </div>
-    </nav>
+    </nav> -->
   </header>
 
 
@@ -89,9 +89,9 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-3">
-          <p> © 2020  AOCP </p>
+          <p> © {{ date('Y') }}  AOCP </p>
         </div>
-        <div class="col-lg-3 footer_contact">
+        <!-- <div class="col-lg-3 footer_contact">
           <a href="tel:+7 123 456-78-90">+7 123 456-78-90 </a>
           <a href="mailto:info@aocponline.ru">info@aocponline.ru</a>
         </div>
@@ -100,7 +100,7 @@
         </div>
         <div class="col-lg-3 text-right">
           <a href="#"> Поддержка 24/7 </a>
-        </div>
+        </div> -->
       </div>
     </div>
   </footer>

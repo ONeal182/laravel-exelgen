@@ -1501,11 +1501,11 @@
         </div>
         <div class="col-lg-3 footer_contact">
           <!--a href="tel:+7 123 456-78-90">+7 123 456-78-90 </a-->
-          <a href="mailto:info@aocponline.ru">info@aocponline.ru</a>
+          <!-- <a href="mailto:info@aocponline.ru">info@aocponline.ru</a> -->
         </div>
-        <div class="col-lg-3">
+        <!-- <div class="col-lg-3">
           <a href="#"> Политика конфиденциальности и сбора персональных данных </a>
-        </div>
+        </div> -->
         <!-- <div class="col-lg-3 text-right">
           <a href="#"> Поддержка 24/7 </a>
         </div> -->
