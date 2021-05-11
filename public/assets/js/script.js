@@ -398,14 +398,23 @@ $(document).ready(function () {
 				$('#step16 .next').addClass('error');
 
 			}
+			var errorStatus;
+			if(error.indexOf('false') != -1){
+				errorStatus = false;
+			}else{
+				errorStatus = true;
+			}
+			if (beginDate.hasClass('ignor') === false) { 
+				if(errorStatus === false){
+					console.log(errorStatus);
+					$('.date').tooltip('dispose');
+					ignoreTooltip();
+					tooltipDate(errorText);
+					beginDate.addClass('stopDate');
+					beginDate.tooltip('show');
+					return false;
+				}
 
-			if (beginDate.hasClass('ignor') === false) {
-				$('.date').tooltip('dispose');
-				ignoreTooltip();
-				tooltipDate(errorText);
-				beginDate.addClass('stopDate');
-				beginDate.tooltip('show');
-				return false;
 			}
 
 		}
@@ -423,7 +432,7 @@ $(document).ready(function () {
 					dateAOSR.tooltip('show');
 					return false;
 				}
-				if (date(endDate.datepicker('getDate')) < date(dateAOSR.datepicker('getDate'))) {
+				if (date(endDate.datepicker('getDate')) > date(dateAOSR.datepicker('getDate'))) {
 					$('.date').tooltip('dispose');
 					ignoreTooltip();
 					tooltipDate('Ошибка: дата раньше чем окончания работ ');
