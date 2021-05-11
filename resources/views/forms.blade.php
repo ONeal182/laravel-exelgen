@@ -27,21 +27,21 @@
         <div class="top_nav">
           <ul>
             <li style="display: none"><a href="#">О нас</a></li>
-            <li><a href="#">Ваши пожелания и замечания</a></li>
+            <!-- <li><a href="#">Ваши пожелания и замечания</a></li> -->
           </ul>
         </div>
         <div class="top_phone">
           <!--a href="#"> +7 (123) 456-78-90</a-->
         </div>
-        <div class="login">
+        <!-- <div class="login">
           <ul>
             <li><a href="#"> Вход </a></li>
             <li><a href="#"> Регистрация </a></li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </nav>
-    <nav class="bottom_navbar navbar justify-content-between">
+    <nav style="display: none;" class="bottom_navbar navbar justify-content-between">
       <div class="container">
         <ul>
           <li>
@@ -128,12 +128,12 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-lg-12">
+              <!-- <div class="col-lg-12">
                 <label class="checkbox-label"> Больше не спрашивать в следующих актах
                   <input type="checkbox" checked="checked">
                   <span class="checkmark"></span>
                 </label>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -212,12 +212,12 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-lg-12">
+              <!-- <div class="col-lg-12">
                 <label class="checkbox-label"> Больше не спрашивать в следующих актах
                   <input type="checkbox" checked="checked">
                   <span class="checkmark"></span>
                 </label>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -297,12 +297,12 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-lg-12">
+              <!-- <div class="col-lg-12">
                 <label class="checkbox-label"> Больше не спрашивать в следующих актах
                   <input type="checkbox" checked="checked">
                   <span class="checkmark"></span>
                 </label>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -380,12 +380,12 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-lg-12">
+              <!-- <div class="col-lg-12">
                 <label class="checkbox-label"> Больше не спрашивать в следующих актах
                   <input type="checkbox" checked="checked">
                   <span class="checkmark"></span>
                 </label>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -466,12 +466,12 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-lg-12">
+              <!-- <div class="col-lg-12">
                 <label class="checkbox-label"> Больше не спрашивать в следующих актах
                   <input type="checkbox" checked="checked">
                   <span class="checkmark"></span>
                 </label>
-              </div>
+              </div> -->
             </div>
 
           </div>
@@ -528,12 +528,12 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-lg-12">
+              <!-- <div class="col-lg-12">
                 <label class="checkbox-label"> Больше не спрашивать в следующих актах
                   <input type="checkbox" checked="checked">
                   <span class="checkmark"></span>
                 </label>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -598,12 +598,12 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-lg-12">
+              <!-- <div class="col-lg-12">
                 <label class="checkbox-label"> Больше не спрашивать в следующих актах
                   <input type="checkbox" checked="checked">
                   <span class="checkmark"></span>
                 </label>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -678,12 +678,12 @@
 
             </div>
             <div class="row">
-              <div class="col-lg-12">
+              <!-- <div class="col-lg-12">
                 <label class="checkbox-label"> Больше не спрашивать в следующих актах
                   <input type="checkbox" checked="checked">
                   <span class="checkmark"></span>
                 </label>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -758,12 +758,12 @@
 
             </div>
             <div class="row">
-              <div class="col-lg-12">
+              <!-- <div class="col-lg-12">
                 <label class="checkbox-label"> Больше не спрашивать в следующих актах
                   <input type="checkbox" checked="checked">
                   <span class="checkmark"></span>
                 </label>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -847,12 +847,12 @@
             </div>
 
             <div class="row">
-              <div class="col-lg-12">
+              <!-- <div class="col-lg-12">
                 <label class="checkbox-label"> Больше не спрашивать в следующих актах
                   <input type="checkbox" checked="checked">
                   <span class="checkmark"></span>
                 </label>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -1497,7 +1497,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-3">
-          <p> © 2020 AOCP </p>
+          <p> © {{ date('Y') }} AOCP </p>
         </div>
         <div class="col-lg-3 footer_contact">
           <!--a href="tel:+7 123 456-78-90">+7 123 456-78-90 </a-->
@@ -1506,9 +1506,9 @@
         <div class="col-lg-3">
           <a href="#"> Политика конфиденциальности и сбора персональных данных </a>
         </div>
-        <div class="col-lg-3 text-right">
+        <!-- <div class="col-lg-3 text-right">
           <a href="#"> Поддержка 24/7 </a>
-        </div>
+        </div> -->
       </div>
     </div>
   </footer>
