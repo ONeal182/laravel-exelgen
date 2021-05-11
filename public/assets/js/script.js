@@ -543,4 +543,29 @@ $(document).ready(function () {
 
 	}
 
+	function setDateStep20(){
+		var dateStep15 = $('.date[data-name=docDate]');
+		var dateStep20 = $('.date[data-name=dateAOSR]');
+		dateStep20.val(dateStep15.val());
+	}
+
+	function copyInfoStep17(){
+		var textStep13 = $('textarea[name=anotherDocs]');
+		var projectDocsCheck = $('input[name=projectDocsCheck]');
+		var textStep17 = $('textarea[name=razdeDoc]');
+		var block17 = $('.rzdeDocBlock');
+		console.log(textStep13.val());
+		console.log(textStep17.val());
+		if(projectDocsCheck.is(':checked') === true){
+			textStep17.val(textStep13.val());
+		}else{
+			block17.css('display','none');
+		}
+	}
+
+	$('#msform').on('change', function(){
+		setDateStep20();
+		copyInfoStep17();
+	})
+
 });

@@ -991,7 +991,7 @@
             <div class="row">
               <div class="col-lg-12">
                 <label class="checkbox-label"> Дублировать в информацию в раздел о нормативно технических документах, по которым произведены работы
-                  <input type="checkbox" checked="checked">
+                  <input type="checkbox" name='projectDocsCheck' checked="checked">
                   <span class="checkmark"></span>
                 </label>
               </div>
@@ -1250,7 +1250,7 @@
           <!-- input step -->
           <div class="forms">
             <div class="row">
-              <div class="col-lg-12">
+              <div class="col-lg-12 rzdeDocBlock">
                 <label class="fieldlabels">Разделы проектной и/или рабочей документации</label>
                 <textarea name="razdeDoc" class="textarea-large"></textarea>
               </div>
