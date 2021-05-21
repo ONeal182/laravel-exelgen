@@ -109,5 +109,6 @@
 <!-- Bootstrap --> 
 <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="{{ asset("assets/js/script.js") }}"></script>
+<script src="//code-ya.jivosite.com/widget/w14XaBFQY4" async></script>
 </body>
 </html>
