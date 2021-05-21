@@ -79,7 +79,7 @@
     <div class="container">
       <div class="banner">
         <h1> БЕСПЛАТНОЕ Оформление АОСР онлайн </h1>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget erat eget justo porttitor varius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae eros odio. </p>
+        <!-- <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget erat eget justo porttitor varius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae eros odio. </p> -->
         <a href="/forms" class="button-home"> Оформить АОСР </a>
       </div>
     </div>
