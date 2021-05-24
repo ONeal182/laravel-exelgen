@@ -23,7 +23,7 @@
   <header class="top_menu">
     <nav class="top_navbar navbar  justify-content-between">
       <div class="container">
-        <a class="top_logo" href="index.html"><img src="{{ asset("assets/img/logo.svg") }}"></a>
+        <a class="top_logo" href="/"><img src="{{ asset("assets/img/logo.svg") }}"></a>
         <div class="top_nav">
           <ul>
             <li style="display: none"><a href="#">О нас</a></li>
@@ -1527,6 +1527,6 @@
 <script type="text/javascript" src="{{ asset("assets/js/rule-date.js") }}"></script>
 <script type="text/javascript" src="{{ asset("assets/js/script.js") }}"></script>
 <script type="text/javascript" src="{{ asset("assets/js/ajax.js") }}"></script>
-
+<script src="//code-ya.jivosite.com/widget/w14XaBFQY4" async></script>
 
 </html>
