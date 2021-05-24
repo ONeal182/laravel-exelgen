@@ -10,6 +10,8 @@
         <!-- Bootstrap --> 
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset("assets/css/style.css") }}">
+        <link rel="icon" type="image/ico" sizes="16x16" href="{{ asset("assets/img/icons/favicon.ico") }}">
+
     </head>
     <body class="home">
   <!-- header --> 

@@ -14,6 +14,7 @@
   <!-- Style -->
   <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/style.css") }}">
   <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/datepicker.min.css") }}">
+  <link rel="icon" type="image/ico" sizes="16x16" href="{{ asset("assets/img/icons/favicon.ico") }}">
 
 </head>
 
