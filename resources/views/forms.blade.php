@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AOCP - ФОРМА</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="yandex-verification" content="0d66c2072f0337e6" />
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500&display=swap" rel="stylesheet">
@@ -1529,5 +1530,20 @@
 <script type="text/javascript" src="{{ asset("assets/js/script.js") }}"></script>
 <script type="text/javascript" src="{{ asset("assets/js/ajax.js") }}"></script>
 <script src="//code-ya.jivosite.com/widget/w14XaBFQY4" async></script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
+ym(80142052, "init", {
+clickmap:true,
+trackLinks:true,
+accurateTrackBounce:true,
+webvisor:true,
+ecommerce:"dataLayer"
+});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/80142052" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </html>
