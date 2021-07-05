@@ -28,3 +28,10 @@ Route::get('/forms', function () {
 // Route::get('create',[DocumentController::class, 'create']);
 // Route::get('store',[DocumentController::class, 'store']);
 Route::post('exel',[ExelGen::class, 'generateExcel']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
