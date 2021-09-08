@@ -20,7 +20,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin');
+        return redirect()->route('list');
+        // return view('admin');
     }
 
     public function list()

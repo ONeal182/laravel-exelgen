@@ -24,7 +24,7 @@
 <div class="container">
     <div class="row">
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-            <div class="position-sticky pt-3">
+            {{-- <div class="position-sticky pt-3">
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="/personal">
@@ -38,7 +38,7 @@
                             Settings
                         </a>
                     </li>
-            </div>
+            </div> --}}
         </nav>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <h2>Список документов</h2>
@@ -59,9 +59,9 @@
                         <td>{{$doc->id}}</td>
                           <td>{{$doc->created_at}}</td>
                           <td>{{$doc->title}}</td>
-                          <td>
+                          <td class="d-flex justify-content-betwee">
                               <button>Скачать</button>
-                              <button><a href="/personal/list/show/{{$doc->id}}">Изменить</a></button>
+                              <a href="/personal/list/show/{{$doc->id}}"><button>Изменить</button></a>
                               
                               <form action="/personal/list/deleted/" method="post">
                                 {{ csrf_field() }}
