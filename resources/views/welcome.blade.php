@@ -20,19 +20,26 @@
     <nav class="top_navbar navbar  justify-content-between">
       <div class="container">
         <a class="top_logo" href="/"><img src="{{ asset("assets/img/logo.svg") }}"></a>
-        <!-- <div class="top_nav">
-          <ul> 
+        <div class="top_nav">
+          {{-- <ul> 
             <li style="display: none"><a href="#">О нас</a></li>
             <li><a href="#">Ваши пожелания и замечания</a></li>
-          </ul>
-        </div> -->
-        <!-- <div class="top_phone"><a href="#"> +7 (123) 456-78-90</a></div>
-        <div class="login">
-          <ul> 
-            <li><a href="#"> Вход </a></li>
-            <li><a href="#"> Регистрация </a></li>
-          </ul>
-        </div> -->
+          </ul> --}}
+        </div>
+        {{-- <div class="top_phone"><a href="#"> +7 (123) 456-78-90</a></div> --}}
+              <!-- Authentication Links -->
+              @guest
+              <div class="login">
+                <ul> 
+                  <li><a href="/login"> Вход </a></li>
+                  <li><a href="/register"> Регистрация </a></li>
+                </ul>
+              </div>
+              @else
+                  <a href="/personal">Переайти в личный кабинет</a>
+              @endguest
+ 
+        
       </div>
     </nav>
     <!-- <nav class="bottom_navbar navbar justify-content-between">

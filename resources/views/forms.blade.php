@@ -1481,7 +1481,7 @@
         </div>
         <div class="footer-form">
           <input type="button" name="previous" class="previous action-button" value="Назад" />
-          <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер </a>
+          <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
           <input type="button" name="next" class="next action-button" value="Далее" style="visibility: hidden;" />
         </div>
       </fieldset>

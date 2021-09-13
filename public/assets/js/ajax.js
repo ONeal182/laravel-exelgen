@@ -1,8 +1,8 @@
 
 $(document).ready(function(){
-    // $('#msform').on('submit', function(e){
-    //     e.preventDefault();
-    // })
+    $('#msform').on('submit', function(e){
+        e.preventDefault();
+    })
     $('.btn-download').on('click', function(e){
         var dateAOSR = $('.date[data-name=dateAOSR]');
         var numberAct = $('input[name=numberAct]');

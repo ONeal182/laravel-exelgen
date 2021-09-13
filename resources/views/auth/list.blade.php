@@ -60,7 +60,9 @@
                           <td>{{$doc->created_at}}</td>
                           <td>{{$doc->title}}</td>
                           <td class="d-flex justify-content-betwee">
-                              <button>Скачать</button>
+                              <button>
+                                  <a href="/personal/list/download/{{$doc->id}}">Скачать</a>
+                              </button>
                               <a href="/personal/list/show/{{$doc->id}}"><button>Изменить</button></a>
                               
                               <form action="/personal/list/deleted/" method="post">

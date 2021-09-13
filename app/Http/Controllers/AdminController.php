@@ -27,8 +27,10 @@ class AdminController extends Controller
     public function list()
     {
         $user = auth()->user();
-        $DocsList = Docs::where('id_user', $user->id)->first()->get();
-        return view('/auth/list', ['Docs' => $DocsList]);
+        $DocsList = Docs::where('id_user', $user->id)->get();
+        if ($DocsList !== null) {
+            return view('/auth/list', ['Docs' => $DocsList]);
+        }
     }
 
     public function updateDataUser(Request $request, $id)
@@ -120,8 +122,8 @@ class AdminController extends Controller
             $data['countSupplArr'][$key]['countSuppl'] = $countSuppl;
         }
         $data = (object)$data;
-        
-        return view('/auth/show', ['Docs' => $data,'ID'=>$id]);
+
+        return view('/auth/show', ['Docs' => $data, 'ID' => $id]);
     }
 
     /**
