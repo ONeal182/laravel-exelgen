@@ -46,11 +46,11 @@ class AdminController extends Controller
         //
     }
 
-    public function download(Request $request)
+    public function download(Request $request,$id)
     {
         $ExelGen = new ExelGen();
         $user = auth()->user();
-        $DocsList = Docs::where('id', 5)->get();
+        $DocsList = Docs::where('id', $id)->get();
 
 
         foreach ($DocsList as $list) {
