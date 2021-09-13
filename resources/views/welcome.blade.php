@@ -36,7 +36,7 @@
                 </ul>
               </div>
               @else
-                  <a href="/personal">Переайти в личный кабинет</a>
+                  <a href="/personal">Перейти в личный кабинет</a>
               @endguest
  
         
