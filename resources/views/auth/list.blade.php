@@ -40,8 +40,12 @@
                     </li>
             </div> --}}
         </nav>
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 head_admin-list">
             <h2>Список документов</h2>
+            <a href="/forms" class="get_act">
+                <input type="button" name="" class="action-button" value="Оформить новый акт">
+            
+            </a>
             <div class="table-responsive">
               <table class="table table-striped table-sm">
                 <thead>

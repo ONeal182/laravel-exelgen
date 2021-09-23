@@ -143,7 +143,10 @@
           <input type="button" name="previous" class="previous action-button" value="Назад" style="visibility: hidden;" />
           <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
           </div>
+         <div>
+          <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
           <input type="button" name="next" class="next action-button" value="Далее" />
+         </div>
         </div>
       </fieldset>
 
@@ -227,7 +230,10 @@
           <input type="button" name="previous" class="previous action-button" value="Назад" />
           <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
           </div>
+         <div>
+          <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
           <input type="button" name="next" class="next action-button" value="Далее" />
+         </div>
         </div>
       </fieldset>
 
@@ -312,7 +318,10 @@
           <input type="button" name="previous" class="previous action-button" value="Назад" />
           <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
           </div>
+         <div>
+          <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
           <input type="button" name="next" class="next action-button" value="Далее" />
+         </div>
         </div>
       </fieldset>
 
@@ -395,7 +404,10 @@
           <input type="button" name="previous" class="previous action-button" value="Назад" />
           <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
           </div>
+         <div>
+          <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
           <input type="button" name="next" class="next action-button" value="Далее" />
+         </div>
         </div>
       </fieldset>
 
@@ -482,7 +494,10 @@
           <input type="button" name="previous" class="previous action-button" value="Назад" />
           <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
           </div>
+         <div>
+          <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
           <input type="button" name="next" class="next action-button" value="Далее" />
+         </div>
         </div>
       </fieldset>
 
@@ -543,7 +558,10 @@
           <input type="button" name="previous" class="previous action-button" value="Назад" />
           <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
           </div>
+         <div>
+          <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
           <input type="button" name="next" class="next action-button" value="Далее" />
+         </div>
         </div>
       </fieldset>
 
@@ -613,7 +631,10 @@
           <input type="button" name="previous" class="previous action-button" value="Назад" />
           <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
           </div>
+         <div>
+          <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
           <input type="button" name="next" class="next action-button" value="Далее" />
+         </div>
         </div>
       </fieldset>
 
@@ -693,7 +714,10 @@
           <input type="button" name="previous" class="previous action-button" value="Назад" />
           <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
           </div>
+         <div>
+          <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
           <input type="button" name="next" class="next action-button" value="Далее" />
+         </div>
         </div>
       </fieldset>
 
@@ -773,7 +797,10 @@
           <input type="button" name="previous" class="previous action-button" value="Назад" />
           <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
           </div>
+         <div>
+          <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
           <input type="button" name="next" class="next action-button" value="Далее" />
+         </div>
         </div>
       </fieldset>
 
@@ -862,7 +889,10 @@
           <input type="button" name="previous" class="previous action-button" value="Назад" />
           <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
           </div>
+         <div>
+          <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
           <input type="button" name="next" class="next action-button" value="Далее" />
+         </div>
         </div>
       </fieldset>
 
@@ -900,7 +930,10 @@
           <input type="button" name="previous" class="previous action-button" value="Назад" />
           <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
           </div>
+         <div>
+          <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
           <input type="button" name="next" class="next action-button" value="Далее" />
+         </div>
         </div>
       </fieldset>
 
@@ -958,7 +991,10 @@
           <input type="button" name="previous" class="previous action-button" value="Назад" />
           <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
           </div>
+         <div>
+          <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
           <input type="button" name="next" class="next action-button" value="Далее" />
+         </div>
         </div>
       </fieldset>
 
@@ -1004,7 +1040,10 @@
           <input type="button" name="previous" class="previous action-button" value="Назад" />
           <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
           </div>
+         <div>
+          <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
           <input type="button" name="next" class="next action-button" value="Далее" />
+         </div>
         </div>
       </fieldset>
 
@@ -1112,7 +1151,10 @@
           <input type="button" name="previous" class="previous action-button" value="Назад" />
           <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
           </div>
+         <div>
+          <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
           <input type="button" name="next" class="next action-button" value="Далее" />
+         </div>
         </div>
       </fieldset>
 
@@ -1183,7 +1225,10 @@
           <input type="button" name="previous" class="previous action-button" value="Назад" />
           <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
           </div>
+         <div>
+          <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
           <input type="button" name="next" class="next action-button" value="Далее" />
+         </div>
         </div>
       </fieldset>
 
@@ -1225,7 +1270,10 @@
           <input type="button" name="previous" class="previous action-button" value="Назад" />
           <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
           </div>
+         <div>
+          <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
           <input type="button" name="next" class="next action-button" value="Далее" />
+         </div>
         </div>
       </fieldset>
 
@@ -1269,7 +1317,10 @@
           <input type="button" name="previous" class="previous action-button" value="Назад" />
           <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
           </div>
+         <div>
+          <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
           <input type="button" name="next" class="next action-button" value="Далее" />
+         </div>
         </div>
       </fieldset>
 
@@ -1307,7 +1358,10 @@
           <input type="button" name="previous" class="previous action-button" value="Назад" />
           <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
           </div>
+         <div>
+          <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
           <input type="button" name="next" class="next action-button" value="Далее" />
+         </div>
         </div>
       </fieldset>
 
@@ -1345,7 +1399,10 @@
           <input type="button" name="previous" class="previous action-button" value="Назад" />
           <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
           </div>
+         <div>
+          <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
           <input type="button" name="next" class="next action-button" value="Далее" />
+         </div>
         </div>
       </fieldset>
 

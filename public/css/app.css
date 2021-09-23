@@ -6015,6 +6015,18 @@ a.close.disabled {
     transform: rotate(360deg);
   }
 }
+.head_admin-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.get_act input{
+  background-color: red;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: white;
+}
 .spinner-border {
   display: inline-block;
   width: 2rem;
