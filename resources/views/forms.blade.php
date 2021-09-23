@@ -41,6 +41,7 @@
             <li><a href="#"> Регистрация </a></li>
           </ul>
         </div> -->
+        <a href="/personal">Перейти в личный кабинет</a>
       </div>
     </nav>
     <nav style="display: none;" class="bottom_navbar navbar justify-content-between">
@@ -1480,7 +1481,10 @@
           <input type="button" name="previous" class="previous action-button" value="Назад" />
           <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
           </div>
-          <input type="submit" name="next" class="next action-button submitAOSR" value="Далее" />
+          <div>
+            <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
+            <input type="button" name="next" class="next action-button" value="Далее" />
+           </div>
         </div>
       </fieldset>
 

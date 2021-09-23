@@ -89,19 +89,8 @@ $(document).ready(function () {
 
 		// Проверка даты 
 		$('.date').on('pick.datepicker', function (e) {
-			// Включаем подсказку
-			// tooltipDate();
-			// Включаем возможность игнорировать подсказку
 			ignoreTooltip();
-			// Если дата раньше текущего дня, активируем условия
-			// if (e.date == '') {
-			// 	tooltipDate();
-			// 	$(this).addClass('stopDate');
-			// 	$(this).tooltip('show');
-			// } else {
-			// 	$(this).removeClass('stopDate');
-			// 	$(this).tooltip('hide');
-			// }
+
 		});
 	};
 
@@ -468,12 +457,14 @@ $(document).ready(function () {
 		current_fs = $(this).parents('fieldset');
 		// Next page
 		next_fs = $(this).parents('fieldset').next();
-
+		
 		//Add Class Active
 		$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-
+		
 		//show the next fieldset
 		next_fs.show();
+		let new_current = $('.active_page').next().attr('page');
+		
 		//hide the current fieldset with style
 		current_fs.animate({ opacity: 0 }, {
 			step: function (now) {
@@ -489,7 +480,8 @@ $(document).ready(function () {
 			},
 			duration: 500
 		});
-		setProgressBar(++current);
+		new_current = parseInt(new_current.match(/\d+/))
+		setProgressBar(new_current+1);
 	});
 
 
@@ -513,6 +505,7 @@ $(document).ready(function () {
 
 		//show the previous fieldset
 		previous_fs.show();
+		let new_current = $('.active_page').attr('page');
 
 		//hide the current fieldset with style
 		current_fs.animate({ opacity: 0 }, {
@@ -530,7 +523,10 @@ $(document).ready(function () {
 			},
 			duration: 500
 		});
-		setProgressBar(--current);
+		
+		new_current = parseInt(new_current.match(/\d+/))
+
+		setProgressBar(new_current--);
 	});
 
 	function setProgressBar(curStep) {
