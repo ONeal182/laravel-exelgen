@@ -232,7 +232,7 @@ footer {
     display: none
 }
 
-#msform input, #msform textarea {
+#msform input, #msform textarea, .modal-content input{
     padding: 9px 15px 9px 15px;
     border: 2px solid #D7D7D8;
     border-radius: 5px;

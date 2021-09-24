@@ -139,7 +139,13 @@ class ExelGen extends Controller
         //Дополнительные сведения
         $moreInfo = $request->input('moreInfo'); // Внесите дополнительные сведения:
         //Номер акта, дата, количество экземпляров
-        $numberAct = $request->input('numberAct'); // Номер акта
+        if ($request->input('numberActModal')) {
+            $numberAct = $request->input('numberActModal'); // Номер акта
+
+        } else {
+            $numberAct = $request->input('numberAct'); // Номер акта
+
+        }
         $dateAOSR = $request->input('dateAOSR'); // Дата составления АОСР
         $countAOSR = $request->input('countAOSR'); // Колличество документов
         $actTest = $request->input('actTest');
@@ -148,7 +154,6 @@ class ExelGen extends Controller
         $fontText = $request->input('fontText');
         $fontTextBottom = $request->input('fontTextBottom');
         //Массив данных формы
-
         $dataForm = [
             'projectName' => $projectName,
             'projectAddres' => $projectAddres,
@@ -358,11 +363,11 @@ class ExelGen extends Controller
     public function addDate(Request $request)
     {
         $date = $this->formRequest($request);
-        $projectName = $date['projectName'];
+        $numberAct = $date['numberAct'];
         $userId = Auth::id();
         if (Auth::check()) {
             $data = [
-                'title' => $projectName,
+                'title' => $numberAct,
                 'id_user' => $userId,
                 'date' => json_encode($date, JSON_UNESCAPED_UNICODE),
             ];
