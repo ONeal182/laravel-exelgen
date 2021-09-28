@@ -20,7 +20,32 @@
 </head>
 
 <body class="snippet-body">
-
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Внимание!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+          <div class="col-lg-12 notNumer">
+            <label class="fieldlabels notificate">Чтобы сохранить документ, укажите номер акта</label>
+            <input type="text" name="numberActModal">
+          </div>
+        </div>
+        <div class="col-lg-12 hasNumber">
+          <p>Вы собираетесь покинуть страницу, сохранить документ?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+          <button type="button" class="btn btn-primary save_doc_modal">Сохранить</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- header -->
   <header class="top_menu">
     <nav class="top_navbar navbar  justify-content-between">
@@ -41,6 +66,7 @@
             <li><a href="#"> Регистрация </a></li>
           </ul>
         </div> -->
+        <a data-toggle="modal" class="personal_admin" data-target="#exampleModal" href="/personal">Перейти в личный кабинет</a>
       </div>
     </nav>
     <nav style="display: none;" class="bottom_navbar navbar justify-content-between">

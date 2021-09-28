@@ -542,7 +542,7 @@ $(document).ready(function () {
 	function setDateStep20(){
 		var dateStep15 = $('.date[data-name=docDate]');
 		var dateStep20 = $('.date[data-name=dateAOSR]');
-		dateStep20.val(dateStep15.val());
+		// dateStep20.val(dateStep15.val());
 	}
 
 	function copyInfoStep17(){
