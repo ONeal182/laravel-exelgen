@@ -46,7 +46,7 @@ class AdminController extends Controller
         //
     }
 
-    public function download(Request $request,$id)
+    public function download(Request $request, $id)
     {
         $ExelGen = new ExelGen();
         $user = auth()->user();
@@ -136,9 +136,12 @@ class AdminController extends Controller
     {
         $DocsList = $request->input();
         unset($DocsList['_token']);
+        $numberAct = $DocsList['numberAct'];
+
         $DocsList = json_encode($DocsList, JSON_UNESCAPED_UNICODE);
-        Docs::where('id', $id)->update(['date' => $DocsList]);
-        return back()->withInput();
+        Docs::where('id', $id)->update(['date' => $DocsList, 'title' => $numberAct]);
+
+        return redirect('/personal/list/');
     }
 
     /**

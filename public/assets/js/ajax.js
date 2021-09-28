@@ -1,6 +1,6 @@
 
 $(document).ready(function () {
-    $('#msform').on('submit', function (e) {
+    $('.msform1').on('submit', function (e) {
         e.preventDefault();
     })
     function ignoreTooltip() {
@@ -92,16 +92,20 @@ $(document).ready(function () {
         $('.step-count').html(curStep);
 
     }
+    $('.downLoad-list').on('click', function(){
+        var dateAOSR = $('.date[data-name=dateAOSR]');
+        var numberAct = $('input[name=numberAct]');
 
+    })
     $('.btn-download').on('click', function (e) {
         var dateAOSR = $('.date[data-name=dateAOSR]');
         var numberAct = $('input[name=numberAct]');
         if (checkNumberAct()) {
-            $('#msform').submit();
+            $('.msform1').submit();
             $.ajax({
                 type: 'POST',
                 url: 'exel',
-                data: $('#msform').serialize(),
+                data: $('.msform1').serialize(),
                 dataType: 'binary',
                 scriptCharset: "utf-8",
                 xhrFields: {
@@ -180,11 +184,11 @@ $(document).ready(function () {
 
         if (checkNumberAct()) {
             
-            $('#msform').submit();
+            $('.msform1').submit();
             $.ajax({
                 type: 'POST',
                 url: 'exel',
-                data: $('#msform').serialize(),
+                data: $('.msform1').serialize(),
                 dataType: 'binary',
                 scriptCharset: "utf-8",
                 xhrFields: {
@@ -211,11 +215,11 @@ $(document).ready(function () {
                 // serlizeForm[89].value = numberActModal.val();
                 // serlizeForm = JSON.stringify(serlizeForm);
 
-                $('#msform').submit();
+                $('.msform1').submit();
                 $.ajax({
                     type: 'POST',
                     url: 'exel',
-                    data: $('#msform').serialize() + '&numberActModal=' + numberActModal.val(),
+                    data: $('.msform1').serialize() + '&numberActModal=' + numberActModal.val(),
                     dataType: 'binary',
                     scriptCharset: "utf-8",
                     xhrFields: {
@@ -238,4 +242,8 @@ $(document).ready(function () {
         }
     })
 
+    $('.save_doc_modal2').on('click', function () {
+        console.log(1)
+        $('#msform').submit();
+    });
 })

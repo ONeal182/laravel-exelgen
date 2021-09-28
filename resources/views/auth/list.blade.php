@@ -65,7 +65,7 @@
                           <td>{{$doc->title}}</td>
                           <td class="d-flex justify-content-betwee">
                               <button>
-                                  <a href="/personal/list/download/{{$doc->id}}">Скачать</a>
+                                  <a class="downLoad-list" href="/personal/list/download/{{$doc->id}}">Скачать</a>
                               </button>
                               <a href="/personal/list/show/{{$doc->id}}"><button>Изменить</button></a>
                               

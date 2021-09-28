@@ -41,7 +41,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
-          <button type="button" class="btn btn-primary save_doc_modal">Сохранить</button>
+          <button type="button" class="btn btn-primary save_doc_modal2">Сохранить</button>
         </div>
       </div>
     </div>

@@ -116,7 +116,7 @@
   <div class="container">
 
     <!-- Forms -->
-    <form id="msform" action="exel" method="post">
+    <form id="msform" class="msform1" action="exel" method="post">
       {{ csrf_field() }}
       <!-- 
     /---------------------------/
