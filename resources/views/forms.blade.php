@@ -489,7 +489,7 @@
                 <label class="bottomlabel"> в национальном реестре специалистов в области строительства </label>
               </div>
               <div class="col-lg-4">
-                <label class="fieldlabels">Дата выдачи номера</label>
+                <label class="fieldlabels">Даты выдачи документа</label>
                 <input type="text" data-name="representativeBuilderDateGet" class="date" readonly="readonly" name="representativeBuilderDateGet" />
               </div>
             </div>
@@ -631,7 +631,7 @@
                 <label class="bottomlabel"> в национальном реестре специалистов в области строительства </label>
               </div>
               <div class="col-lg-4">
-                <label class="fieldlabels">Дата выдачи номера</label>
+                <label class="fieldlabels">Даты выдачи документа</label>
                 <input type="text" data-name="memberBuilderDateId" class="date" readonly="readonly" name="memberBuilderDateId" />
               </div>
             </div>
@@ -703,7 +703,7 @@
                 <input type="text" name="preparationREQ" />
               </div>
               <div class="col-lg-4">
-                <label class="fieldlabels">Дата выдачи номера</label>
+                <label class="fieldlabels">Даты выдачи документа</label>
                 <input type="text" data-name="preparationDateId" class="date" readonly="readonly" name="preparationDateId" />
               </div>
             </div>
@@ -786,7 +786,7 @@
                 <input type="text" name="compliteREQ" />
               </div>
               <div class="col-lg-4">
-                <label class="fieldlabels">Дата выдачи номера</label>
+                <label class="fieldlabels">Даты выдачи документа</label>
                 <input type="text" data-name="compliteDateId" class="date" readonly="readonly" name="compliteDateId" />
               </div>
             </div>
@@ -871,7 +871,7 @@
                     <input type="text" name="anotherREQ[]" />
                   </div>
                   <div class="col-lg-4">
-                    <label class="fieldlabels">Дата выдачи номера</label>
+                    <label class="fieldlabels">Даты выдачи документа</label>
                     <input type="text" data-name="anotherDate_Id" class="date" readonly="readonly" name="anotherDate_Id[]" />
                   </div>
                 </div>

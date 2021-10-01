@@ -69,7 +69,7 @@ class ExelGen extends Controller
         $representativeBuilderRequisites = $request->input('representativeBuilderRequisites'); // Реквизиты
         $representativeBuilderDate = $request->input('representativeBuilderDate'); // Дата распорядительного документа
         $representativeBuilderId = $request->input('representativeBuilderId'); // Идентификационный номер
-        $representativeBuilderDateGet = $request->input('representativeBuilderDateGet'); //Дата выдачи номера
+        $representativeBuilderDateGet = $request->input('representativeBuilderDateGet'); //Даты выдачи документа
         $representativeBuilderORGN = $request->input('representativeBuilderORGN'); //ОРГН
         $representativeBuilderINN = $request->input('representativeBuilderINN'); // ИНН
         $representativeBuilderAddres = $request->input('representativeBuilderAddres'); //Местонахождение юр.Лица
@@ -82,14 +82,14 @@ class ExelGen extends Controller
         $memberBuilderPosition = $request->input('memberBuilderPosition'); // Должность
         $memberBuilderFIO = $request->input('memberBuilderFIO'); //ФИО
         $memberBuilderId = $request->input('memberBuilderId'); // в национальном реестре специалистов в области строительства
-        $memberBuilderDateId = $request->input('memberBuilderDateId'); // Дата выдачи номера
+        $memberBuilderDateId = $request->input('memberBuilderDateId'); // Даты выдачи документа
         $memberBuilderRequisites = $request->input('memberBuilderRequisites'); // Реквизиты распорядительного документа, подтверждающего полномочия
         $memberBuilderDate = $request->input('memberBuilderDate'); // Дата выдачи документа
         // Заполнить информацию о представителе лица осуществляющего подготовку проектной документации
         $preparationPosition = $request->input('preparationPosition'); // Должность
         $preparationFIO = $request->input('preparationFIO'); // ФИО
         $preparationREQ = $request->input('preparationREQ'); // Реквизиты распорядительного документа, подтверждающего полномочия
-        $preparationDateId = $request->input('preparationDateId'); // Дата выдачи номера
+        $preparationDateId = $request->input('preparationDateId'); // Даты выдачи документа
         $preparationYurName = $request->input('preparationYurName'); // Наименование юридического лица
         $preparationYurAddres = $request->input('preparationYurAddres'); // Место нахождения юридического лица
         $preparationORGN = $request->input('preparationORGN'); // ОРГН
@@ -99,7 +99,7 @@ class ExelGen extends Controller
         $complitePosition = $request->input('complitePosition'); //Должность
         $compliteFIO = $request->input('compliteFIO'); // ФИО
         $compliteREQ = $request->input('compliteREQ'); // Реквизиты распорядительного документа, подтверждающего полномочия
-        $compliteDateId = $request->input('compliteDateId'); // Дата выдачи номера
+        $compliteDateId = $request->input('compliteDateId'); // Даты выдачи документа
         $compliteNameYUR = $request->input('compliteNameYUR'); // Наименование юридического лица
         $compliteYURaddres = $request->input('compliteYURaddres'); // Место нахождения юридического лица
         $compliteORGN = $request->input('compliteORGN'); // ОРГН
@@ -109,7 +109,7 @@ class ExelGen extends Controller
         $anotherPosition = $request->input('anotherPosition'); //Должность
         $anotherFIO = $request->input('anotherFIO'); // ФИО
         $anotherREQ = $request->input('anotherREQ'); // Реквизиты распорядительного документа, подтверждающего полномочия
-        $anotherDate_Id = $request->input('anotherDate_Id'); // Дата выдачи номера
+        $anotherDate_Id = $request->input('anotherDate_Id'); // Даты выдачи документа
         $anotherNameYur = $request->input('anotherNameYur'); // Наименование юридического лица
         //Произвели осмотр работ, выполненных
         $checkName = $request->input('checkName'); //Наименование юридического лица, выполнившего работы, подлежащие освидетельствованию

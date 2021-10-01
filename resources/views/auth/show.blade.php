@@ -475,7 +475,7 @@
                 <label class="bottomlabel"> в национальном реестре специалистов в области строительства </label>
               </div>
               <div class="col-lg-4">
-                <label class="fieldlabels">Дата выдачи номера</label>
+                <label class="fieldlabels">Даты выдачи документа</label>
                 <input type="text" value="{{$Docs->representativeBuilderDateGet}}" data-name="representativeBuilderDateGet" class="date" name="representativeBuilderDateGet" />
               </div>
             </div>
@@ -611,7 +611,7 @@
                 <label class="bottomlabel"> в национальном реестре специалистов в области строительства </label>
               </div>
               <div class="col-lg-4">
-                <label class="fieldlabels">Дата выдачи номера</label>
+                <label class="fieldlabels">Даты выдачи документа</label>
                 <input type="text" value="{{$Docs->memberBuilderDateId}}" data-name="memberBuilderDateId" class="date" name="memberBuilderDateId" />
               </div>
             </div>
@@ -680,7 +680,7 @@
                 <input type="text" value="{{$Docs->preparationREQ}}" name="preparationREQ" />
               </div>
               <div class="col-lg-4">
-                <label class="fieldlabels">Дата выдачи номера</label>
+                <label class="fieldlabels">Даты выдачи документа</label>
                 <input type="text" value="{{$Docs->preparationDateId}}" data-name="preparationDateId" class="date" name="preparationDateId" />
               </div>
             </div>
@@ -760,7 +760,7 @@
                 <input type="text" value="{{$Docs->compliteREQ}}" name="compliteREQ" />
               </div>
               <div class="col-lg-4">
-                <label class="fieldlabels">Дата выдачи номера</label>
+                <label class="fieldlabels">Даты выдачи документа</label>
                 <input type="text" value="{{$Docs->compliteDateId}}" data-name="compliteDateId" class="date" name="compliteDateId" />
               </div>
             </div>
@@ -846,7 +846,7 @@
                     <input type="text" value="{{$another['anotherREQ']}}" name="anotherREQ[]" />
                   </div>
                   <div class="col-lg-4">
-                    <label class="fieldlabels">Дата выдачи номера</label>
+                    <label class="fieldlabels">Даты выдачи документа</label>
                     <input type="text" value="{{$another['anotherDate_Id']}}" data-name="anotherDate_Id" class="date" name="anotherDate_Id[]" />
                   </div>
                 </div>
