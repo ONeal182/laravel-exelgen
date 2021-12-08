@@ -169,9 +169,31 @@
         </div>
         <div class="footer-form">
           <input type="button" name="previous" class="previous action-button" value="Назад" style="visibility: hidden;" />
-          <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
+          <div class="step-form">
+          <div class="nav-bread">
+            <a data-step="1" href="">1</a>
+            <a data-step="2" href="">2</a>
+            <a data-step="3" href="">3</a>
+            <a data-step="4" href="">4</a>
+            <a data-step="5" href="">5</a>
+            <a data-step="6" href="">6</a>
+            <a data-step="7" href="">7</a>
+            <a data-step="8" href="">8</a>
+            <a data-step="9" href="">9</a>
+            <a data-step="10" href="">10</a>
+            <a data-step="11" href="">11</a>
+            <a data-step="12" href="">12</a>
+            <a data-step="13" href="">13</a>
+            <a data-step="14" href="">14</a>
+            <a data-step="15" href="">15</a>
+            <a data-step="16" href="">16</a>
+            <a data-step="17" href="">17</a>
+            <a data-step="18" href="">18</a>
+            <a data-step="19" href="">19</a>
+            <a data-step="20" href="">20</a></div>
           </div>
          <div>
+           
           <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
           <input type="button" name="next" class="next action-button" value="Далее" />
          </div>
@@ -256,7 +278,28 @@
         </div>
         <div class="footer-form">
           <input type="button" name="previous" class="previous action-button" value="Назад" />
-          <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
+          <div class="step-form">
+          <div class="nav-bread">
+              <a data-step="1" href="">1</a>
+              <a data-step="2" href="">2</a>
+              <a data-step="3" href="">3</a>
+              <a data-step="4" href="">4</a>
+              <a data-step="5" href="">5</a>
+              <a data-step="6" href="">6</a>
+              <a data-step="7" href="">7</a>
+              <a data-step="8" href="">8</a>
+              <a data-step="9" href="">9</a>
+              <a data-step="10" href="">10</a>
+              <a data-step="11" href="">11</a>
+              <a data-step="12" href="">12</a>
+              <a data-step="13" href="">13</a>
+              <a data-step="14" href="">14</a>
+              <a data-step="15" href="">15</a>
+              <a data-step="16" href="">16</a>
+              <a data-step="17" href="">17</a>
+              <a data-step="18" href="">18</a>
+              <a data-step="19" href="">19</a>
+              <a data-step="20" href="">20</a></div>
           </div>
          <div>
           <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
@@ -344,7 +387,28 @@
         </div>
         <div class="footer-form">
           <input type="button" name="previous" class="previous action-button" value="Назад" />
-          <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
+          <div class="step-form">
+<div class="nav-bread">
+              <a data-step="1" href="">1</a>
+              <a data-step="2" href="">2</a>
+              <a data-step="3" href="">3</a>
+              <a data-step="4" href="">4</a>
+              <a data-step="5" href="">5</a>
+              <a data-step="6" href="">6</a>
+              <a data-step="7" href="">7</a>
+              <a data-step="8" href="">8</a>
+              <a data-step="9" href="">9</a>
+              <a data-step="10" href="">10</a>
+              <a data-step="11" href="">11</a>
+              <a data-step="12" href="">12</a>
+              <a data-step="13" href="">13</a>
+              <a data-step="14" href="">14</a>
+              <a data-step="15" href="">15</a>
+              <a data-step="16" href="">16</a>
+              <a data-step="17" href="">17</a>
+              <a data-step="18" href="">18</a>
+              <a data-step="19" href="">19</a>
+              <a data-step="20" href="">20</a></div>
           </div>
          <div>
           <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
@@ -430,7 +494,28 @@
         </div>
         <div class="footer-form">
           <input type="button" name="previous" class="previous action-button" value="Назад" />
-          <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
+          <div class="step-form">
+<div class="nav-bread">
+              <a data-step="1" href="">1</a>
+              <a data-step="2" href="">2</a>
+              <a data-step="3" href="">3</a>
+              <a data-step="4" href="">4</a>
+              <a data-step="5" href="">5</a>
+              <a data-step="6" href="">6</a>
+              <a data-step="7" href="">7</a>
+              <a data-step="8" href="">8</a>
+              <a data-step="9" href="">9</a>
+              <a data-step="10" href="">10</a>
+              <a data-step="11" href="">11</a>
+              <a data-step="12" href="">12</a>
+              <a data-step="13" href="">13</a>
+              <a data-step="14" href="">14</a>
+              <a data-step="15" href="">15</a>
+              <a data-step="16" href="">16</a>
+              <a data-step="17" href="">17</a>
+              <a data-step="18" href="">18</a>
+              <a data-step="19" href="">19</a>
+              <a data-step="20" href="">20</a></div>
           </div>
          <div>
           <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
@@ -520,7 +605,28 @@
         </div>
         <div class="footer-form">
           <input type="button" name="previous" class="previous action-button" value="Назад" />
-          <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
+          <div class="step-form">
+<div class="nav-bread">
+              <a data-step="1" href="">1</a>
+              <a data-step="2" href="">2</a>
+              <a data-step="3" href="">3</a>
+              <a data-step="4" href="">4</a>
+              <a data-step="5" href="">5</a>
+              <a data-step="6" href="">6</a>
+              <a data-step="7" href="">7</a>
+              <a data-step="8" href="">8</a>
+              <a data-step="9" href="">9</a>
+              <a data-step="10" href="">10</a>
+              <a data-step="11" href="">11</a>
+              <a data-step="12" href="">12</a>
+              <a data-step="13" href="">13</a>
+              <a data-step="14" href="">14</a>
+              <a data-step="15" href="">15</a>
+              <a data-step="16" href="">16</a>
+              <a data-step="17" href="">17</a>
+              <a data-step="18" href="">18</a>
+              <a data-step="19" href="">19</a>
+              <a data-step="20" href="">20</a></div>
           </div>
          <div>
           <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
@@ -584,7 +690,28 @@
         </div>
         <div class="footer-form">
           <input type="button" name="previous" class="previous action-button" value="Назад" />
-          <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
+          <div class="step-form">
+<div class="nav-bread">
+              <a data-step="1" href="">1</a>
+              <a data-step="2" href="">2</a>
+              <a data-step="3" href="">3</a>
+              <a data-step="4" href="">4</a>
+              <a data-step="5" href="">5</a>
+              <a data-step="6" href="">6</a>
+              <a data-step="7" href="">7</a>
+              <a data-step="8" href="">8</a>
+              <a data-step="9" href="">9</a>
+              <a data-step="10" href="">10</a>
+              <a data-step="11" href="">11</a>
+              <a data-step="12" href="">12</a>
+              <a data-step="13" href="">13</a>
+              <a data-step="14" href="">14</a>
+              <a data-step="15" href="">15</a>
+              <a data-step="16" href="">16</a>
+              <a data-step="17" href="">17</a>
+              <a data-step="18" href="">18</a>
+              <a data-step="19" href="">19</a>
+              <a data-step="20" href="">20</a></div>
           </div>
          <div>
           <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
@@ -657,7 +784,28 @@
         </div>
         <div class="footer-form">
           <input type="button" name="previous" class="previous action-button" value="Назад" />
-          <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
+          <div class="step-form">
+<div class="nav-bread">
+              <a data-step="1" href="">1</a>
+              <a data-step="2" href="">2</a>
+              <a data-step="3" href="">3</a>
+              <a data-step="4" href="">4</a>
+              <a data-step="5" href="">5</a>
+              <a data-step="6" href="">6</a>
+              <a data-step="7" href="">7</a>
+              <a data-step="8" href="">8</a>
+              <a data-step="9" href="">9</a>
+              <a data-step="10" href="">10</a>
+              <a data-step="11" href="">11</a>
+              <a data-step="12" href="">12</a>
+              <a data-step="13" href="">13</a>
+              <a data-step="14" href="">14</a>
+              <a data-step="15" href="">15</a>
+              <a data-step="16" href="">16</a>
+              <a data-step="17" href="">17</a>
+              <a data-step="18" href="">18</a>
+              <a data-step="19" href="">19</a>
+              <a data-step="20" href="">20</a></div>
           </div>
          <div>
           <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
@@ -740,7 +888,28 @@
         </div>
         <div class="footer-form">
           <input type="button" name="previous" class="previous action-button" value="Назад" />
-          <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
+          <div class="step-form">
+<div class="nav-bread">
+              <a data-step="1" href="">1</a>
+              <a data-step="2" href="">2</a>
+              <a data-step="3" href="">3</a>
+              <a data-step="4" href="">4</a>
+              <a data-step="5" href="">5</a>
+              <a data-step="6" href="">6</a>
+              <a data-step="7" href="">7</a>
+              <a data-step="8" href="">8</a>
+              <a data-step="9" href="">9</a>
+              <a data-step="10" href="">10</a>
+              <a data-step="11" href="">11</a>
+              <a data-step="12" href="">12</a>
+              <a data-step="13" href="">13</a>
+              <a data-step="14" href="">14</a>
+              <a data-step="15" href="">15</a>
+              <a data-step="16" href="">16</a>
+              <a data-step="17" href="">17</a>
+              <a data-step="18" href="">18</a>
+              <a data-step="19" href="">19</a>
+              <a data-step="20" href="">20</a></div>
           </div>
          <div>
           <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
@@ -823,7 +992,28 @@
         </div>
         <div class="footer-form">
           <input type="button" name="previous" class="previous action-button" value="Назад" />
-          <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
+          <div class="step-form">
+<div class="nav-bread">
+              <a data-step="1" href="">1</a>
+              <a data-step="2" href="">2</a>
+              <a data-step="3" href="">3</a>
+              <a data-step="4" href="">4</a>
+              <a data-step="5" href="">5</a>
+              <a data-step="6" href="">6</a>
+              <a data-step="7" href="">7</a>
+              <a data-step="8" href="">8</a>
+              <a data-step="9" href="">9</a>
+              <a data-step="10" href="">10</a>
+              <a data-step="11" href="">11</a>
+              <a data-step="12" href="">12</a>
+              <a data-step="13" href="">13</a>
+              <a data-step="14" href="">14</a>
+              <a data-step="15" href="">15</a>
+              <a data-step="16" href="">16</a>
+              <a data-step="17" href="">17</a>
+              <a data-step="18" href="">18</a>
+              <a data-step="19" href="">19</a>
+              <a data-step="20" href="">20</a></div>
           </div>
          <div>
           <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
@@ -915,7 +1105,28 @@
         </div>
         <div class="footer-form">
           <input type="button" name="previous" class="previous action-button" value="Назад" />
-          <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
+          <div class="step-form">
+<div class="nav-bread">
+              <a data-step="1" href="">1</a>
+              <a data-step="2" href="">2</a>
+              <a data-step="3" href="">3</a>
+              <a data-step="4" href="">4</a>
+              <a data-step="5" href="">5</a>
+              <a data-step="6" href="">6</a>
+              <a data-step="7" href="">7</a>
+              <a data-step="8" href="">8</a>
+              <a data-step="9" href="">9</a>
+              <a data-step="10" href="">10</a>
+              <a data-step="11" href="">11</a>
+              <a data-step="12" href="">12</a>
+              <a data-step="13" href="">13</a>
+              <a data-step="14" href="">14</a>
+              <a data-step="15" href="">15</a>
+              <a data-step="16" href="">16</a>
+              <a data-step="17" href="">17</a>
+              <a data-step="18" href="">18</a>
+              <a data-step="19" href="">19</a>
+              <a data-step="20" href="">20</a></div>
           </div>
          <div>
           <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
@@ -956,7 +1167,28 @@
         </div>
         <div class="footer-form">
           <input type="button" name="previous" class="previous action-button" value="Назад" />
-          <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
+          <div class="step-form">
+<div class="nav-bread">
+              <a data-step="1" href="">1</a>
+              <a data-step="2" href="">2</a>
+              <a data-step="3" href="">3</a>
+              <a data-step="4" href="">4</a>
+              <a data-step="5" href="">5</a>
+              <a data-step="6" href="">6</a>
+              <a data-step="7" href="">7</a>
+              <a data-step="8" href="">8</a>
+              <a data-step="9" href="">9</a>
+              <a data-step="10" href="">10</a>
+              <a data-step="11" href="">11</a>
+              <a data-step="12" href="">12</a>
+              <a data-step="13" href="">13</a>
+              <a data-step="14" href="">14</a>
+              <a data-step="15" href="">15</a>
+              <a data-step="16" href="">16</a>
+              <a data-step="17" href="">17</a>
+              <a data-step="18" href="">18</a>
+              <a data-step="19" href="">19</a>
+              <a data-step="20" href="">20</a></div>
           </div>
          <div>
           <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
@@ -1017,7 +1249,28 @@
         </div>
         <div class="footer-form">
           <input type="button" name="previous" class="previous action-button" value="Назад" />
-          <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
+          <div class="step-form">
+<div class="nav-bread">
+              <a data-step="1" href="">1</a>
+              <a data-step="2" href="">2</a>
+              <a data-step="3" href="">3</a>
+              <a data-step="4" href="">4</a>
+              <a data-step="5" href="">5</a>
+              <a data-step="6" href="">6</a>
+              <a data-step="7" href="">7</a>
+              <a data-step="8" href="">8</a>
+              <a data-step="9" href="">9</a>
+              <a data-step="10" href="">10</a>
+              <a data-step="11" href="">11</a>
+              <a data-step="12" href="">12</a>
+              <a data-step="13" href="">13</a>
+              <a data-step="14" href="">14</a>
+              <a data-step="15" href="">15</a>
+              <a data-step="16" href="">16</a>
+              <a data-step="17" href="">17</a>
+              <a data-step="18" href="">18</a>
+              <a data-step="19" href="">19</a>
+              <a data-step="20" href="">20</a></div>
           </div>
          <div>
           <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
@@ -1066,7 +1319,28 @@
         </div>
         <div class="footer-form">
           <input type="button" name="previous" class="previous action-button" value="Назад" />
-          <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
+          <div class="step-form">
+<div class="nav-bread">
+              <a data-step="1" href="">1</a>
+              <a data-step="2" href="">2</a>
+              <a data-step="3" href="">3</a>
+              <a data-step="4" href="">4</a>
+              <a data-step="5" href="">5</a>
+              <a data-step="6" href="">6</a>
+              <a data-step="7" href="">7</a>
+              <a data-step="8" href="">8</a>
+              <a data-step="9" href="">9</a>
+              <a data-step="10" href="">10</a>
+              <a data-step="11" href="">11</a>
+              <a data-step="12" href="">12</a>
+              <a data-step="13" href="">13</a>
+              <a data-step="14" href="">14</a>
+              <a data-step="15" href="">15</a>
+              <a data-step="16" href="">16</a>
+              <a data-step="17" href="">17</a>
+              <a data-step="18" href="">18</a>
+              <a data-step="19" href="">19</a>
+              <a data-step="20" href="">20</a></div>
           </div>
          <div>
           <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
@@ -1177,7 +1451,28 @@
         </div>
         <div class="footer-form">
           <input type="button" name="previous" class="previous action-button" value="Назад" />
-          <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
+          <div class="step-form">
+<div class="nav-bread">
+              <a data-step="1" href="">1</a>
+              <a data-step="2" href="">2</a>
+              <a data-step="3" href="">3</a>
+              <a data-step="4" href="">4</a>
+              <a data-step="5" href="">5</a>
+              <a data-step="6" href="">6</a>
+              <a data-step="7" href="">7</a>
+              <a data-step="8" href="">8</a>
+              <a data-step="9" href="">9</a>
+              <a data-step="10" href="">10</a>
+              <a data-step="11" href="">11</a>
+              <a data-step="12" href="">12</a>
+              <a data-step="13" href="">13</a>
+              <a data-step="14" href="">14</a>
+              <a data-step="15" href="">15</a>
+              <a data-step="16" href="">16</a>
+              <a data-step="17" href="">17</a>
+              <a data-step="18" href="">18</a>
+              <a data-step="19" href="">19</a>
+              <a data-step="20" href="">20</a></div>
           </div>
          <div>
           <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
@@ -1251,7 +1546,28 @@
         </div>
         <div class="footer-form">
           <input type="button" name="previous" class="previous action-button" value="Назад" />
-          <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
+          <div class="step-form">
+<div class="nav-bread">
+              <a data-step="1" href="">1</a>
+              <a data-step="2" href="">2</a>
+              <a data-step="3" href="">3</a>
+              <a data-step="4" href="">4</a>
+              <a data-step="5" href="">5</a>
+              <a data-step="6" href="">6</a>
+              <a data-step="7" href="">7</a>
+              <a data-step="8" href="">8</a>
+              <a data-step="9" href="">9</a>
+              <a data-step="10" href="">10</a>
+              <a data-step="11" href="">11</a>
+              <a data-step="12" href="">12</a>
+              <a data-step="13" href="">13</a>
+              <a data-step="14" href="">14</a>
+              <a data-step="15" href="">15</a>
+              <a data-step="16" href="">16</a>
+              <a data-step="17" href="">17</a>
+              <a data-step="18" href="">18</a>
+              <a data-step="19" href="">19</a>
+              <a data-step="20" href="">20</a></div>
           </div>
          <div>
           <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
@@ -1296,7 +1612,28 @@
         </div>
         <div class="footer-form">
           <input type="button" name="previous" class="previous action-button" value="Назад" />
-          <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
+          <div class="step-form">
+<div class="nav-bread">
+              <a data-step="1" href="">1</a>
+              <a data-step="2" href="">2</a>
+              <a data-step="3" href="">3</a>
+              <a data-step="4" href="">4</a>
+              <a data-step="5" href="">5</a>
+              <a data-step="6" href="">6</a>
+              <a data-step="7" href="">7</a>
+              <a data-step="8" href="">8</a>
+              <a data-step="9" href="">9</a>
+              <a data-step="10" href="">10</a>
+              <a data-step="11" href="">11</a>
+              <a data-step="12" href="">12</a>
+              <a data-step="13" href="">13</a>
+              <a data-step="14" href="">14</a>
+              <a data-step="15" href="">15</a>
+              <a data-step="16" href="">16</a>
+              <a data-step="17" href="">17</a>
+              <a data-step="18" href="">18</a>
+              <a data-step="19" href="">19</a>
+              <a data-step="20" href="">20</a></div>
           </div>
          <div>
           <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
@@ -1343,7 +1680,28 @@
         </div>
         <div class="footer-form">
           <input type="button" name="previous" class="previous action-button" value="Назад" />
-          <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
+          <div class="step-form">
+<div class="nav-bread">
+              <a data-step="1" href="">1</a>
+              <a data-step="2" href="">2</a>
+              <a data-step="3" href="">3</a>
+              <a data-step="4" href="">4</a>
+              <a data-step="5" href="">5</a>
+              <a data-step="6" href="">6</a>
+              <a data-step="7" href="">7</a>
+              <a data-step="8" href="">8</a>
+              <a data-step="9" href="">9</a>
+              <a data-step="10" href="">10</a>
+              <a data-step="11" href="">11</a>
+              <a data-step="12" href="">12</a>
+              <a data-step="13" href="">13</a>
+              <a data-step="14" href="">14</a>
+              <a data-step="15" href="">15</a>
+              <a data-step="16" href="">16</a>
+              <a data-step="17" href="">17</a>
+              <a data-step="18" href="">18</a>
+              <a data-step="19" href="">19</a>
+              <a data-step="20" href="">20</a></div>
           </div>
          <div>
           <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
@@ -1384,7 +1742,28 @@
         </div>
         <div class="footer-form">
           <input type="button" name="previous" class="previous action-button" value="Назад" />
-          <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
+          <div class="step-form">
+<div class="nav-bread">
+              <a data-step="1" href="">1</a>
+              <a data-step="2" href="">2</a>
+              <a data-step="3" href="">3</a>
+              <a data-step="4" href="">4</a>
+              <a data-step="5" href="">5</a>
+              <a data-step="6" href="">6</a>
+              <a data-step="7" href="">7</a>
+              <a data-step="8" href="">8</a>
+              <a data-step="9" href="">9</a>
+              <a data-step="10" href="">10</a>
+              <a data-step="11" href="">11</a>
+              <a data-step="12" href="">12</a>
+              <a data-step="13" href="">13</a>
+              <a data-step="14" href="">14</a>
+              <a data-step="15" href="">15</a>
+              <a data-step="16" href="">16</a>
+              <a data-step="17" href="">17</a>
+              <a data-step="18" href="">18</a>
+              <a data-step="19" href="">19</a>
+              <a data-step="20" href="">20</a></div>
           </div>
          <div>
           <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
@@ -1425,7 +1804,28 @@
         </div>
         <div class="footer-form">
           <input type="button" name="previous" class="previous action-button" value="Назад" />
-          <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
+          <div class="step-form">
+<div class="nav-bread">
+              <a data-step="1" href="">1</a>
+              <a data-step="2" href="">2</a>
+              <a data-step="3" href="">3</a>
+              <a data-step="4" href="">4</a>
+              <a data-step="5" href="">5</a>
+              <a data-step="6" href="">6</a>
+              <a data-step="7" href="">7</a>
+              <a data-step="8" href="">8</a>
+              <a data-step="9" href="">9</a>
+              <a data-step="10" href="">10</a>
+              <a data-step="11" href="">11</a>
+              <a data-step="12" href="">12</a>
+              <a data-step="13" href="">13</a>
+              <a data-step="14" href="">14</a>
+              <a data-step="15" href="">15</a>
+              <a data-step="16" href="">16</a>
+              <a data-step="17" href="">17</a>
+              <a data-step="18" href="">18</a>
+              <a data-step="19" href="">19</a>
+              <a data-step="20" href="">20</a></div>
           </div>
          <div>
           <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>
@@ -1506,7 +1906,28 @@
         </div>
         <div class="footer-form">
           <input type="button" name="previous" class="previous action-button" value="Назад" />
-          <div class="step-form">Шаг <div class="step-count"></div> из <div class="step-all"></div>
+          <div class="step-form">
+<div class="nav-bread">
+              <a data-step="1" href="">1</a>
+              <a data-step="2" href="">2</a>
+              <a data-step="3" href="">3</a>
+              <a data-step="4" href="">4</a>
+              <a data-step="5" href="">5</a>
+              <a data-step="6" href="">6</a>
+              <a data-step="7" href="">7</a>
+              <a data-step="8" href="">8</a>
+              <a data-step="9" href="">9</a>
+              <a data-step="10" href="">10</a>
+              <a data-step="11" href="">11</a>
+              <a data-step="12" href="">12</a>
+              <a data-step="13" href="">13</a>
+              <a data-step="14" href="">14</a>
+              <a data-step="15" href="">15</a>
+              <a data-step="16" href="">16</a>
+              <a data-step="17" href="">17</a>
+              <a data-step="18" href="">18</a>
+              <a data-step="19" href="">19</a>
+              <a data-step="20" href="">20</a></div>
           </div>
           <div>
             <a href="#" class="button-blue btn-download"><img src="{{ asset("assets/img/icons/save-button.svg") }}">Скачать на компьютер / сохранить </a>

@@ -227,7 +227,9 @@ footer {
     text-align: left;
     min-height: 60vh;
 }
-
+.active_page{
+    display: block !important;
+}
 #msform fieldset:not(:first-of-type) {
     display: none
 }

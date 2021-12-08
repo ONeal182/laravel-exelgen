@@ -486,6 +486,40 @@ $(document).ready(function () {
 
 
 	// Предыдущий шаг
+	function numberStep(){
+		$('.nav-bread a').on('click', function(e){
+			e.preventDefault();
+			
+			var selectStep = $(this).attr('data-step');
+			
+			selectStep = Number(selectStep) - 1;
+			selectStefForProgress = Number(selectStep);
+
+
+			current_fs = $(this).parents().parents('fieldset');
+			previous_fs = $('fieldset[page="pg'+selectStep+'"]');
+			$('fieldset[page="pg'+selectStep+'"] .nav-bread a[data-step="'+(selectStep + 1)+'"]').css({'color':'black','pointer-events': 'none',
+			'cursor': 'default'});
+			console.log(previous_fs);
+			current_fs.animate({ opacity: 0 }, {
+				step: function (now) {
+					// for making fielset appear animation
+					opacity = 1 - now;
+	
+					current_fs.removeClass('active_page');
+					current_fs.css({
+						'display': 'none',
+						'position': 'relative'
+					});
+					previous_fs.addClass('active_page');
+					previous_fs.css({ 'opacity': opacity });
+				},
+				duration: 500
+			});
+			setProgressBar(selectStefForProgress + 1);
+	})
+}
+	numberStep();
 	$(".previous").click(function () {
 		var beginDate = $('.date[data-name=dateBeginWork]');
 		var endDate = $('.date[data-name=dateEndWork]');
@@ -502,11 +536,10 @@ $(document).ready(function () {
 
 		//Remove class active
 		$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-
+		
 		//show the previous fieldset
 		previous_fs.show();
 		let new_current = $('.active_page').attr('page');
-
 		//hide the current fieldset with style
 		current_fs.animate({ opacity: 0 }, {
 			step: function (now) {
@@ -532,10 +565,13 @@ $(document).ready(function () {
 	function setProgressBar(curStep) {
 		var percent = parseFloat(100 / steps) * curStep;
 		percent = percent.toFixed();
+		console.log(curStep); 
 		$(".progress-bar")
 			.css("width", percent + "%")
 		$('.step-all').html(steps - 1);
 		$('.step-count').html(curStep);
+		$('fieldset[page="pg'+curStep+'"] .nav-bread a[data-step="'+(curStep + 1)+'"]').css({'color':'black','pointer-events': 'none',
+			'cursor': 'default'});
 
 	}
 
