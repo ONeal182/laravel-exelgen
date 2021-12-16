@@ -35,7 +35,9 @@ Route::get('/personal', [App\Http\Controllers\AdminController::class, 'index'])-
 Route::get('/personal/list', [App\Http\Controllers\AdminController::class, 'list'])->name('list');
 Route::get('/personal/list/download/{id}', [App\Http\Controllers\AdminController::class, 'download']);
 Route::get('/personal/list/show/{id}', [App\Http\Controllers\AdminController::class, 'show']);
+Route::get('/personal/list/docs/{id}', [App\Http\Controllers\AdminController::class, 'docs']);
 Route::post('/personal/list/edit/{id}', [App\Http\Controllers\AdminController::class, 'edit']);
+Route::post('/personal/list/updateDocs/{id}', [App\Http\Controllers\AdminController::class, 'updateDocs']);
 Route::post('/personal/list/deleted/', [App\Http\Controllers\AdminController::class, 'deleted']);
 
 Route::put('/personal/settings/{id}', [App\Http\Controllers\AdminController::class, 'updateDataUser']);

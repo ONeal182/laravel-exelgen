@@ -44,7 +44,6 @@
             <h2>Список документов</h2>
             <a href="/forms" class="get_act">
                 <input type="button" name="" class="action-button" value="Оформить новый акт">
-            
             </a>
             <div class="table-responsive">
               <table class="table table-striped table-sm">
@@ -67,7 +66,12 @@
                               <button>
                                   <a class="downLoad-list" href="/personal/list/download/{{$doc->id}}">Скачать</a>
                               </button>
-                              <a href="/personal/list/show/{{$doc->id}}"><button>Изменить</button></a>
+                              <a href="/personal/list/show/{{$doc->id}}">
+                                <button>Изменить</button>
+                              </a>
+                              <a href="/personal/list/docs/{{$doc->id}}">
+                                <button>Журнал работ</button>
+                              </a>
                               
                               <form action="/personal/list/deleted/" method="post">
                                 {{ csrf_field() }}

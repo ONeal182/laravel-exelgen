@@ -126,6 +126,20 @@ class AdminController extends Controller
         return view('/auth/show', ['Docs' => $data, 'ID' => $id]);
     }
 
+    public function docs($id){
+        $DocsList = Docs::where('id', $id)->get();
+        // dd($DocsList[0]->date);
+        $data = $DocsList[0]->date;
+        $data = json_decode($data);
+        $data = (array)$data;
+        foreach ($data['workDo'] as $key => $workDo) {
+            $data['workDoArr'][$key]['workDo'] = $workDo;
+        }
+
+        $data = (object)$data;
+        return view('/auth/docs', ['Docs' => $data, 'ID' => $id]);
+
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -143,7 +157,21 @@ class AdminController extends Controller
 
         return redirect('/personal/list/');
     }
-
+    public function updateDocs(Request $request, $id)
+    {
+        $DocsList = Docs::where('id', $id)->get();
+        $DocsListWorkDo = $request->input();
+        unset($DocsListWorkDo['_token']);
+        $data = $DocsList[0]->date;
+        $data = json_decode($data);
+        $data = (array)$data;
+        $data['workDo'] = $DocsListWorkDo['workDo'];
+        $DocsList = json_encode($DocsList, JSON_UNESCAPED_UNICODE);
+        Docs::where('id', $id)->update(['date' => $data]);
+        return redirect('/personal/list/');
+        
+        
+    }
     /**
      * Update the specified resource in storage.
      *
