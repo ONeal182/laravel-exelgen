@@ -45,6 +45,7 @@
             <a href="/forms" class="get_act">
                 <input type="button" name="" class="action-button" value="Оформить новый акт">
             </a>
+            
             <div class="table-responsive">
               <table class="table table-striped table-sm">
                 <thead>
@@ -86,6 +87,9 @@
                  
                 </tbody>
               </table>
+              <a href="/personal/list/ojr/" class="">
+                <input type="button" name="" class="action-button" value="Общий журнал работ">
+            </a>
             </div>
           </main>
     </div>

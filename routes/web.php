@@ -41,3 +41,6 @@ Route::post('/personal/list/updateDocs/{id}', [App\Http\Controllers\AdminControl
 Route::post('/personal/list/deleted/', [App\Http\Controllers\AdminController::class, 'deleted']);
 
 Route::put('/personal/settings/{id}', [App\Http\Controllers\AdminController::class, 'updateDataUser']);
+
+Route::get('/personal/list/ojr/', [App\Http\Controllers\AdminController::class, 'ojr']);
+Route::get('/personal/list/ojr/create', [App\Http\Controllers\AdminController::class, 'ojrCreate']);

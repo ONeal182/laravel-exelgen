@@ -140,6 +140,39 @@ class AdminController extends Controller
         return view('/auth/docs', ['Docs' => $data, 'ID' => $id]);
 
     }
+    public function ojr(){
+        // $DocsList = Docs::where('id', $id)->get();
+        // // dd($DocsList[0]->date);
+        // $data = $DocsList[0]->date;
+        // $data = json_decode($data);
+        // $data = (array)$data;
+        // foreach ($data['workDo'] as $key => $workDo) {
+        //     $data['workDoArr'][$key]['workDo'] = $workDo;
+        // }
+
+        // $data = (object)$data;
+        // return view('/auth/ojr', ['Docs' => $data, 'ID' => $id]);
+        return view('/auth/ojr');
+
+
+    }
+
+    public function ojrCreate(){
+        // $DocsList = Docs::where('id', $id)->get();
+        // // dd($DocsList[0]->date);
+        // $data = $DocsList[0]->date;
+        // $data = json_decode($data);
+        // $data = (array)$data;
+        // foreach ($data['workDo'] as $key => $workDo) {
+        //     $data['workDoArr'][$key]['workDo'] = $workDo;
+        // }
+
+        // $data = (object)$data;
+        // return view('/auth/ojr', ['Docs' => $data, 'ID' => $id]);
+        return view('/auth/createojr');
+
+
+    }
     /**
      * Show the form for editing the specified resource.
      *
