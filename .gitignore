@@ -15,6 +15,6 @@ yarn-error.log
 /nginx
 /php
 /mysql
-DockerFile
+Dockerfile
 docker-compose.yml
-DockerFile5.6.txt
+Dockerfile5.6.txt
