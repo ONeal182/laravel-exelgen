@@ -376,6 +376,7 @@ class ExelGen extends Controller
             $docs->fill(
                 $data
             );
+            dd($date);
             $docs->save();
             $ojr = new Ojr;
             $ojrDate = $ojr::where('id', $date['idOjr'])->get();
