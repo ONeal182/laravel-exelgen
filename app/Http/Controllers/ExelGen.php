@@ -10,6 +10,7 @@ use PHPExcel_Style_Alignment;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Docs;
+use App\Models\Ojr;
 
 class ExelGen extends Controller
 {
@@ -376,7 +377,9 @@ class ExelGen extends Controller
                 $data
             );
             $docs->save();
-            dd($docs->id);
+            $ojr = new Ojr;
+            $ojrDate = $ojr::where('id', $date['idOjr'])->get();
+            dd($ojrDate);
             
 
         }

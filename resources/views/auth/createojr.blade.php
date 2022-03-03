@@ -47,6 +47,7 @@
 
                 <div class="table-responsive">
                     <form class="form-ojr" action="/personal/list/ojr/add/save" id="msform">
+                        <input type="hidden" name="idOjr" value="{{$ojr->id}}">
                         <div class="form-group row">
                             <label for="actNumber" class="col-sm-2 col-form-label">Акт №</label>
                             <div class="col-sm-10">
