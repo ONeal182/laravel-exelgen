@@ -256,6 +256,7 @@ class AdminController extends Controller
         $DocsList = Docs::where('id', $post['doneWork'])->get();
         $date = (array)json_decode($DocsList[0]->date);
         $replaceArray = array_replace($date, $post);
+        $replaceArray['idOjr'] = $date['idOjr'] ;
         $ExelGen->generateExcel($replaceArray,$request,true);
         
     }
