@@ -376,7 +376,7 @@ class ExelGen extends Controller
                 $data
             );
             $docs->save();
-            dd($docs->save());
+            dd($docs->id);
             
 
         }
