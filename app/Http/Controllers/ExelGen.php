@@ -376,12 +376,28 @@ class ExelGen extends Controller
             $docs->fill(
                 $data
             );
-            dd($date);
             $docs->save();
-            $ojr = new Ojr;
-            dd($date);
-            $ojrDate = $ojr::where('id', $date['idOjr'])->get();
-            dd($ojrDate);
+            if($edit === true){
+                $id_aosr = (int)$docs->id;
+                $id_aosr_array = [];
+                $ojr = new Ojr;
+                $dateOjr = $ojr::where('id', $date['idOjr'])->get();
+                $dateOjrDate = json_decode($dateOjr[0]->id_aosr);
+                $dateOjrDate = (array)$dateOjrDate;
+                if(!empty($dateOjr[0]->id_aosr)){
+                    foreach($dateOjrDate as $key => $id){
+                        
+                        $id_aosr_array[] = (int)$id;
+                        
+                    }
+                    
+                }
+                $id_aosr_array[] = $id_aosr;
+               
+                $id_aosr = json_encode($id_aosr);
+                $ojr::where('id', $date['idOjr'])->update(['id_aosr' => json_encode($id_aosr_array)]);
+            }
+
             
 
         }
@@ -1513,8 +1529,9 @@ class ExelGen extends Controller
         
         
         if($edit === true){
-            // $this->addDate($date);
-            dd($this->addDate($date));
+            $this->addDate($date,true);
+            return redirect('/personal/list/ojr/');
+
         }else{
             $objWriter = PHPExcel_IOFactory::createWriter($this->objPHPExcel, 'Excel5');
             $filename = 'Content-Disposition:AOCP_№' . $numberAct . '_om_' . $dateAOSR . '.xls';
