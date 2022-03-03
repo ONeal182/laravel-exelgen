@@ -43,7 +43,7 @@
             </div> --}}
             </nav>
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 head_admin-list">
-                <h2>Новый ОЖР</h2>
+                <h2>Новый АОСР</h2>
 
                 <div class="table-responsive">
                     <form class="form-ojr" action="/personal/list/ojr/add/save" id="msform">
@@ -75,7 +75,7 @@
                         <div class="form-group row">
                             <label for="workName" class="col-sm-2 col-form-label">Наименование работ</label>
                             <div class="col-sm-10">
-                                <input type="text" value="{{ $ojr->title }}" name="nameWork" class="form-control"
+                                <input type="text" value="" name="projectName" class="form-control"
                                     id="dateGo" placeholder="">
                             </div>
                         </div>
@@ -253,15 +253,29 @@
                         <div class="form-group row">
                             <label for="workerPres3" class="col-sm-2 col-form-label">Представитель лица, осуществляющего строительство </label>
                             <div class="col-sm-10">
-                                <input  type="text" name="contractorName" class="form-control" id="workerPres3"
-                                    placeholder="">
+                                <input  type="text" name="representativeContractorFIO" class="form-control" id="representativeContractorFIO"
+                                    placeholder=" 
+                                    Фамилия, инициалы">
+                                    <input  type="text" name="representativeContractorPosition" class="form-control" id="representativeContractorPosition"
+                                    placeholder="Должность">
+                                    <input  type="text" name="representativeContractorRequisites" class="form-control" id="representativeContractorRequisites"
+                                    placeholder="Реквизиты распорядительного документа, подтверждающего полномочия">
+                                    <input  type="date" name="representativeContractorDate" class="form-control" id="representativeContractorDate"
+                                    placeholder="Дата выдачи документа">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="workerPres4" class="col-sm-2 col-form-label">Представитель лица, осуществляющего подготовку проектной документации</label>
                             <div class="col-sm-10">
-                                <input  type="text" name="workerPres4" class="form-control" id="workerPres4"
-                                    placeholder="">
+                                <input  type="text" name="preparationFIO" class="form-control" id="preparationFIO"
+                                    placeholder=" 
+                                    Фамилия, инициалы">
+                                    <input  type="text" name="preparationPosition" class="form-control" id="preparationPosition"
+                                    placeholder="Должность">
+                                    <input  type="text" name="preparationREQ" class="form-control" id="preparationREQ"
+                                    placeholder="Должность">
+                                    <input  type="date" name="preparationDateId" class="form-control" id="preparationDateId"
+                                    placeholder="Должность">
                             </div>
                         </div>
                         <div class="form-group row">

@@ -275,9 +275,12 @@ $(document).ready(function () {
 
                 let dateEndWork = JSON.stringify(data[0].dateEndWork);
                 addDateForm('dateEndWork',dateEndWork,'data');
-
+                console.log(JSON.stringify(data[0].projectName));
                 let dateBeginWork = JSON.stringify(data[0].dateBeginWork);
                 addDateForm('dateBeginWork',dateBeginWork,'data');
+
+                let projectName = JSON.stringify(data[0].projectName);
+                addDateForm('projectName',projectName);
 
             },
             error: function (jqXHR, exception) {
