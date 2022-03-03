@@ -360,9 +360,9 @@ class ExelGen extends Controller
     {
     }
 
-    public function addDate(Request $request)
+    public function addDate($date,$edit=false)
     {
-        $date = $this->formRequest($request);
+        $date = $date;
         $numberAct = $date['numberAct'];
         $userId = Auth::id();
         if (Auth::check()) {
@@ -376,17 +376,23 @@ class ExelGen extends Controller
                 $data
             );
             $docs->save();
+            
+
         }
+
+        return $docs->id;
     }
 
-    public function generateExcel($data = null, Request $request)
+    public function generateExcel($data = null, Request $request,$edit=false)
     {
+
         //Получаем данные из формы
-        if ($data) {
+        if (!empty($data)) {
             $date = $data;
         } else {
             $date = $this->formRequest($request);
         }
+
 
         $title = 'Название документа';
         $rowMarg = ['top' => 1.5, 'left' => 1, 'right' => 0.5, 'bottom' => 1.5];
@@ -1503,10 +1509,15 @@ class ExelGen extends Controller
         // iconv('UTF-8', "windows-1251", $filename);
         header($filename);
         header('Cache-Control: max-age=0');
-
-
+        
+        
+        if($edit === true){
+            $this->addDate($date);
+        }else{
+            $this->addDate($date);
+        }
         $objWriter->save('php://output');
-        $this->addDate($request);
+        
         return $filename;
     }
 }

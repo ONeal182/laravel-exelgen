@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <script src="{{ asset('assets/js/ajax.js') }}" defer></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -79,5 +79,39 @@
             @yield('content')
         </main>
     </div>
+    <script>
+        function datePicker() {
+            $('.date').datepicker({
+                format: 'dd.mm.yyyy',
+                date: '',
+                language: 'ru-RU',
+                autoHide: true
+            });
+            // Инициализируем проверку дат (проверка и подсказки)
+            // dateCheck();
+            $('.date').attr('placeholder', '01.01.2000');
+        };
+        datePicker();
+        $('body').on('click', '.control_section .delete', function() {
+            $count = $(this).parents('.forms').find('.add_section').length;
+            if ($count > 2) {
+                $(this).parents('.add_section').remove();
+            }
+            // скрыть тултипы
+            $('.date').tooltip('hide');
+            // datePicker();
+
+
+        });
+        $('body').on('click', '.control_section .add', function() {
+            console.log(1);
+            console.log(1);
+            var first_section = $(this).parents('fieldset').find('.forms .add_section:nth-child(1)').clone();
+            first_section.find('input').val('');
+            $(this).parent().parent().before(first_section);
+            datePicker();
+
+        })
+    </script>
 </body>
 </html>

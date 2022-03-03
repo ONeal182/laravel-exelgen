@@ -53,38 +53,31 @@
                     <th>Редактировать</th>
                   </tr>
                 </thead>
-                {{-- <tbody>
+                <tbody>
                     
-                    @foreach ($Docs as $doc)
+                    @foreach ($data as $doc)
                     <tr>
                         <td>{{$doc->id}}</td>
-                          <td>{{$doc->created_at}}</td>
+                          <td>{{$doc->date_start}} / {{$doc->date_end}}</td>
                           <td>{{$doc->title}}</td>
                           <td class="d-flex justify-content-betwee">
-                              <button>
-                                  <a class="downLoad-list" href="/personal/list/download/{{$doc->id}}">Скачать</a>
-                              </button>
-                              <a href="/personal/list/show/{{$doc->id}}">
+                              <a href="/personal/list/ojr/create/{{$doc->id}}">
+                                <button>Добавить АОСР</button>
+                              </a>
+                              {{-- <a href="/personal/list/edit/{{$doc->id}}">
                                 <button>Изменить</button>
                               </a>
                               <a href="/personal/list/docs/{{$doc->id}}">
                                 <button>Журнал работ</button>
-                              </a>
-                              
-                              <form action="/personal/list/deleted/" method="post">
-                                {{ csrf_field() }}
-                                <input name='id' type="hidden" value="{{$doc->id}}">
-                                <button type="submit">Удалить</button>
-                            </form>
-                              
+                              </a>       --}}
                           </td>
                         </tr>
                     @endforeach
                   
                  
-                </tbody> --}}
+                </tbody>
               </table>
-              <a href="/personal/list/ojr/" class="">
+              <a href="/personal/list/ojr/add" class="">
                 <input type="button" name="" class="action-button" value="Добавить работы">
             </a>
             </div>

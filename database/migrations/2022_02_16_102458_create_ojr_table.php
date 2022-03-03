@@ -13,11 +13,13 @@ class CreateOjrTable extends Migration
      */
     public function up()
     {
-        Schema::create('ojr', function (Blueprint $table) {
+        Schema::create('ojrs', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->integer('id_user');
-            $table->text('date');
+            $table->text('id_aosr')->nullable();
+            $table->text('date_start');
+            $table->text('date_end');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateOjrTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ojr');
+        Schema::dropIfExists('ojrs');
     }
 }

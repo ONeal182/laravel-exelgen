@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Docs;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Ojr;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Controllers\ExelGen;
@@ -141,25 +143,29 @@ class AdminController extends Controller
 
     }
     public function ojr(){
-        // $DocsList = Docs::where('id', $id)->get();
-        // // dd($DocsList[0]->date);
-        // $data = $DocsList[0]->date;
-        // $data = json_decode($data);
-        // $data = (array)$data;
-        // foreach ($data['workDo'] as $key => $workDo) {
-        //     $data['workDoArr'][$key]['workDo'] = $workDo;
-        // }
+        $user = auth()->user();
+        $data = Ojr::where('id_user', $user->id)->get();
+        if ($data !== null) {
+            return view('/auth/ojr', ['data' => $data, 'ID' => $user]);
+        }
+        
 
-        // $data = (object)$data;
-        // return view('/auth/ojr', ['Docs' => $data, 'ID' => $id]);
-        return view('/auth/ojr');
 
 
     }
 
-    public function ojrCreate(){
-        // $DocsList = Docs::where('id', $id)->get();
-        // // dd($DocsList[0]->date);
+    public function ojrCreate(Request $request, $id){
+        $DocsList = Docs::get();
+        $ojr = Ojr::where('id', $id)->get();
+        $ojr = json_decode($ojr)[0];
+
+        $arrDate = [];
+        foreach($DocsList as $list){
+            $list->date = json_decode($list->date);
+            $list->date->id = $list->id;
+            $arrDate[] = $list->date;
+        }
+
         // $data = $DocsList[0]->date;
         // $data = json_decode($data);
         // $data = (array)$data;
@@ -169,9 +175,48 @@ class AdminController extends Controller
 
         // $data = (object)$data;
         // return view('/auth/ojr', ['Docs' => $data, 'ID' => $id]);
-        return view('/auth/createojr');
+        return view('/auth/createojr', ['arrDate'=>$arrDate,'ojr'=>$ojr]);
 
 
+    }
+
+    public function ojrDate(Request $request){
+        $id = $request->all()['id'];
+        $DocsList = Docs::where('id', $id)->get();
+        $arrDate = [];
+        foreach($DocsList as $list){
+            $list->date = json_decode($list->date);
+            $list->date->id = $list->id;
+            $arrDate[] = $list->date;
+        }
+        return json_encode($arrDate);
+
+    }
+    public function ojrView(Request $request){
+        return view('/auth/ojradd');
+
+    }
+    public function ojrAdd(Request $request){
+        $name = $request->input('nameOjr');
+        $date_end_ojr = $request->input('date_end_ojr');
+        $date_start_ojr = $request->input('date_start_ojr');
+
+
+        $userId = Auth::id();
+        if (Auth::check()) {
+            $data = [
+                'title' => $name,
+                'id_user' => $userId,
+                'date_start' => $date_start_ojr,
+                'date_end' => $date_end_ojr
+            ];
+            
+            $Ojr = new Ojr();
+            $Ojr->fill(
+                $data
+            );
+            $Ojr->save();
+        }
     }
     /**
      * Show the form for editing the specified resource.
@@ -203,6 +248,15 @@ class AdminController extends Controller
         Docs::where('id', $id)->update(['date' => $data]);
         return redirect('/personal/list/');
         
+        
+    }
+    public function ojrSave(Request $request){
+        $ExelGen = new ExelGen();
+        $post = $request->input();
+        $DocsList = Docs::where('id', $post['doneWork'])->get();
+        $date = (array)json_decode($DocsList[0]->date);
+        $replaceArray = array_replace($date, $post);
+        $ExelGen->generateExcel($replaceArray,$request,true);
         
     }
     /**

@@ -246,4 +246,59 @@ $(document).ready(function () {
         console.log(1)
         $('#msform').submit();
     });
+    let addDateForm = (className,text,type)=>{
+        let textInput = text;
+        if(type === 'data'){
+            var d = new Date();
+            var datestring =  d.getFullYear()+ "-" + ("0"+(d.getMonth()+1)).slice(-2) + "-" +
+            ("0" + d.getDate()).slice(-2);
+            textInput = datestring;
+
+        }
+        
+
+        console.log(datestring);
+        $(`input[name='${className}']`).val(textInput);
+    }
+    $('.form-ojr .doneWork').on('change', function(){
+        let workNameId = $(this).val();
+        $.ajax({
+            type: 'POST',
+            url: '/personal/list/ojr/date',
+            data: {'id': workNameId},
+            dataType: 'json',
+            scriptCharset: "utf-8",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function (data, status, xhr) {
+
+                let dateEndWork = JSON.stringify(data[0].dateEndWork);
+                addDateForm('dateEndWork',dateEndWork,'data');
+
+                let dateBeginWork = JSON.stringify(data[0].dateBeginWork);
+                addDateForm('dateBeginWork',dateBeginWork,'data');
+
+            },
+            error: function (jqXHR, exception) {
+
+                if (jqXHR.status === 0) {
+                    alert('Not connect. Verify Network.');
+                } else if (jqXHR.status == 404) {
+                    alert('Requested page not found (404).');
+                } else if (jqXHR.status == 500) {
+                    alert('Internal Server Error (500).');
+                } else if (exception === 'parsererror') {
+                    alert('Requested JSON parse failed.');
+                } else if (exception === 'timeout') {
+                    alert('Time out error.');
+                } else if (exception === 'abort') {
+                    alert('Ajax request aborted.');
+                } else {
+                    alert('Uncaught Error. ' + jqXHR.responseText);
+                }
+            }
+        });
+    })
+
 })
