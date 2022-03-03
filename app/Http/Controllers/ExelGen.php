@@ -1513,11 +1513,13 @@ class ExelGen extends Controller
         
         
         if($edit === true){
-            $this->addDate($date);
+            // $this->addDate($date);
+            dd($this->addDate($date));
         }else{
             $this->addDate($date);
+            $objWriter->save('php://output');
         }
-        $objWriter->save('php://output');
+        
         
         return $filename;
     }
