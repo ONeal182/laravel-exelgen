@@ -10074,3 +10074,12 @@ td.aosr-date{
 td.btn-wrapper a{
   width: 143px;
 }
+.btn-action-wrapper{
+  display: flex;
+  justify-content: end;
+}
+.table-header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
