@@ -1529,8 +1529,16 @@ class ExelGen extends Controller
         
         
         if($edit === true){
-            $this->addDate($date,true);
-            return redirect('/personal/list/ojr/');
+            $objWriter = PHPExcel_IOFactory::createWriter($this->objPHPExcel, 'Excel5');
+            $filename = 'Content-Disposition:AOCP_№' . $numberAct . '_om_' . $dateAOSR . '.xls';
+            header("Content-Type:application/vnd.ms-excel; charset=utf-8");
+            // iconv('UTF-8', "windows-1251", $filename);
+            header($filename);
+            header('Cache-Control: max-age=0');
+            $this->addDate($date);
+            $objWriter->save('php://output');
+            // $this->addDate($date,true);
+            // return redirect('/personal/list/ojr/');
 
         }else{
             $objWriter = PHPExcel_IOFactory::createWriter($this->objPHPExcel, 'Excel5');

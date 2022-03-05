@@ -47,6 +47,9 @@ Route::get('/personal/list/ojr/create/{id}', [App\Http\Controllers\AdminControll
 Route::get('/personal/list/ojr/add', [App\Http\Controllers\AdminController::class, 'ojrView']);
 Route::get('/personal/list/ojr/add/newojr', [App\Http\Controllers\AdminController::class, 'ojrAdd']);
 Route::get('/personal/list/ojr/add/save', [App\Http\Controllers\AdminController::class, 'ojrSave']);
+Route::get('/personal/list/ojr/aosr/view/{id}', [App\Http\Controllers\AdminController::class, 'ojrAosrView']);
+Route::get('/personal/list/ojr/aosr/save', [App\Http\Controllers\AdminController::class, 'ojrAosrSave']);
+
 
 
 Route::post('/personal/list/ojr/date', [App\Http\Controllers\AdminController::class, 'ojrDate']);

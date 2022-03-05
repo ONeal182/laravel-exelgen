@@ -145,8 +145,28 @@ class AdminController extends Controller
     public function ojr(){
         $user = auth()->user();
         $data = Ojr::where('id_user', $user->id)->get();
+        $id_aosr = json_decode($data[0]->id_aosr);
+        $arrAosr =[];
+        $titelAocr = [];
+        foreach($data as $key => $ojrData){
+            $id_ojr = $ojrData->id;
+            $arrIdAosr = [];
+            $id_aosr_json = json_decode($ojrData->id_aosr);
+            if(!empty($id_aosr_json)){
+                foreach($id_aosr_json as $aosr_id){
+                    $arrIdAosr[] = $aosr_id;
+                }
+            }
+           
+            $DocsList = Docs::whereIn('id', $arrIdAosr)->get();
+            
+            $arrAosr[$id_ojr] = $DocsList;
+
+        }
+        
+
         if ($data !== null) {
-            return view('/auth/ojr', ['data' => $data, 'ID' => $user]);
+            return view('/auth/ojr', ['data' => $data, 'ID' => $user,'aosr'=>$arrAosr]);
         }
         
 
@@ -217,6 +237,8 @@ class AdminController extends Controller
             );
             $Ojr->save();
         }
+
+        return redirect('/personal/list/ojr/');
     }
     /**
      * Show the form for editing the specified resource.
@@ -260,6 +282,34 @@ class AdminController extends Controller
         $ExelGen->generateExcel($replaceArray,$request,true);
         return redirect('/personal/list/ojr/');
         
+    }
+    public function ojrAosrSave(Request $request){
+        $doc = new Docs;
+        $post = $request->input();
+        $DocsList = Docs::where('id', $post['idAosr'])->get();
+        $date = (array)json_decode($DocsList[0]->date);
+        $replaceArray = array_replace($date, $post);
+        $replaceArray['idOjr'] = $post['idOjr'] ;
+        $doc::where('id', $post['idAosr'])->update(['date' => json_encode($replaceArray)]);
+        return redirect('/personal/list/ojr/');
+        
+    }
+    public function ojrAosrView(Request $request,$id){
+        $DocsListAll  = Docs::get();
+        $DocsList = Docs::where('id', $id)->get();
+        $arrDate = json_decode($DocsList[0]->date);
+        $ojr = Ojr::where('id', $arrDate->idOjr)->get();
+        foreach($arrDate->doc as $key =>$value){
+            $arrDocs[$key]['doc'] = $value;
+            $arrDocs[$key]['docDate'] = $arrDate->docDate[$key];
+        }
+        foreach($arrDate->countSuppl as $key =>$value){
+            $arrCountSuppl[$key]['countSuppl'] = $value;
+        }
+        foreach($DocsListAll as $key => $value){
+            $DocsListAll[$key]->date = json_decode($value->date);
+        }
+        return view('/auth/ojraosr', ['id'=>$id,'arrDate'=>$arrDate,'ojr'=>$ojr[0],'DocsListAll'=>$DocsListAll,'arrDocs'=>$arrDocs,'arrCountSuppl'=>$arrCountSuppl]);
     }
     /**
      * Update the specified resource in storage.

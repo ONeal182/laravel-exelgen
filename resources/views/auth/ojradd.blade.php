@@ -41,7 +41,7 @@
             </div> --}}
             </nav>
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 head_admin-list">
-                <h2>Новый ОЖР</h2>
+                <h2>Новая работа</h2>
 
                 <div class="table-responsive">
                     <form action="/personal/list/ojr/add/newojr" method="get" class="form-ojr">

@@ -50,6 +50,7 @@
                     <th>ID</th>
                     <th>Дата</th>
                     <th>Название</th>
+                    <th>АОСР</th>
                     <th>Редактировать</th>
                   </tr>
                 </thead>
@@ -60,6 +61,15 @@
                         <td>{{$doc->id}}</td>
                           <td>{{$doc->date_start}} / {{$doc->date_end}}</td>
                           <td>{{$doc->title}}</td>
+                          <td>
+                              {{$doc->titleAosr}}
+                              
+                            @foreach ($aosr[$doc->id] as $item)
+                            <a href="/personal/list/ojr/aosr/view/{{$item->id}}">{{json_decode($item->date)->projectName}}</a> &nbsp;<br>
+                                
+                            @endforeach
+
+                          </td>
                           <td class="d-flex justify-content-betwee">
                               <a href="/personal/list/ojr/create/{{$doc->id}}">
                                 <button>Добавить АОСР</button>

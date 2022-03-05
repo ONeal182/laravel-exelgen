@@ -279,8 +279,8 @@ $(document).ready(function () {
                 let dateBeginWork = JSON.stringify(data[0].dateBeginWork);
                 addDateForm('dateBeginWork',dateBeginWork,'data');
 
-                let projectName = JSON.stringify(data[0].projectName);
-                addDateForm('projectName',projectName);
+                // let projectName = JSON.stringify(data[0].projectName);
+                // addDateForm('projectName',projectName);
 
             },
             error: function (jqXHR, exception) {
