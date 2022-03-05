@@ -209,24 +209,52 @@
                 </fieldset>
                 <fieldset style="display:block;background:none;">
                     <div class="form-group row">
+                    <label for="representativeBuilderFIO" class="col-md-12 col-form-label">Дополнительные
+                            Приложения</label>
+
+                        <div class="col-md-12 inputs-wrapper form-row">
+                            <div class="form-group col-md-12">
+                                <input type="text" value="Дополнительные Приложения" name="application2" class="form-control" id="application2" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset style="display:block;background:none;">
+                    <div class="form-group row">
                         <label for="representativeBuilderFIO" class="col-md-12 col-form-label">Представитель застройщика</label>
 
-                        <div class="col-md-12 inputs-wrapper">
-                            <input type="text" name="representativeBuilderFIO" class="form-control" id="representativeBuilderFIO" placeholder="Фамилия, инициалы">
-                            <input type="text" name="representativeBuilderPosition" class="form-control" id="representativeBuilderPosition" placeholder="Должность">
-                            <input type="text" name="representativeBuilderId" class="form-control" id="representativeBuilderId" placeholder="Должность">
-                            <input type="date" name="representativeBuilderDateGet" class="form-control" id="representativeBuilderDateGet" placeholder="Даты выдачи документа">
+                        <div class="col-md-12 inputs-wrapper form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" name="representativeBuilderFIO" class="form-control" id="representativeBuilderFIO" placeholder="Фамилия, инициалы">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="representativeBuilderPosition" class="form-control " id="representativeBuilderPosition" placeholder="Должность">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="representativeBuilderId" class="form-control " id="representativeBuilderId" placeholder="Должность">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="date" name="representativeBuilderDateGet" class="form-control col-md-6" id="representativeBuilderDateGet" placeholder="Даты выдачи документа">
+                            </div>
                         </div>
                 </fieldset>
 
                 <fieldset style="display:block;background:none;">
                     <div class="form-group row">
                         <label for="workerPres2" class="col-md-12 col-form-label">Представитель лица по вопросам строительного контроля</label>
-                        <div class="col-md-12 inputs-wrapper">
-                            <input type="text" name="memberBuilderFIO" class="form-control" id="memberBuilderFIO" placeholder="Фамилия, инициалы">
-                            <input type="text" name="memberBuilderPosition" class="form-control" id="memberBuilderPosition" placeholder="Должность">
-                            <input type="text" name="memberBuilderId" class="form-control" id="memberBuilderId" placeholder="Идентификационный номер">
-                            <input type="date" name="memberBuilderDateId" class="form-control" id="memberBuilderDateId" placeholder="Даты выдачи документа">
+                        <div class="col-md-12 inputs-wrapper form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" name="memberBuilderFIO" class="form-control" id="memberBuilderFIO" placeholder="Фамилия, инициалы">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="memberBuilderPosition" class="form-control " id="memberBuilderPosition" placeholder="Должность">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="memberBuilderId" class="form-control " id="memberBuilderId" placeholder="Идентификационный номер">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="date" name="memberBuilderDateId" class="form-control col-md-6" id="memberBuilderDateId" placeholder="Даты выдачи документа">
+                            </div>
                         </div>
                     </div>
                 </fieldset>
@@ -235,12 +263,19 @@
                     <div class="form-group row">
                         <label for="workerPres3" class="col-md-12 col-form-label">Представитель лица, осуществляющего строительство
                         </label>
-
-                        <div class="col-md-12 inputs-wrapper">
-                            <input type="text" name="representativeContractorFIO" class="form-control" id="representativeContractorFIO" placeholder="Фамилия, инициалы">
-                            <input type="text" name="representativeContractorPosition" class="form-control" id="representativeContractorPosition" placeholder="Должность">
-                            <input type="text" name="representativeContractorRequisites" class="form-control" id="representativeContractorRequisites" placeholder="Реквизиты распорядительного документа, подтверждающего полномочия">
-                            <input type="date" name="representativeContractorDate" class="form-control" id="representativeContractorDate" placeholder="Дата выдачи документа">
+                        <div class="col-md-12 inputs-wrapper form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" name="representativeContractorFIO" class="form-control" id="representativeContractorFIO" placeholder="Фамилия, инициалы">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="representativeContractorPosition" class="form-control " id="representativeContractorPosition" placeholder="Должность">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="representativeContractorRequisites" class="form-control " id="representativeContractorRequisites" placeholder="Реквизиты распорядительного документа, подтверждающего полномочия">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="date" name="representativeContractorDate" class="form-control col-md-6" id="representativeContractorDate" placeholder="Даты выдачи документа">
+                            </div>
                         </div>
                     </div>
                 </fieldset>
@@ -248,11 +283,20 @@
                     <div class="form-group row">
                         <label for="workerPres4" class="col-md-12 col-form-label">Представитель лица, осуществляющего подготовку
                             проектной документации</label>
-                        <div class="col-md-12 inputs-wrapper">
-                            <input type="text" name="preparationFIO" class="form-control" id="preparationFIO" placeholder="Фамилия, инициалы">
-                            <input type="text" name="preparationPosition" class="form-control" id="preparationPosition" placeholder="Должность">
-                            <input type="text" name="preparationREQ" class="form-control" id="preparationREQ" placeholder="Должность">
-                            <input type="date" name="preparationDateId" class="form-control" id="preparationDateId" placeholder="Должность">
+ 
+                        <div class="col-md-12 inputs-wrapper form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" name="preparationFIO" class="form-control" id="preparationFIO" placeholder="Фамилия, инициалы">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="preparationPosition" class="form-control " id="preparationPosition" placeholder="Должность">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="preparationREQ" class="form-control " id="preparationREQ" placeholder="Должность">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="date" name="preparationDateId" class="form-control col-md-6" id="preparationDateId" placeholder="Даты выдачи документа">
+                            </div>
                         </div>
                     </div>
                 </fieldset>
@@ -260,23 +304,40 @@
                     <div class="form-group row">
                         <label for="workerPres5" class="col-md-12 col-form-label">Представитель лица, выполнившего работы, подлежащие
                             освидетельствованию</label>
-                        <div class="col-md-12 inputs-wrapper">
-                            <input type="text" name="memberBuilderFIO" class="form-control" id="memberBuilderFIO" placeholder="Фамилия, инициалы">
-                            <input type="text" name="memberBuilderPosition" class="form-control" id="memberBuilderPosition" placeholder="Должность">
-                            <input type="text" name="memberBuilderId" class="form-control" id="memberBuilderId" placeholder="Идентификационный номер">
-                            <input type="date" name="memberBuilderDateId" class="form-control" id="memberBuilderDateId" placeholder="Даты выдачи документа">
+
+                        <div class="col-md-12 inputs-wrapper form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" name="memberBuilderFIO" class="form-control" id="memberBuilderFIO" placeholder="Фамилия, инициалы">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="memberBuilderPosition" class="form-control " id="memberBuilderPosition" placeholder="Должность">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="memberBuilderId" class="form-control " id="memberBuilderId" placeholder="Идентификационный номер">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="date" name="memberBuilderDateId" class="form-control col-md-6" id="memberBuilderDateId" placeholder="Даты выдачи документа">
+                            </div>
                         </div>
                     </div>
                 </fieldset>
                 <fieldset style="display:block;background:none;">
                     <div class="form-group row">
                         <label for="workerPres5" class="col-md-12 col-form-label">Представители иных лиц</label>
-                        <div class="col-md-12 inputs-wrapper">
-                            <input type="text" name="anotherFIO[]" class="form-control" id="anotherFIO[]" placeholder="Фамилия, инициалы">
-                            <input type="text" name="anotherPosition[]" class="form-control" id="anotherFIO[]" placeholder="Должность">
-                            <input type="text" name="anotherREQ[]" class="form-control" id="anotherREQ[]" placeholder="Реквизиты распорядительного документа, подтверждающего полномочия">
-                            <input type="date" name="anotherDate_Id[]" class="form-control" id="aanotherDate_Id[]" placeholder="Даты выдачи документа">
 
+                        <div class="col-md-12 inputs-wrapper form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" name="anotherFIO[]" class="form-control" id="anotherFIO[]" placeholder="Фамилия, инициалы">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="anotherPosition[]" class="form-control " id="anotherPosition[]" placeholder="Должность">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="anotherREQ[]" class="form-control " id="anotherREQ[]" placeholder="Реквизиты распорядительного документа, подтверждающего полномочия">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="date" name="anotherDate_Id[]" class="form-control col-md-6" id="anotherDate_Id[]" placeholder="Даты выдачи документа">
+                            </div>
                         </div>
                     </div>
                 </fieldset>
