@@ -50,7 +50,7 @@
                     <th>ID</th>
                     <th>Дата</th>
                     <th>Название</th>
-                    <th>АОСР</th>
+                    <th class="aosr-title">АОСР</th>
                     <th>Редактировать</th>
                   </tr>
                 </thead>
@@ -60,13 +60,19 @@
                     <tr>
                         <td>{{$doc->id}}</td>
                           <td>{{$doc->date_start}} / {{$doc->date_end}}</td>
-                          <td>{{$doc->title}}</td>
-                          <td>
+                          <td class="aosr-name">{{$doc->title}}</td>
+                          <td class="items-wrapper">
                               {{$doc->titleAosr}}
                               
                             @foreach ($aosr[$doc->id] as $item)
-                            <a href="/personal/list/ojr/aosr/view/{{$item->id}}">{{json_decode($item->date)->projectName}}</a> &nbsp;<br>
-                                
+                              @if (json_decode($item->date)->projectName)
+                              
+                                <div class="items-wrapper__item" >
+                                    <img src="http://94.228.115.45/assets/img/logo-file.svg" alt="АОСР">
+                                    <a href="/personal/list/ojr/aosr/view/{{$item->id}}" data-bs-toggle="tooltip" data-bs-placement="top" title="{{json_decode($item->date)->projectName}}">{{ \Illuminate\Support\Str::limit(json_decode($item->date)->projectName, 30, $end='...') }}
+                                     </a> &nbsp;<br>
+                                </div>
+                              @endif
                             @endforeach
 
                           </td>

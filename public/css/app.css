@@ -10014,3 +10014,23 @@ h3 {
     border-color: #dee2e6;
   }
 }
+
+.items-wrapper .items-wrapper__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.items-wrapper__item img {
+  max-width: 36px;
+}
+.items-wrapper__item a {
+  max-width: 74%;
+  text-align: center;
+}
+
+td.aosr-name{
+  max-width: 150px;
+}
+th.aosr-title{
+  text-align: center;
+}
