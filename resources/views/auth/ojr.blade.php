@@ -78,13 +78,13 @@
                           </td>
                           <td class="d-flex justify-content-betwee">
                               <a href="/personal/list/ojr/create/{{$doc->id}}">
-                                <button>Добавить АОСР</button>
+                                <button type="button" class="btn btn-outline-primary">Добавить АОСР</button>
                               </a>
                               {{-- <a href="/personal/list/edit/{{$doc->id}}">
-                                <button>Изменить</button>
+                                <button type="button" class="btn btn-outline-primary">Изменить</button>
                               </a>
                               <a href="/personal/list/docs/{{$doc->id}}">
-                                <button>Журнал работ</button>
+                                <button type="button" class="btn btn-outline-primary">Журнал работ</button>
                               </a>       --}}
                           </td>
                         </tr>
@@ -94,7 +94,7 @@
                 </tbody>
               </table>
               <a href="/personal/list/ojr/add" class="">
-                <input type="button" name="" class="action-button" value="Добавить работы">
+                <input type="button" name="" class="action-button btn btn-outline-primary" value="Добавить работы">
             </a>
             </div>
           </main>
