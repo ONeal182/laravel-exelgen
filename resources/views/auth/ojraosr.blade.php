@@ -3,30 +3,30 @@
 
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
 @section('content')
-    @if (session('status'))
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header">{{ __('Dashboard') }}</div>
-                        <div class="card-body">
+@if (session('status'))
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-body">
 
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-
-
-
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
                     </div>
+
+
+
                 </div>
             </div>
         </div>
-    @endif
-    <div class="container">
-        <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-                {{-- <div class="position-sticky pt-3">
+    </div>
+</div>
+@endif
+<div class="container">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            {{-- <div class="position-sticky pt-3">
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="/personal">
@@ -41,8 +41,319 @@
                         </a>
                     </li>
             </div> --}}
-            </nav>
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 head_admin-list">
+        </nav>
+    </div>
+</div>
+<section class="admin-form">
+    <div class="container">
+        <div class="row">
+            <h2 class="col-md-12">Новый АОСР</h2>
+            <form class="col-12">
+                <div>
+                    <label for="numberAct" class="col-form-label">Акт №</label>
+
+                    <input name="numberAct" value="{{$arrDate->numberAct}}" type="text" class="form-control" id="numberAct" placeholder="">
+                </div>
+                <div>
+                    <label for="dateAOSR" class="col-form-label">от</label>
+
+                    <input name="dateAOSR" value="{{$arrDate->dateAOSR}}" type="date" class="form-control" id="dateAOSR" value="" placeholder="">
+                </div>
+                <div>
+                    <label for="doneWork" class=" col-form-label">Выполненые работы</label>
+
+                    <select class="form-control doneWork" id="doneWork" name="doneWork">
+                            <option value=""></option>
+                        @foreach ($DocsListAll as $date)
+                        <option value="{{ $date->id }}">{{ $date->date->projectName }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div>
+                    <label for="workName" class="col-form-label">Наименование работ</label>
+
+                    <input type="text" value="{{$arrDate->projectName}}" name="projectName" class="form-control" id="projectName" placeholder="">
+                </div>
+                <div>
+                    <label for="dateGo" class=" col-form-label">Даты проведения работ</label>
+
+                    <p class="form-label-p">c</p>
+
+                    <input type="date" value="{{ $ojr->date_start }}" name="dateBeginWork" class="form-control" id="dateGo" placeholder="">
+
+                    <p class="form-label-p">по</p>
+
+                    <input type="date" value="{{ $ojr->date_end }}" name="dateEndWork" class="form-control" id="dateGo" placeholder="">
+                </div>
+
+                <fieldset style="background: none;">
+
+                    <div class="form-group row ">
+                        <label for="docsAcept" class="col-form-label fieldset-label col-12">Документы, подтверждающие
+                            соответствие
+                            работ предъявленным к ним требованиям </label>
+                        <div class="forms row_sections col-12">
+                        @foreach ($arrDocs as $doc)
+                            <div class="add_section first_section">
+                                <div class="content_section">
+                                    <div class="row">
+                                        <div class="col-lg-9">
+                                        <input type="text" class="form-control" value="{{$doc['doc']}}" name="doc[]" placeholder="Документ">
+                                        </div>
+                                        <div class="col-lg-3">
+                                        <input type="text" data-name="docDate" class="date form-control" readonly="readonly" value="{{$doc['docDate']}}" name="docDate[]" placeholder="01.01.2000" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="control_section topnull">
+                                    <div class="delete"></div>
+                                    <div class="add" style="display: none;">
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                            <div class="add_section">
+                                <div class="content_section">
+                                    <div class="row">
+                                        <div class="col-lg-9">
+                                            <input type="text" disabled="disabled" class="form-control" placeholder="Документ">
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <input type="text" disabled="disabled" data-name="docDateEmpty" class="date form-control" readonly="readonly" placeholder="01.01.2000" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="control_section">
+                                    <div class="delete" style="display: none;"></div>
+                                    <div class="add"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        {{-- <div class="col-lg-7">
+                            <input type="text" name="doc[]" placeholder="Документ">
+                        </div>
+
+                        <div class="col-lg-3 d-flex align-items-start">
+                            <input type="text" style="width:80%;" data-name="docDate" class="date readonly=" readonly"
+                                name="docDate[]" placeholder="01.01.2000">
+
+                            <div class="control_section topnull" style="width:20%;">
+                                <div class="delete"></div>
+                                <div class="add" style="display: none;"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-7">
+                            <input type="text" style="width:80%;" disabled="disabled" placeholder="Документ">
+                        </div>
+
+                        <div class="col-lg-3 align-items-start">
+                            <input type="text" style="width:20%;" disabled="disabled" data-name="docDateEmpty" class="date"
+                                readonly="readonly" placeholder="01.01.2000">
+                        </div> --}}
+                    </div>
+                </fieldset>
+
+                <div>
+                    <label for="nameWorkCostruct" class=" col-form-label">Разрешается производство последующих
+                        работ</label>
+                    <input type="text" value="{{$arrDate->nameWorkCostruct}}" name="nameWorkCostruct" class="form-control" id="nameWorkCostruct" placeholder="">
+
+                </div>
+                <div>
+                    <label for="moreInfo" class=" col-form-label">Дополнительные сведения </label>
+                    <input type="text" value="{{$arrDate->moreInfo}}" name="moreInfo" class="form-control" id="moreInfo" placeholder="">
+                </div>
+                <div>
+                    <label for="countAOSR" class=" col-form-label">Количество экземпляров</label>
+                    <input type="number" value="{{$arrDate->countAOSR}}" name="countAOSR" class="form-control" id="countAOSR" placeholder="">
+                </div>
+                <fieldset style="display:block;background:none;">
+                    <div class="form-group row d-flex">
+                        <label for="application" class=" col-form-label col-12">Приложения</label>
+
+                        <div class="forms col-12">
+                            @foreach($arrCountSuppl as $countSuppl)
+                            <div class="add_section first_section">
+                                <div class="content_section">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <input type="text" value="{{$countSuppl['countSuppl']}}" name="countSuppl[]" class="form-control" placeholder="Приложение">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="control_section topnull">
+                                    <div class="delete"></div>
+                                    <div class="add" style="display: none;"></div>
+                                </div>
+                            </div>
+                            @endforeach
+                            <div class="add_section">
+                                <div class="content_section">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <input type="text" value="" name="countSuppl2" class="form-control" placeholder="Приложение">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="control_section">
+                                    <div class="delete" style="display: none;"></div>
+                                    <div class="add"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset style="display:block;background:none;">
+                    <div class="form-group row">
+                    <label for="representativeBuilderFIO" class="col-md-12 col-form-label">Дополнительные
+                            Приложения</label>
+
+                        <div class="col-md-12 inputs-wrapper form-row">
+                            <div class="form-group col-md-12">
+                                <input type="text" value="{{$arrDate->application2}}" name="application2" class="form-control" id="application2" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset style="display:block;background:none;">
+                    <div class="form-group row">
+                        <label for="representativeBuilderFIO" class="col-md-12 col-form-label">Представитель застройщика</label>
+
+                        <div class="col-md-12 inputs-wrapper form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" value="{{$arrDate->representativeBuilderFIO}}" name="representativeBuilderFIO" class="form-control" id="representativeBuilderFIO" placeholder="Фамилия, инициалы">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" value="{{$arrDate->representativeBuilderPosition}}" name="representativeBuilderPosition" class="form-control " id="representativeBuilderPosition" placeholder="Должность">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" value="{{$arrDate->representativeBuilderId}}" name="representativeBuilderId" class="form-control " id="representativeBuilderId" placeholder="Должность">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="date" value="{{$arrDate->representativeBuilderDateGet}}" name="representativeBuilderDateGet" class="form-control col-md-6" id="representativeBuilderDateGet" placeholder="Даты выдачи документа">
+                            </div>
+                        </div>
+                </fieldset>
+
+                <fieldset style="display:block;background:none;">
+                    <div class="form-group row">
+                        <label for="workerPres2" class="col-md-12 col-form-label">Представитель лица по вопросам строительного контроля</label>
+                        <div class="col-md-12 inputs-wrapper form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text"  value="{{$arrDate->memberBuilderFIO}}" name="memberBuilderFIO" class="form-control" id="memberBuilderFIO" placeholder="Фамилия, инициалы">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" value="{{$arrDate->memberBuilderPosition}}" name="memberBuilderPosition" class="form-control " id="memberBuilderPosition" placeholder="Должность">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" value="{{$arrDate->memberBuilderId}}" name="memberBuilderId" class="form-control " id="memberBuilderId" placeholder="Идентификационный номер">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="date" value="{{$arrDate->memberBuilderDateId}}" name="memberBuilderDateId" class="form-control col-md-6" id="memberBuilderDateId" placeholder="Даты выдачи документа">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset style="display:block;background:none;">
+                    <div class="form-group row">
+                        <label for="workerPres3" class="col-md-12 col-form-label">Представитель лица, осуществляющего строительство
+                        </label>
+                        <div class="col-md-12 inputs-wrapper form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" value="{{$arrDate->representativeContractorFIO}}" name="representativeContractorFIO" class="form-control" id="representativeContractorFIO" placeholder="Фамилия, инициалы">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" value="{{$arrDate->representativeContractorPosition}}" name="representativeContractorPosition" class="form-control " id="representativeContractorPosition" placeholder="Должность">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" value="{{$arrDate->representativeContractorRequisites}}" name="representativeContractorRequisites" class="form-control " id="representativeContractorRequisites" placeholder="Реквизиты распорядительного документа, подтверждающего полномочия">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="date" value="{{$arrDate->representativeContractorDate}}" name="representativeContractorDate" class="form-control col-md-6" id="representativeContractorDate" placeholder="Даты выдачи документа">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset style="display:block;background:none;">
+                    <div class="form-group row">
+                        <label for="workerPres4" class="col-md-12 col-form-label">Представитель лица, осуществляющего подготовку
+                            проектной документации</label>
+
+                        <div class="col-md-12 inputs-wrapper form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text"  value="{{$arrDate->preparationFIO}}" name="preparationFIO" class="form-control" id="preparationFIO" placeholder="Фамилия, инициалы">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" value="{{$arrDate->preparationPosition}}" name="preparationPosition" class="form-control " id="preparationPosition" placeholder="Должность">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text"  value="{{$arrDate->preparationREQ}}" name="preparationREQ" class="form-control " id="preparationREQ" placeholder="Должность">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="date" value="{{$arrDate->preparationDateId}}"  name="preparationDateId" class="form-control col-md-6" id="preparationDateId" placeholder="Даты выдачи документа">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset style="display:block;background:none;">
+                    <div class="form-group row">
+                        <label for="workerPres5" class="col-md-12 col-form-label">Представитель лица, выполнившего работы, подлежащие
+                            освидетельствованию</label>
+
+                        <div class="col-md-12 inputs-wrapper form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" value="{{$arrDate->memberBuilderFIO}}" name="memberBuilderFIO" class="form-control" id="memberBuilderFIO" placeholder="Фамилия, инициалы">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" value="{{$arrDate->memberBuilderPosition}}" name="memberBuilderPosition" class="form-control " id="memberBuilderPosition" placeholder="Должность">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" value="{{$arrDate->memberBuilderId}}" name="memberBuilderId" class="form-control " id="memberBuilderId" placeholder="Идентификационный номер">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="date" value="{{$arrDate->memberBuilderDateId}}" name="memberBuilderDateId" class="form-control col-md-6" id="memberBuilderDateId" placeholder="Даты выдачи документа">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset style="display:block;background:none;">
+                    <div class="form-group row">
+                        <label for="workerPres5" class="col-md-12 col-form-label">Представители иных лиц</label>
+
+                        <div class="col-md-12 inputs-wrapper form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" value="{{$arrDate->anotherFIO[0]}}" name="anotherFIO[]" class="form-control" id="anotherFIO[]" placeholder="Фамилия, инициалы">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" value="{{$arrDate->anotherPosition[0]}}" name="anotherPosition[]" class="form-control " id="anotherPosition[]" placeholder="Должность">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" value="{{$arrDate->anotherREQ[0]}}" name="anotherREQ[]" class="form-control " id="anotherREQ[]" placeholder="Реквизиты распорядительного документа, подтверждающего полномочия">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="date" value="{{$arrDate->anotherDate_Id[0]}}" name="anotherDate_Id[]" class="form-control col-md-6" id="anotherDate_Id[]" placeholder="Даты выдачи документа">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <div>
+                    <input type="submit" name="save" class=" action-button btn btn-primary btn-lg" role="button" aria-disabled="true" value="Сохранить">
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</section>
+
+<!-- <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 head_admin-list">
                 <h2>Новый АОСР</h2>
 
                 <div class="table-responsive">
@@ -58,7 +369,7 @@
                         <div class="form-group row">
                             <label for="dateAOSR" class="col-sm-2 col-form-label">от</label>
                             <div class="col-sm-10">
-                                <input name="dateAOSR" value="{{$arrDate->dateAOSR}}"" type="date" class="form-control" id="dateAOSR" value=""
+                                <input name="dateAOSR" value="{{$arrDate->dateAOSR}}" type="date" class="form-control" id="dateAOSR" value=""
                                     placeholder="">
                             </div>
                         </div>
@@ -218,7 +529,7 @@
                     
                               </div>
                         </div>
-                    </fieldset>
+                        </fieldset>
                         <div class="form-group row">
                             <label for="application2" class="col-sm-2 col-form-label">Дополнительные
                                 Приложения </label>
@@ -315,22 +626,21 @@
 
                     
                 </div>
-            </main>
-        </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
-    </script>
-    <!-- Popperjs -->
-    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
-    <!-- datepicker -->
-    <script type="text/javascript" src="{{ asset('assets/js/datepicker.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/i18n/datepicker.ru-RU.js') }}"></script>
-    <!-- Script -->
-    <script type="text/javascript" src="{{ asset('assets/js/rule-date.js') }}"></script>
+            </main> -->
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+</script>
+<!-- Popperjs -->
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<!-- datepicker -->
+<script type="text/javascript" src="{{ asset('assets/js/datepicker.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/i18n/datepicker.ru-RU.js') }}"></script>
+<!-- Script -->
+<script type="text/javascript" src="{{ asset('assets/js/rule-date.js') }}"></script>
 
-    <script type="text/javascript" src="{{ asset('assets/js/ajax.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/ajax.js') }}"></script>
 @endsection
