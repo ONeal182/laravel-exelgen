@@ -58,25 +58,27 @@
                     
                     @foreach ($data as $doc)
                     <tr>
-                        <td>{{$doc->id}}</td>
-                          <td>{{$doc->date_start}} / {{$doc->date_end}}</td>
+                        <td >{{$doc->id}}</td>
+                          <td class="aosr-date">{{$doc->date_start}} / {{$doc->date_end}}</td>
                           <td class="aosr-name">{{$doc->title}}</td>
-                          <td class="items-wrapper">
-                              {{$doc->titleAosr}}
+                          <td>
+                            <div class="items-wrapper">
+                            {{$doc->titleAosr}}
                               
-                            @foreach ($aosr[$doc->id] as $item)
-                              @if (json_decode($item->date)->projectName)
-                              
-                                <div class="items-wrapper__item" >
-                                    <img src="http://94.228.115.45/assets/img/logo-file.svg" alt="АОСР">
-                                    <a href="/personal/list/ojr/aosr/view/{{$item->id}}" data-bs-toggle="tooltip" data-bs-placement="top" title="{{json_decode($item->date)->projectName}}">{{ \Illuminate\Support\Str::limit(json_decode($item->date)->projectName, 30, $end='...') }}
-                                     </a> &nbsp;<br>
-                                </div>
-                              @endif
-                            @endforeach
+                              @foreach ($aosr[$doc->id] as $item)
+                                @if (json_decode($item->date)->projectName)
+                                
+                                  <div class="items-wrapper__item col-4" >
+                                      <img src="http://94.228.115.45/assets/img/logo-file.svg" alt="АОСР">
+                                      <a href="/personal/list/ojr/aosr/view/{{$item->id}}" data-bs-toggle="tooltip" data-bs-placement="top" title="{{json_decode($item->date)->projectName}}">{{ \Illuminate\Support\Str::limit(json_decode($item->date)->projectName, 25, $end='...') }}
+                                       </a> &nbsp;<br>
+                                  </div>
+                                @endif
+                              @endforeach
+                            </div>
 
                           </td>
-                          <td class="d-flex justify-content-betwee">
+                          <td class="d-flex justify-content-betwee btn-wrapper">
                               <a href="/personal/list/ojr/create/{{$doc->id}}">
                                 <button type="button" class="btn btn-outline-primary">Добавить АОСР</button>
                               </a>

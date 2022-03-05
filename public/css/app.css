@@ -10019,18 +10019,9 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.items-wrapper__item img {
-  max-width: 36px;
-}
-.items-wrapper__item a {
-  max-width: 74%;
-  text-align: center;
+  max-width: 38%;
 }
 
-td.aosr-name{
-  max-width: 150px;
-}
 th.aosr-title{
   text-align: center;
 }
@@ -10056,4 +10047,30 @@ select#doneWork{
 
 .control_section .add{
   color: #0ba31f;
+}
+.items-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
+.items-wrapper__item img {
+  max-width: 30px;
+}
+.items-wrapper__item a {
+  margin-top: 5px;
+  font-size: 10px;
+  text-align: center;
+}
+td.items-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+td.aosr-name {
+  max-width: 111px;
+}
+
+td.aosr-date{
+  width: 21%;
+}
+td.btn-wrapper a{
+  width: 143px;
 }
