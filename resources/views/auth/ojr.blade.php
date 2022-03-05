@@ -45,7 +45,7 @@
         <h2>Общий журнал работ</h2>
 
         <a href="/personal/list/ojr/add" class="">
-          <input type="button" name="" class="action-button btn btn-outline-primary" value="Добавить работы">
+          <input type="button" name="" class="action-button btn btn-outline-primary white-bg white-bg" value="Добавить работы">
         </a>
       </div>
 
@@ -86,13 +86,13 @@
               </td>
               <td class="d-flex justify-content-betwee btn-wrapper">
                 <a href="/personal/list/ojr/create/{{$doc->id}}">
-                  <button type="button" class="btn btn-outline-primary">Добавить АОСР</button>
+                  <button type="button" class="btn btn-outline-primary white-bg">Добавить АОСР</button>
                 </a>
                 {{-- <a href="/personal/list/edit/{{$doc->id}}">
-                <button type="button" class="btn btn-outline-primary">Изменить</button>
+                <button type="button" class="btn btn-outline-primary white-bg">Изменить</button>
                 </a>
                 <a href="/personal/list/docs/{{$doc->id}}">
-                  <button type="button" class="btn btn-outline-primary">Журнал работ</button>
+                  <button type="button" class="btn btn-outline-primary white-bg">Журнал работ</button>
                 </a> --}}
               </td>
             </tr>
@@ -102,7 +102,7 @@
 
         <div class="btn-action-wrapper">
           <a href="/personal/list/ojr/add" class="">
-            <input type="button" name="" class="action-button btn btn-outline-primary" value="Добавить работы">
+            <input type="button" name="" class="action-button btn btn-outline-primary white-bg" value="Добавить работы">
           </a>
         </div>
 
