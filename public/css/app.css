@@ -10037,17 +10037,6 @@ select#doneWork{
 .inputs-wrapper input{
   margin: 11px 0;
 }
-.control_section .delete,
-.control_section .add{
-  background: none;
-}
-.control_section .delete{
-  color: red;
-}
-
-.control_section .add{
-  color: #0ba31f;
-}
 .items-wrapper{
   display: flex;
   flex-wrap: wrap;
@@ -10082,4 +10071,7 @@ td.btn-wrapper a{
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+.add_section .control_section{
+  padding: 0;
 }
