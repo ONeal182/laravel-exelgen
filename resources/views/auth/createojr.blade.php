@@ -50,17 +50,17 @@
         <div class="row">
             <h2 class="col-md-12">Новый АОСР</h2>
             <form class="col-12">
-                <div class="col-md-12">
+                <div>
                     <label for="numberAct" class="col-form-label">Акт №</label>
 
                     <input name="numberAct" type="text" class="form-control" id="numberAct" placeholder="">
                 </div>
-                <div class="col-md-12">
+                <div>
                     <label for="dateAOSR" class="col-form-label">от</label>
 
                     <input name="dateAOSR" value="{{$ojr->date_start}}" type="date" class="form-control" id="dateAOSR" value="" placeholder="">
                 </div>
-                <div class="col-12">
+                <div>
                     <label for="doneWork" class=" col-form-label">Выполненые работы</label>
 
                     <select class="form-control doneWork" id="doneWork" name="doneWork">
@@ -70,12 +70,12 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="col-12">
+                <div>
                     <label for="workName" class="col-form-label">Наименование работ</label>
 
                     <input type="text" value="{{$ojr->title}}" name="projectName" class="form-control" id="projectName" placeholder="">
                 </div>
-                <div class="col-md-12">
+                <div>
                     <label for="dateGo" class=" col-form-label">Даты проведения работ</label>
 
                     <p class="form-label-p">c</p>
@@ -87,7 +87,7 @@
                     <input type="date" value="{{ $ojr->date_end }}" name="dateEndWork" class="form-control" id="dateGo" placeholder="">
                 </div>
 
-                <fieldset style="background: none;" class="col-12">
+                <fieldset style="background: none;">
 
                     <div class="form-group row ">
                         <label for="docsAcept" class="col-form-label fieldset-label col-12">Документы, подтверждающие
@@ -172,21 +172,21 @@
                     </div>
                 </fieldset>
 
-                <div class="col-md-12">
+                <div>
                     <label for="nameWorkCostruct" class=" col-form-label">Разрешается производство последующих
                         работ</label>
                     <input type="text" name="nameWorkCostruct" class="form-control" id="nameWorkCostruct" placeholder="">
 
                 </div>
-                <div class="col-md-12">
+                <div>
                     <label for="moreInfo" class=" col-form-label">Дополнительные сведения </label>
                     <input type="text" name="moreInfo" class="form-control" id="moreInfo" placeholder="">
                 </div>
-                <div class="col-12">
+                <div>
                     <label for="countAOSR" class=" col-form-label">Количество экземпляров</label>
                     <input type="number" name="countAOSR" class="form-control" id="countAOSR" placeholder="">
                 </div>
-                <fieldset style="display:block;background:none;" class="col-12">
+                <fieldset style="display:block;background:none;">
                     <div class="form-group row d-flex">
                         <label for="application" class=" col-form-label col-12">Приложения</label>
 
@@ -232,7 +232,7 @@
                         </div>
                     </div>
                 </fieldset>
-                <fieldset style="display:block;background:none;" class="col-md-12">
+                <fieldset style="display:block;background:none;">
                     <div class="form-group row">
                         <label for="representativeBuilderFIO" class="col-md-12 col-form-label">Представитель застройщика</label>
 
@@ -244,7 +244,7 @@
                         </div>
                 </fieldset>
 
-                <fieldset style="display:block;background:none;" class="col-md-12">
+                <fieldset style="display:block;background:none;">
                     <div class="form-group row">
                         <label for="workerPres2" class="col-md-12 col-form-label">Представитель лица по вопросам строительного контроля</label>
                         <div class="col-md-12 inputs-wrapper">
@@ -256,7 +256,7 @@
                     </div>
                 </fieldset>
 
-                <fieldset style="display:block;background:none;" class="col-md-12">
+                <fieldset style="display:block;background:none;">
                     <div class="form-group row">
                         <label for="workerPres3" class="col-md-12 col-form-label">Представитель лица, осуществляющего строительство
                         </label>
@@ -269,7 +269,7 @@
                         </div>
                     </div>
                 </fieldset>
-                <fieldset style="display:block;background:none;" class="col-md-12">
+                <fieldset style="display:block;background:none;">
                     <div class="form-group row">
                         <label for="workerPres4" class="col-md-12 col-form-label">Представитель лица, осуществляющего подготовку
                             проектной документации</label>
@@ -281,7 +281,7 @@
                         </div>
                     </div>
                 </fieldset>
-                <fieldset style="display:block;background:none;" class="col-md-12">
+                <fieldset style="display:block;background:none;">
                     <div class="form-group row">
                         <label for="workerPres5" class="col-md-12 col-form-label">Представитель лица, выполнившего работы, подлежащие
                             освидетельствованию</label>
@@ -293,7 +293,7 @@
                         </div>
                     </div>
                 </fieldset>
-                <fieldset style="display:block;background:none;" class="col-md-12">
+                <fieldset style="display:block;background:none;">
                     <div class="form-group row">
                         <label for="workerPres5" class="col-md-12 col-form-label">Представители иных лиц</label>
                         <div class="col-md-12 inputs-wrapper">
@@ -305,7 +305,7 @@
                         </div>
                     </div>
                 </fieldset>
-                <div class="col-md-12">
+                <div>
                     <input type="submit" name="save" class=" action-button btn btn-primary btn-lg disabled" role="button" aria-disabled="true" value="Сохранить">
                 </div>
 
