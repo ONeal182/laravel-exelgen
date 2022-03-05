@@ -78,15 +78,15 @@
                 <div class="col-md-12">
                     <label for="dateGo" class=" col-form-label">Даты проведения работ</label>
 
-                     <p class="form-label-p">c</p>
+                    <p class="form-label-p">c</p>
 
                     <input type="date" value="{{ $ojr->date_start }}" name="dateBeginWork" class="form-control" id="dateGo" placeholder="">
 
-                     <p class="form-label-p">по</p>
+                    <p class="form-label-p">по</p>
 
                     <input type="date" value="{{ $ojr->date_end }}" name="dateEndWork" class="form-control" id="dateGo" placeholder="">
                 </div>
-                
+
                 <fieldset style="background: none;" class="col-12">
 
                     <div class="form-group row ">
@@ -107,8 +107,14 @@
                                     </div>
                                 </div>
                                 <div class="control_section topnull">
-                                    <div class="delete"></div>
-                                    <div class="add" style="display: none;"></div>
+                                    <div class="delete">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
+                                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                                        </svg>
+                                    </div>
+                                    <div class="add" style="display: none;">
+                                    </div>
                                 </div>
                             </div>
 
@@ -126,7 +132,12 @@
 
                                 <div class="control_section">
                                     <div class="delete" style="display: none;"></div>
-                                    <div class="add"></div>
+                                    <div class="add">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                        </svg>
+                                    </div>
                                 </div>
                             </div>
 
@@ -140,7 +151,12 @@
                                 name="docDate[]" placeholder="01.01.2000">
 
                             <div class="control_section topnull" style="width:20%;">
-                                <div class="delete"></div>
+                            <div class="delete">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
+                                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                                        </svg>
+                                    </div>
                                 <div class="add" style="display: none;"></div>
                             </div>
                         </div>
@@ -185,7 +201,12 @@
                                     </div>
                                 </div>
                                 <div class="control_section topnull">
-                                    <div class="delete"></div>
+                                    <div class="delete">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
+                                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                                        </svg>
+                                    </div>
                                     <div class="add" style="display: none;"></div>
                                 </div>
                             </div>
@@ -199,7 +220,12 @@
                                 </div>
                                 <div class="control_section">
                                     <div class="delete" style="display: none;"></div>
-                                    <div class="add"></div>
+                                    <div class="add">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                        </svg>
+                                    </div>
                                 </div>
                             </div>
 
@@ -211,48 +237,35 @@
                         <label for="representativeBuilderFIO" class="col-md-12 col-form-label">Представитель застройщика</label>
 
                         <div class="col-md-12 inputs-wrapper">
-                            <input type="text" name="representativeBuilderFIO" class="form-control" id="representativeBuilderFIO"
-                                placeholder="Фамилия, инициалы">
-                            <input type="text" name="representativeBuilderPosition" class="form-control"
-                                id="representativeBuilderPosition" placeholder="Должность">
-                            <input type="text" name="representativeBuilderId" class="form-control" id="representativeBuilderId"
-                                placeholder="Должность">
-                            <input type="date" name="representativeBuilderDateGet" class="form-control"
-                                id="representativeBuilderDateGet" placeholder="Даты выдачи документа">
-                    </div>
+                            <input type="text" name="representativeBuilderFIO" class="form-control" id="representativeBuilderFIO" placeholder="Фамилия, инициалы">
+                            <input type="text" name="representativeBuilderPosition" class="form-control" id="representativeBuilderPosition" placeholder="Должность">
+                            <input type="text" name="representativeBuilderId" class="form-control" id="representativeBuilderId" placeholder="Должность">
+                            <input type="date" name="representativeBuilderDateGet" class="form-control" id="representativeBuilderDateGet" placeholder="Даты выдачи документа">
+                        </div>
                 </fieldset>
 
                 <fieldset style="display:block;background:none;" class="col-md-12">
                     <div class="form-group row">
                         <label for="workerPres2" class="col-md-12 col-form-label">Представитель лица по вопросам строительного контроля</label>
                         <div class="col-md-12 inputs-wrapper">
-                            <input type="text" name="memberBuilderFIO" class="form-control" id="memberBuilderFIO"
-                                placeholder="Фамилия, инициалы">
-                            <input type="text" name="memberBuilderPosition" class="form-control" id="memberBuilderPosition"
-                                placeholder="Должность">
-                            <input type="text" name="memberBuilderId" class="form-control" id="memberBuilderId"
-                                placeholder="Идентификационный номер">
-                            <input type="date" name="memberBuilderDateId" class="form-control" id="memberBuilderDateId"
-                                placeholder="Даты выдачи документа">
+                            <input type="text" name="memberBuilderFIO" class="form-control" id="memberBuilderFIO" placeholder="Фамилия, инициалы">
+                            <input type="text" name="memberBuilderPosition" class="form-control" id="memberBuilderPosition" placeholder="Должность">
+                            <input type="text" name="memberBuilderId" class="form-control" id="memberBuilderId" placeholder="Идентификационный номер">
+                            <input type="date" name="memberBuilderDateId" class="form-control" id="memberBuilderDateId" placeholder="Даты выдачи документа">
                         </div>
                     </div>
                 </fieldset>
-                
+
                 <fieldset style="display:block;background:none;" class="col-md-12">
                     <div class="form-group row">
                         <label for="workerPres3" class="col-md-12 col-form-label">Представитель лица, осуществляющего строительство
                         </label>
 
                         <div class="col-md-12 inputs-wrapper">
-                            <input type="text" name="representativeContractorFIO" class="form-control" id="representativeContractorFIO"
-                                placeholder="Фамилия, инициалы">
-                            <input type="text" name="representativeContractorPosition" class="form-control"
-                                id="representativeContractorPosition" placeholder="Должность">
-                            <input type="text" name="representativeContractorRequisites" class="form-control"
-                                id="representativeContractorRequisites"
-                                placeholder="Реквизиты распорядительного документа, подтверждающего полномочия">
-                            <input type="date" name="representativeContractorDate" class="form-control"
-                                id="representativeContractorDate" placeholder="Дата выдачи документа">
+                            <input type="text" name="representativeContractorFIO" class="form-control" id="representativeContractorFIO" placeholder="Фамилия, инициалы">
+                            <input type="text" name="representativeContractorPosition" class="form-control" id="representativeContractorPosition" placeholder="Должность">
+                            <input type="text" name="representativeContractorRequisites" class="form-control" id="representativeContractorRequisites" placeholder="Реквизиты распорядительного документа, подтверждающего полномочия">
+                            <input type="date" name="representativeContractorDate" class="form-control" id="representativeContractorDate" placeholder="Дата выдачи документа">
                         </div>
                     </div>
                 </fieldset>
@@ -261,13 +274,10 @@
                         <label for="workerPres4" class="col-md-12 col-form-label">Представитель лица, осуществляющего подготовку
                             проектной документации</label>
                         <div class="col-md-12 inputs-wrapper">
-                            <input type="text" name="preparationFIO" class="form-control" id="preparationFIO"
-                                placeholder="Фамилия, инициалы">
-                            <input type="text" name="preparationPosition" class="form-control" id="preparationPosition"
-                                placeholder="Должность">
+                            <input type="text" name="preparationFIO" class="form-control" id="preparationFIO" placeholder="Фамилия, инициалы">
+                            <input type="text" name="preparationPosition" class="form-control" id="preparationPosition" placeholder="Должность">
                             <input type="text" name="preparationREQ" class="form-control" id="preparationREQ" placeholder="Должность">
-                            <input type="date" name="preparationDateId" class="form-control" id="preparationDateId"
-                                placeholder="Должность">
+                            <input type="date" name="preparationDateId" class="form-control" id="preparationDateId" placeholder="Должность">
                         </div>
                     </div>
                 </fieldset>
@@ -276,14 +286,10 @@
                         <label for="workerPres5" class="col-md-12 col-form-label">Представитель лица, выполнившего работы, подлежащие
                             освидетельствованию</label>
                         <div class="col-md-12 inputs-wrapper">
-                            <input type="text" name="memberBuilderFIO" class="form-control" id="memberBuilderFIO"
-                                placeholder="Фамилия, инициалы">
-                            <input type="text" name="memberBuilderPosition" class="form-control" id="memberBuilderPosition"
-                                placeholder="Должность">
-                            <input type="text" name="memberBuilderId" class="form-control" id="memberBuilderId"
-                                placeholder="Идентификационный номер">
-                            <input type="date" name="memberBuilderDateId" class="form-control" id="memberBuilderDateId"
-                                placeholder="Даты выдачи документа">
+                            <input type="text" name="memberBuilderFIO" class="form-control" id="memberBuilderFIO" placeholder="Фамилия, инициалы">
+                            <input type="text" name="memberBuilderPosition" class="form-control" id="memberBuilderPosition" placeholder="Должность">
+                            <input type="text" name="memberBuilderId" class="form-control" id="memberBuilderId" placeholder="Идентификационный номер">
+                            <input type="date" name="memberBuilderDateId" class="form-control" id="memberBuilderDateId" placeholder="Даты выдачи документа">
                         </div>
                     </div>
                 </fieldset>
@@ -291,27 +297,24 @@
                     <div class="form-group row">
                         <label for="workerPres5" class="col-md-12 col-form-label">Представители иных лиц</label>
                         <div class="col-md-12 inputs-wrapper">
-                            <input type="text" name="anotherFIO[]" class="form-control" id="anotherFIO[]"
-                                placeholder="Фамилия, инициалы">
+                            <input type="text" name="anotherFIO[]" class="form-control" id="anotherFIO[]" placeholder="Фамилия, инициалы">
                             <input type="text" name="anotherPosition[]" class="form-control" id="anotherFIO[]" placeholder="Должность">
-                            <input type="text" name="anotherREQ[]" class="form-control" id="anotherREQ[]"
-                                placeholder="Реквизиты распорядительного документа, подтверждающего полномочия">
-                            <input type="date" name="anotherDate_Id[]" class="form-control" id="aanotherDate_Id[]"
-                                placeholder="Даты выдачи документа">
+                            <input type="text" name="anotherREQ[]" class="form-control" id="anotherREQ[]" placeholder="Реквизиты распорядительного документа, подтверждающего полномочия">
+                            <input type="date" name="anotherDate_Id[]" class="form-control" id="aanotherDate_Id[]" placeholder="Даты выдачи документа">
 
                         </div>
                     </div>
                 </fieldset>
                 <div class="col-md-12">
-                    <input type="submit" name="save" class=" action-button btn btn-primary btn-lg   disabled"  role="button" aria-disabled="true" value="Сохранить">
+                    <input type="submit" name="save" class=" action-button btn btn-primary btn-lg disabled" role="button" aria-disabled="true" value="Сохранить">
                 </div>
-                         
+
             </form>
-           
+
         </div>
     </div>
 </section>
-<section>
+<!-- <section>
     <div class="container">
         <div class="row">
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 head_admin-list">
@@ -551,7 +554,7 @@
             </main>
         </div>
     </div>
-</section>
+</section> -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
