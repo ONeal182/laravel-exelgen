@@ -10034,3 +10034,15 @@ td.aosr-name{
 th.aosr-title{
   text-align: center;
 }
+.form-label-p{
+  margin: 0;
+  padding-top: calc(0.375rem + 1px);
+    padding-bottom: calc(0.375rem + 1px);
+  color: #212529;
+}
+select#doneWork{
+  cursor: pointer;
+}
+.inputs-wrapper input{
+  margin: 11px 0;
+}
