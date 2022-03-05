@@ -281,7 +281,7 @@
                     </div>
                 </fieldset>
                 <div>
-                    <input type="submit" name="save" class=" action-button btn btn-primary btn-lg disabled" role="button" aria-disabled="true" value="Сохранить">
+                    <input type="submit" name="save" class=" action-button btn btn-primary btn-lg" role="button" aria-disabled="true" value="Сохранить">
                 </div>
 
             </form>
