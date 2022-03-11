@@ -177,6 +177,7 @@ class AdminController extends Controller
     public function ojrCreate(Request $request, $id){
         $DocsList = Docs::get();
         $ojr = Ojr::where('id', $id)->get();
+        $ojrAll = Ojr::where('id','!=', $id)->get();
         $ojr = json_decode($ojr)[0];
 
         $arrDate = [];
@@ -195,7 +196,7 @@ class AdminController extends Controller
 
         // $data = (object)$data;
         // return view('/auth/ojr', ['Docs' => $data, 'ID' => $id]);
-        return view('/auth/createojr', ['arrDate'=>$arrDate,'ojr'=>$ojr]);
+        return view('/auth/createojr', ['arrDate'=>$arrDate,'ojr'=>$ojr,'ojrAll'=>$ojrAll]);
 
 
     }
@@ -278,7 +279,11 @@ class AdminController extends Controller
         $DocsList = Docs::where('id', $post['doneWork'])->get();
         $date = (array)json_decode($DocsList[0]->date);
         $replaceArray = array_replace($date, $post);
+        $ojrWork = [];
+        $ojrWork[] = $post['idOjr'];
+        $ojrWork[] = $post['orjWork'];
         $replaceArray['idOjr'] = $post['idOjr'] ;
+        dd($replaceArray);
         $ExelGen->generateExcel($replaceArray,$request,true);
         return redirect('/personal/list/ojr/');
         

@@ -277,13 +277,13 @@ $(document).ready(function () {
 
 			}
 
-			if(third.val() == ''){
+			if (third.val() == '') {
 				third.addClass('stopDate');
 				errorDuble = false;
 				error.push('false');
 				thirdEmpty = false;
 			}
-			if(thirdEmpty !== false){
+			if (thirdEmpty !== false) {
 				if (date(first.datepicker('getDate')) < date(third.datepicker('getDate'))) {
 					third.addClass('stopDate');
 					errorDuble = false;
@@ -292,7 +292,7 @@ $(document).ready(function () {
 					error.push('true');
 				}
 			}
-			if(secondEmpty !== false){
+			if (secondEmpty !== false) {
 				if (date(first.datepicker('getDate')) < date(second.datepicker('getDate'))) {
 					second.addClass('stopDate');
 					errorDuble = false;
@@ -301,8 +301,8 @@ $(document).ready(function () {
 					error.push('true');
 				}
 			}
-			
-			if(errorDuble === false){
+
+			if (errorDuble === false) {
 				errorText = errorText + ' В шаге ' + step + ' даты позже начала работ, ';
 				error.push('false');
 			}
@@ -388,13 +388,13 @@ $(document).ready(function () {
 
 			}
 			var errorStatus;
-			if(error.indexOf('false') != -1){
+			if (error.indexOf('false') != -1) {
 				errorStatus = false;
-			}else{
+			} else {
 				errorStatus = true;
 			}
-			if (beginDate.hasClass('ignor') === false) { 
-				if(errorStatus === false){
+			if (beginDate.hasClass('ignor') === false) {
+				if (errorStatus === false) {
 					console.log(errorStatus);
 					$('.date').tooltip('dispose');
 					ignoreTooltip();
@@ -457,14 +457,14 @@ $(document).ready(function () {
 		current_fs = $(this).parents('fieldset');
 		// Next page
 		next_fs = $(this).parents('fieldset').next();
-		
+
 		//Add Class Active
 		$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-		
+
 		//show the next fieldset
 		next_fs.show();
 		let new_current = $('.active_page').next().attr('page');
-		
+
 		//hide the current fieldset with style
 		current_fs.animate({ opacity: 0 }, {
 			step: function (now) {
@@ -481,31 +481,33 @@ $(document).ready(function () {
 			duration: 500
 		});
 		new_current = parseInt(new_current.match(/\d+/))
-		setProgressBar(new_current+1);
+		setProgressBar(new_current + 1);
 	});
 
 
 	// Предыдущий шаг
-	function numberStep(){
-		$('.nav-bread a').on('click', function(e){
+	function numberStep() {
+		$('.nav-bread a').on('click', function (e) {
 			e.preventDefault();
-			
+
 			var selectStep = $(this).attr('data-step');
-			
+
 			selectStep = Number(selectStep) - 1;
 			selectStefForProgress = Number(selectStep);
 
 
 			current_fs = $(this).parents().parents('fieldset');
-			previous_fs = $('fieldset[page="pg'+selectStep+'"]');
-			$('fieldset[page="pg'+selectStep+'"] .nav-bread a[data-step="'+(selectStep + 1)+'"]').css({'color':'black','pointer-events': 'none',
-			'cursor': 'default'});
+			previous_fs = $('fieldset[page="pg' + selectStep + '"]');
+			$('fieldset[page="pg' + selectStep + '"] .nav-bread a[data-step="' + (selectStep + 1) + '"]').css({
+				'color': 'black', 'pointer-events': 'none',
+				'cursor': 'default'
+			});
 			console.log(previous_fs);
 			current_fs.animate({ opacity: 0 }, {
 				step: function (now) {
 					// for making fielset appear animation
 					opacity = 1 - now;
-	
+
 					current_fs.removeClass('active_page');
 					current_fs.css({
 						'display': 'none',
@@ -517,8 +519,8 @@ $(document).ready(function () {
 				duration: 500
 			});
 			setProgressBar(selectStefForProgress + 1);
-	})
-}
+		})
+	}
 	numberStep();
 	$(".previous").click(function () {
 		var beginDate = $('.date[data-name=dateBeginWork]');
@@ -536,7 +538,7 @@ $(document).ready(function () {
 
 		//Remove class active
 		$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-		
+
 		//show the previous fieldset
 		previous_fs.show();
 		let new_current = $('.active_page').attr('page');
@@ -556,7 +558,7 @@ $(document).ready(function () {
 			},
 			duration: 500
 		});
-		
+
 		new_current = parseInt(new_current.match(/\d+/))
 
 		setProgressBar(new_current--);
@@ -565,39 +567,43 @@ $(document).ready(function () {
 	function setProgressBar(curStep) {
 		var percent = parseFloat(100 / steps) * curStep;
 		percent = percent.toFixed();
-		console.log(curStep); 
+		console.log(curStep);
 		$(".progress-bar")
 			.css("width", percent + "%")
 		$('.step-all').html(steps - 1);
 		$('.step-count').html(curStep);
-		$('fieldset[page="pg'+curStep+'"] .nav-bread a[data-step="'+(curStep + 1)+'"]').css({'color':'black','pointer-events': 'none',
-			'cursor': 'default'});
+		$('fieldset[page="pg' + curStep + '"] .nav-bread a[data-step="' + (curStep + 1) + '"]').css({
+			'color': 'black', 'pointer-events': 'none',
+			'cursor': 'default'
+		});
 
 	}
 
-	function setDateStep20(){
+	function setDateStep20() {
 		var dateStep15 = $('.date[data-name=docDate]');
 		var dateStep20 = $('.date[data-name=dateAOSR]');
 		// dateStep20.val(dateStep15.val());
 	}
 
-	function copyInfoStep17(){
+	function copyInfoStep17() {
 		var textStep13 = $('textarea[name=anotherDocs]');
 		var projectDocsCheck = $('input[name=projectDocsCheck]');
 		var textStep17 = $('textarea[name=razdeDoc]');
 		var block17 = $('.rzdeDocBlock');
 		console.log(textStep13.val());
 		console.log(textStep17.val());
-		if(projectDocsCheck.is(':checked') === true){
+		if (projectDocsCheck.is(':checked') === true) {
 			textStep17.val(textStep13.val());
-		}else{
-			block17.css('display','none');
+		} else {
+			block17.css('display', 'none');
 		}
 	}
 
-	$('#msform').on('change', function(){
+	$('#msform').on('change', function () {
 		setDateStep20();
 		copyInfoStep17();
 	})
+
+
 
 });

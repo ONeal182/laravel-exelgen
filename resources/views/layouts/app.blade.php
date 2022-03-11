@@ -104,8 +104,7 @@
 
         });
         $('body').on('click', '.control_section .add', function() {
-            console.log(1);
-            console.log(1);
+            console.log($(this).parents('fieldset').find('.forms .add_section:nth-child(1)'));
             var first_section = $(this).parents('fieldset').find('.forms .add_section:nth-child(1)').clone();
             first_section.find('input').val('');
             $(this).parent().parent().before(first_section);

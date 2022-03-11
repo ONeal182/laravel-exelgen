@@ -379,23 +379,27 @@ class ExelGen extends Controller
             $docs->save();
             if($edit === true){
                 $id_aosr = (int)$docs->id;
-                $id_aosr_array = [];
+                
                 $ojr = new Ojr;
-                $dateOjr = $ojr::where('id', $date['idOjr'])->get();
-                $dateOjrDate = json_decode($dateOjr[0]->id_aosr);
-                $dateOjrDate = (array)$dateOjrDate;
-                if(!empty($dateOjr[0]->id_aosr)){
-                    foreach($dateOjrDate as $key => $id){
-                        
-                        $id_aosr_array[] = (int)$id;
+                foreach($date['idOjr'] as $ojrDate){
+                    $id_aosr_array = [];
+                    $dateOjr = $ojr::where('id', $ojrDate)->get();
+                    $dateOjrDate = json_decode($dateOjr[0]->id_aosr);
+                    $dateOjrDate = (array)$dateOjrDate;
+                    if(!empty($dateOjr[0]->id_aosr)){
+                        foreach($dateOjrDate as $key => $id){
+                            
+                            $id_aosr_array[] = (int)$id;
+                            
+                        }
                         
                     }
-                    
+                    $id_aosr_array[] = $id_aosr;
+                   
+                    $id_aosr = json_encode($id_aosr);
+                    $ojr::where('id', $ojrDate)->update(['id_aosr' => json_encode($id_aosr_array)]);
                 }
-                $id_aosr_array[] = $id_aosr;
-               
-                $id_aosr = json_encode($id_aosr);
-                $ojr::where('id', $date['idOjr'])->update(['id_aosr' => json_encode($id_aosr_array)]);
+
             }
 
             

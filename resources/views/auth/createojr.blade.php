@@ -49,7 +49,8 @@
     <div class="container">
         <div class="row">
             <h2 class="col-md-12">Новый АОСР</h2>
-            <form class="col-12">
+            <form class="col-12"  action="/personal/list/ojr/add/save" >
+                <input type="hidden" name="idOjr" value="{{$ojr->id}}">
                 <div>
                     <label for="numberAct" class="col-form-label">Акт №</label>
 
@@ -61,12 +62,22 @@
                     <input name="dateAOSR" value="{{$ojr->date_start}}" type="date" class="form-control" id="dateAOSR" value="" placeholder="">
                 </div>
                 <div>
-                    <label for="doneWork" class=" col-form-label">Выполненые работы</label>
+                    <label for="doneWork" class=" col-form-label">Копия АОСР</label>
 
-                    <select class="form-control doneWork" id="doneWork" name="doneWork">
-                        <option value=""></option>
+                    <select multiple class="form-control doneWork" id="doneWork" name="doneWork">
+                        
                         @foreach ($arrDate as $date)
                         <option value="{{ $date->id }}">{{ $date->projectName }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div>
+                    <label for="ojrWork" class=" col-form-label">Выполненые работы</label>
+
+                    <select multiple class="form-control ojrWork" id="ojrWork" name="orjWork">
+                        
+                        @foreach ($ojrAll as $date)
+                        <option value="{{ $date->id }}">{{ $date->title }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -231,11 +242,15 @@
                                 <input type="text" name="representativeBuilderPosition" class="form-control " id="representativeBuilderPosition" placeholder="Должность">
                             </div>
                             <div class="form-group col-md-6">
-                                <input type="text" name="representativeBuilderId" class="form-control " id="representativeBuilderId" placeholder="Должность">
+                                <input type="text" name="representativeBuilderId" class="form-control " id="representativeBuilderId" placeholder="Идентификационный номер">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="representativeBuilderRequisites" class="form-control col-md" id="representativeBuilderRequisites" placeholder="Реквизиты распорядительного документа">
                             </div>
                             <div class="form-group col-md-6">
                                 <input type="date" name="representativeBuilderDateGet" class="form-control col-md-6" id="representativeBuilderDateGet" placeholder="Даты выдачи документа">
                             </div>
+                            
                         </div>
                 </fieldset>
 
@@ -251,6 +266,9 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <input type="text" name="memberBuilderId" class="form-control " id="memberBuilderId" placeholder="Идентификационный номер">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="memberBuilderRequisites" class="form-control " id="memberBuilderRequisites" placeholder="Реквизиты распорядительного документа, подтверждающего полномочия">
                             </div>
                             <div class="form-group col-md-6">
                                 <input type="date" name="memberBuilderDateId" class="form-control col-md-6" id="memberBuilderDateId" placeholder="Даты выдачи документа">
@@ -292,7 +310,7 @@
                                 <input type="text" name="preparationPosition" class="form-control " id="preparationPosition" placeholder="Должность">
                             </div>
                             <div class="form-group col-md-6">
-                                <input type="text" name="preparationREQ" class="form-control " id="preparationREQ" placeholder="Должность">
+                                <input type="text" name="preparationREQ" class="form-control " id="preparationREQ" placeholder="Реквизиты распорядительного документа, подтверждающего полномочия">
                             </div>
                             <div class="form-group col-md-6">
                                 <input type="date" name="preparationDateId" class="form-control col-md-6" id="preparationDateId" placeholder="Даты выдачи документа">
@@ -313,7 +331,7 @@
                                 <input type="text" name="memberBuilderPosition" class="form-control " id="memberBuilderPosition" placeholder="Должность">
                             </div>
                             <div class="form-group col-md-6">
-                                <input type="text" name="memberBuilderId" class="form-control " id="memberBuilderId" placeholder="Идентификационный номер">
+                                <input type="text" name="memberBuilderId" class="form-control " id="memberBuilderId" placeholder="Реквизиты распорядительного документа, подтверждающего полномочия">
                             </div>
                             <div class="form-group col-md-6">
                                 <input type="date" name="memberBuilderDateId" class="form-control col-md-6" id="memberBuilderDateId" placeholder="Даты выдачи документа">
@@ -322,15 +340,39 @@
                     </div>
                 </fieldset>
                 <fieldset style="display:block;background:none;">
-                    <div class="form-group row">
+                    <div class="form-group row forms">
+                        
                         <label for="workerPres5" class="col-md-12 col-form-label">Представители иных лиц</label>
-
-                        <div class="col-md-12 inputs-wrapper form-row">
+                        <div class="col-md-12">
+                        <div class="col-md-12 inputs-wrapper form-row add_section first_section">
                             <div class="form-group col-md-6">
                                 <input type="text" name="anotherFIO[]" class="form-control" id="anotherFIO[]" placeholder="Фамилия, инициалы">
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-5">
                                 <input type="text" name="anotherPosition[]" class="form-control " id="anotherPosition[]" placeholder="Должность">
+                            </div>
+                            <div class="col-md-1 control_section topnull">
+                                <div class="delete"></div>
+                                <div class="add" style="display: none;"></div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="anotherREQ[]" class="form-control " id="anotherREQ[]" placeholder="Реквизиты распорядительного документа, подтверждающего полномочия">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="date" name="anotherDate_Id[]" class="form-control col-md-6" id="anotherDate_Id[]" placeholder="Даты выдачи документа">
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-12 inputs-wrapper form-row add_section">
+                            <div class="form-group col-md-6">
+                                <input type="text" name="anotherFIO[]" class="form-control" id="anotherFIO[]" placeholder="Фамилия, инициалы">
+                            </div>
+                            <div class="form-group col-md-5">
+                                <input type="text" name="anotherPosition[]" class="form-control " id="anotherPosition[]" placeholder="Должность">
+                            </div>
+                            <div class="control_section col-md-1">
+                                <div class="delete" style="display: none;"></div>
+                                <div class="add"></div>
                             </div>
                             <div class="form-group col-md-6">
                                 <input type="text" name="anotherREQ[]" class="form-control " id="anotherREQ[]" placeholder="Реквизиты распорядительного документа, подтверждающего полномочия">
@@ -339,6 +381,7 @@
                                 <input type="date" name="anotherDate_Id[]" class="form-control col-md-6" id="anotherDate_Id[]" placeholder="Даты выдачи документа">
                             </div>
                         </div>
+                    </div>
                     </div>
                 </fieldset>
                 <div>
@@ -605,5 +648,5 @@
 <!-- Script -->
 <script type="text/javascript" src="{{ asset('assets/js/rule-date.js') }}"></script>
 
-<script type="text/javascript" src="{{ asset('assets/js/ajax.js') }}"></script>
+{{-- <script type="text/javascript" src="{{ asset('assets/js/ajax.js') }}"></script> --}}
 @endsection

@@ -243,7 +243,6 @@ $(document).ready(function () {
     })
 
     $('.save_doc_modal2').on('click', function () {
-        console.log(1)
         $('#msform').submit();
     });
     let addDateForm = (className,text,type)=>{
@@ -303,5 +302,23 @@ $(document).ready(function () {
             }
         });
     })
+    const vanilName = $('#projectName').val();
+    const setTitleOjr = () => {
+		$('#ojrWork').on('change', ()=>{
+            let selectedEl = $('#ojrWork').find('option:selected');
+            let alltext = '';
+            let projectValue =  $('#projectName').val();
+            selectedEl.each((index, value) =>{
+                alltext = alltext + ', ' + value.text;
+            })
+            
+            projectValue = vanilName + ' ' + alltext;
+            $('#projectName').val('');
+            $('#projectName').val(projectValue);
+
+		})
+		
+	}
+	setTitleOjr();
 
 })
