@@ -84,7 +84,7 @@
                 </div>
 
               </td>
-              <td class="d-flex justify-content-betwee btn-wrapper">
+              <td class="justify-content-betwee btn-wrapper">
                 <a href="/personal/list/ojr/create/{{$doc->id}}">
                   <button type="button" class="btn btn-outline-primary white-bg">Добавить АОСР</button>
                 </a>
