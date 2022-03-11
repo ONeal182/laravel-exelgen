@@ -365,20 +365,20 @@
                         </div>
                         <div class="col-md-12 inputs-wrapper form-row add_section">
                             <div class="form-group col-md-6">
-                                <input type="text" name="anotherFIO[]" class="form-control" id="anotherFIO[]" placeholder="Фамилия, инициалы">
+                                <input type="text" disabled name="anotherFIO[]" class="form-control" id="anotherFIO[]" placeholder="Фамилия, инициалы">
                             </div>
                             <div class="form-group col-md-5">
-                                <input type="text" name="anotherPosition[]" class="form-control " id="anotherPosition[]" placeholder="Должность">
+                                <input type="text" disabled name="anotherPosition[]" class="form-control " id="anotherPosition[]" placeholder="Должность">
                             </div>
                             <div class="control_section col-md-1">
                                 <div class="delete" style="display: none;"></div>
                                 <div class="add"></div>
                             </div>
                             <div class="form-group col-md-6">
-                                <input type="text" name="anotherREQ[]" class="form-control " id="anotherREQ[]" placeholder="Реквизиты распорядительного документа, подтверждающего полномочия">
+                                <input type="text" disabled name="anotherREQ[]" class="form-control " id="anotherREQ[]" placeholder="Реквизиты распорядительного документа, подтверждающего полномочия">
                             </div>
                             <div class="form-group col-md-6">
-                                <input type="date" name="anotherDate_Id[]" class="form-control col-md-6" id="anotherDate_Id[]" placeholder="Даты выдачи документа">
+                                <input type="date" disabled name="anotherDate_Id[]" class="form-control col-md-6" id="anotherDate_Id[]" placeholder="Даты выдачи документа">
                             </div>
                         </div>
                     </div>

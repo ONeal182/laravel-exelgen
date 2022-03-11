@@ -282,8 +282,8 @@ class AdminController extends Controller
         $ojrWork = [];
         $ojrWork[] = $post['idOjr'];
         $ojrWork[] = $post['orjWork'];
-        $replaceArray['idOjr'] = $post['idOjr'] ;
-        dd($replaceArray);
+        $replaceArray['idOjr'] = $ojrWork ;
+        // dd($replaceArray);
         $ExelGen->generateExcel($replaceArray,$request,true);
         return redirect('/personal/list/ojr/');
         
