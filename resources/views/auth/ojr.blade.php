@@ -57,7 +57,7 @@
               <th>Дата</th>
               <th>Название</th>
               <th class="aosr-title">АОСР</th>
-              <th>Редактировать</th>
+              <th style="width:160px;">Редактировать</th>
             </tr>
           </thead>
           <tbody>
@@ -87,6 +87,12 @@
               <td class="d-flex justify-content-betwee btn-wrapper">
                 <a href="/personal/list/ojr/create/{{$doc->id}}">
                   <button type="button" class="btn btn-outline-primary white-bg">Добавить АОСР</button>
+                </a>
+                <a href="/personal/list/ojr/edit/{{$doc->id}}">
+                  <button type="button" class="btn btn-outline-primary white-bg">Редактировать</button>
+                </a>
+                <a href="/personal/list/ojr/deleted/{{$doc->id}}">
+                  <button type="button" class="btn btn-outline-primary white-bg">Удалить</button>
                 </a>
                 {{-- <a href="/personal/list/edit/{{$doc->id}}">
                 <button type="button" class="btn btn-outline-primary white-bg">Изменить</button>
