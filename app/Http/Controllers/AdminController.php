@@ -70,6 +70,7 @@ class AdminController extends Controller
 
         return back()->withInput();
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -217,6 +218,11 @@ class AdminController extends Controller
         return view('/auth/ojradd');
 
     }
+    public function ojrViewEdit(Request $request,$id){
+        $ojr = Ojr::where('id', $id)->get();
+        return view('/auth/ojredit', ['ojr' => $ojr[0]]);
+
+    }
     public function ojrAdd(Request $request){
         $name = $request->input('nameOjr');
         $date_end_ojr = $request->input('date_end_ojr');
@@ -316,6 +322,34 @@ class AdminController extends Controller
             $DocsListAll[$key]->date = json_decode($value->date);
         }
         return view('/auth/ojraosr', ['id'=>$id,'arrDate'=>$arrDate,'ojr'=>$ojr[0],'DocsListAll'=>$DocsListAll,'arrDocs'=>$arrDocs,'arrCountSuppl'=>$arrCountSuppl,'ojrAll'=>$ojrAll]);
+    }
+
+    public function ojrDeleted(Request $request, $id){
+        $ojr = Ojr::where('id', $id)->delete();
+        return back()->withInput();
+    }
+
+    public function ojrEdit(Request $request, $id){
+        $name = $request->input('nameOjr');
+        $date_end_ojr = $request->input('date_end_ojr');
+        $date_start_ojr = $request->input('date_start_ojr');
+
+
+        $userId = Auth::id();
+        if (Auth::check()) {
+            $data = [
+                'title' => $name,
+                'id_user' => $userId,
+                'date_start' => $date_start_ojr,
+                'date_end' => $date_end_ojr
+            ];
+            
+            Ojr::where('id',$id)->update(['title'=>$data['title'], 'date_start'=>$data['date_start'],'date_end'=>$data['date_end']]);
+
+            
+        }
+        
+        return redirect('/personal/list/ojr/');
     }
     /**
      * Update the specified resource in storage.
