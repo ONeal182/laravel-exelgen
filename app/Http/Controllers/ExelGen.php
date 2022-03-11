@@ -1539,7 +1539,7 @@ class ExelGen extends Controller
             // iconv('UTF-8', "windows-1251", $filename);
             header($filename);
             header('Cache-Control: max-age=0');
-            $this->addDate($date);
+            $this->addDate($date, true);
             $objWriter->save('php://output');
             // $this->addDate($date,true);
             // return redirect('/personal/list/ojr/');
