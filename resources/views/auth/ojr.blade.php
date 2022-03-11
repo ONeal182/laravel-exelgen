@@ -95,7 +95,7 @@
                                             <button type="button"
                                                 class="btn btn-outline-primary white-bg">Редактировать</button>
                                         </a>
-                                        @if ($doc->id_aosr != '')
+                                        @if ($doc->id_aosr == '')
                                         <a href="/personal/list/ojr/deleted/{{ $doc->id }}">
                                           <button type="button" class="btn btn-outline-primary white-bg">Удалить</button>
                                       </a>
