@@ -48,6 +48,9 @@
 <section class="admin-form">
     <div class="container">
         <div class="row">
+            <div>
+                <a href="/personal/list/ojr/"><-Назад</a>
+            </div>
             <h2 class="col-md-12">Новый АОСР</h2>
             <form class="col-12"  action="/personal/list/ojr/add/save" >
                 <input type="hidden" name="idOjr" value="{{$ojr->id}}">

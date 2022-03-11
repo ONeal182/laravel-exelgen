@@ -47,8 +47,11 @@
 <section class="admin-form">
     <div class="container">
         <div class="row">
+            <div>
+                <a href="/personal/list/ojr/"><-Назад</a>
+            </div>
             <h2 class="col-md-12">Новый АОСР</h2>
-            <form class="col-12">
+            <form class="col-12" action="/personal/list/ojr/aosr/save">
                 <div>
                     <label for="numberAct" class="col-form-label">Акт №</label>
 
@@ -60,12 +63,22 @@
                     <input name="dateAOSR" value="{{$arrDate->dateAOSR}}" type="date" class="form-control" id="dateAOSR" value="" placeholder="">
                 </div>
                 <div>
-                    <label for="doneWork" class=" col-form-label">Выполненые работы</label>
+                    <label for="doneWork" class=" col-form-label">Копия АОСР</label>
 
-                    <select class="form-control doneWork" id="doneWork" name="doneWork">
-                            <option value=""></option>
+                    <select multiple class="form-control doneWork" id="doneWork" name="doneWork">
+                        
                         @foreach ($DocsListAll as $date)
                         <option value="{{ $date->id }}">{{ $date->date->projectName }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div>
+                    <label for="ojrWork" class=" col-form-label">Выполненые работы</label>
+
+                    <select multiple class="form-control ojrWork" id="ojrWork" name="orjWork">
+                        
+                        @foreach ($ojrAll as $date)
+                        <option value="{{ $date->id }}">{{ $date->title }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -236,6 +249,9 @@
                                 <input type="text" value="{{$arrDate->representativeBuilderId}}" name="representativeBuilderId" class="form-control " id="representativeBuilderId" placeholder="Должность">
                             </div>
                             <div class="form-group col-md-6">
+                                <input value="{{$arrDate->representativeBuilderRequisites}}" type="text" name="representativeBuilderRequisites" class="form-control col-md" id="representativeBuilderRequisites" placeholder="Реквизиты распорядительного документа">
+                            </div>
+                            <div class="form-group col-md-6">
                                 <input type="date" value="{{$arrDate->representativeBuilderDateGet}}" name="representativeBuilderDateGet" class="form-control col-md-6" id="representativeBuilderDateGet" placeholder="Даты выдачи документа">
                             </div>
                         </div>
@@ -253,6 +269,9 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <input type="text" value="{{$arrDate->memberBuilderId}}" name="memberBuilderId" class="form-control " id="memberBuilderId" placeholder="Идентификационный номер">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" value="{{$arrDate->memberBuilderRequisites}}" name="memberBuilderRequisites" class="form-control " id="memberBuilderRequisites" placeholder="Реквизиты распорядительного документа, подтверждающего полномочия">
                             </div>
                             <div class="form-group col-md-6">
                                 <input type="date" value="{{$arrDate->memberBuilderDateId}}" name="memberBuilderDateId" class="form-control col-md-6" id="memberBuilderDateId" placeholder="Даты выдачи документа">
@@ -323,24 +342,49 @@
                         </div>
                     </div>
                 </fieldset>
-                <fieldset style="display:block;background:none;">
-                    <div class="form-group row">
+                                <fieldset style="display:block;background:none;">
+                    <div class="form-group row forms">
+                        
                         <label for="workerPres5" class="col-md-12 col-form-label">Представители иных лиц</label>
-
-                        <div class="col-md-12 inputs-wrapper form-row">
+                        <div class="col-md-12">
+                        <div class="col-md-12 inputs-wrapper form-row add_section first_section">
                             <div class="form-group col-md-6">
-                                <input type="text" value="{{$arrDate->anotherFIO[0]}}" name="anotherFIO[]" class="form-control" id="anotherFIO[]" placeholder="Фамилия, инициалы">
+                                <input type="text" name="anotherFIO[]" value="{{$arrDate->anotherFIO[0]}}" class="form-control" id="anotherFIO[]" placeholder="Фамилия, инициалы">
+                            </div>
+                            <div class="form-group col-md-5">
+                                <input type="text" name="anotherPosition[]" value="{{$arrDate->anotherPosition[0]}}" class="form-control " id="anotherPosition[]" placeholder="Должность">
+                            </div>
+                            <div class="col-md-1 control_section topnull">
+                                <div class="delete"></div>
+                                <div class="add" style="display: none;"></div>
                             </div>
                             <div class="form-group col-md-6">
-                                <input type="text" value="{{$arrDate->anotherPosition[0]}}" name="anotherPosition[]" class="form-control " id="anotherPosition[]" placeholder="Должность">
+                                <input type="text" name="anotherREQ[]" value="{{$arrDate->anotherREQ[0]}}" class="form-control " id="anotherREQ[]" placeholder="Реквизиты распорядительного документа, подтверждающего полномочия">
                             </div>
                             <div class="form-group col-md-6">
-                                <input type="text" value="{{$arrDate->anotherREQ[0]}}" name="anotherREQ[]" class="form-control " id="anotherREQ[]" placeholder="Реквизиты распорядительного документа, подтверждающего полномочия">
+                                <input type="date" name="anotherDate_Id[]" value="{{$arrDate->anotherDate_Id[0]}}" class="form-control col-md-6" id="anotherDate_Id[]" placeholder="Даты выдачи документа">
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-12 inputs-wrapper form-row add_section">
+                            <div class="form-group col-md-6">
+                                <input type="text" disabled name="anotherFIO[]" class="form-control" id="anotherFIO[]" placeholder="Фамилия, инициалы">
+                            </div>
+                            <div class="form-group col-md-5">
+                                <input type="text" disabled name="anotherPosition[]" class="form-control " id="anotherPosition[]" placeholder="Должность">
+                            </div>
+                            <div class="control_section col-md-1">
+                                <div class="delete" style="display: none;"></div>
+                                <div class="add"></div>
                             </div>
                             <div class="form-group col-md-6">
-                                <input type="date" value="{{$arrDate->anotherDate_Id[0]}}" name="anotherDate_Id[]" class="form-control col-md-6" id="anotherDate_Id[]" placeholder="Даты выдачи документа">
+                                <input type="text" disabled name="anotherREQ[]" class="form-control " id="anotherREQ[]" placeholder="Реквизиты распорядительного документа, подтверждающего полномочия">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="date" disabled name="anotherDate_Id[]" class="form-control col-md-6" id="anotherDate_Id[]" placeholder="Даты выдачи документа">
                             </div>
                         </div>
+                    </div>
                     </div>
                 </fieldset>
                 <div>
@@ -358,7 +402,7 @@
 
                 <div class="table-responsive">
                     <form class="form-ojr" action="/personal/list/ojr/aosr/save" id="msform">
-                        <input type="hidden" name="idOjr" value="{{$arrDate->idOjr}}">
+                        <input type="hidden" name="idOjr" value="">
                         <input type="hidden" name="idAosr" value="{{$id}}">
                         <div class="form-group row">
                             <label for="actNumber" class="col-sm-2 col-form-label">Акт №</label>

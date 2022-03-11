@@ -304,6 +304,7 @@ class AdminController extends Controller
         $DocsList = Docs::where('id', $id)->get();
         $arrDate = json_decode($DocsList[0]->date);
         $ojr = Ojr::where('id', $arrDate->idOjr)->get();
+        $ojrAll  = Ojr::get();
         foreach($arrDate->doc as $key =>$value){
             $arrDocs[$key]['doc'] = $value;
             $arrDocs[$key]['docDate'] = $arrDate->docDate[$key];
@@ -314,7 +315,7 @@ class AdminController extends Controller
         foreach($DocsListAll as $key => $value){
             $DocsListAll[$key]->date = json_decode($value->date);
         }
-        return view('/auth/ojraosr', ['id'=>$id,'arrDate'=>$arrDate,'ojr'=>$ojr[0],'DocsListAll'=>$DocsListAll,'arrDocs'=>$arrDocs,'arrCountSuppl'=>$arrCountSuppl]);
+        return view('/auth/ojraosr', ['id'=>$id,'arrDate'=>$arrDate,'ojr'=>$ojr[0],'DocsListAll'=>$DocsListAll,'arrDocs'=>$arrDocs,'arrCountSuppl'=>$arrCountSuppl,'ojrAll'=>$ojrAll]);
     }
     /**
      * Update the specified resource in storage.
