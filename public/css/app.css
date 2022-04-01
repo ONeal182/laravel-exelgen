@@ -10020,6 +10020,7 @@ h3 {
   flex-direction: column;
   align-items: center;
   max-width: 25%;
+  margin: 0px 17px;
 }
 
 th.aosr-title{
@@ -10040,6 +10041,7 @@ select#doneWork{
 .items-wrapper{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .items-wrapper__item img {
   max-width: 30px;
@@ -10053,14 +10055,10 @@ td.items-wrapper {
   display: flex;
   flex-wrap: wrap;
 }
-td.aosr-name {
-  max-width: 111px;
-}
 
-td.aosr-date{
-  width: 21%;
-}
 td.btn-wrapper a{
+  margin: 5px 0;
+  display: block;
   width: 143px;
 }
 .btn-action-wrapper{

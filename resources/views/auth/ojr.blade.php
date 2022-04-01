@@ -66,15 +66,15 @@
                             @foreach ($data as $doc)
                                 <tr>
                                     <td>{{ $doc->id }}</td>
-                                    <td class="aosr-date">{{ $doc->date_start }} / {{ $doc->date_end }}</td>
-                                    <td class="aosr-name">{{ $doc->title }}</td>
+                                    <td class="aosr-date col-3">{{ date('d-m-Y', strtotime($doc->date_start))  }} / {{ date('d-m-Y', strtotime($doc->date_end)) }}</td>
+                                    <td class="aosr-name col-5">{{ $doc->title }}</td>
                                     <td>
                                         <div class="items-wrapper">
                                             {{ $doc->titleAosr }}
 
                                             @foreach ($aosr[$doc->id] as $item)
                                                 @if (json_decode($item->date)->projectName)
-                                                    <div class="items-wrapper__item col-4">
+                                                    <div class="items-wrapper__item">
                                                         <img src="http://94.228.115.45/assets/img/logo-file.svg" alt="АОСР">
                                                         <a href="/personal/list/ojr/aosr/view/{{ $item->id }}"
                                                             data-bs-toggle="tooltip" data-bs-placement="top"
