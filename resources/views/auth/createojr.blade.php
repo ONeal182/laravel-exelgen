@@ -251,7 +251,16 @@
                                 <input type="text" name="representativeBuilderRequisites" class="form-control col-md" id="representativeBuilderRequisites" placeholder="Реквизиты распорядительного документа">
                             </div>
                             <div class="form-group col-md-6">
-                                <input type="date" name="representativeBuilderDateGet" class="form-control col-md-6" id="representativeBuilderDateGet" placeholder="Даты выдачи документа">
+                                <input type="date" name="representativeBuilderDateGet" class="form-control" id="representativeBuilderDateGet" placeholder="Даты выдачи документа">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="representativeBuilderRequisites" class="form-control " id="representativeBuilderAddres" placeholder="Местонахождение юр.Лица">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="representativeBuilderINN" class="form-control " id="representativeBuilderRequisites" placeholder="ИНН">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="representativeBuilderORGN" class="form-control col-md" id="representativeBuilderORGN" placeholder="ОГРН">
                             </div>
                             
                         </div>
@@ -302,8 +311,7 @@
                 </fieldset>
                 <fieldset style="display:block;background:none;">
                     <div class="form-group row">
-                        <label for="workerPres4" class="col-md-12 col-form-label">Представитель лица, осуществляющего подготовку
-                            проектной документации</label>
+                        <label for="workerPres4" class="col-md-12 col-form-label">Представитель лица, осуществляющего подготовку проектной документации</label>
  
                         <div class="col-md-12 inputs-wrapper form-row">
                             <div class="form-group col-md-6">
@@ -318,13 +326,18 @@
                             <div class="form-group col-md-6">
                                 <input type="date" name="preparationDateId" class="form-control col-md-6" id="preparationDateId" placeholder="Даты выдачи документа">
                             </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="preparationORGN" class="form-control " id="preparationORGN" placeholder="ОГРН">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="preparationREQ" class="form-control " id="preparationINN" placeholder="ИНН">
+                            </div>
                         </div>
                     </div>
                 </fieldset>
                 <fieldset style="display:block;background:none;">
                     <div class="form-group row">
-                        <label for="workerPres5" class="col-md-12 col-form-label">Представитель лица, выполнившего работы, подлежащие
-                            освидетельствованию</label>
+                        <label for="workerPres5" class="col-md-12 col-form-label">Представитель лица, выполнившего работы, подлежащие освидетельствованию</label>
 
                         <div class="col-md-12 inputs-wrapper form-row">
                             <div class="form-group col-md-6">
@@ -338,6 +351,12 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <input type="date" name="memberBuilderDateId" class="form-control col-md-6" id="memberBuilderDateId" placeholder="Даты выдачи документа">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="compliteORGN" class="form-control " id="compliteORGN" placeholder="ОГРН">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="compliteINN" class="form-control " id="compliteINN" placeholder="ИНН">
                             </div>
                         </div>
                     </div>

@@ -146,7 +146,7 @@ class AdminController extends Controller
     public function ojr(){
         $user = auth()->user();
         $data = Ojr::where('id_user', $user->id)->get();
-        $id_aosr = json_decode($data[0]->id_aosr);
+        // $id_aosr = json_decode($data[0]->id_aosr);
         $arrAosr =[];
         $titelAocr = [];
         foreach($data as $key => $ojrData){
