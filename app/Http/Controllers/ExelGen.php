@@ -1161,14 +1161,31 @@ class ExelGen extends Controller
         $sertificateBy = $date['sertificateBy'];
         $sertificateQuality =  $date['sertificateQuality'];
         $sertificateDate = $date['sertificateDate'];
-        foreach ($this->wordBreak($materialName . ' ' . $sertificate . ' действителен с ' . $sertificatefrom  . ' по ' . $sertificateBy . ', ' . $sertificateQuality . ' от ' . $sertificateDate, 155) as $text) {
-            $this->i++;
-            $this->creatRow(
-                [
-                    ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
-                ]
-            );
+        if(is_array($materialName)){
+            foreach($materialName as $key => $material){
+
+        
+                foreach ($this->wordBreak($material . ' ' . $sertificate[$key] . ' действителен с ' . $sertificatefrom[$key]  . ' по ' . $sertificateBy[$key] . ', ' . $sertificateQuality[$key] . ' от ' . $sertificateDate[$key], 155) as $text) {
+                    $this->i++;
+                    $this->creatRow(
+                        [
+                            ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
+                        ]
+                    );
+                }
+        
+            }
+        }else{
+            foreach ($this->wordBreak($materialName . ' ' . $sertificate . ' действителен с ' . $sertificatefrom  . ' по ' . $sertificateBy . ', ' . $sertificateQuality . ' от ' . $sertificateDate, 155) as $text) {
+                $this->i++;
+                $this->creatRow(
+                    [
+                        ['row' => 'A' . $this->i . ':I' . $this->i . '', 'text' => $text, 'style' => $styleText]
+                    ]
+                );
+            }
         }
+        
         // foreach($materialName as $key => $value){
 
         //         foreach($sertificate[$key] as $key2 => $value2){
@@ -1531,8 +1548,8 @@ class ExelGen extends Controller
 
       
         
-        
-        if($edit === true){
+
+        if($edit == true){
             $objWriter = PHPExcel_IOFactory::createWriter($this->objPHPExcel, 'Excel5');
             $filename = 'Content-Disposition:AOCP_№' . $numberAct . '_om_' . $dateAOSR . '.xls';
             header("Content-Type:application/vnd.ms-excel; charset=utf-8");
@@ -1551,7 +1568,7 @@ class ExelGen extends Controller
             // iconv('UTF-8', "windows-1251", $filename);
             header($filename);
             header('Cache-Control: max-age=0');
-            $this->addDate($date);
+            $this->addDate($date, false);
             $objWriter->save('php://output');
         }
         

@@ -52,6 +52,8 @@
             </div>
             <h2 class="col-md-12">Новый АОСР</h2>
             <form class="col-12" action="/personal/list/ojr/aosr/save">
+                <input type="hidden" name="idAosr" value="{{$id}}">
+                <input type="hidden" name="idOjr" value="{{$ojr->id}}">
                 <div>
                     <label for="numberAct" class="col-form-label">Акт №</label>
 
@@ -98,7 +100,91 @@
 
                     <input type="date" value="{{ $ojr->date_end }}" name="dateEndWork" class="form-control" id="dateGo" placeholder="">
                 </div>
-
+                <fieldset style="display:block;background:none;">
+                    
+                    <label for="workName" class="col-form-label">Материал</label>  
+                    <!-- input step -->
+                    <div class="document_in form-group   forms flex-column">
+                      <div class="add_section first_section">
+                        <div class="content_section">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <input class="form-control" type="text" name="materialName[]" placeholder="Наименование материала">
+                            </div>
+                          </div>
+                          <div class="row_element document_in ">
+                            <div class="template row sertificat_sootvetsviya ">
+                              <div class="col-lg-4">
+                                <input class="form-control" type="text" name="sertificate[]" placeholder="Сертификат соответсвия">
+                              </div>
+                              <div class="field-line">
+                                <label class="fieldlabels"> Действителен с </label>
+                              </div>
+                              <div class="col-lg-2">
+                                <input class="form-control" type="date" class="date"  name="sertificatefrom[]" placeholder="01.01.2000">
+                              </div>
+                              <div class="field-line">
+                                <label class="fieldlabels"> По </label>
+                              </div>
+                              <div class="col-lg-2">
+                                <input class="form-control" type="date" class="number" name="sertificateBy[]">
+                              </div>
+                              <div class="contor_in_row_element">
+                                <div class="delete"></div>
+                              </div>
+                            </div>
+                            <div class="template row document_podtverjdayushiy ">
+                              <div class="col-lg-4">
+                                <input class="form-control" type="text" name="sertificateQuality[]" placeholder="Документ подтверждающий качество">
+                              </div>
+                              <div class="field-line">
+                                <label class="fieldlabels"> Дата </label>
+                              </div>
+                              <div class="col-lg-2">
+                                <input class="form-control" type="date" class="date"  name="sertificateDate[]" placeholder="01.01.2000">
+                              </div>
+                              <div class="contor_in_row_element">
+                                <div class="delete"></div>
+                              </div>
+                            </div>
+                            <div class="row add_document_block">
+                              <div class="col-lg-6">
+                                <div class="add_doc">
+                                  <div class="add"></div> Добавить сертификат
+                                </div>
+                              </div>
+                              <div class="col-lg-6">
+                                <div class="add_doc_2">
+                                  <div class="add"></div> Документ подтверждающий качество
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+          
+                        <div class="control_section">
+                          <div class="delete"></div>
+                          <div class="add" style="display: none;"></div>
+                        </div>
+                      </div>
+          
+                      <div class="add_section">
+                        <div class="content_section">
+                          <div class="row">
+                            <div class="col-lg-12">
+          
+                              <input class="form-control" type="text" disabled="disabled" name="step2_input1" placeholder="добавить еще материал">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="control_section">
+                          <div class="delete" style="display: none;"></div>
+                          <div class="add"></div>
+                        </div>
+                      </div>
+                    </div>
+                  
+            </fieldset>
                 <fieldset style="background: none;">
 
                     <div class="form-group row ">
@@ -114,7 +200,7 @@
                                         <input type="text" class="form-control" value="{{$doc['doc']}}" name="doc[]" placeholder="Документ">
                                         </div>
                                         <div class="col-lg-3">
-                                        <input type="text" data-name="docDate" class="date form-control" readonly="readonly" value="{{$doc['docDate']}}" name="docDate[]" placeholder="01.01.2000" />
+                                        <input type="date" data-name="docDate" class="date form-control"  value="{{$doc['docDate']}}" name="docDate[]" placeholder="01.01.2000" />
                                         </div>
                                     </div>
                                 </div>
@@ -132,7 +218,7 @@
                                             <input type="text" disabled="disabled" class="form-control" placeholder="Документ">
                                         </div>
                                         <div class="col-lg-3">
-                                            <input type="text" disabled="disabled" data-name="docDateEmpty" class="date form-control" readonly="readonly" placeholder="01.01.2000" />
+                                            <input type="date" disabled="disabled" data-name="docDateEmpty" class="date form-control" readonly="readonly" placeholder="01.01.2000" />
                                         </div>
                                     </div>
                                 </div>
@@ -252,7 +338,16 @@
                                 <input value="{{$arrDate->representativeBuilderRequisites}}" type="text" name="representativeBuilderRequisites" class="form-control col-md" id="representativeBuilderRequisites" placeholder="Реквизиты распорядительного документа">
                             </div>
                             <div class="form-group col-md-6">
-                                <input type="date" value="{{$arrDate->representativeBuilderDateGet}}" name="representativeBuilderDateGet" class="form-control col-md-6" id="representativeBuilderDateGet" placeholder="Даты выдачи документа">
+                                <input type="date" value="{{$arrDate->representativeBuilderDateGet}}" name="representativeBuilderDateGet" class="form-control " id="representativeBuilderDateGet" placeholder="Даты выдачи документа">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="representativeBuilderRequisites" class="form-control " id="representativeBuilderAddres" placeholder="Местонахождение юр.Лица">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="representativeBuilderINN" class="form-control " id="representativeBuilderRequisites" placeholder="ИНН" value="{{$arrDate->representativeBuilderRequisites}}">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" value="{{$arrDate->representativeBuilderORGN}}" name="representativeBuilderORGN" class="form-control col-md" id="representativeBuilderORGN" placeholder="ОГРН">
                             </div>
                         </div>
                 </fieldset>
@@ -316,7 +411,13 @@
                                 <input type="text"  value="{{$arrDate->preparationREQ}}" name="preparationREQ" class="form-control " id="preparationREQ" placeholder="Должность">
                             </div>
                             <div class="form-group col-md-6">
-                                <input type="date" value="{{$arrDate->preparationDateId}}"  name="preparationDateId" class="form-control col-md-6" id="preparationDateId" placeholder="Даты выдачи документа">
+                                <input type="date" value="{{$arrDate->preparationDateId}}"  name="preparationDateId" class="form-control" id="preparationDateId" placeholder="Даты выдачи документа">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="representativeBuilderINN" class="form-control " id="representativeBuilderRequisites" placeholder="ИНН" value="{{$arrDate->representativeBuilderRequisites}}">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="representativeBuilderORGN" class="form-control col-md" id="representativeBuilderORGN" value="{{$arrDate->representativeBuilderORGN}}" placeholder="ОГРН">
                             </div>
                         </div>
                     </div>
@@ -337,7 +438,13 @@
                                 <input type="text" value="{{$arrDate->memberBuilderId}}" name="memberBuilderId" class="form-control " id="memberBuilderId" placeholder="Идентификационный номер">
                             </div>
                             <div class="form-group col-md-6">
-                                <input type="date" value="{{$arrDate->memberBuilderDateId}}" name="memberBuilderDateId" class="form-control col-md-6" id="memberBuilderDateId" placeholder="Даты выдачи документа">
+                                <input type="date" value="{{$arrDate->memberBuilderDateId}}" name="memberBuilderDateId" class="form-control" id="memberBuilderDateId" placeholder="Даты выдачи документа">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="compliteORGN" class="form-control " id="compliteORGN" placeholder="ОГРН" value="{{$arrDate->compliteORGN}}">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="compliteINN" class="form-control " id="compliteINN" placeholder="ИНН" value="{{$arrDate->compliteINN}}">
                             </div>
                         </div>
                     </div>
