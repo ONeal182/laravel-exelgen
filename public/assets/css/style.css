@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0
 }
-
+.template { 
+    display: none !important; 
+}
 html {
     font-family: Open Sans;
     height: 100%
@@ -595,9 +597,7 @@ footer {
     align-items: center;
 }
 
-.template { 
-    display: none; 
-}
+
 
 #msform input:focus, #msform textarea:focus {
     border-color: #0099FF;

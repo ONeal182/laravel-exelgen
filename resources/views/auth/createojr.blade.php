@@ -100,7 +100,91 @@
 
                     <input type="date" value="{{ $ojr->date_end }}" name="dateEndWork" class="form-control" id="dateGo" placeholder="">
                 </div>
-
+                <fieldset style="display:block;background:none;">
+                    
+                    <label for="workName" class="col-form-label">Материал</label> 
+                    <!-- input step -->
+                    <div class="document_in form-group  forms flex-column">
+                      <div class="add_section first_section">
+                        <div class="content_section">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <input class="form-control" type="text" name="materialName[]" placeholder="Наименование материала">
+                            </div>
+                          </div>
+                          <div class="row_element document_in ">
+                            <div class="template row sertificat_sootvetsviya ">
+                              <div class="col-lg-4">
+                                <input class="form-control" type="text" name="sertificate[]" placeholder="Сертификат соответсвия">
+                              </div>
+                              <div class="field-line">
+                                <label class="fieldlabels"> Действителен с </label>
+                              </div>
+                              <div class="col-lg-2">
+                                <input class="form-control" type="date" class="date"  name="sertificatefrom[]" placeholder="01.01.2000">
+                              </div>
+                              <div class="field-line">
+                                <label class="fieldlabels"> По </label>
+                              </div>
+                              <div class="col-lg-2">
+                                <input class="form-control" type="date" class="number" name="sertificateBy[]">
+                              </div>
+                              <div class="contor_in_row_element">
+                                <div class="delete"></div>
+                              </div>
+                            </div>
+                            <div class="template row document_podtverjdayushiy ">
+                              <div class="col-lg-4">
+                                <input class="form-control" type="text" name="sertificateQuality[]" placeholder="Документ подтверждающий качество">
+                              </div>
+                              <div class="field-line">
+                                <label class="fieldlabels"> Дата </label>
+                              </div>
+                              <div class="col-lg-2">
+                                <input class="form-control" type="date" class="date"  name="sertificateDate[]" placeholder="01.01.2000">
+                              </div>
+                              <div class="contor_in_row_element">
+                                <div class="delete"></div>
+                              </div>
+                            </div>
+                            <div class="row add_document_block">
+                              <div class="col-lg-6">
+                                <div class="add_doc">
+                                  <div class="add"></div> Добавить сертификат
+                                </div>
+                              </div>
+                              <div class="col-lg-6">
+                                <div class="add_doc_2">
+                                  <div class="add"></div> Документ подтверждающий качество
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+          
+                        <div class="control_section">
+                          <div class="delete"></div>
+                          <div class="add" style="display: none;"></div>
+                        </div>
+                      </div>
+          
+                      <div class="add_section">
+                        <div class="content_section">
+                          <div class="row">
+                            <div class="col-lg-12">
+          
+                              <input class="form-control" type="text" disabled="disabled" name="step2_input1" placeholder="добавить еще материал">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="control_section">
+                          <div class="delete" style="display: none;"></div>
+                          <div class="add"></div>
+                        </div>
+                      </div>
+                    </div>
+                  
+            </fieldset>
                 <fieldset style="background: none;">
 
                     <div class="form-group row ">
@@ -116,7 +200,7 @@
                                             <input type="text" name="doc[]" class="form-control" placeholder="Документ">
                                         </div>
                                         <div class="col-lg-3">
-                                            <input type="text" data-name="docDate" class="date form-control" readonly="readonly" name="docDate[]" placeholder="01.01.2000" />
+                                            <input type="date" data-name="docDate" class="date form-control"  name="docDate[]" placeholder="01.01.2000" />
                                         </div>
                                     </div>
                                 </div>
@@ -134,7 +218,7 @@
                                             <input type="text" disabled="disabled" class="form-control" placeholder="Документ">
                                         </div>
                                         <div class="col-lg-3">
-                                            <input type="text" disabled="disabled" data-name="docDateEmpty" class="date form-control" readonly="readonly" placeholder="01.01.2000" />
+                                            <input type="date" disabled="disabled" data-name="docDateEmpty" class="date form-control" readonly="readonly" placeholder="01.01.2000" />
                                         </div>
                                     </div>
                                 </div>
@@ -251,7 +335,16 @@
                                 <input type="text" name="representativeBuilderRequisites" class="form-control col-md" id="representativeBuilderRequisites" placeholder="Реквизиты распорядительного документа">
                             </div>
                             <div class="form-group col-md-6">
-                                <input type="date" name="representativeBuilderDateGet" class="form-control col-md-6" id="representativeBuilderDateGet" placeholder="Даты выдачи документа">
+                                <input type="date" name="representativeBuilderDateGet" class="form-control" id="representativeBuilderDateGet" placeholder="Даты выдачи документа">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="representativeBuilderRequisites" class="form-control " id="representativeBuilderAddres" placeholder="Местонахождение юр.Лица">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="representativeBuilderINN" class="form-control " id="representativeBuilderRequisites" placeholder="ИНН">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="representativeBuilderORGN" class="form-control col-md" id="representativeBuilderORGN" placeholder="ОГРН">
                             </div>
                             
                         </div>
@@ -302,8 +395,7 @@
                 </fieldset>
                 <fieldset style="display:block;background:none;">
                     <div class="form-group row">
-                        <label for="workerPres4" class="col-md-12 col-form-label">Представитель лица, осуществляющего подготовку
-                            проектной документации</label>
+                        <label for="workerPres4" class="col-md-12 col-form-label">Представитель лица, осуществляющего подготовку проектной документации</label>
  
                         <div class="col-md-12 inputs-wrapper form-row">
                             <div class="form-group col-md-6">
@@ -318,13 +410,18 @@
                             <div class="form-group col-md-6">
                                 <input type="date" name="preparationDateId" class="form-control col-md-6" id="preparationDateId" placeholder="Даты выдачи документа">
                             </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="preparationORGN" class="form-control " id="preparationORGN" placeholder="ОГРН">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="preparationREQ" class="form-control " id="preparationINN" placeholder="ИНН">
+                            </div>
                         </div>
                     </div>
                 </fieldset>
                 <fieldset style="display:block;background:none;">
                     <div class="form-group row">
-                        <label for="workerPres5" class="col-md-12 col-form-label">Представитель лица, выполнившего работы, подлежащие
-                            освидетельствованию</label>
+                        <label for="workerPres5" class="col-md-12 col-form-label">Представитель лица, выполнившего работы, подлежащие освидетельствованию</label>
 
                         <div class="col-md-12 inputs-wrapper form-row">
                             <div class="form-group col-md-6">
@@ -338,6 +435,12 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <input type="date" name="memberBuilderDateId" class="form-control col-md-6" id="memberBuilderDateId" placeholder="Даты выдачи документа">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="compliteORGN" class="form-control " id="compliteORGN" placeholder="ОГРН">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="compliteINN" class="form-control " id="compliteINN" placeholder="ИНН">
                             </div>
                         </div>
                     </div>
@@ -387,6 +490,7 @@
                     </div>
                     </div>
                 </fieldset>
+
                 <div>
                     <input type="submit" name="save" class=" action-button btn btn-primary btn-lg" role="button" aria-disabled="true" value="Сохранить">
                 </div>
@@ -652,4 +756,19 @@
 <script type="text/javascript" src="{{ asset('assets/js/rule-date.js') }}"></script>
 
 {{-- <script type="text/javascript" src="{{ asset('assets/js/ajax.js') }}"></script> --}}
+<script>
+    	$('body').on('click', '.add_doc', function () {
+            console.log(1);
+		var first_doc = $(this).parents('.document_in').find('.sertificat_sootvetsviya.template').clone();
+		first_doc.find('input').val('');
+		$(this).parent().parent().before(first_doc.removeClass('template'));
+
+	});
+    $('body').on('click', '.add_doc_2', function () {
+		var first_doc = $(this).parents('.document_in').find('.document_podtverjdayushiy.template').clone();
+		first_doc.find('input').val('');
+		$(this).parent().parent().before(first_doc.removeClass('template'));
+
+	});
+</script>
 @endsection

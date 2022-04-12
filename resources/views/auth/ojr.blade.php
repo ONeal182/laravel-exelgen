@@ -71,7 +71,7 @@
                                     <td>
                                         <div class="items-wrapper">
                                             {{ $doc->titleAosr }}
-
+                                            
                                             @foreach ($aosr[$doc->id] as $item)
                                                 @if (json_decode($item->date)->projectName)
                                                     <div class="items-wrapper__item">

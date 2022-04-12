@@ -60,7 +60,7 @@ class AdminController extends Controller
             $data = json_decode($data);
             $data = (array)$data;
         }
-        $ExelGen->generateExcel($data, $request, true);
+        $ExelGen->generateExcel($data, $request, false);
     }
 
     public function deleted(Request $request)
@@ -321,6 +321,7 @@ class AdminController extends Controller
         foreach($DocsListAll as $key => $value){
             $DocsListAll[$key]->date = json_decode($value->date);
         }
+        // dd($DocsList[0]->id);
         return view('/auth/ojraosr', ['id'=>$id,'arrDate'=>$arrDate,'ojr'=>$ojr[0],'DocsListAll'=>$DocsListAll,'arrDocs'=>$arrDocs,'arrCountSuppl'=>$arrCountSuppl,'ojrAll'=>$ojrAll]);
     }
 
